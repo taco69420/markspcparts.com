@@ -6,6 +6,16 @@ import PartCard from '../components/PartCard.astro';
 
 const parts = [
   {
+    name: 'NVIDIA Titan RTX',
+    category: 'GPU',
+    specs: ['24 GB GDDR6', 'Turing · 4608 CUDA cores', '672 GB/s bandwidth', 'NVLink support'],
+    condition: 'Mint' as const,
+    status: 'Watching' as const,
+    description: 'Museum-condition Titan RTX from a local collector. Pristine shroud, gold accents untouched. Considering holding for a dual NVLink build.',
+    image: '/titan1.jpg',
+    href: '/inventory/titan-rtx',
+  },
+  {
     name: 'Intel Core i7-2600K',
     category: 'CPU',
     specs: ['Socket LGA1155', '3.4 GHz / 3.8 GHz Turbo', '4C/8T · Sandy Bridge', '95W TDP'],
@@ -94,6 +104,9 @@ const parts = [
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-8 text-sm">
       <span class="text-steel">
         <span class="text-slate-100 font-semibold">{parts.filter(p => p.status === 'Available').length}</span> available
+      </span>
+      <span class="text-steel">
+        <span class="text-amber-300 font-semibold">{parts.filter(p => p.status === 'Watching').length}</span> watching
       </span>
       <span class="text-steel">
         <span class="text-slate-100 font-semibold">{parts.filter(p => p.status === 'Sold').length}</span> sold

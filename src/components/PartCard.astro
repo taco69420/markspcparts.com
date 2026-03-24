@@ -4,10 +4,11 @@ export interface Props {
   category: string;
   specs: string[];
   condition: 'Mint' | 'Excellent' | 'Good' | 'Fair';
-  status: 'Available' | 'Sold';
+  status: 'Available' | 'Sold' | 'Watching';
   description: string;
   ebayUrl?: string;
-  imagePlaceholder?: string;
+  image?: string;
+  href?: string;
 }
 
 const {
@@ -18,7 +19,8 @@ const {
   status,
   description,
   ebayUrl,
-  imagePlaceholder,
+  image,
+  href,
 } = Astro.props;
 
 const conditionColor: Record<string, string> = {
@@ -26,6 +28,12 @@ const conditionColor: Record<string, string> = {
   Excellent: 'text-sky-400 bg-sky-400/10 border-sky-400/20',
   Good: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20',
   Fair: 'text-orange-400 bg-orange-400/10 border-orange-400/20',
+};
+
+const statusBadge: Record<string, string> = {
+  Available: 'bg-accent text-white shadow-lg shadow-accent/30',
+  Sold: 'bg-slate-700 text-slate-400',
+  Watching: 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
 };
 ---
 
@@ -37,8 +45,8 @@ const conditionColor: Record<string, string> = {
 ]}>
   <!-- Image area -->
   <div class="relative aspect-[4/3] bg-surface-700 flex items-center justify-center overflow-hidden">
-    {imagePlaceholder ? (
-      <img src={imagePlaceholder} alt={name} class="w-full h-full object-cover" />
+    {image ? (
+      <img src={image} alt={name} class="w-full h-full object-cover" />
     ) : (
       <div class="flex flex-col items-center gap-2 text-steel/40">
         <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -51,9 +59,7 @@ const conditionColor: Record<string, string> = {
     <!-- Status badge -->
     <span class:list={[
       'absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold tracking-wide',
-      status === 'Available'
-        ? 'bg-accent text-white shadow-lg shadow-accent/30'
-        : 'bg-slate-700 text-slate-400',
+      statusBadge[status],
     ]}>
       {status}
     </span>
@@ -67,8 +73,11 @@ const conditionColor: Record<string, string> = {
   <!-- Content -->
   <div class="flex flex-col flex-1 p-5 gap-3">
     <div>
-      <h3 class="text-base font-semibold text-slate-100 leading-tight group-hover:text-accent-light transition-colors">
-        {name}
+      <h3 class:list={[
+        'text-base font-semibold text-slate-100 leading-tight transition-colors',
+        href ? 'group-hover:text-accent-light' : '',
+      ]}>
+        {href ? <a href={href} class="after:absolute after:inset-0">{name}</a> : name}
       </h3>
       <p class="mt-1.5 text-sm text-steel leading-relaxed">{description}</p>
     </div>
@@ -97,7 +106,7 @@ const conditionColor: Record<string, string> = {
           href={ebayUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-1.5 text-xs text-yellow-400 hover:text-yellow-300 transition-colors font-medium"
+          class="relative z-10 flex items-center gap-1.5 text-xs text-yellow-400 hover:text-yellow-300 transition-colors font-medium"
         >
           <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
             <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
@@ -106,13 +115,18 @@ const conditionColor: Record<string, string> = {
         </a>
       )}
 
-      {status === 'Available' && (
-        <a
-          href="/contact"
-          class="text-xs text-accent-light hover:text-white transition-colors font-medium"
-        >
+      {status === 'Available' && !href && (
+        <a href="/contact" class="relative z-10 text-xs text-accent-light hover:text-white transition-colors font-medium">
           Inquire →
         </a>
+      )}
+
+      {status === 'Available' && href && (
+        <span class="text-xs text-accent-light font-medium">View listing →</span>
+      )}
+
+      {status === 'Watching' && href && (
+        <span class="text-xs text-amber-400/80 font-medium font-mono">View listing →</span>
       )}
     </div>
   </div>

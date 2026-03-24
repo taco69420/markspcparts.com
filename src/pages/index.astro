@@ -6,12 +6,14 @@ import PartCard from '../components/PartCard.astro';
 
 const featured = [
   {
-    name: 'Intel Core i7-2600K',
-    category: 'CPU',
-    specs: ['Socket LGA1155', '3.4 GHz / 3.8 GHz Turbo', '4C/8T · Sandy Bridge', '95W TDP'],
-    condition: 'Excellent' as const,
-    status: 'Available' as const,
-    description: 'The overclocker\'s legend. Unlocked multiplier, still holds its own in light workloads. A collector\'s cornerstone.',
+    name: 'NVIDIA Titan RTX',
+    category: 'GPU',
+    specs: ['24 GB GDDR6', 'Turing · 4608 CUDA cores', '672 GB/s bandwidth', 'NVLink support'],
+    condition: 'Mint' as const,
+    status: 'Watching' as const,
+    description: 'Museum-condition Titan RTX from a local collector. Pristine shroud, gold accents untouched. Considering holding for a dual NVLink build.',
+    image: '/titan1.jpg',
+    href: '/inventory/titan-rtx',
   },
   {
     name: 'EVGA GTX 980 Ti SC+',

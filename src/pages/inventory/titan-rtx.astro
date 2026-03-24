@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const images = [
+  { src: '/titan1.jpg', alt: 'NVIDIA Titan RTX — main shot' },
+  { src: '/titan2.jpg', alt: 'NVIDIA Titan RTX — top view' },
+  { src: '/titan3.jpg', alt: 'NVIDIA Titan RTX — back plate' },
+];
+
+const specs = [
+  { label: 'Architecture', value: 'Turing (TU102)' },
+  { label: 'CUDA Cores', value: '4608' },
+  { label: 'Memory', value: '24 GB GDDR6' },
+  { label: 'Memory Bus', value: '384-bit' },
+  { label: 'Memory Bandwidth', value: '672 GB/s' },
+  { label: 'Base Clock', value: '1350 MHz' },
+  { label: 'Boost Clock', value: '1770 MHz' },
+  { label: 'TDP', value: '280W' },
+  { label: 'NVLink', value: 'Yes — dual GPU support' },
+  { label: 'Display Outputs', value: '3x DisplayPort 1.4 · 1x HDMI 2.0 · 1x USB-C (VirtualLink)' },
+  { label: 'Form Factor', value: 'Dual-slot · 267 mm' },
+  { label: 'Condition', value: 'Mint — unplayed, display only' },
+];
+---
+
+<Layout
+  title="NVIDIA Titan RTX"
+  description="Museum-condition NVIDIA Titan RTX — 24 GB GDDR6, Turing architecture. Picked up from a local collector. May or may not sell."
+>
+  <Nav slot="nav" />
+
+  <!-- Breadcrumb -->
+  <div class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-steel font-mono">
+      <a href="/" class="hover:text-accent-light transition-colors">home</a>
+      <span class="text-white/20">/</span>
+      <a href="/inventory" class="hover:text-accent-light transition-colors">inventory</a>
+      <span class="text-white/20">/</span>
+      <span class="text-slate-300">nvidia-titan-rtx</span>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-14 items-start">
+
+      <!-- Image gallery -->
+      <div class="flex flex-col gap-3">
+        <!-- Main image -->
+        <div class="rounded-xl overflow-hidden bg-surface-700 aspect-[4/3]">
+          <img
+            id="main-image"
+            src={images[0].src}
+            alt={images[0].alt}
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <!-- Thumbnails -->
+        <div class="grid grid-cols-3 gap-3">
+          {images.map((img, i) => (
+            <button
+              data-src={img.src}
+              data-alt={img.alt}
+              class:list={[
+                'rounded-lg overflow-hidden aspect-[4/3] border-2 transition-all duration-150 focus:outline-none thumbnail-btn',
+                i === 0 ? 'border-accent' : 'border-white/10 hover:border-accent/40',
+              ]}
+            >
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="mt-10 lg:mt-0">
+        <!-- Header -->
+        <div class="flex items-start justify-between gap-4 mb-1">
+          <span class="text-xs font-mono text-accent-light uppercase tracking-widest">GPU</span>
+          <!-- Status pill -->
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold border bg-amber-500/10 text-amber-300 border-amber-500/30">
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+            Watching — may not sell
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mt-2 leading-tight">NVIDIA Titan RTX</h1>
+
+        <div class="flex items-center gap-3 mt-3">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium border text-emerald-400 bg-emerald-400/10 border-emerald-400/20">
+            Mint
+          </span>
+          <span class="text-xs text-steel font-mono">Acquired: Facebook Marketplace · Redlands, CA</span>
+        </div>
+
+        <!-- Status notice -->
+        <div class="mt-6 p-4 rounded-lg bg-amber-500/5 border border-amber-500/20">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-amber-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.07 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            <p class="text-sm text-amber-300/80 leading-relaxed">
+              <strong class="text-amber-300">Status: Watching — may not sell.</strong> Currently
+              considering holding this for a dual NVLink build. Status will update if it becomes available.
+              Feel free to <a href="/contact" class="underline underline-offset-2 hover:text-amber-200 transition-colors">reach out</a> to express interest.
+            </p>
+          </div>
+        </div>
+
+        <!-- Write-up -->
+        <div class="mt-8">
+          <h2 class="text-sm font-semibold text-slate-100 uppercase tracking-widest mb-3 font-mono text-accent-light">The Story</h2>
+          <div class="space-y-3 text-steel text-sm leading-relaxed">
+            <p>
+              Picked this up from a local collector off Facebook Marketplace for $500. The guy was a
+              true collector — bought it new and only ever powered it on to test it.
+            </p>
+            <p>
+              This card is in museum condition. The shroud is flawless, the gold accents are pristine,
+              no dust, no wear. Genuinely one of the cleanest Titan RTX units you'll find anywhere.
+            </p>
+            <p>
+              The Titan RTX was NVIDIA's top-of-line consumer Turing card — 24 GB of GDDR6,
+              NVLink support for dual-GPU configs, and the full TU102 die. It was never really a
+              gaming card; it was a workstation chip with a consumer shroud. That's what makes it
+              interesting to collect.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20"
+          >
+            Express Interest
+          </a>
+          <a
+            href="/inventory"
+            class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
+          >
+            ← Back to Inventory
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs table -->
+    <div class="mt-16 border-t border-white/5 pt-14">
+      <h2 class="text-xl font-bold mb-8">Full Specifications</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden border border-white/5">
+        {specs.map(spec => (
+          <div class="bg-surface-800 px-5 py-4">
+            <p class="text-xs text-steel font-mono uppercase tracking-wide mb-1">{spec.label}</p>
+            <p class="text-sm text-slate-100 font-medium">{spec.value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const thumbBtns = document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn');
+
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const src = btn.dataset.src!;
+      const alt = btn.dataset.alt!;
+      mainImage.src = src;
+      mainImage.alt = alt;
+      thumbBtns.forEach(b => b.classList.replace('border-accent', 'border-white/10'));
+      btn.classList.replace('border-white/10', 'border-accent');
+    });
+  });
+</script>
