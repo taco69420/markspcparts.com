@@ -6,6 +6,17 @@ import PartCard from '../components/PartCard.astro';
 
 const featured = [
   {
+    name: 'ASUS ROG Dominus Extreme',
+    category: 'Motherboard',
+    specs: ['Intel LGA 3647', 'Xeon W-3175X · 28C/56T', '12-ch DDR4 · 384 GB max', 'Dual DIMM.2 · ROG Aura RGB'],
+    condition: 'Good' as const,
+    status: 'Available' as const,
+    description: 'Flagship HEDT board for the Xeon W-3175X. Complete with accessories. POST code 00 issue — well-documented resistor fix. Active eBay listing.',
+    image: '/rogdom2.jpg',
+    href: '/inventory/rog-dominus-extreme',
+    ebayUrl: 'https://ebay.us/m/KmIMET',
+  },
+  {
     name: 'NVIDIA Titan RTX',
     category: 'GPU',
     specs: ['24 GB GDDR6', 'Turing · 4608 CUDA cores', '672 GB/s bandwidth', 'NVLink support'],

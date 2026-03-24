@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const ebayUrl = 'https://ebay.us/m/KmIMET';
+
+const images = [
+  { src: '/rogdom2.jpg', alt: 'ROG Dominus Extreme — board overview in box' },
+  { src: '/rogdom3.jpg', alt: 'ROG Dominus Extreme — LGA 3647 socket close-up' },
+  { src: '/rogdom4.jpg', alt: 'ROG Dominus Extreme — board overview angle' },
+  { src: '/rogdom5.jpg', alt: 'ROG Dominus Extreme — top of board' },
+  { src: '/rogdom6.jpg', alt: 'ROG Dominus Extreme — accessories' },
+  { src: '/rogdom7.jpg', alt: 'ROG Dominus Extreme — accessories continued' },
+  { src: '/rogdom8.jpg', alt: 'ROG Dominus Extreme — DIMM.2 and accessories' },
+  { src: '/rogdom1.jpg', alt: 'ROG Dominus Extreme — box front' },
+];
+
+const specs = [
+  { label: 'Form Factor', value: 'SSI-EEB (Extended ATX)' },
+  { label: 'Socket', value: 'Intel LGA 3647' },
+  { label: 'CPU Support', value: 'Intel Xeon W-3175X only (28C / 56T)' },
+  { label: 'Memory Slots', value: '12x DIMM — 12-channel DDR4' },
+  { label: 'Max Memory', value: '384 GB DDR4 ECC / non-ECC' },
+  { label: 'PCIe Slots', value: '4x PCIe 3.0 x16 + 2x PCIe 3.0 x8' },
+  { label: 'DIMM.2 Slots', value: '2x (supports NVMe RAID)' },
+  { label: 'Storage', value: '8x SATA 6Gb/s + 2x M.2' },
+  { label: 'USB', value: 'USB 3.1 Gen 2 (Type-A + Type-C), USB 3.1 Gen 1' },
+  { label: 'Networking', value: 'Dual Intel I219-LM Gigabit LAN' },
+  { label: 'Audio', value: 'ROG SupremeFX 8-channel' },
+  { label: 'RGB', value: 'Full ROG Aura Sync RGB' },
+  { label: 'Chipset', value: 'Intel C621' },
+  { label: 'Condition', value: 'Good — known POST resistor issue' },
+  { label: 'Includes', value: 'All original accessories, most unopened. Sealed coaster included.' },
+];
+---
+
+<Layout
+  title="ASUS ROG Dominus Extreme"
+  description="ASUS ROG Dominus Extreme LGA 3647 motherboard — complete with accessories. Known POST resistor issue, easy fix. Listed on eBay."
+>
+  <Nav slot="nav" />
+
+  <!-- Breadcrumb -->
+  <div class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-steel font-mono">
+      <a href="/" class="hover:text-accent-light transition-colors">home</a>
+      <span class="text-white/20">/</span>
+      <a href="/inventory" class="hover:text-accent-light transition-colors">inventory</a>
+      <span class="text-white/20">/</span>
+      <span class="text-slate-300">rog-dominus-extreme</span>
+    </div>
+  </div>
+
+  <!-- Top eBay CTA banner -->
+  <div class="bg-yellow-500/10 border-b border-yellow-500/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-sm text-yellow-300 font-medium">This item is listed and active on eBay.</p>
+      <a
+        href={ebayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shrink-0"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+        </svg>
+        View Listing on eBay
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-14 items-start">
+
+      <!-- Image gallery -->
+      <div class="flex flex-col gap-3">
+        <div class="rounded-xl overflow-hidden bg-surface-700">
+          <img
+            id="main-image"
+            src={images[0].src}
+            alt={images[0].alt}
+            class="w-full object-contain max-h-[520px] bg-surface-700"
+          />
+        </div>
+        <!-- Thumbnails — 4 across -->
+        <div class="grid grid-cols-4 gap-2">
+          {images.map((img, i) => (
+            <button
+              data-src={img.src}
+              data-alt={img.alt}
+              class:list={[
+                'rounded-lg overflow-hidden border-2 transition-all duration-150 focus:outline-none thumbnail-btn aspect-square',
+                i === 0 ? 'border-accent' : 'border-white/10 hover:border-accent/40',
+              ]}
+            >
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="mt-10 lg:mt-0">
+        <div class="flex items-start justify-between gap-4 mb-1">
+          <span class="text-xs font-mono text-accent-light uppercase tracking-widest">Motherboard · LGA 3647</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/25 shrink-0">
+            For Sale
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mt-2 leading-tight">ASUS ROG Dominus Extreme</h1>
+
+        <div class="flex flex-wrap items-center gap-3 mt-3">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium border text-yellow-400 bg-yellow-400/10 border-yellow-400/20">
+            Good
+          </span>
+          <span class="text-xs text-steel font-mono">Complete with original accessories</span>
+        </div>
+
+        <!-- Condition / known issue callout -->
+        <div class="mt-6 p-4 rounded-lg bg-yellow-500/5 border border-yellow-500/20">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-yellow-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.07 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            <div>
+              <p class="text-sm font-semibold text-yellow-300 mb-1">Known Issue — POST Code 00</p>
+              <p class="text-xs text-yellow-300/70 leading-relaxed">
+                Hangs at POST code 00. Consistent with the well-documented resistor issue on this platform —
+                a known fix for anyone comfortable with a soldering iron or a board repair shop.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Write-up -->
+        <div class="mt-8">
+          <h2 class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">The Story</h2>
+          <div class="space-y-3 text-steel text-sm leading-relaxed">
+            <p>
+              Picked this up as a "broken" board — seller described it as power cycling once before booting
+              into Windows, Aura RGB acting erratic, and missing chipset drivers. Diagnosed and fixed it
+              myself: updated the ME Engine firmware, installed chipset drivers, and flashed the BIOS.
+            </p>
+            <p>
+              Ran it as a daily driver for two months without a single issue. Eventually pulled the GPU and
+              SSD to move on to a new build. When I went to fire it back up with a Titan RTX it hung at
+              POST code 00 — most likely the well-documented resistor issue on this platform.
+            </p>
+            <p>
+              Comes complete with all accessories, most still unopened. Even the coaster is still sealed.
+              This is a board for someone who knows what they're working with — the Dominus Extreme is
+              one of the most extreme enthusiast boards ASUS ever made, built around the only consumer
+              28-core CPU Intel ever shipped.
+            </p>
+          </div>
+        </div>
+
+        <!-- eBay CTA -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href={ebayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+            </svg>
+            Buy / Bid on eBay
+          </a>
+          <a
+            href="/contact"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
+          >
+            Ask a Question
+          </a>
+          <a
+            href="/inventory"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
+          >
+            ← Inventory
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs table -->
+    <div class="mt-16 border-t border-white/5 pt-14">
+      <h2 class="text-xl font-bold mb-8">Full Specifications</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden border border-white/5">
+        {specs.map(spec => (
+          <div class="bg-surface-800 px-5 py-4">
+            <p class="text-xs text-steel font-mono uppercase tracking-wide mb-1">{spec.label}</p>
+            <p class="text-sm text-slate-100 font-medium">{spec.value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom eBay CTA -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-xl bg-surface-800 border border-white/10">
+      <div>
+        <p class="font-semibold text-slate-100">Ready to buy?</p>
+        <p class="text-sm text-steel mt-0.5">Active eBay listing — place a bid or buy it now.</p>
+      </div>
+      <a
+        href={ebayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20 shrink-0"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+        </svg>
+        View on eBay →
+      </a>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const thumbBtns = document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn');
+
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mainImage.src = btn.dataset.src!;
+      mainImage.alt = btn.dataset.alt!;
+      thumbBtns.forEach(b => b.classList.replace('border-accent', 'border-white/10'));
+      btn.classList.replace('border-white/10', 'border-accent');
+    });
+  });
+</script>
