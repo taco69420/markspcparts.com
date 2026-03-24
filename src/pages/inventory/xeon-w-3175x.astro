@@ -1,0 +1,253 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const ebayUrl = 'https://ebay.us/m/ouUYQi';
+
+const images = [
+  { src: '/3175x1.jpg', alt: 'Intel Xeon W-3175X — IHS front' },
+  { src: '/3175x2.jpg', alt: 'Intel Xeon W-3175X — LGA 3647 pins (back)' },
+];
+
+const specs = [
+  { label: 'Socket', value: 'Intel LGA 3647' },
+  { label: 'Cores / Threads', value: '28 cores / 56 threads' },
+  { label: 'Base Clock', value: '3.1 GHz' },
+  { label: 'Boost Clock', value: '4.3 GHz (single-core)' },
+  { label: 'Cache', value: '38.5 MB Intel Smart Cache' },
+  { label: 'Memory Channels', value: '6-channel DDR4' },
+  { label: 'Max Memory Speed', value: 'DDR4-2666' },
+  { label: 'PCIe Lanes', value: '48 PCIe 3.0' },
+  { label: 'TDP', value: '255W' },
+  { label: 'Multiplier', value: 'Unlocked' },
+  { label: 'Architecture', value: 'Skylake-W (14nm)' },
+  { label: 'Compatible Board', value: 'ASUS ROG Dominus Extreme only' },
+  { label: 'Condition', value: 'Fair — IHS scratches, thermal paste residue on back. Silicon solid.' },
+  { label: 'Pricing', value: 'Price on request — message on eBay' },
+];
+---
+
+<Layout
+  title="Intel Xeon W-3175X"
+  description="Intel Xeon W-3175X — 28 cores, unlocked, LGA 3647. Fair cosmetic condition, solid silicon. Price on request. Bundle with ROG Dominus Extreme available."
+>
+  <Nav slot="nav" />
+
+  <!-- Breadcrumb -->
+  <div class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-steel font-mono">
+      <a href="/" class="hover:text-accent-light transition-colors">home</a>
+      <span class="text-white/20">/</span>
+      <a href="/inventory" class="hover:text-accent-light transition-colors">inventory</a>
+      <span class="text-white/20">/</span>
+      <span class="text-slate-300">xeon-w-3175x</span>
+    </div>
+  </div>
+
+  <!-- Top eBay CTA banner -->
+  <div class="bg-yellow-500/10 border-b border-yellow-500/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-sm text-yellow-300 font-medium">Price on request — message on the eBay listing to discuss.</p>
+      <a
+        href={ebayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shrink-0"
+      >
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+        </svg>
+        Message on eBay
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-14 items-start">
+
+      <!-- Image gallery -->
+      <div class="flex flex-col gap-3">
+        <div class="rounded-xl overflow-hidden bg-surface-700">
+          <img
+            id="main-image"
+            src={images[0].src}
+            alt={images[0].alt}
+            class="w-full object-contain max-h-[540px] bg-surface-700"
+          />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          {images.map((img, i) => (
+            <button
+              data-src={img.src}
+              data-alt={img.alt}
+              class:list={[
+                'rounded-lg overflow-hidden border-2 transition-all duration-150 focus:outline-none thumbnail-btn aspect-[4/3]',
+                i === 0 ? 'border-accent' : 'border-white/10 hover:border-accent/40',
+              ]}
+            >
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover object-center" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="mt-10 lg:mt-0">
+        <div class="flex items-start justify-between gap-4 mb-1">
+          <span class="text-xs font-mono text-accent-light uppercase tracking-widest">CPU · LGA 3647</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/25 shrink-0">
+            For Sale
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mt-2 leading-tight">Intel Xeon W-3175X</h1>
+
+        <div class="flex flex-wrap items-center gap-3 mt-3">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium border text-orange-400 bg-orange-400/10 border-orange-400/20">
+            Fair
+          </span>
+          <span class="text-xs text-steel font-mono">28C / 56T · Unlocked · 255W</span>
+        </div>
+
+        <!-- Cosmetic condition note -->
+        <div class="mt-6 p-4 rounded-lg bg-orange-500/5 border border-orange-500/20">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-orange-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <div>
+              <p class="text-sm font-semibold text-orange-300 mb-1">Cosmetic Wear — Fair Condition</p>
+              <p class="text-xs text-orange-300/70 leading-relaxed">
+                IHS has visible scratches. Thermal paste residue on the back of the chip. Cosmetic only —
+                the silicon is solid and the IMC tested strong on the Dominus Extreme platform.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Write-up -->
+        <div class="mt-8">
+          <h2 class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">The Story</h2>
+          <div class="space-y-3 text-steel text-sm leading-relaxed">
+            <p>
+              This W-3175X came from China and it delivered. Strong IMC, ran great on the Dominus Extreme
+              platform. Cosmetically it has some scratches on the IHS and thermal paste residue on the back —
+              what can you say, it's from China. But the silicon is solid and the results speak for themselves.
+            </p>
+            <p>
+              The W-3175X is the only consumer-facing 28-core chip Intel ever shipped, and it only ever
+              worked in one board: the ASUS ROG Dominus Extreme. It's not a chip you build a practical
+              workstation around — it's a statement. Unlocked multiplier, 6-channel DDR4, 48 PCIe lanes,
+              and a 255W TDP that demands serious cooling. There's nothing else like it.
+            </p>
+            <p>
+              Pricing is on request — message on the eBay listing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bundle callout -->
+        <div class="mt-6 p-4 rounded-lg bg-accent/5 border border-accent/20">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-accent-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <div>
+              <p class="text-sm font-semibold text-accent-light mb-1">Bundle Deal Available</p>
+              <p class="text-xs text-steel leading-relaxed">
+                Interested in the{' '}
+                <a href="/inventory/rog-dominus-extreme" class="text-accent-light hover:text-white underline underline-offset-2 transition-colors">
+                  ASUS ROG Dominus Extreme
+                </a>
+                {' '}too? The W-3175X only works in one board — message on eBay and we can work something out.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href={ebayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+            </svg>
+            Message on eBay
+          </a>
+          <a
+            href="/inventory/rog-dominus-extreme"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-accent/30 text-accent-light hover:border-accent/60 hover:text-white font-medium text-sm transition-colors"
+          >
+            View Dominus Extreme →
+          </a>
+          <a
+            href="/inventory"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
+          >
+            ← Inventory
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs table -->
+    <div class="mt-16 border-t border-white/5 pt-14">
+      <h2 class="text-xl font-bold mb-8">Full Specifications</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden border border-white/5">
+        {specs.map(spec => (
+          <div class="bg-surface-800 px-5 py-4">
+            <p class="text-xs text-steel font-mono uppercase tracking-wide mb-1">{spec.label}</p>
+            <p class="text-sm text-slate-100 font-medium">{spec.value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-xl bg-surface-800 border border-white/10">
+      <div>
+        <p class="font-semibold text-slate-100">Interested? Price is on request.</p>
+        <p class="text-sm text-steel mt-0.5">Message on the eBay listing. Bundle with the Dominus Extreme available.</p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <a
+          href="/inventory/rog-dominus-extreme"
+          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-accent/30 text-accent-light hover:border-accent/60 hover:text-white font-medium text-sm transition-colors"
+        >
+          Dominus Extreme →
+        </a>
+        <a
+          href={ebayUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors"
+        >
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+          </svg>
+          eBay →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const thumbBtns = document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn');
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mainImage.src = btn.dataset.src!;
+      mainImage.alt = btn.dataset.alt!;
+      thumbBtns.forEach(b => b.classList.replace('border-accent', 'border-white/10'));
+      btn.classList.replace('border-white/10', 'border-accent');
+    });
+  });
+</script>

@@ -6,6 +6,17 @@ import PartCard from '../components/PartCard.astro';
 
 const parts = [
   {
+    name: 'Intel Xeon W-3175X',
+    category: 'CPU',
+    specs: ['LGA 3647 · 28C / 56T', 'Unlocked multiplier', '6-ch DDR4 · 48 PCIe lanes', '255W TDP'],
+    condition: 'Fair' as const,
+    status: 'Available' as const,
+    description: 'The only consumer 28-core Intel ever made. Cosmetic wear on IHS, solid silicon. Price on request — message on eBay. Bundle with Dominus Extreme available.',
+    image: '/3175x1.jpg',
+    href: '/inventory/xeon-w-3175x',
+    ebayUrl: 'https://ebay.us/m/ouUYQi',
+  },
+  {
     name: 'ASUS ROG Dominus Extreme',
     category: 'Motherboard',
     specs: ['Intel LGA 3647', 'Xeon W-3175X · 28C/56T', '12-ch DDR4 · 384 GB max', 'Dual DIMM.2 · ROG Aura RGB'],
