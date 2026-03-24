@@ -38,9 +38,54 @@ import Footer from '../components/Footer.astro';
           <p class="text-slate-400">
             Based in Redlands, CA.
           </p>
+        </div>
+      </div>
 
-          <!-- Contact nudge -->
-          <div class="pt-4 flex flex-wrap gap-4 text-sm">
+      <!-- Personal Story -->
+      <div class="mt-16 max-w-2xl">
+        <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-6">How I got here</p>
+        <div class="space-y-4 text-steel text-base leading-relaxed">
+          <p>
+            I've been taking things apart since I was a kid. Electronics, toys, whatever I could get
+            my hands on — I just wanted to know how it worked. My first real computer was a Pentium
+            office PC I got at 14. Most kids would've just played games on it. I was running local
+            Apache servers just to see what I could do.
+          </p>
+          <p>
+            From there it snowballed. I built up my collection the only way that made sense —
+            flipping parts, hunting deals, and reinvesting every dollar back into the next weird
+            thing. Best score so far: 48GB of DDR5-9000 CUDIMMs for $400. That's the price of a
+            decent 32GB kit. Still think about that one.
+          </p>
+        </div>
+      </div>
+
+      <!-- What I look for -->
+      <div class="mt-16 max-w-2xl">
+        <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-6">What I look for</p>
+        <div class="space-y-4 text-steel text-base leading-relaxed">
+          <p>
+            The sweet spot for me is hardware that almost nobody else is running. I want to be the
+            only person daily driving it — that's half the appeal. If it's obscure, power-hungry,
+            and makes no practical sense, I'm interested.
+          </p>
+          <p>
+            I have a soft spot for AMD's Fiji era specifically. There's something about that
+            generation that just hits different. I've owned two Radeon Pro Duo Fiji cards and one
+            Polaris variant — dual-GPU setups in general are catnip to me. The more watts it pulls,
+            the better.
+          </p>
+          <p>
+            Outside of that sweet spot I go after high-end older workstation platforms and
+            relatively recent server hardware that falls through the cracks on the used market —
+            stuff that was insanely expensive new and now nobody knows what to do with. I do.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact nudge (moved outside bio flex) -->
+      <div class="mt-12 max-w-2xl">
+          <div class="flex flex-wrap gap-4 text-sm">
             <a
               href="/contact"
               class="inline-flex items-center gap-2 text-accent-light hover:text-white transition-colors font-medium"
@@ -68,9 +113,8 @@ import Footer from '../components/Footer.astro';
               eBay
             </a>
           </div>
-        </div>
-
       </div>
+
     </div>
   </section>
 
