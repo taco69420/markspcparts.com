@@ -1,0 +1,126 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PartCard from '../components/PartCard.astro';
+
+const parts = [
+  {
+    name: 'Intel Core i7-2600K',
+    category: 'CPU',
+    specs: ['Socket LGA1155', '3.4 GHz / 3.8 GHz Turbo', '4C/8T · Sandy Bridge', '95W TDP'],
+    condition: 'Excellent' as const,
+    status: 'Available' as const,
+    description: 'The overclocker\'s legend. Unlocked multiplier, still holds its own in light workloads. A collector\'s cornerstone.',
+  },
+  {
+    name: 'EVGA GTX 980 Ti SC+',
+    category: 'GPU',
+    specs: ['GM200 · Maxwell', '6 GB GDDR5', '384-bit bus', 'ACX 2.0+ Cooling'],
+    condition: 'Mint' as const,
+    status: 'Available' as const,
+    description: 'Top-of-line Maxwell flagship. Barely used, full shroud intact, backplate pristine. A display-worthy card.',
+  },
+  {
+    name: 'Asus Rampage IV Extreme',
+    category: 'Motherboard',
+    specs: ['LGA2011 · X79', '8x DDR3 slots · 64 GB max', 'Quad SLI / CrossFireX', 'ROG Supreme FX audio'],
+    condition: 'Good' as const,
+    status: 'Sold' as const,
+    description: 'HEDT powerhouse from the X79 era. Fully tested, all phases confirmed. A proper enthusiast trophy board.',
+    ebayUrl: '#',
+  },
+  {
+    name: 'AMD FX-9590',
+    category: 'CPU',
+    specs: ['Socket AM3+', '4.7 GHz / 5.0 GHz Turbo', '8C · Vishera', '220W TDP'],
+    condition: 'Good' as const,
+    status: 'Available' as const,
+    description: 'AMD\'s highest-clocked Bulldozer chip. A piece of history — infamous for its power draw, beloved for its character.',
+  },
+  {
+    name: 'Corsair Dominator Platinum 32 GB',
+    category: 'RAM',
+    specs: ['DDR3-2400 C10', '4x 8 GB kit', 'White DHX fins', 'Custom LED bar'],
+    condition: 'Mint' as const,
+    status: 'Available' as const,
+    description: 'Show-quality Dominator kit. Pristine fins, all LEDs functional. A centerpiece for any X79 or Z87 build.',
+  },
+  {
+    name: 'Sound Blaster X-Fi Titanium HD',
+    category: 'Sound Card',
+    specs: ['PCIe x1', '192 kHz / 24-bit DAC', 'THX TruStudio Pro', 'EAX 5.0 Advanced HD'],
+    condition: 'Excellent' as const,
+    status: 'Sold' as const,
+    description: 'Creative\'s pinnacle discrete audio card. Sought-after by audiophiles and retro gamers alike. Hard to find in this condition.',
+    ebayUrl: '#',
+  },
+  {
+    name: 'ASUS ROG MATRIX GTX 580 Platinum',
+    category: 'GPU',
+    specs: ['GF110 · Fermi', '3 GB GDDR5', 'OC Edition', 'Voltage control header'],
+    condition: 'Good' as const,
+    status: 'Available' as const,
+    description: 'One of the most premium Fermi cards ever made. Voltage control, ROG aesthetics, and brute-force Fermi performance.',
+  },
+  {
+    name: 'Thermalright Archon SB-E',
+    category: 'Cooling',
+    specs: ['Dual 140 mm fans', 'LGA2011 / AM3+ support', 'Aluminum fins · 6 heatpipes', '190 mm tall'],
+    condition: 'Excellent' as const,
+    status: 'Available' as const,
+    description: 'Legendary HEDT cooler. Massive, effective, and increasingly rare. Compatible with X79 and AM3+ platforms.',
+  },
+];
+---
+
+<Layout title="Inventory" description="Browse Mark's collection of rare, collectible, and enthusiast PC hardware.">
+  <Nav slot="nav" />
+
+  <!-- Page header -->
+  <section class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">Browse</p>
+      <h1 class="text-3xl sm:text-4xl font-bold">Inventory</h1>
+      <p class="mt-3 text-steel max-w-lg">
+        Every piece sourced, tested, and written up. Available items are ready to sell —
+        sold items link to their eBay listing for reference.
+      </p>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="border-b border-white/5 bg-surface-800/50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center gap-8 text-sm">
+      <span class="text-steel">
+        <span class="text-slate-100 font-semibold">{parts.filter(p => p.status === 'Available').length}</span> available
+      </span>
+      <span class="text-steel">
+        <span class="text-slate-100 font-semibold">{parts.filter(p => p.status === 'Sold').length}</span> sold
+      </span>
+      <span class="text-steel ml-auto text-xs font-mono">
+        {parts.length} total parts
+      </span>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {parts.map(part => <PartCard {...part} />)}
+    </div>
+
+    <!-- Empty state placeholder (hidden when parts exist) -->
+    {parts.length === 0 && (
+      <div class="text-center py-24 text-steel">
+        <svg class="w-12 h-12 mx-auto mb-4 opacity-30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
+        </svg>
+        <p class="font-medium">No parts listed yet.</p>
+        <p class="text-sm mt-1">Check back soon.</p>
+      </div>
+    )}
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
