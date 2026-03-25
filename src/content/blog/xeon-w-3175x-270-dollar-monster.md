@@ -1,6 +1,6 @@
 ---
 title: I Paid $270 for Intel's Most Unhinged CPU
-date: 2026-03-24
+date: 2026-03-25
 description: The only consumer 28-core chip Intel ever made, bought off eBay for $270. It has lived a hard life and does not care.
 tags: [intel, xeon, w-3175x, cpu, power, lga3647, ebay, deal]
 ---
