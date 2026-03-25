@@ -3,8 +3,6 @@ import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
 
-const ebayUrl = 'https://ebay.us/m/ouUYQi';
-
 const images = [
   { src: '/images/inventory/xeon-w-3175x/3175x1.jpg', alt: 'Intel Xeon W-3175X — IHS front' },
   { src: '/images/inventory/xeon-w-3175x/3175x2.jpg', alt: 'Intel Xeon W-3175X — LGA 3647 pins (back)' },
@@ -24,13 +22,13 @@ const specs = [
   { label: 'Architecture', value: 'Skylake-W (14nm)' },
   { label: 'Compatible Board', value: 'ASUS ROG Dominus Extreme only' },
   { label: 'Condition', value: 'Fair — IHS scratches, thermal paste residue on back. Silicon solid.' },
-  { label: 'Status', value: 'Not for sale — deciding what to do with the platform' },
+  { label: 'Status', value: 'Might list later — check back' },
 ];
 ---
 
 <Layout
   title="Intel Xeon W-3175X"
-  description="Intel Xeon W-3175X — 28 cores, unlocked, LGA 3647. Fair cosmetic condition, solid silicon. Price on request. Bundle with ROG Dominus Extreme available."
+  description="Intel Xeon W-3175X — 28 cores, unlocked, LGA 3647. Fair cosmetic condition, solid silicon. May go up for sale later."
 >
   <Nav slot="nav" />
 
@@ -48,7 +46,7 @@ const specs = [
   <!-- Status banner -->
   <div class="bg-surface-700/50 border-b border-white/5">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-      <p class="text-sm text-steel">Not currently for sale — still deciding what to do with the platform.</p>
+      <p class="text-sm text-steel">Not listed right now — might go up for sale later. Check back.</p>
     </div>
   </div>
 
@@ -86,7 +84,7 @@ const specs = [
         <div class="flex items-start justify-between gap-4 mb-1">
           <span class="text-xs font-mono text-accent-light uppercase tracking-widest">CPU · LGA 3647</span>
           <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-surface-600 text-steel border border-white/10 shrink-0">
-            Not For Sale
+            Might List Later
           </span>
         </div>
 
@@ -131,7 +129,7 @@ const specs = [
               and a 255W TDP that demands serious cooling. There's nothing else like it.
             </p>
             <p>
-              Not for sale right now — still figuring out what to do with this platform.
+              Might go up for sale later — still figuring out what to do with this platform.
             </p>
           </div>
         </div>
@@ -189,8 +187,8 @@ const specs = [
     <!-- Bottom note -->
     <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-xl bg-surface-800 border border-white/10">
       <div>
-        <p class="font-semibold text-slate-100">Not for sale right now.</p>
-        <p class="text-sm text-steel mt-0.5">Holding this while I decide what to do with the platform. Check back later.</p>
+        <p class="font-semibold text-slate-100">Might go up for sale later.</p>
+        <p class="text-sm text-steel mt-0.5">Holding onto this for now — could list it down the road. Check back.</p>
       </div>
       <a
         href="/inventory/rog-dominus-extreme"
