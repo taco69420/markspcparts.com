@@ -164,4 +164,18 @@ const dateStr = post.data.date.toLocaleDateString('en-US', {
     font-style: italic;
     margin: 1.5rem 0;
   }
+
+  .prose :global(.video-embed) {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    margin: 2rem auto;
+  }
+
+  .prose :global(.video-embed iframe) {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
 </style>
