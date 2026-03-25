@@ -10,7 +10,7 @@ const parts = [
     category: 'CPU',
     specs: ['LGA 3647 · 28C / 56T', 'Unlocked multiplier', '6-ch DDR4 · 48 PCIe lanes', '255W TDP'],
     condition: 'Fair' as const,
-    status: 'Watching' as const,
+    status: 'Not Listed' as const,
     description: 'The only consumer 28-core Intel ever made. Cosmetic wear on IHS, solid silicon. Might go up for sale later — check back.',
     image: '/images/inventory/xeon-w-3175x/3175x1.jpg',
     href: '/inventory/xeon-w-3175x',
@@ -20,7 +20,7 @@ const parts = [
     category: 'Motherboard',
     specs: ['Intel LGA 3647', 'Xeon W-3175X · 28C/56T', '12-ch DDR4 · 192 GB max', '4x PCIe 3.0 x16 · ROG Aura RGB'],
     condition: 'Good' as const,
-    status: 'Watching' as const,
+    status: 'Not Listed' as const,
     description: 'Flagship HEDT board for the Xeon W-3175X. Complete with accessories. Fully working. Might go up for sale later — check back.',
     image: '/images/inventory/rog-dominus-extreme/rogdom2.jpg',
     href: '/inventory/rog-dominus-extreme',
@@ -30,7 +30,7 @@ const parts = [
     category: 'GPU',
     specs: ['24 GB GDDR6', 'Turing · 4608 CUDA cores', '672 GB/s bandwidth', 'NVLink support'],
     condition: 'Mint' as const,
-    status: 'Watching' as const,
+    status: 'Not Listed' as const,
     description: 'Museum-condition Titan RTX from a local collector. Pristine shroud, gold accents untouched. Considering holding for a dual NVLink build.',
     image: '/images/inventory/titan-rtx/titan1.jpg',
     href: '/inventory/titan-rtx',
@@ -60,7 +60,7 @@ const parts = [
         <span class="text-slate-100 font-semibold">{parts.filter(p => p.status === 'Available').length}</span> available
       </span>
       <span class="text-steel">
-        <span class="text-amber-300 font-semibold">{parts.filter(p => p.status === 'Watching').length}</span> watching
+        <span class="text-amber-300 font-semibold">{parts.filter(p => p.status === 'Not Listed').length}</span> not listed
       </span>
       <span class="text-steel">
         <span class="text-slate-100 font-semibold">{parts.filter(p => p.status === 'Sold').length}</span> sold

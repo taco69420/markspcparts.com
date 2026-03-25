@@ -4,7 +4,7 @@ export interface Props {
   category: string;
   specs: string[];
   condition: 'Mint' | 'Excellent' | 'Good' | 'Fair';
-  status: 'Available' | 'Sold' | 'Watching';
+  status: 'Available' | 'Sold' | 'Not Listed';
   description: string;
   ebayUrl?: string;
   image?: string;
@@ -33,7 +33,7 @@ const conditionColor: Record<string, string> = {
 const statusBadge: Record<string, string> = {
   Available: 'bg-accent text-white shadow-lg shadow-accent/30',
   Sold: 'bg-slate-700 text-slate-400',
-  Watching: 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
+  'Not Listed': 'bg-amber-500/20 text-amber-300 border border-amber-500/30',
 };
 ---
 
@@ -137,7 +137,7 @@ const statusBadge: Record<string, string> = {
         <span class="text-xs text-accent-light font-medium">View listing →</span>
       )}
 
-      {status === 'Watching' && href && (
+      {status === 'Not Listed' && href && (
         <span class="text-xs text-amber-400/80 font-medium font-mono">View listing →</span>
       )}
     </div>
