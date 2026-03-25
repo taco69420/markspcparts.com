@@ -7,7 +7,7 @@ tags: [intel, xeon, w-3175x, cpu, power, lga3647, ebay, deal]
 
 Last year I grabbed a Xeon W-3175X off eBay for $270. That's not a typo.
 
-This thing launched at **$2,999**. It's the only consumer-facing 28-core chip Intel ever shipped, and it only ever worked in a single board — the ASUS ROG Dominus Extreme. You couldn't buy a different socket. You couldn't go bargain hunt a cheaper board. One chip, one board, one insane platform. And I got the CPU for the price of a mid-range GPU.
+This thing launched at **$2,999**. It's the only consumer-facing 28-core chip Intel ever shipped, and it only worked in a handful of boards — the ASUS ROG Dominus Extreme, the ASUS WS C621E SAGE, the Gigabyte C621 Aorus Xtreme, and the EVGA SR-3 Dark (I've actually had two of those). Not a long list. You couldn't just drop this into any LGA 3647 server board and call it a day — it needed a platform built around its unlocked multiplier and extreme power delivery. One chip, a few very specific boards, one insane platform. And I got the CPU for the price of a mid-range GPU.
 
 ---
 
