@@ -1,0 +1,167 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const dateStr = post.data.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+---
+
+<Layout title={post.data.title} description={post.data.description}>
+  <Nav slot="nav" />
+
+  <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+
+    <!-- Back link -->
+    <a
+      href="/blog"
+      class="inline-flex items-center gap-1.5 text-xs font-mono text-steel hover:text-accent-light transition-colors mb-12"
+    >
+      ← blog
+    </a>
+
+    <!-- Header -->
+    <header class="mb-12">
+      <time class="text-xs font-mono text-steel block mb-4">{dateStr}</time>
+      <h1 class="text-3xl sm:text-4xl font-semibold text-slate-100 leading-tight mb-6">
+        {post.data.title}
+      </h1>
+      {post.data.tags.length > 0 && (
+        <div class="flex flex-wrap gap-1.5">
+          {post.data.tags.map(tag => (
+            <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-700 text-steel border border-white/5">
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </header>
+
+    <!-- Post body -->
+    <div class="prose">
+      <Content />
+    </div>
+
+  </article>
+
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  .prose {
+    color: #94a3b8; /* steel */
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .prose :global(h2) {
+    color: #f1f5f9;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose :global(h3) {
+    color: #f1f5f9;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .prose :global(strong) {
+    color: #e2e8f0;
+    font-weight: 600;
+  }
+
+  .prose :global(em) {
+    color: #94a3b8;
+    font-style: italic;
+  }
+
+  .prose :global(hr) {
+    border-color: rgba(255, 255, 255, 0.07);
+    margin: 2.5rem 0;
+  }
+
+  .prose :global(img) {
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    margin: 2rem 0;
+  }
+
+  .prose :global(code) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.875em;
+    background: #1a1a24;
+    color: #a78bfa;
+    padding: 0.15em 0.4em;
+    border-radius: 0.25rem;
+  }
+
+  .prose :global(pre) {
+    background: #111118;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+
+  .prose :global(pre code) {
+    background: none;
+    padding: 0;
+    font-size: 0.875rem;
+    color: #94a3b8;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose :global(a) {
+    color: #a78bfa;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose :global(a:hover) {
+    color: #fff;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid #7c3aed;
+    padding-left: 1rem;
+    color: #64748b;
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+</style>

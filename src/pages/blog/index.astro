@@ -1,0 +1,66 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Layout title="Blog" description="Hardware writeups, debug logs, and build notes from Mark's PC Parts.">
+  <Nav slot="nav" />
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-6">Blog</p>
+    <h1 class="text-3xl font-semibold text-slate-100 mb-2">Build logs &amp; debug notes</h1>
+    <p class="text-steel text-base mb-16">Hardware writeups. What broke, what worked, what I'm running next.</p>
+
+    {posts.length === 0 ? (
+      <p class="text-steel">No posts yet.</p>
+    ) : (
+      <ul class="divide-y divide-white/5">
+        {posts.map(post => {
+          const dateStr = post.data.date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'UTC',
+          });
+          return (
+            <li class="py-8 group">
+              <a href={`/blog/${post.slug}`} class="block">
+                <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+                  <time class="text-xs font-mono text-steel shrink-0 mb-2 sm:mb-0">{dateStr}</time>
+                  <div class="flex-1 min-w-0">
+                    <h2 class="text-lg font-medium text-slate-100 group-hover:text-accent-light transition-colors mb-1">
+                      {post.data.title}
+                    </h2>
+                    {post.data.description && (
+                      <p class="text-steel text-sm leading-relaxed mb-3">{post.data.description}</p>
+                    )}
+                    {post.data.tags.length > 0 && (
+                      <div class="flex flex-wrap gap-1.5">
+                        {post.data.tags.map(tag => (
+                          <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-700 text-steel border border-white/5">
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <span class="hidden sm:inline-block shrink-0 text-accent-light opacity-0 group-hover:opacity-100 transition-opacity text-sm">
+                    →
+                  </span>
+                </div>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    )}
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
