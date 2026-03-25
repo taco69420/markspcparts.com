@@ -29,14 +29,15 @@ const specs = [
   { label: 'Audio', value: 'ROG SupremeFX 8-channel' },
   { label: 'RGB', value: 'Full ROG Aura Sync RGB' },
   { label: 'Chipset', value: 'Intel C621' },
-  { label: 'Condition', value: 'Good — known POST resistor issue' },
+  { label: 'Condition', value: 'Good — fully working, POSTs clean' },
+  { label: 'Status', value: 'Not for sale — deciding what to do with the platform' },
   { label: 'Includes', value: 'All original accessories, most unopened. Sealed coaster included.' },
 ];
 ---
 
 <Layout
   title="ASUS ROG Dominus Extreme"
-  description="ASUS ROG Dominus Extreme LGA 3647 motherboard — complete with accessories. Known POST resistor issue, easy fix. Listed on eBay."
+  description="ASUS ROG Dominus Extreme LGA 3647 motherboard — complete with accessories. Fully working. Not currently for sale."
 >
   <Nav slot="nav" />
 
@@ -51,21 +52,10 @@ const specs = [
     </div>
   </div>
 
-  <!-- Top eBay CTA banner -->
-  <div class="bg-yellow-500/10 border-b border-yellow-500/20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-sm text-yellow-300 font-medium">This item is listed and active on eBay.</p>
-      <a
-        href={ebayUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shrink-0"
-      >
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
-        </svg>
-        View Listing on eBay
-      </a>
+  <!-- Status banner -->
+  <div class="bg-surface-700/50 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <p class="text-sm text-steel">Not currently for sale — still deciding what to do with the platform.</p>
     </div>
   </div>
 
@@ -103,8 +93,8 @@ const specs = [
       <div class="mt-10 lg:mt-0">
         <div class="flex items-start justify-between gap-4 mb-1">
           <span class="text-xs font-mono text-accent-light uppercase tracking-widest">Motherboard · LGA 3647</span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/25 shrink-0">
-            For Sale
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-surface-600 text-steel border border-white/10 shrink-0">
+            Not For Sale
           </span>
         </div>
 
@@ -117,17 +107,17 @@ const specs = [
           <span class="text-xs text-steel font-mono">Complete with original accessories</span>
         </div>
 
-        <!-- Condition / known issue callout -->
-        <div class="mt-6 p-4 rounded-lg bg-yellow-500/5 border border-yellow-500/20">
+        <!-- Status callout -->
+        <div class="mt-6 p-4 rounded-lg bg-surface-700/50 border border-white/10">
           <div class="flex items-start gap-3">
-            <svg class="w-4 h-4 text-yellow-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.07 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            <svg class="w-4 h-4 text-steel mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
             <div>
-              <p class="text-sm font-semibold text-yellow-300 mb-1">Known Issue — POST Code 00</p>
-              <p class="text-xs text-yellow-300/70 leading-relaxed">
-                Hangs at POST code 00. Consistent with the well-documented resistor issue on this platform —
-                a known fix for anyone comfortable with a soldering iron or a board repair shop.
+              <p class="text-sm font-semibold text-slate-300 mb-1">Board is fully working</p>
+              <p class="text-xs text-steel leading-relaxed">
+                Previously listed with a POST code 00 issue — turned out to be corrupt CMOS data, not a hardware fault.
+                One button clear and it came straight up. Not for sale right now.
               </p>
             </div>
           </div>
@@ -149,51 +139,38 @@ const specs = [
             </p>
             <p>
               Comes complete with all accessories, most still unopened. Even the coaster is still sealed.
-              This is a board for someone who knows what they're working with — the Dominus Extreme is
-              one of the most extreme enthusiast boards ASUS ever made, built around the only consumer
-              28-core CPU Intel ever shipped.
+              One of the most extreme enthusiast boards ASUS ever made, built around the only consumer
+              28-core CPU Intel ever shipped. Not going anywhere for now.
             </p>
           </div>
         </div>
 
-        <!-- Bundle callout -->
+        <!-- Platform note -->
         <div class="mt-6 p-4 rounded-lg bg-accent/5 border border-accent/20">
           <div class="flex items-start gap-3">
             <svg class="w-4 h-4 text-accent-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             <div>
-              <p class="text-sm font-semibold text-accent-light mb-1">Bundle Deal Available</p>
+              <p class="text-sm font-semibold text-accent-light mb-1">Part of the W-3175X Platform</p>
               <p class="text-xs text-steel leading-relaxed">
                 I also have the{' '}
                 <a href="/inventory/xeon-w-3175x" class="text-accent-light hover:text-white underline underline-offset-2 transition-colors">
                   Intel Xeon W-3175X
                 </a>
-                {' '}— the only CPU this board supports. Willing to bundle the board and CPU together.
-                Message me on eBay and we can work something out.
+                {' '}— the only CPU this board supports. Both are being held while I figure out what to do with this build.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- eBay CTA -->
+        <!-- Nav links -->
         <div class="mt-8 flex flex-col sm:flex-row gap-3">
           <a
-            href={ebayUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20"
+            href="/inventory/xeon-w-3175x"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-accent/30 text-accent-light hover:border-accent/60 hover:text-white font-medium text-sm transition-colors"
           >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
-            </svg>
-            Buy / Bid on eBay
-          </a>
-          <a
-            href="/contact"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
-          >
-            Ask a Question
+            View Xeon W-3175X →
           </a>
           <a
             href="/inventory"
@@ -218,22 +195,17 @@ const specs = [
       </div>
     </div>
 
-    <!-- Bottom eBay CTA -->
+    <!-- Bottom note -->
     <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-xl bg-surface-800 border border-white/10">
       <div>
-        <p class="font-semibold text-slate-100">Ready to buy?</p>
-        <p class="text-sm text-steel mt-0.5">Active eBay listing — place a bid or buy it now.</p>
+        <p class="font-semibold text-slate-100">Not for sale right now.</p>
+        <p class="text-sm text-steel mt-0.5">Holding this while I decide what to do with the platform. Check back later.</p>
       </div>
       <a
-        href={ebayUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20 shrink-0"
+        href="/inventory/xeon-w-3175x"
+        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-accent/30 text-accent-light hover:border-accent/60 hover:text-white font-medium text-sm transition-colors shrink-0"
       >
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
-        </svg>
-        View on eBay →
+        Xeon W-3175X →
       </a>
     </div>
   </div>

@@ -24,7 +24,7 @@ const specs = [
   { label: 'Architecture', value: 'Skylake-W (14nm)' },
   { label: 'Compatible Board', value: 'ASUS ROG Dominus Extreme only' },
   { label: 'Condition', value: 'Fair — IHS scratches, thermal paste residue on back. Silicon solid.' },
-  { label: 'Pricing', value: 'Price on request — message on eBay' },
+  { label: 'Status', value: 'Not for sale — deciding what to do with the platform' },
 ];
 ---
 
@@ -45,21 +45,10 @@ const specs = [
     </div>
   </div>
 
-  <!-- Top eBay CTA banner -->
-  <div class="bg-yellow-500/10 border-b border-yellow-500/20">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-sm text-yellow-300 font-medium">Price on request — message on the eBay listing to discuss.</p>
-      <a
-        href={ebayUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shrink-0"
-      >
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
-        </svg>
-        Message on eBay
-      </a>
+  <!-- Status banner -->
+  <div class="bg-surface-700/50 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+      <p class="text-sm text-steel">Not currently for sale — still deciding what to do with the platform.</p>
     </div>
   </div>
 
@@ -96,8 +85,8 @@ const specs = [
       <div class="mt-10 lg:mt-0">
         <div class="flex items-start justify-between gap-4 mb-1">
           <span class="text-xs font-mono text-accent-light uppercase tracking-widest">CPU · LGA 3647</span>
-          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/25 shrink-0">
-            For Sale
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-surface-600 text-steel border border-white/10 shrink-0">
+            Not For Sale
           </span>
         </div>
 
@@ -142,43 +131,32 @@ const specs = [
               and a 255W TDP that demands serious cooling. There's nothing else like it.
             </p>
             <p>
-              Pricing is on request — message on the eBay listing.
+              Not for sale right now — still figuring out what to do with this platform.
             </p>
           </div>
         </div>
 
-        <!-- Bundle callout -->
+        <!-- Platform note -->
         <div class="mt-6 p-4 rounded-lg bg-accent/5 border border-accent/20">
           <div class="flex items-start gap-3">
             <svg class="w-4 h-4 text-accent-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             <div>
-              <p class="text-sm font-semibold text-accent-light mb-1">Bundle Deal Available</p>
+              <p class="text-sm font-semibold text-accent-light mb-1">Part of the W-3175X Platform</p>
               <p class="text-xs text-steel leading-relaxed">
-                Interested in the{' '}
+                The W-3175X only works in one board:{' '}
                 <a href="/inventory/rog-dominus-extreme" class="text-accent-light hover:text-white underline underline-offset-2 transition-colors">
                   ASUS ROG Dominus Extreme
                 </a>
-                {' '}too? The W-3175X only works in one board — message on eBay and we can work something out.
+                . Both are being held while I figure out what to do with this build.
               </p>
             </div>
           </div>
         </div>
 
-        <!-- CTAs -->
+        <!-- Nav links -->
         <div class="mt-8 flex flex-col sm:flex-row gap-3">
-          <a
-            href={ebayUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors shadow-lg shadow-yellow-400/20"
-          >
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
-            </svg>
-            Message on eBay
-          </a>
           <a
             href="/inventory/rog-dominus-extreme"
             class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-accent/30 text-accent-light hover:border-accent/60 hover:text-white font-medium text-sm transition-colors"
@@ -208,31 +186,18 @@ const specs = [
       </div>
     </div>
 
-    <!-- Bottom CTA -->
+    <!-- Bottom note -->
     <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-xl bg-surface-800 border border-white/10">
       <div>
-        <p class="font-semibold text-slate-100">Interested? Price is on request.</p>
-        <p class="text-sm text-steel mt-0.5">Message on the eBay listing. Bundle with the Dominus Extreme available.</p>
+        <p class="font-semibold text-slate-100">Not for sale right now.</p>
+        <p class="text-sm text-steel mt-0.5">Holding this while I decide what to do with the platform. Check back later.</p>
       </div>
-      <div class="flex items-center gap-3 shrink-0">
-        <a
-          href="/inventory/rog-dominus-extreme"
-          class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-accent/30 text-accent-light hover:border-accent/60 hover:text-white font-medium text-sm transition-colors"
-        >
-          Dominus Extreme →
-        </a>
-        <a
-          href={ebayUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-yellow-400 text-black font-bold text-sm hover:bg-yellow-300 transition-colors"
-        >
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
-          </svg>
-          eBay →
-        </a>
-      </div>
+      <a
+        href="/inventory/rog-dominus-extreme"
+        class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border border-accent/30 text-accent-light hover:border-accent/60 hover:text-white font-medium text-sm transition-colors shrink-0"
+      >
+        Dominus Extreme →
+      </a>
     </div>
   </div>
 
