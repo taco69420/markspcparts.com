@@ -23,7 +23,7 @@ I was now the owner of 128 gigabytes of DDR2 ECC RAM, 14 years old, sitting in R
 
 They showed up in a big anti-static tray, packed in rows, looking like something out of a data center dumpster. Beautiful in a weird way. Completely useless to me at the time.
 
-![128 sticks of 1GB DDR2 ECC server RAM packed in anti-static tray](/ram-sticks-tray.jpg)
+![128 sticks of 1GB DDR2 ECC server RAM packed in anti-static tray](/images/posts/ddr2-wall-art/ram-sticks-tray.jpg)
 
 So I started giving them away. My school's lab tech — I brought him a stack one day and he genuinely freaked out. Like, full-on couldn't believe it. Those sticks are probably still running in some school computer somewhere in the IE. That felt good.
 
@@ -39,7 +39,7 @@ My grandpa had a scrap piece of wood sitting around. We got to talking, figured 
 
 Hung it on the wall.
 
-![18 sticks of DDR2 ECC RAM mounted in wooden frame, hanging on wall](/ram-wall-v2.jpg)
+![18 sticks of DDR2 ECC RAM mounted in wooden frame, hanging on wall](/images/posts/ddr2-wall-art/ram-wall-v2.jpg)
 
 It looks exactly as unhinged as I hoped. People walk into the room and do a double take every single time. It's genuinely one of my favorite things I own — and it cost me about $3 worth of RAM.
 
