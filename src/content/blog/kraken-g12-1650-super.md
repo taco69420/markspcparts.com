@@ -5,7 +5,7 @@ description: Drilled custom holes, cut brackets, and got it to post — then fou
 tags: [gpu, nvidia, gtx-1650-super, nzxt, kraken-g12, aio, liquid-cooling, modding]
 ---
 
-It was near the end of quarantine and I was losing my mind.
+It was March 2022, near the end of quarantine, and I was losing my mind.
 
 I had a GTX 1650 Super — the OEM one that came out of an HP Pavilion. Me and my brother had teamed up to buy that machine, so it was technically the family GPU, but it's what I had. And I was absolutely fiending to do something cool. Something nobody had really done before. So I started digging around and landed on the NZXT Kraken G12 GPU cooler bracket and a cheap 120mm AIO, and decided I was going to liquid cool this thing.
 

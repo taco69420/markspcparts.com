@@ -1,11 +1,11 @@
 ---
 title: The Vega 56 Strix and My Love for HBM
 date: 2026-03-25
-description: Got this card in March 2023. It ran hot, it had the thermal pad problem, and I loved it anyway.
+description: Got this card in August 2022. It ran hot, it had the thermal pad problem, and I loved it anyway.
 tags: [amd, vega-56, asus, rog, strix, hbm, hbm2, gpu]
 ---
 
-I picked up the Vega 56 Strix in March 2023 and it immediately deepened something that had already been building for a while — an obsession with HBM.
+I picked up the Vega 56 Strix in August 2022 and it immediately deepened something that had already been building for a while — an obsession with HBM.
 
 ![ASUS ROG Strix Vega 56 — three fan cooler, ROG branding, full front view](/images/posts/vega-56-strix/main-shot.JPG)
 
@@ -51,4 +51,4 @@ The Vega 56 Strix ran hot and had problems. Still one of my favorite cards.
 
 ---
 
-*ASUS ROG Strix Vega 56 — HBM2, thermal pad lottery loser, picked up March 2023. Worth it.*
+*ASUS ROG Strix Vega 56 — HBM2, thermal pad lottery loser, picked up August 2022. Worth it.*

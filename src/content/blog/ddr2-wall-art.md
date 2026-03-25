@@ -35,7 +35,7 @@ But I still had a crapton left. Some are under my bed right now. I genuinely don
 
 At some point I started thinking about what to actually *do* with a few of them. Not run them — just display them. These sticks are from a different era of computing. DDR2 ECC, gold contacts, little yellow warning labels still on them. They look cool. They deserve better than a box.
 
-My grandpa had a scrap piece of wood sitting around. We got to talking, figured out a layout, and built a simple wooden frame together. Nothing fancy — just clean cuts, a wire hanger on the back, and 18 sticks of RAM mounted in two columns like a grid.
+My grandpa had a scrap piece of wood sitting around. In 2023 we got to talking, figured out a layout, and built a simple wooden frame together. Nothing fancy — just clean cuts, a wire hanger on the back, and 18 sticks of RAM mounted in two columns like a grid.
 
 Hung it on the wall.
 
@@ -53,4 +53,4 @@ The $21.73 auction was one of the best financial decisions I've ever made. Not b
 
 ---
 
-*128x 1GB DDR2 ECC sticks — sourced 2021, eBay auction, $21.73 total. 18 on the wall, a bunch at a school lab somewhere, the rest under a bed in Redlands.*
+*128x 1GB DDR2 ECC sticks — sourced 2021, eBay auction, $21.73 total. Wall art built 2023. 18 on the wall, a bunch at a school lab somewhere, the rest under a bed in Redlands.*

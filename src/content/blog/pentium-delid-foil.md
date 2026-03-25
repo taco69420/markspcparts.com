@@ -5,7 +5,7 @@ description: First delid ever. Vice, foil, and zero reason not to try it.
 tags: [intel, pentium, delid, modding, proof-of-concept]
 ---
 
-The chip was worth about five bucks on eBay. It was a Pentium — the one that came out of my very first PC. Sentimental value: low. Experimental value: potentially high.
+August 2022. The chip was worth about five bucks on eBay. It was a Pentium — the one that came out of my very first PC. Sentimental value: low. Experimental value: potentially high.
 
 So I delidded it.
 

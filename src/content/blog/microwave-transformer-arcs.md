@@ -5,7 +5,7 @@ description: Grandparents were getting a new microwave. I searched what you coul
 tags: [high-voltage, mot, capacitor, electronics, mad-scientist]
 ---
 
-My grandparents were getting a new microwave. Before it went in the trash I looked up what you could actually do with the parts inside, and the rabbit hole went deep fast.
+It was May 2022. My grandparents were getting a new microwave. Before it went in the trash I looked up what you could actually do with the parts inside, and the rabbit hole went deep fast.
 
 The answer was: a lot.
 

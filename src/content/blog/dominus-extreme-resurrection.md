@@ -7,7 +7,7 @@ tags: [asus, rog, dominus-extreme, xeon, w-3175x, titan-rtx, debug, bios]
 
 I thought this board was cooked.
 
-The ROG Dominus Extreme had been sitting in a box since my last build. Moved, packed it up, figured I'd deal with it later. When I finally pulled it back out and tried to fire it up with the Titan RTX, it hit **POST code 00** and just sat there. Nothing. No boot, no signs of life beyond the fans spinning. Classic 00 — the board isn't even initializing.
+April 2025. The ROG Dominus Extreme had been sitting in a box since my last build. Moved, packed it up, figured I'd deal with it later. When I finally pulled it back out and tried to fire it up with the Titan RTX, it hit **POST code 00** and just sat there. Nothing. No boot, no signs of life beyond the fans spinning. Classic 00 — the board isn't even initializing.
 
 My first assumption was a resistor problem somewhere on the board. That's been documented on the Dominus before, a cold joint or a blown resistor on the power delivery side can cause exactly this. I listed it on eBay as-is, disclosed the issue, and figured whoever bought it would either fix it or part it out.
 
