@@ -29,11 +29,11 @@ The Strix cooler on this thing is massive. Three fans, thick heatsink, the full 
 
 ## The Thermal Pad Problem
 
-I got unlucky. There's a known issue with certain Vega 56 Strix variants where the thermal pads between the cooler and the HBM stacks are too thick — or the wrong thickness — so you end up with a gap and the HBM barely gets cooled at all. The result is that the card runs hot. Not warm. Hot.
+I got unlucky. There's a known issue with certain Vega 56 Strix variants where one specific MOSFET on the board has nothing touching it — no thermal pad, no contact with the cooler whatsoever. Just a bare MOSFET sitting there getting absolutely no cooling while the card is under load. The result is that the card runs hot. Not warm. Hot.
 
 ![Cooler removed — showing the mounting hardware and cooler assembly from underneath](/images/posts/vega-56-strix/cooler-off.JPG)
 
-The fix is replacing the thermal pads with the correct thickness, which is a known mod in the community. But straight out of the box this variant was cooking itself.
+There's no clean fix. That variant just shipped broken from the factory. ASUS sent some of these out the door with a MOSFET getting zero cooling and that's just what you got.
 
 ---
 
