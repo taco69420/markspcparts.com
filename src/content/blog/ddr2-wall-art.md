@@ -39,7 +39,7 @@ My grandpa had a scrap piece of wood sitting around. We got to talking, figured 
 
 Hung it on the wall.
 
-![18 sticks of DDR2 ECC RAM mounted in wooden frame, hanging on wall](/ram-wall-mounted.jpg)
+![18 sticks of DDR2 ECC RAM mounted in wooden frame, hanging on wall](/ram-wall-v2.jpg)
 
 It looks exactly as unhinged as I hoped. People walk into the room and do a double take every single time. It's genuinely one of my favorite things I own — and it cost me about $3 worth of RAM.
 
