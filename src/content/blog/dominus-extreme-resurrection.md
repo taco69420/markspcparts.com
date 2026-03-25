@@ -1,6 +1,6 @@
 ---
 title: The Dominus Extreme Came Back From the Dead
-date: 2025-03-24
+date: 2026-03-24
 description: POST code 00, a dead board, an eBay listing, and one button fix.
 tags: [asus, rog, dominus-extreme, xeon, w-3175x, titan-rtx, debug, bios]
 ---
