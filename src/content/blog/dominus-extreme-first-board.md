@@ -15,9 +15,9 @@ I picked it up for $300 off eBay — same platform, same premise. The ROG Dominu
 
 While I had the board I came across an EKWB water block designed specifically for it — a dedicated VRM block to cover the power delivery array on the left side. And looking at this board, you understand immediately why someone made that product.
 
-![ROG Dominus Extreme laid flat on workbench — blue painter's tape masking the VRM array, scissors, LGA 3647 socket visible](/images/posts/dominus-extreme-first/vrm-prep.jpg)
+![ROG Dominus Extreme laid flat on workbench — thermal pad material laid over the VRM array, scissors, LGA 3647 socket visible](/images/posts/dominus-extreme-first/vrm-prep.jpg)
 
-That's me prepping the VRM for the block. Blue painter's tape masking off the phases, scissors on standby, thermal pad material ready. The VRM on the Dominus Extreme is not small. It runs down the entire left edge of the board — a massive array of power phases built to feed a chip that pulls 400 watts at stock. ASUS didn't cut corners on the power delivery, and it shows physically. The thing is enormous.
+That's me prepping the VRM for the block. Thermal pad material laid over the phases, scissors on standby. The VRM on the Dominus Extreme is not small. It runs down the entire left edge of the board — a massive array of power phases built to feed a chip that pulls 400 watts at stock. ASUS didn't cut corners on the power delivery, and it shows physically. The thing is enormous.
 
 ---
 
@@ -25,7 +25,7 @@ That's me prepping the VRM for the block. Blue painter's tape masking off the ph
 
 I never finished the EKWB install.
 
-The board had an issue — something in the power delivery side that was keeping it from posting cleanly. I listed it on eBay as-is with the problem disclosed, same as I did with the second one later. Sold it for more than I paid.
+The board had an issue — the infamous post code 00, traced to a resistor problem. I listed it on eBay as-is with the problem disclosed, same as I did with the second one later. Sold it for more than I paid.
 
 The buyer messaged me after he got it. He'd fixed it.
 
