@@ -47,7 +47,7 @@ This card is part of a longer arc for me. It goes something like:
 
 HBM2 is already dwarfed by what's come since. The newer HBM generations are just on another level entirely. But there's something about the era of Fury through Radeon VII that felt like AMD was genuinely swinging for something different — stacked memory on consumer silicon, chasing bandwidth when everyone else was just adding more GDDR chips.
 
-The Vega 56 Strix ran hot and had problems. Still one of my favorite cards.
+The Vega 56 Strix ran hot and had problems. Still one of my favorite cards. The HBM pull didn't stop here — a year later I ended up grabbing a [Vega 64 LC for $200](/blog/vega-64-lc-powercolor).
 
 ---
 

@@ -49,7 +49,7 @@ It looks exactly as unhinged as I hoped. People walk into the room and do a doub
 
 I've still got somewhere between 80 and 90 sticks under my bed. Open to ideas. If you want some, reach out — I'll probably just give them away at this point. They're not getting faster sitting in a box.
 
-The $21.73 auction was one of the best financial decisions I've ever made. Not because the RAM was useful. Just because it became *this.*
+The $21.73 auction was one of the best financial decisions I've ever made. Not because the RAM was useful. Just because it became *this.* If this is your kind of thing, I did [the same thing with 20 server CPUs](/blog/xeon-silver-4114-wall-art).
 
 ---
 

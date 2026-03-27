@@ -15,7 +15,7 @@ One dollar each. I still don't fully understand what happened.
 
 ## What These Actually Were
 
-The Xeon Silver 4114 launched in 2017 as part of Intel's Skylake-SP Xeon Scalable lineup. Same LGA 3647 socket as the W-3175X. 10 cores, 20 threads, 2.2 GHz base with a 3.0 GHz boost. These things were living in dual-socket servers at companies that paid real money for them.
+The Xeon Silver 4114 launched in 2017 as part of Intel's Skylake-SP Xeon Scalable lineup. Same LGA 3647 socket as [the W-3175X](/blog/xeon-w-3175x-270-dollar-monster). 10 cores, 20 threads, 2.2 GHz base with a 3.0 GHz boost. These things were living in dual-socket servers at companies that paid real money for them.
 
 At launch, a single 4114 retailed for around **$694.**
 
@@ -27,7 +27,7 @@ That's roughly **$13,880 worth of server silicon** that I bought for the price o
 
 ## The Wall Art
 
-Same story as the DDR2 wall art. I had 20 CPUs with nowhere to go and a piece of scrap wood sitting around.
+Same story as the [DDR2 wall art](/blog/ddr2-wall-art). I had 20 CPUs with nowhere to go and a piece of scrap wood sitting around.
 
 ![20 Intel Xeon Silver 4114 LGA 3647 CPUs mounted in a wooden frame](/images/posts/xeon-silver-wall-art/wall-art-main.jpg)
 

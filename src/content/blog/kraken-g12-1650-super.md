@@ -45,7 +45,7 @@ When we finally got it seated in the PCIe slot and I hit the power button, it po
 
 I freaked out.
 
-Genuinely. After all the drilling and cutting and improvising, the thing booted. Seeing a display output on a GPU that looked like it had been through a field surgery was one of those moments. But the setup was fragile in a way that was hard to ignore — similar to the mounting hardware situation on the ROG Dominus Extreme, where you can torque it down infinitely and never know you've gone too far. Uneven mounting pressure on something like this and you can crack the die. You had to be careful every single time you touched it.
+Genuinely. After all the drilling and cutting and improvising, the thing booted. Seeing a display output on a GPU that looked like it had been through a field surgery was one of those moments. But the setup was fragile in a way that was hard to ignore — similar to [the mounting hardware situation on the ROG Dominus Extreme](/blog/lga3647-server-socket-mounting), where you can torque it down infinitely and never know you've gone too far. Uneven mounting pressure on something like this and you can crack the die. You had to be careful every single time you touched it.
 
 ---
 

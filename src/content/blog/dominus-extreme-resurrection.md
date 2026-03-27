@@ -23,7 +23,7 @@ So I dragged everything back out.
 
 ![Full build - ROG Dominus Extreme with Titan RTX installed, ROG logo glowing blue, Titan backlit](/images/posts/dominus-resurrection/build-wide.jpg)
 
-The W-3175X went back in the socket. I grabbed **6 sticks of RAM** and populated the slots strategically — the W-3175X has a notoriously demanding IMC and on a board like the Dominus, bad RAM config or marginal sticks can absolutely cause a 00 on cold boot. Giving the IMC the best possible chance to train.
+[The W-3175X](/blog/xeon-w-3175x-270-dollar-monster) went back in the socket. I grabbed **6 sticks of RAM** and populated the slots strategically — the W-3175X has a notoriously demanding IMC and on a board like the Dominus, bad RAM config or marginal sticks can absolutely cause a 00 on cold boot. Giving the IMC the best possible chance to train.
 
 Power on. 00. Still nothing.
 
