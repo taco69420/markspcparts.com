@@ -1,8 +1,13 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import PartCard from '../components/PartCard.astro';
+
+const recentPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -120,6 +125,65 @@ const featured = [
     <div class="mt-8 text-center sm:hidden">
       <a href="/inventory" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
         View all inventory →
+      </a>
+    </div>
+  </section>
+
+  <!-- Recent posts -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <div class="flex items-end justify-between mb-10">
+      <div>
+        <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Blog</p>
+        <h2 class="text-2xl sm:text-3xl font-bold">Recent Posts</h2>
+      </div>
+      <a href="/blog" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
+        View all →
+      </a>
+    </div>
+
+    <ul class="divide-y divide-white/5">
+      {recentPosts.map(post => {
+        const dateStr = post.data.date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          timeZone: 'UTC',
+        });
+        return (
+          <li class="py-8 group">
+            <a href={`/blog/${post.slug}`} class="block">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+                <time class="text-xs font-mono text-steel shrink-0 mb-2 sm:mb-0">{dateStr}</time>
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-lg font-medium text-slate-100 group-hover:text-accent-light transition-colors mb-1">
+                    {post.data.title}
+                  </h3>
+                  {post.data.description && (
+                    <p class="text-steel text-sm leading-relaxed mb-3">{post.data.description}</p>
+                  )}
+                  {post.data.tags.length > 0 && (
+                    <div class="flex flex-wrap gap-1.5">
+                      {post.data.tags.map(tag => (
+                        <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-700 text-steel border border-white/5">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <span class="hidden sm:inline-block shrink-0 text-accent-light opacity-0 group-hover:opacity-100 transition-opacity text-sm">
+                  →
+                </span>
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+
+    <div class="mt-8 text-center sm:hidden">
+      <a href="/blog" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
+        View all posts →
       </a>
     </div>
   </section>
