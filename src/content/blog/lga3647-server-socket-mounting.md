@@ -1,7 +1,7 @@
 ---
-title: LGA 3647: Born in a Server Rack, Dropped in a Desktop
+title: "LGA 3647: Born in a Server Rack, Dropped in a Desktop"
 date: 2026-03-26
-description: Intel's LGA 3647 was designed for server sleds. Then they shipped a 28-core unlocked chip on it and called it enthusiast. The mounting system never got the memo.
+description: "Intel's LGA 3647 was designed for server sleds. Then they shipped a 28-core unlocked chip on it and called it enthusiast. The mounting system never got the memo."
 tags: [intel, xeon, lga3647, w-3175x, cpu, cooling, socket, hedt, server]
 ---
 
