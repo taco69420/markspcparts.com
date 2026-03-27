@@ -23,7 +23,7 @@ PowerColor shipped this card in a proper box. Nothing subtle about it — "Unlea
 
 ![Vega 64 LC in foam packaging — silver shroud, AIO pump head, cables tucked in the tray](/images/posts/vega-64-lc/unboxed.jpg)
 
-This is the LC variant — factory liquid cooled, AIO included in the box. Instead of a traditional heatsink and fan setup, AMD shipped the Vega 64 LC with a 120mm AIO attached directly to the GPU die from the factory. The silver shroud, the pump head sitting in the foam, the braided tubing — it looks like nothing else from that era.
+This is the LC variant — factory liquid cooled, AIO included in the box. Instead of a traditional heatsink and fan setup, PowerColor shipped the Vega 64 LC with a 120mm AIO attached directly to the GPU die from the factory. The silver shroud, the pump head sitting in the foam, the braided tubing — it looks like nothing else from that era.
 
 That's why I bought it. That thing is beautiful.
 
