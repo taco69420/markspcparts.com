@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Privacy Policy" description="Privacy policy for markspcparts.com">
+  <Nav slot="nav" />
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h1 class="text-3xl font-bold text-slate-100 mb-2">Privacy Policy</h1>
+    <p class="text-sm text-steel mb-10">Last updated: March 26, 2026</p>
+
+    <div class="prose prose-invert prose-sm max-w-none space-y-8 text-steel leading-relaxed">
+
+      <section>
+        <h2 class="text-lg font-semibold text-slate-200 mb-3">Who we are</h2>
+        <p>
+          This site is <strong class="text-slate-300">markspcparts.com</strong>, a personal site for buying, selling, and writing about enthusiast PC hardware. It's run by one person based in Redlands, CA. You can reach me through the <a href="/contact" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">contact page</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-slate-200 mb-3">What data is collected</h2>
+        <p>
+          This site uses <strong class="text-slate-300">Google Analytics 4</strong> to understand how visitors find and use the site — things like which pages are viewed, how long people stay, and what country they're in. This only runs if you accept cookies.
+        </p>
+        <p class="mt-3">
+          Google Analytics collects anonymized data including your approximate location (city/country level), browser type, device type, pages visited, and time spent. It does not collect your name, email, or any information that directly identifies you.
+        </p>
+        <p class="mt-3">
+          No other analytics or tracking services are used. No ads. No third-party trackers embedded in the content.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-slate-200 mb-3">Cookies</h2>
+        <p>
+          If you accept cookies, Google Analytics sets cookies in your browser to track session activity. If you decline, no cookies are set and no data is sent to Google. Your preference is saved in your browser's local storage.
+        </p>
+        <p class="mt-3">
+          See the <a href="/cookie-policy" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">cookie policy</a> for the full breakdown.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-slate-200 mb-3">How data is used</h2>
+        <p>
+          Analytics data is used only to understand how the site is being used — which posts get read, where visitors come from, that kind of thing. It is not sold, shared with advertisers, or used for any purpose beyond improving this site.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-slate-200 mb-3">Third parties</h2>
+        <p>
+          If you accept analytics cookies, data is processed by Google under their own privacy policy. You can read about how Google handles Analytics data at <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">policies.google.com/privacy</a>.
+        </p>
+        <p class="mt-3">
+          This site may link to external sites (eBay listings, etc.). Those sites have their own privacy policies and are not covered here.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-slate-200 mb-3">Your rights</h2>
+        <p>
+          You can withdraw cookie consent at any time by clearing your browser's local storage for this site, or by using your browser's built-in privacy tools. If you decline analytics cookies, no data about your visit is collected.
+        </p>
+        <p class="mt-3">
+          If you have questions about your data, use the <a href="/contact" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">contact page</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-lg font-semibold text-slate-200 mb-3">Changes to this policy</h2>
+        <p>
+          If anything material changes about how data is collected or used, this page will be updated with a new date at the top.
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>

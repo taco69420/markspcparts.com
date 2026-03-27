@@ -1,0 +1,67 @@
+---
+const GA_ID = 'G-XGNKDW9ESZ';
+---
+
+<div
+  id="cookie-banner"
+  style="display:none"
+  class="fixed bottom-0 left-0 right-0 z-50 bg-surface-800 border-t border-white/10"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <p class="text-sm text-steel leading-relaxed">
+        This site uses Google Analytics to see how people find and use it — no ads, no selling data.
+        <a href="/cookie-policy" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">Cookie policy</a>
+        ·
+        <a href="/privacy-policy" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">Privacy policy</a>
+      </p>
+      <div class="flex items-center gap-3 shrink-0">
+        <button
+          id="decline-cookies"
+          class="text-xs text-steel hover:text-slate-300 transition-colors px-3 py-1.5 border border-white/10 rounded hover:border-white/20"
+        >
+          Decline
+        </button>
+        <button
+          id="accept-cookies"
+          class="text-xs text-slate-900 bg-accent-light hover:bg-white transition-colors px-3 py-1.5 rounded font-medium"
+        >
+          Accept
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ GA_ID }}>
+  function loadGA() {
+    if (window.__gaLoaded) return;
+    window.__gaLoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+  }
+
+  var consent = localStorage.getItem('cookie-consent');
+  if (consent === 'granted') {
+    loadGA();
+  } else if (!consent) {
+    document.getElementById('cookie-banner').style.display = 'block';
+  }
+
+  document.getElementById('accept-cookies').addEventListener('click', function () {
+    localStorage.setItem('cookie-consent', 'granted');
+    loadGA();
+    document.getElementById('cookie-banner').style.display = 'none';
+  });
+
+  document.getElementById('decline-cookies').addEventListener('click', function () {
+    localStorage.setItem('cookie-consent', 'denied');
+    document.getElementById('cookie-banner').style.display = 'none';
+  });
+</script>

@@ -21,8 +21,12 @@ const year = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="mt-6 pt-6 border-t border-white/5 text-center text-xs text-surface-600 text-slate-600">
-      &copy; {year} Mark's PC Parts · markspcparts.com
+    <div class="mt-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-slate-600">
+      <span>&copy; {year} Mark's PC Parts · markspcparts.com</span>
+      <div class="flex items-center gap-4">
+        <a href="/privacy-policy" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+        <a href="/cookie-policy" class="hover:text-slate-400 transition-colors">Cookie Policy</a>
+      </div>
     </div>
   </div>
 </footer>
