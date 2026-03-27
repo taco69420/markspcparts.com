@@ -23,12 +23,32 @@ const specs = [
   { label: 'Form Factor', value: 'Dual-slot · 267 mm' },
   { label: 'Condition', value: 'Mint — unplayed, display only' },
 ];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'NVIDIA Titan RTX',
+  description: 'Museum-condition NVIDIA Titan RTX — 24 GB GDDR6, Turing architecture, NVLink support. Picked up from a local collector.',
+  image: 'https://markspcparts.com/images/inventory/titan-rtx/titan1.jpg',
+  url: 'https://markspcparts.com/inventory/titan-rtx',
+  brand: { '@type': 'Brand', name: 'NVIDIA' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/OutOfStock',
+    priceCurrency: 'USD',
+    seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
+  },
+};
 ---
 
 <Layout
   title="NVIDIA Titan RTX"
   description="Museum-condition NVIDIA Titan RTX — 24 GB GDDR6, Turing architecture. Picked up from a local collector. May or may not sell."
+  ogImage="https://markspcparts.com/images/inventory/titan-rtx/titan1.jpg"
+  canonicalUrl="https://markspcparts.com/inventory/titan-rtx"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <Nav slot="nav" />
 
   <!-- Breadcrumb -->

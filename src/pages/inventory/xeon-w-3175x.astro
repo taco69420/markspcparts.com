@@ -24,12 +24,32 @@ const specs = [
   { label: 'Condition', value: 'Fair — IHS scratches, thermal paste residue on back. Silicon solid.' },
   { label: 'Status', value: 'Might list later — check back' },
 ];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Intel Xeon W-3175X',
+  description: 'Intel Xeon W-3175X — 28 cores, 56 threads, unlocked multiplier, LGA 3647. Fair cosmetic condition, solid silicon.',
+  image: 'https://markspcparts.com/images/inventory/xeon-w-3175x/3175x1.jpg',
+  url: 'https://markspcparts.com/inventory/xeon-w-3175x',
+  brand: { '@type': 'Brand', name: 'Intel' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/OutOfStock',
+    priceCurrency: 'USD',
+    seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
+  },
+};
 ---
 
 <Layout
   title="Intel Xeon W-3175X"
   description="Intel Xeon W-3175X — 28 cores, unlocked, LGA 3647. Fair cosmetic condition, solid silicon. May go up for sale later."
+  ogImage="https://markspcparts.com/images/inventory/xeon-w-3175x/3175x1.jpg"
+  canonicalUrl="https://markspcparts.com/inventory/xeon-w-3175x"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <Nav slot="nav" />
 
   <!-- Breadcrumb -->

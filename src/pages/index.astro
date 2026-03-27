@@ -4,6 +4,14 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import PartCard from '../components/PartCard.astro';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: "Mark's PC Parts",
+  url: 'https://markspcparts.com',
+  description: 'Rare, collectible, and enthusiast PC hardware sourced, tested, and documented by Mark in Redlands, CA.',
+};
+
 const featured = [
   {
     name: 'Intel Xeon W-3175X',
@@ -38,7 +46,14 @@ const featured = [
 ];
 ---
 
-<Layout title="Home">
+<Layout
+  title="Home"
+  description="Rare, collectible, and enthusiast PC hardware sourced, tested, and documented. Redlands, CA."
+  canonicalUrl="https://markspcparts.com/"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <Nav slot="nav" />
 
   <!-- Hero -->

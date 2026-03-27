@@ -18,7 +18,7 @@ const specs = [
   { label: 'Form Factor', value: 'SSI-EEB (Extended ATX)' },
   { label: 'Socket', value: 'Intel LGA 3647' },
   { label: 'CPU Support', value: 'Intel Xeon W-3175X only (28C / 56T)' },
-  { label: 'Memory Slots', value: '12x DIMM — 12-channel DDR4' },
+  { label: 'Memory Slots', value: '12x DIMM — 6-channel DDR4 (2 per channel)' },
   { label: 'Max Memory', value: '192 GB DDR4 ECC / non-ECC' },
   { label: 'PCIe Slots', value: '4x PCIe 3.0 x16' },
   { label: 'Storage', value: '8x SATA 6Gb/s' },
@@ -31,12 +31,32 @@ const specs = [
   { label: 'Status', value: 'Might list later — check back' },
   { label: 'Includes', value: 'All original accessories, most unopened. Sealed coaster included.' },
 ];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'ASUS ROG Dominus Extreme',
+  description: 'ASUS ROG Dominus Extreme LGA 3647 motherboard — complete with accessories. Fully working.',
+  image: 'https://markspcparts.com/images/inventory/rog-dominus-extreme/rogdom2.jpg',
+  url: 'https://markspcparts.com/inventory/rog-dominus-extreme',
+  brand: { '@type': 'Brand', name: 'ASUS' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/OutOfStock',
+    priceCurrency: 'USD',
+    seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
+  },
+};
 ---
 
 <Layout
   title="ASUS ROG Dominus Extreme"
   description="ASUS ROG Dominus Extreme LGA 3647 motherboard — complete with accessories. Fully working. May go up for sale later."
+  ogImage="https://markspcparts.com/images/inventory/rog-dominus-extreme/rogdom2.jpg"
+  canonicalUrl="https://markspcparts.com/inventory/rog-dominus-extreme"
 >
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <Nav slot="nav" />
 
   <!-- Breadcrumb -->

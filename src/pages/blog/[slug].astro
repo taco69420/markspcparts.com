@@ -21,9 +21,38 @@ const dateStr = post.data.date.toLocaleDateString('en-US', {
   day: 'numeric',
   timeZone: 'UTC',
 });
+
+const canonicalUrl = `https://markspcparts.com/blog/${post.slug}`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description ?? '',
+  datePublished: post.data.date.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: 'Mark',
+    url: 'https://markspcparts.com/about',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: "Mark's PC Parts",
+    url: 'https://markspcparts.com',
+  },
+  url: canonicalUrl,
+};
 ---
 
-<Layout title={post.data.title} description={post.data.description}>
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  ogType="article"
+  canonicalUrl={canonicalUrl}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <Nav slot="nav" />
 
   <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
