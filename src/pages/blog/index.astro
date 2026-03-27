@@ -7,6 +7,8 @@ import Footer from '../../components/Footer.astro';
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
+
+const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
 ---
 
 <Layout title="Blog" description="Hardware writeups, debug logs, and build notes from Mark's PC Parts.">
@@ -15,12 +17,30 @@ const posts = (await getCollection('blog')).sort(
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
     <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-6">Blog</p>
     <h1 class="text-3xl font-semibold text-slate-100 mb-2">Build logs &amp; debug notes</h1>
-    <p class="text-steel text-base mb-16">Hardware writeups. What broke, what worked, what I'm running next.</p>
+    <p class="text-steel text-base mb-10">Hardware writeups. What broke, what worked, what I'm running next.</p>
+
+    {/* Tag filter buttons */}
+    <div class="flex flex-wrap gap-2 mb-12" id="tag-filters">
+      <button
+        data-tag="all"
+        class="tag-btn text-xs font-mono px-3 py-1 rounded border transition-colors border-accent bg-accent text-white"
+      >
+        All
+      </button>
+      {allTags.map(tag => (
+        <button
+          data-tag={tag}
+          class="tag-btn text-xs font-mono px-3 py-1 rounded border transition-colors border-white/10 bg-surface-700 text-steel hover:border-accent-light hover:text-accent-light"
+        >
+          {tag}
+        </button>
+      ))}
+    </div>
 
     {posts.length === 0 ? (
       <p class="text-steel">No posts yet.</p>
     ) : (
-      <ul class="divide-y divide-white/5">
+      <ul class="divide-y divide-white/5" id="post-list">
         {posts.map(post => {
           const dateStr = post.data.date.toLocaleDateString('en-US', {
             year: 'numeric',
@@ -29,7 +49,7 @@ const posts = (await getCollection('blog')).sort(
             timeZone: 'UTC',
           });
           return (
-            <li class="py-8 group">
+            <li class="py-8 group" data-tags={post.data.tags.join(',')}>
               <a href={`/blog/${post.slug}`} class="block">
                 <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
                   <time class="text-xs font-mono text-steel shrink-0 mb-2 sm:mb-0">{dateStr}</time>
@@ -43,9 +63,13 @@ const posts = (await getCollection('blog')).sort(
                     {post.data.tags.length > 0 && (
                       <div class="flex flex-wrap gap-1.5">
                         {post.data.tags.map(tag => (
-                          <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-700 text-steel border border-white/5">
+                          <button
+                            data-tag={tag}
+                            class="post-tag text-xs font-mono px-2 py-0.5 rounded bg-surface-700 text-steel border border-white/5 hover:border-accent-light hover:text-accent-light transition-colors"
+                            onclick="event.preventDefault(); event.stopPropagation(); filterByTag(this.dataset.tag)"
+                          >
                             {tag}
-                          </span>
+                          </button>
                         ))}
                       </div>
                     )}
@@ -64,3 +88,37 @@ const posts = (await getCollection('blog')).sort(
 
   <Footer slot="footer" />
 </Layout>
+
+<script>
+  const ACTIVE = 'border-accent bg-accent text-white';
+  const INACTIVE = 'border-white/10 bg-surface-700 text-steel hover:border-accent-light hover:text-accent-light';
+
+  function filterByTag(tag: string) {
+    const posts = document.querySelectorAll<HTMLElement>('#post-list li');
+    const buttons = document.querySelectorAll<HTMLElement>('.tag-btn');
+
+    buttons.forEach(btn => {
+      const isActive = btn.dataset.tag === tag;
+      btn.className = `tag-btn text-xs font-mono px-3 py-1 rounded border transition-colors ${isActive ? ACTIVE : INACTIVE}`;
+    });
+
+    posts.forEach(li => {
+      const tags = li.dataset.tags ? li.dataset.tags.split(',') : [];
+      li.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+    });
+
+    // sync inline post-tag chips highlight
+    document.querySelectorAll<HTMLElement>('.post-tag').forEach(chip => {
+      const isActive = chip.dataset.tag === tag && tag !== 'all';
+      chip.classList.toggle('border-accent', isActive);
+      chip.classList.toggle('text-accent-light', isActive);
+      chip.classList.toggle('border-white/5', !isActive);
+      chip.classList.toggle('text-steel', !isActive);
+    });
+  }
+
+  // wire up top filter buttons
+  document.querySelectorAll<HTMLElement>('.tag-btn').forEach(btn => {
+    btn.addEventListener('click', () => filterByTag(btn.dataset.tag!));
+  });
+</script>
