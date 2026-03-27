@@ -48,6 +48,8 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toStri
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
 
+    <link rel="alternate" type="application/rss+xml" title="Mark's PC Parts" href="/rss.xml" />
+
     <slot name="head" />
   </head>
   <body class="bg-surface-900 text-slate-100 font-sans antialiased min-h-screen flex flex-col">
