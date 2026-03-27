@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Search" description="Search hardware writeups and build logs on Mark's PC Parts.">
+  <Nav slot="nav" />
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-6">Search</p>
+    <h1 class="text-3xl font-semibold text-slate-100 mb-8">Find a post</h1>
+
+    <div class="relative mb-12">
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Title, description, or tag…"
+        autocomplete="off"
+        class="w-full bg-surface-800 border border-white/10 rounded px-4 py-3 text-slate-100 placeholder:text-steel text-sm font-mono focus:outline-none focus:border-accent-light transition-colors"
+      />
+    </div>
+
+    <ul id="results" class="divide-y divide-white/5"></ul>
+    <p id="empty" class="hidden text-steel text-sm">No results.</p>
+    <p id="loading" class="text-steel text-sm">Loading index…</p>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  interface Post {
+    title: string;
+    description: string;
+    tags: string[];
+    url: string;
+    date: string;
+  }
+
+  const input = document.getElementById('search-input') as HTMLInputElement;
+  const resultsList = document.getElementById('results') as HTMLUListElement;
+  const emptyMsg = document.getElementById('empty') as HTMLParagraphElement;
+  const loadingMsg = document.getElementById('loading') as HTMLParagraphElement;
+
+  let posts: Post[] = [];
+
+  function formatDate(iso: string): string {
+    return new Date(iso).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      timeZone: 'UTC',
+    });
+  }
+
+  function renderPost(post: Post): string {
+    const tagsHtml = post.tags.length
+      ? `<div class="flex flex-wrap gap-1.5 mt-3">
+          ${post.tags.map(t => `<span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-700 text-steel border border-white/5">${t}</span>`).join('')}
+         </div>`
+      : '';
+
+    const descHtml = post.description
+      ? `<p class="text-steel text-sm leading-relaxed mb-1">${post.description}</p>`
+      : '';
+
+    return `
+      <li class="py-8 group">
+        <a href="${post.url}" class="block">
+          <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+            <time class="text-xs font-mono text-steel shrink-0 mb-2 sm:mb-0">${formatDate(post.date)}</time>
+            <div class="flex-1 min-w-0">
+              <h2 class="text-lg font-medium text-slate-100 group-hover:text-accent-light transition-colors mb-1">${post.title}</h2>
+              ${descHtml}
+              ${tagsHtml}
+            </div>
+            <span class="hidden sm:inline-block shrink-0 text-accent-light opacity-0 group-hover:opacity-100 transition-opacity text-sm">→</span>
+          </div>
+        </a>
+      </li>`;
+  }
+
+  function search(query: string) {
+    const q = query.trim().toLowerCase();
+
+    if (!q) {
+      resultsList.innerHTML = '';
+      emptyMsg.classList.add('hidden');
+      return;
+    }
+
+    const matched = posts.filter(p =>
+      p.title.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q) ||
+      p.tags.some(t => t.toLowerCase().includes(q))
+    );
+
+    if (matched.length === 0) {
+      resultsList.innerHTML = '';
+      emptyMsg.classList.remove('hidden');
+    } else {
+      emptyMsg.classList.add('hidden');
+      resultsList.innerHTML = matched.map(renderPost).join('');
+    }
+  }
+
+  input.addEventListener('input', () => search(input.value));
+
+  fetch('/search-index.json')
+    .then(r => r.json())
+    .then((data: Post[]) => {
+      posts = data;
+      loadingMsg.remove();
+      input.focus();
+      // Run against any value already in the box (e.g. browser back-fill)
+      if (input.value) search(input.value);
+    })
+    .catch(() => {
+      loadingMsg.textContent = 'Failed to load search index.';
+    });
+</script>
