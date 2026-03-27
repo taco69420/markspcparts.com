@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import { readingTime } from '../../lib/readingTime';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
@@ -52,7 +53,11 @@ const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
             <li class="py-8 group" data-tags={post.data.tags.join(',')}>
               <a href={`/blog/${post.slug}`} class="block">
                 <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
-                  <time class="text-xs font-mono text-steel shrink-0 mb-2 sm:mb-0">{dateStr}</time>
+                  <div class="flex items-center gap-2 shrink-0 mb-2 sm:mb-0">
+                    <time class="text-xs font-mono text-steel">{dateStr}</time>
+                    <span class="text-white/15 text-xs hidden sm:inline">·</span>
+                    <span class="text-xs font-mono text-steel hidden sm:inline">{readingTime(post.body)}</span>
+                  </div>
                   <div class="flex-1 min-w-0">
                     <h2 class="text-lg font-medium text-slate-100 group-hover:text-accent-light transition-colors mb-1">
                       {post.data.title}
