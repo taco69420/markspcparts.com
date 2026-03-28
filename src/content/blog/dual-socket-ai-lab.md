@@ -31,11 +31,9 @@ I grabbed two cheap Amazon coolers for about $20 and started planning the build.
 
 ## The Damage
 
-One night I'm inspecting the board before putting it all together and I notice the top left corner — right by the IO — is bent. Shipping damage. The kind of thing that's easy to miss in photos but obvious once you're holding the board under a light.
+One night I'm inspecting the board and I notice the top left corner — right by the IO — is bent. Shipping damage. Not catastrophic, but it's there.
 
-At this point I'd already started planning the Dominus Extreme build, so I had a decision to make. I could try to straighten it, hope nothing was cracked, and see if it posted. Or I could cut my losses.
-
-I cut my losses.
+At that point I was already losing the thread on this build. The bend was just another reason to not bother.
 
 ![Top left IO corner of the Z9PE-D8 WS showing the shipping damage bend](/images/posts/dual-socket-ai-lab/bent-mobo.jpg)
 
@@ -43,9 +41,11 @@ I cut my losses.
 
 ## The Recovery
 
-The Dominus Extreme build was happening and I needed to fund it. The 256GB DDR3 ECC kit was the most liquid thing I had, so I sold it for $200.
+Honestly I was already losing interest. The ROG Dominus Extreme was calling and I needed money to fund it. And the more I thought about the AI lab idea the more I realized — DDR3 ECC on dual E5-2697s was going to be horrendously slow for inference. Like, painfully slow. The novelty of the $150 deal was wearing off and the reality of what the actual performance would look like was setting in.
 
-Paid $150 for the board, RAM, and two CPUs. Sold just the RAM for $200 to bankroll the Dominus. The board and both E5-2697s are just sitting here, essentially free.
+So I sold the 256GB DDR3 ECC kit for $200 and put that toward the Dominus.
+
+Paid $150 for the board, RAM, and two CPUs. Sold just the RAM for $200. The board and both E5-2697s are just sitting here, essentially free.
 
 My cousin got me an IPMI module for this board for Christmas which is sitting in a drawer. The board is collecting dust. The dream is technically still alive.
 
