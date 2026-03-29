@@ -9,8 +9,6 @@ So if you saw the video, you already know the deal. I picked up an NVIDIA Titan 
 
 But beyond the deal, there's a reason I'm actually keeping this one instead of flipping it immediately: 24 GB of GDDR6 VRAM. In 2026, that number matters a lot more than it did when this card launched in 2018.
 
-![NVIDIA Titan RTX — matte gold shroud, full TU102 die](/images/posts/titan-rtx/card.jpg)
-
 ---
 
 ## Why VRAM is the bottleneck for local AI
