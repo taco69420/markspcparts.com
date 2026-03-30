@@ -61,4 +61,4 @@ But that's not why you get one.
 
 ---
 
-*Intel Xeon W-3175X — 28C/56T, LGA 3647, currently living in the ROG Dominus Extreme. Scratched up. Running great.*
+*Intel Xeon W-3175X — 28C/56T, LGA 3647, currently living in the ROG Dominus Extreme. Scratched up. Running great. Full details on the [inventory page](/inventory/xeon-w-3175x).*

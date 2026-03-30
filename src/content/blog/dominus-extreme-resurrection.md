@@ -69,4 +69,4 @@ For now the eBay listing is coming down. This thing deserves better than being p
 
 ---
 
-*ROG Dominus Extreme — LGA 3647, 6-channel DDR4, W-3175X installed, Titan RTX. Status: very much alive.*
+*ROG Dominus Extreme — LGA 3647, 6-channel DDR4, W-3175X installed, Titan RTX. Status: very much alive. Full details on the [inventory page](/inventory/rog-dominus-extreme).*

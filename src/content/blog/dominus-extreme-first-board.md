@@ -39,4 +39,4 @@ $300 for a board that launched alongside a $3,000 CPU. Even broken, even flipped
 
 ---
 
-*ROG Dominus Extreme — first one, spring 2024, $300. Post code 00, resistor problem. Sold with the EKWB VRM block for profit. Buyer got it running.*
+*ROG Dominus Extreme — first one, spring 2024, $300. Post code 00, resistor problem. Sold with the EKWB VRM block for profit. Buyer got it running. The second board is still in the collection — see the [inventory page](/inventory/rog-dominus-extreme).*

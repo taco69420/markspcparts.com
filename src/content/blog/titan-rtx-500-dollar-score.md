@@ -65,3 +65,7 @@ Mint condition. Matte gold shroud, polished accents, the Titan logo on the top e
 | TDP | 280W (2x 8-pin) |
 | Launch Price | $2,499 (Dec 2018) |
 | What I paid | $500 |
+
+---
+
+*This card is part of the collection — full details on the [Titan RTX inventory page](/inventory/titan-rtx).*
