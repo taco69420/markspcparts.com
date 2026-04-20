@@ -97,4 +97,5 @@
 <text font-family="Inter, sans-serif" font-size="12" x="340" y="416" text-anchor="middle" fill="#f1f5f9" opacity="0.7">Same ILM clamping force — totally different result depending on die size.</text>
 <text font-family="Inter, sans-serif" font-size="12" x="340" y="434" text-anchor="middle" fill="#f1f5f9" opacity="0.7">Consumer dies are small enough that side pressure distributes across the whole surface.</text>
 <text font-family="Inter, sans-serif" font-size="12" x="340" y="452" text-anchor="middle" fill="#f1f5f9" opacity="0.7">The Xeon die is so large the top and bottom of the IHS barely get any contact at all.</text>
+<text font-family="Inter, sans-serif" font-size="11" x="672" y="493" text-anchor="end" fill="#ffffff" opacity="0.22">markspcparts.com</text>
 </svg>
