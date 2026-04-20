@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 680 760" role="img" aria-labelledby="lane-title lane-desc">
+  <title id="lane-title">ROG Dominus Extreme PCIe lane sharing board layout</title>
+  <desc id="lane-desc">Top-down illustration of the ASUS ROG Dominus Extreme motherboard showing CPU socket, 12 DIMM slots, dual DIMM.2 cards, four PCIe x16 slots, and dual U.2 connectors, with colored trace lines showing which storage connectors share PCIe bandwidth with which slots.</desc>
+  <style>
+    .board{fill:none;stroke:#B4B2A9}
+    .cpu{fill:none;stroke:#888780}
+    .dimm{fill:#E1F5EE;stroke:#0F6E56}
+    .dimm2-card{fill:#FAEEDA;stroke:#854F0B}
+    .dimm2-slot{fill:#FAECE7;stroke:#993C1D}
+    .dimm2-slot-red{fill:#FCEBEB;stroke:#A32D2D}
+    .pcie-ded{fill:#EAF3DE;stroke:#3B6D11}
+    .pcie-shared{fill:#FAEEDA;stroke:#854F0B}
+    .u2{fill:#FAECE7;stroke:#993C1D}
+    .legend-box{fill:#F1EFE8;stroke:#5F5E5A}
+    .t{fill:#2C2C2A;font-family:system-ui,sans-serif;font-size:14px;font-weight:500}
+    .ts{fill:#5F5E5A;font-family:system-ui,sans-serif;font-size:12px}
+    .th{fill:#2C2C2A;font-family:system-ui,sans-serif;font-size:14px;font-weight:500}
+    .t-green{fill:#173404;font-family:system-ui,sans-serif;font-size:14px;font-weight:500}
+    .ts-green{fill:#27500A;font-family:system-ui,sans-serif;font-size:12px}
+    .t-amber{fill:#412402;font-family:system-ui,sans-serif;font-size:14px;font-weight:500}
+    .ts-amber{fill:#633806;font-family:system-ui,sans-serif;font-size:12px}
+    .t-coral{fill:#4A1B0C;font-family:system-ui,sans-serif;font-size:14px;font-weight:500}
+    @media (prefers-color-scheme: dark){
+      .board,.cpu{stroke:#888780}
+      .dimm{fill:#085041;stroke:#9FE1CB}
+      .dimm2-card{fill:#633806;stroke:#FAC775}
+      .dimm2-slot{fill:#712B13;stroke:#F5C4B3}
+      .dimm2-slot-red{fill:#791F1F;stroke:#F7C1C1}
+      .pcie-ded{fill:#27500A;stroke:#C0DD97}
+      .pcie-shared{fill:#633806;stroke:#FAC775}
+      .u2{fill:#712B13;stroke:#F5C4B3}
+      .legend-box{fill:#444441;stroke:#B4B2A9}
+      .t,.th,.t-green,.t-amber,.t-coral{fill:#F1EFE8}
+      .ts,.ts-green,.ts-amber{fill:#D3D1C7}
+    }
+  </style>
+  <rect class="board" x="60" y="30" width="560" height="620" rx="14" stroke-width="1"/>
+  <text class="ts" x="72" y="50" dominant-baseline="central">ROG Dominus Extreme (top-down)</text>
+  <rect class="cpu" x="280" y="180" width="120" height="120" rx="6" stroke-width="1.5"/>
+  <text class="th" x="340" y="232" text-anchor="middle" dominant-baseline="central">LGA 3647</text>
+  <text class="ts" x="340" y="252" text-anchor="middle" dominant-baseline="central">W-3175X</text>
+  <text class="ts" x="340" y="270" text-anchor="middle" dominant-baseline="central">48 lanes</text>
+  <text class="ts" x="185" y="108" text-anchor="middle">left RAM bank (6 DIMMs)</text>
+  <rect class="dimm" x="130" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="148" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="166" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="184" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="202" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="220" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <text class="ts" x="495" y="108" text-anchor="middle">right RAM bank (6 DIMMs)</text>
+  <rect class="dimm" x="448" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="466" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="484" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="502" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="520" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm" x="538" y="120" width="12" height="240" rx="2" stroke-width="0.5"/>
+  <rect class="dimm2-card" x="82" y="120" width="30" height="240" rx="3" stroke-width="0.5"/>
+  <rect class="dimm2-slot-red" x="86" y="134" width="22" height="102" rx="2" stroke-width="0.5"/>
+  <rect class="dimm2-slot-red" x="86" y="244" width="22" height="102" rx="2" stroke-width="0.5"/>
+  <line x1="112" y1="160" x2="150" y2="80" stroke="#5F5E5A" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <text class="th" x="152" y="76" dominant-baseline="central">DIMM.2_1</text>
+  <text class="ts" x="152" y="92" dominant-baseline="central">slots _1_1 and _1_2</text>
+  <rect class="dimm2-card" x="568" y="120" width="30" height="240" rx="3" stroke-width="0.5"/>
+  <rect class="dimm2-slot" x="572" y="134" width="22" height="102" rx="2" stroke-width="0.5"/>
+  <rect class="dimm2-slot" x="572" y="244" width="22" height="102" rx="2" stroke-width="0.5"/>
+  <line x1="568" y1="160" x2="528" y2="80" stroke="#5F5E5A" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <text class="th" x="526" y="76" text-anchor="end" dominant-baseline="central">DIMM.2_2</text>
+  <text class="ts" x="526" y="92" text-anchor="end" dominant-baseline="central">slots _2_1 and _2_2</text>
+  <rect class="pcie-ded" x="80" y="410" width="520" height="28" rx="3" stroke-width="0.5"/>
+  <text class="t-green" x="100" y="424" dominant-baseline="central">PCIEX16_1</text>
+  <text class="ts-green" x="580" y="424" text-anchor="end" dominant-baseline="central">dedicated x16 — no conflicts</text>
+  <rect class="pcie-shared" x="80" y="450" width="520" height="28" rx="3" stroke-width="0.5"/>
+  <text class="t-amber" x="100" y="464" dominant-baseline="central">PCIEX16_2</text>
+  <text class="ts-amber" x="580" y="464" text-anchor="end" dominant-baseline="central">shared with 4 connectors</text>
+  <rect class="pcie-shared" x="80" y="490" width="520" height="28" rx="3" stroke-width="0.5"/>
+  <text class="t-amber" x="100" y="504" dominant-baseline="central">PCIEX16_3</text>
+  <text class="ts-amber" x="580" y="504" text-anchor="end" dominant-baseline="central">shared with 2 connectors</text>
+  <rect class="pcie-shared" x="80" y="530" width="520" height="28" rx="3" stroke-width="0.5"/>
+  <text class="t-amber" x="100" y="544" dominant-baseline="central">PCIEX16_4</text>
+  <text class="ts-amber" x="580" y="544" text-anchor="end" dominant-baseline="central">shared with 2 connectors</text>
+  <rect class="u2" x="150" y="590" width="120" height="36" rx="3" stroke-width="0.5"/>
+  <text class="t-coral" x="210" y="608" text-anchor="middle" dominant-baseline="central">U.2_1</text>
+  <rect class="u2" x="410" y="590" width="120" height="36" rx="3" stroke-width="0.5"/>
+  <text class="t-coral" x="470" y="608" text-anchor="middle" dominant-baseline="central">U.2_2</text>
+  <path d="M 97 236 L 97 380 L 50 380 L 50 464 L 80 464" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+  <path d="M 583 134 L 583 390 L 620 390 L 620 464 L 600 464" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+  <path d="M 470 626 L 470 660 L 640 660 L 640 464 L 600 464" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+  <path d="M 583 244 L 583 395 L 624 395 L 624 504 L 600 504" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+  <path d="M 210 626 L 210 665 L 44 665 L 44 504 L 80 504" fill="none" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6 4" opacity="0.7"/>
+  <path d="M 102 236 L 102 400 L 55 400 L 55 544 L 80 544" fill="none" stroke="#A32D2D" stroke-width="2" stroke-dasharray="6 4" opacity="0.85"/>
+  <path d="M 102 244 L 102 405 L 60 405 L 60 544 L 80 544" fill="none" stroke="#A32D2D" stroke-width="2" stroke-dasharray="6 4" opacity="0.85"/>
+  <rect class="legend-box" x="60" y="678" width="560" height="70" rx="6" stroke-width="0.5"/>
+  <text class="th" x="340" y="696" text-anchor="middle" dominant-baseline="central">legend</text>
+  <rect x="80" y="712" width="14" height="14" rx="2" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.5"/>
+  <text class="ts" x="102" y="720" dominant-baseline="central">dedicated slot</text>
+  <rect x="210" y="712" width="14" height="14" rx="2" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.5"/>
+  <text class="ts" x="232" y="720" dominant-baseline="central">shared slot</text>
+  <line x1="330" y1="720" x2="360" y2="720" stroke="#BA7517" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text class="ts" x="366" y="720" dominant-baseline="central">1-slot conflict</text>
+  <line x1="478" y1="720" x2="508" y2="720" stroke="#A32D2D" stroke-width="2" stroke-dasharray="6 4"/>
+  <text class="ts" x="514" y="720" dominant-baseline="central">2-slot conflict</text>
+</svg>
