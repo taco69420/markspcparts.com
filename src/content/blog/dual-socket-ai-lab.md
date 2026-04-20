@@ -17,7 +17,7 @@ I couldn't figure out why nobody had touched it. The RAM alone was worth more th
 
 ## The Plan
 
-This was right around when running LLMs locally was becoming a thing people actually did. The idea was simple: 256GB of ECC RAM is a lot of addressable memory. You can load models into system RAM and run inference off it — it's slow, but it works. Pair that with a 3090 Ti for the GPU side and you've got a genuinely capable local AI rig for basically nothing.
+This was right around when running LLMs locally was becoming a thing people actually did. The idea was simple: 256GB of ECC RAM is a lot of addressable memory. You can load models into system RAM and run inference off it — it's slow, but it works. Pair that with a 3090 Ti for the GPU side and you've got a genuinely capable local AI rig for basically nothing. (I later went the GPU VRAM route instead — the [Titan RTX with 24GB](/blog/titan-rtx-500-dollar-score) is a much better answer to this problem.)
 
 Poor man's AI lab. That was the vision.
 
@@ -43,7 +43,7 @@ At that point I was already losing the thread on this build. The bend was just a
 
 Honestly I was already losing interest. The ROG Dominus Extreme was calling and I needed money to fund it. And the more I thought about the AI lab idea the more I realized — DDR3 ECC on dual E5-2697s was going to be horrendously slow for inference. Like, painfully slow. The novelty of the $150 deal was wearing off and the reality of what the actual performance would look like was setting in.
 
-So I sold the 256GB DDR3 ECC kit for $200 and put that toward the Dominus.
+So I sold the 256GB DDR3 ECC kit for $200 and put that toward the [Dominus](/inventory/rog-dominus-extreme).
 
 Paid $150 for the board, RAM, and two CPUs. Sold just the RAM for $200. The board and both E5-2697s are just sitting here, essentially free.
 

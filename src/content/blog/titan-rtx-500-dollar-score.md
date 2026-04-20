@@ -68,4 +68,4 @@ Mint condition. Matte gold shroud, polished accents, the Titan logo on the top e
 
 ---
 
-*This card is part of the collection — full details on the [Titan RTX inventory page](/inventory/titan-rtx).*
+*This card is part of the collection — full details on the [Titan RTX inventory page](/inventory/titan-rtx). Curious what the cheap RAM-based AI lab alternative looks like? I tried that too: [dual socket E5-2697s for $150](/blog/dual-socket-ai-lab).*

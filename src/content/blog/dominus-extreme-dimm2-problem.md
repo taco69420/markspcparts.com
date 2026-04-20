@@ -69,4 +69,4 @@ Build log coming. Stay tuned.
 
 ---
 
-*ROG Dominus Extreme — full board details on the [inventory page](/inventory/rog-dominus-extreme).*
+*ROG Dominus Extreme — full board details on the [inventory page](/inventory/rog-dominus-extreme). Background on how I got this board running in the first place: [the resurrection post](/blog/dominus-extreme-resurrection).*
