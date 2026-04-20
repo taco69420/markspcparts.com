@@ -35,8 +35,6 @@ It's not a dealbreaker. It's annoying for something marketed as a no-compromise 
 
 ---
 
-![Diagram showing the DIMM.2 card acting as a windbreaker, blocking case fan airflow from reaching the 12 DIMM slots — blocked paths shown in red, RAM overheating as a result](/images/posts/dominus-dimm2/airflow-diagram.svg)
-
 ## The bigger problem: it's a RAM heatsink blocker
 
 Here's the issue I didn't anticipate at all.
@@ -45,7 +43,9 @@ The DIMM.2 cards slot into DIMM slots. The Dominus Extreme has 12 DIMM slots. Th
 
 Airflow that should be moving laterally across your memory sticks just stops. It hits the DIMM.2 card and goes somewhere else. Your DIMMs are now in a dead air zone.
 
-On a board with 12 DIMM slots capable of holding up to 256GB of RAM, thermals matter. DDR4 under sustained load generates real heat. Without airflow across the sticks, that heat stays put.
+![Diagram showing the DIMM.2 card acting as a windbreaker, blocking case fan airflow from reaching the 12 DIMM slots — blocked paths shown in red, RAM overheating as a result](/images/posts/dominus-dimm2/airflow-diagram.svg)
+
+On a board with 12 DIMM slots capable of holding up to 192GB of unbuffered RAM, thermals matter. DDR4 under sustained load generates real heat. Without airflow across the sticks, that heat stays put.
 
 My RAM started overheating. Not "running a little warm" overheating — actually unstable. System crashes, memory errors, the kind of thing that makes you wonder if you have a bad stick before you realize the whole array is just baking.
 
