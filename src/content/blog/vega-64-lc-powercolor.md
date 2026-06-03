@@ -51,7 +51,7 @@ Five degrees Fahrenheit. My room got measurably warmer running this card under l
 
 ## The HBM Part
 
-This is still what gets me about Vega. HBM2 sitting right there on the package, absurd bandwidth for a consumer card. By 2023 it was already a generation behind and the performance numbers showed it, but the architecture is genuinely interesting. Same lineage as [the Vega 56 Strix](/blog/vega-56-strix-hbm), same reason I keep coming back to these cards. I wrote up [the full HBM history](/blog/hbm-memory-history) if you want the whole arc from Fiji onward.
+This is still what gets me about Vega. HBM2 sitting right there on the package, absurd bandwidth for a consumer card. By 2023 it was already a generation behind and the performance numbers showed it, but the architecture is genuinely interesting. Same lineage as [the Vega 56 Strix](/blog/vega-56-strix-hbm), same reason I keep coming back to these cards. I wrote up [the full HBM history](/blog/hbm-memory-history) if you want the whole arc from Fiji onward. The same Vega 10 die also had a server life — AMD put two of them on one passive PCIe card for the enterprise market, the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste), which ended up running in Google Stadia's infrastructure before finding its way into homelabs.
 
 Fast memory on consumer silicon is cool. It was cool in 2017 and it was still cool when I dropped $200 on one six years later.
 

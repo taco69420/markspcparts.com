@@ -79,7 +79,7 @@ I sent him **$220** and he accepted.
 
 Not the consumer PC crowd. They already scrolled past twice without bidding.
 
-**Homelabbers.** Proxmox, TrueNAS, Unraid users who need lots of cores, lots of RAM, and ECC support. A working dual-socket v4 system is a legitimately powerful homelab server. These people will pay real money for something complete and tested — they're not buying it to game on, they're buying it to run 40 containers and never touch it again.
+**Homelabbers.** Proxmox, TrueNAS, Unraid users who need lots of cores, lots of RAM, and ECC support. A working dual-socket v4 system is a legitimately powerful homelab server. These people will pay real money for something complete and tested — they're not buying it to game on, they're buying it to run 40 containers and never touch it again. The same surplus channel that produces these boards also turns up enterprise GPUs like the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste) — a passive AMD dual-GPU card with hardware SR-IOV for up to 16 virtual GPUs, which pairs directly with Proxmox for vGPU workloads.
 
 **AI and LLM people.** [RAM-based inference works](/blog/dual-socket-ai-lab). It's slow compared to VRAM, but several hundred gigabytes of system memory can hold models that would otherwise require stacked high-end GPUs. There's a buyer for this.
 

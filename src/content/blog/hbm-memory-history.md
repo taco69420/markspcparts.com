@@ -72,7 +72,7 @@ Products that shipped on HBM2:
 
 The V100 was arguably the more important launch. NVIDIA used HBM2 for data center compute rather than consumer graphics, and that framing — HBM as a serious accelerator technology rather than a consumer gimmick — stuck. The V100's 900 GB/s on the SXM2 form factor set the standard for what serious compute memory looked like.
 
-AMD's Vega architecture was supposed to recapture the GPU lead. It didn't, but the Vega 56 and Vega 64 were at least respectable parts with interesting bandwidth characteristics. The Radeon VII in 2019 was essentially a compute card with 1 TB/s+ memory bandwidth shoved into a gaming SKU — wildly overbuilt for games, interesting for compute work.
+AMD's Vega architecture was supposed to recapture the GPU lead. It didn't, but the Vega 56 and Vega 64 were at least respectable parts with interesting bandwidth characteristics. The Radeon VII in 2019 was essentially a compute card with 1 TB/s+ memory bandwidth shoved into a gaming SKU — wildly overbuilt for games, interesting for compute work. AMD also took the same Vega 10 die into the enterprise with the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste) — a passive dual-GPU server card carrying 16GB HBM2 across two dies, hardware SR-IOV for up to 16 virtual GPUs, and a prior life inside Google Stadia's datacenter racks.
 
 ---
 
