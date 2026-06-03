@@ -5,7 +5,11 @@ description: "A full teardown of the AMD Radeon Pro V340L — dual Vega 10 XL GP
 tags: [gpu, teardown, amd, server, homelab, vega]
 ---
 
-Placeholder intro paragraph — brief hook about acquiring the V340L and why it warranted a teardown.
+Stadia shut down in January 2023. Over the next year the hardware started moving — eBay listings, surplus auctions, all the server equipment Google quietly decommissioned after pulling the plug. I sniped this one for $30.
+
+Thirty dollars for a dual Vega 10 XL server card with 16GB HBM2 and hardware GPU virtualization. The seller had no idea what they had. I wasn't going to explain it.
+
+A card that spent years running continuous server workloads doesn't get paste changes. It runs until it stops running. Tearing it down to see what AMD actually shipped into those datacenter racks — and putting fresh paste on it while everything was apart — was the obvious play.
 
 ![AMD Radeon Pro V340L fully assembled hero shot](/images/posts/v340l-repaste/hero-1.jpg)
 
@@ -85,7 +89,13 @@ There's also a Microsemi SmartFusion2 security processor onboard — a microcont
 
 ## What I Found Inside
 
-Placeholder — describe the condition of the original thermal paste: dried out, cracked, poor coverage, age, anything unexpected on the PCB, VRM layout, capacitors, overall build quality impressions.
+First thing that stood out: the heatsinks are vapor chambers. Not flat copper plates with heatpipes — actual vapor chambers. For a passively cooled card that has to survive on chassis airflow alone, that's the right call. The thermal mass needs to spread heat fast enough across the whole fin stack that there are no hotspots when airflow is restricted. AMD engineered these properly.
+
+The paste was predictably cooked. Dried and cracked across both die surfaces, pulling away from center, no longer making consistent contact. Years of continuous server workloads will do that. Not surprising, but it confirmed the repaste was necessary.
+
+The PCB itself looked clean — no capacitor damage, no VRM stress marks, no burnt smell. Just age. The two Vega 10 XL packages sit side by side on the board with the HBM2 stacks right there on the silicon interposer next to each die. If you've never seen bare Vega before, the stacks are the first thing you notice — small, flush against the die, part of the same interposer package. The whole thing is noticeably larger than just a GPU die alone.
+
+The SmartFusion2 chip is easy to spot once the backplate is off — small square component, the FPGA security processor that handles secure boot and platform management. It has no equivalent on any consumer GPU. It's one of those details that makes it obvious this hardware was built for a different threat model than anything running games.
 
 ![Vapor chamber heatsinks alongside bare V340L PCB showing dies and screws](/images/posts/v340l-repaste/heatsinks-and-pcb.jpg)
 *The vapor chamber heatsinks next to the bare PCB.*
@@ -109,7 +119,13 @@ Placeholder — describe the condition of the original thermal paste: dried out,
 
 ## Repaste
 
-Placeholder — describe the repaste process: cleaning the old paste off, product used, application method, reinstalling the heatsink, torque pattern on screws, any thermal pad replacements.
+Cleaned both dies with isopropyl alcohol. The old paste was dry enough to wipe off cleanly — couple passes with a lint-free cloth and the die surfaces came up clean.
+
+Bare die changes how you apply paste. There's no IHS. The exposed silicon is all you have, and the HBM stacks are sitting right next to it on the interposer — you're not just protecting the die, you're making sure nothing runs onto those stacks. Small dot on each die, let the heatsink spread it on mounting. Less is right here. Anything more and you're pushing paste somewhere it shouldn't go.
+
+Heatsink reinstall uses the same cross-pattern approach as CPU coolers. Work opposite corners, bring both sides down evenly, don't fully seat one before the other. The vapor chamber needs even contact across the whole die surface. Rush the torque on one side and you've created the same uneven pressure the old paste was working around.
+
+VRM pads held their position on the components and didn't need replacement. Both heatsinks seated flat with no issues.
 
 ![Thermal paste applied to both bare Vega 10 dies on V340L](/images/posts/v340l-repaste/paste.jpg)
 *Fresh paste on both dies, ready for the heatsinks to go back on.*
@@ -118,7 +134,9 @@ Placeholder — describe the repaste process: cleaning the old paste off, produc
 
 ## Whats Next
 
-Placeholder — plans for the card: what system it will go into, intended workload (AI inference, vGPU, compute, homelab use), any follow-up posts planned on temperatures or benchmarks.
+This is going into a homelab Proxmox build. The SR-IOV MxGPU support is the whole reason to bother — each Vega 10 XL die supports up to 8 virtual GPU instances, so the V340L can theoretically hand out 16 vGPUs to different VMs simultaneously. That's not a number you see outside serious enterprise hardware, and getting one of these at Stadia surplus prices is the kind of gap that makes this stuff worth chasing.
+
+The plan is to get AMD's MxGPU drivers running on a Linux host and start carving it into vGPU slices for Windows VMs. Getting SR-IOV GPU passthrough properly configured is its own project — I'm not declaring victory until it's actually stable and running. Expect a follow-up once that's sorted.
 
 <script type="application/ld+json">
 {
