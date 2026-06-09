@@ -28,9 +28,9 @@ The coolers are the part I keep coming back to. The NH-D9DX i4 is the specific N
 
 ![Z10PE-D16 PCB name printed between the two CPU DIMM banks](/images/posts/dual-socket-16/name-shot.jpg)
 
-The "D16" is the important part. Sixteen DIMM slots — eight per CPU, quad-channel per socket. That's the whole board. Where cheaper dual-socket platforms cut corners on memory slots, ASUS built this one out fully. Fill it with 64GB LRDIMMs and you've got a 1TB system. Fill it with the 16GB RDIMMs that came in this bundle and you've got 128GB with slots to spare.
+The "D16" is the important part. Sixteen DIMM slots — eight per CPU, quad-channel per socket. That's the whole board. Where cheaper dual-socket platforms cut corners on memory slots, ASUS built this one out fully. Fill it with 64GB LRDIMMs and you've got a 1TB system. Fill it with the 16GB RDIMMs that came in this bundle and you've got 256GB with slots to spare.
 
-The rest of the spec sheet: dual Intel 10GbE onboard, seven PCIe 3.0 x16 slots, C612 chipset, SSI-EEB form factor. The seven PCIe slots aren't a typo — this board was designed for multi-GPU visualization workloads, so ASUS populated it properly. In a homelab context that means room for GPUs, HBAs, NVMe controllers, and 10GbE cards without fighting over slots.
+The rest of the spec sheet: dual Intel i350 Gigabit LAN onboard, seven PCIe 3.0 x16 slots, C612 chipset, SSI-EEB form factor. The seven PCIe slots aren't a typo — this board was designed for multi-GPU visualization workloads, so ASUS populated it properly. In a homelab context that means room for GPUs, HBAs, NVMe controllers, and 10GbE cards without fighting over slots.
 
 It needs a server case, pedestal workstation chassis, or open bench. It's too big for a standard ATX enclosure.
 
@@ -47,7 +47,7 @@ The ASUS ASMB8-iKVM module is what separates this from anything in the consumer 
 
 What that means in practice: you can power the machine on or off remotely even when the OS is dead. You get a full KVM-over-IP browser session — keyboard, video, mouse — so you see POST messages, BIOS screens, and OS boot failures without a monitor attached. You can mount an ISO over the network as a virtual optical drive and do a completely headless Proxmox install. You can hook it into ipmitool and automate power management from other machines. You get SNMP and SMTP alerting on fan failures, voltage drift, and temperature spikes before they become real problems.
 
-None of this exists on Z390 or X299 or TRX50. IPMI is enterprise hardware. You get it here because this board shipped into server rooms, not gaming setups. The BIOS even has a dedicated "Server Mgmt" menu tab — visible right in the POST shot below.
+You won't find this on any mainstream consumer board. Z390, standard X299, consumer Threadripper — none of them ship with IPMI as a built-in feature. Workstation and rack-oriented variants from ASRock Rack and Supermicro do exist with IPMI on those chipsets, but they're a completely different product category at a very different price. The Z10PE-D16 has the ASMB8-iKVM built in from the factory because this board shipped into server rooms, not gaming setups. The BIOS even has a dedicated "Server Mgmt" menu tab — visible right in the POST shot below.
 
 ![Top-down view of both Noctua coolers showing CPU power connectors between them](/images/posts/dual-socket-16/top-right.jpg)
 *Both 8-pin EPS connectors visible between the coolers. This board wants a server PSU or a quality ATX unit with dual CPU power.*
@@ -95,7 +95,7 @@ Same playbook as the Z8PE flip. Three-way split, RAM first.
 
 → **[COOLER LISTING]**
 
-**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s, sold tested and confirmed. The E5-2620 v4 is not a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual 10GbE, and seven PCIe slots in a confirmed-working package. That's a real homelab server at surplus pricing, and the buyer that wants it will pay for a tested combo over a gamble.
+**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s, sold tested and confirmed. The E5-2620 v4 is not a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and seven PCIe slots in a confirmed-working package. That's a real homelab server at surplus pricing, and the buyer that wants it will pay for a tested combo over a gamble.
 
 → **[BOARD+CPU LISTING]**
 
