@@ -6,6 +6,17 @@ import PartCard from '../components/PartCard.astro';
 
 const parts = [
   {
+    name: 'ASUS Z10PE-D16 + Dual Xeon E5-2620 v4',
+    category: 'Motherboard',
+    specs: ['Dual LGA 2011-3 · C612 chipset', '2x 8C/16T Xeon E5-2620 v4 included', '16x DDR4 ECC DIMM slots · up to 1TB', 'IPMI 2.0 · KVM over IP · remote management'],
+    condition: 'Good' as const,
+    status: 'Available' as const,
+    description: 'Complete dual-socket DDR4 ECC workstation platform. Tested and confirmed working. Full IPMI/BMC onboard — KVM over IP, remote power, headless management. $200 on eBay.',
+    image: '/images/posts/dual-socket-16/hero-dual.jpg',
+    href: '/inventory/z10pe-d16',
+    ebayUrl: 'https://ebay.io/m/4Yi0ug',
+  },
+  {
     name: 'Intel Xeon W-3175X',
     category: 'CPU',
     specs: ['LGA 3647 · 28C / 56T', 'Unlocked multiplier', '6-ch DDR4 · 48 PCIe lanes', '255W TDP'],

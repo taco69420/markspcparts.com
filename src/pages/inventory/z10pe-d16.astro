@@ -1,0 +1,270 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const ebayUrl = 'https://ebay.io/m/4Yi0ug';
+
+const images = [
+  { src: '/images/posts/dual-socket-16/hero-dual.jpg', alt: 'ASUS Z10PE-D16 with dual Noctua NH-D9DX coolers installed — top-down view' },
+  { src: '/images/posts/dual-socket-16/name-shot.jpg', alt: 'Z10PE-D16 board name printed on PCB between DIMM banks' },
+  { src: '/images/posts/dual-socket-16/cpu-shot.jpg', alt: 'Intel Xeon E5-2620 v4 seated in CPU1 socket' },
+  { src: '/images/posts/dual-socket-16/post-shot.jpg', alt: 'BIOS POST screen showing 65536MB and BIOS version 3703' },
+  { src: '/images/posts/dual-socket-16/testing-shot.jpg', alt: 'Full open bench test setup' },
+  { src: '/images/posts/dual-socket-16/left-cornor.jpg', alt: 'Bottom-left corner showing ASPEED AST2300 BMC chip' },
+  { src: '/images/posts/dual-socket-16/right-cornor.jpg', alt: 'Bottom-right corner showing SATA ports and M.2 slot' },
+  { src: '/images/posts/dual-socket-16/side-shot.jpg', alt: 'Z10PE-D16 right side profile' },
+];
+
+const specs = [
+  { label: 'Form Factor', value: 'SSI-EEB (needs server case or open bench)' },
+  { label: 'Sockets', value: 'Dual LGA 2011-3 (Socket R3)' },
+  { label: 'CPU Support', value: 'E5-2600 v3 / v4 — up to E5-2699 v4 (22-core)' },
+  { label: 'Chipset', value: 'Intel C612' },
+  { label: 'Included CPUs', value: '2x Intel Xeon E5-2620 v4 (8C/16T · 2.1GHz · boost 3.0GHz · 85W)' },
+  { label: 'Memory Slots', value: '16x DDR4 DIMM — 8 per CPU, quad-channel per socket' },
+  { label: 'Memory Support', value: 'ECC RDIMM / LRDIMM · up to 1TB RAM' },
+  { label: 'PCIe', value: 'Multiple PCIe 3.0 slots' },
+  { label: 'Storage', value: 'SATA III · M.2' },
+  { label: 'Networking', value: 'Dual Intel Gigabit LAN · dedicated IPMI management port' },
+  { label: 'IPMI / BMC', value: 'ASUS ASMB8-iKVM — IPMI 2.0, KVM over IP, virtual media, remote power' },
+  { label: 'USB', value: 'USB 3.0' },
+  { label: 'Video Out', value: 'VGA (onboard, for BIOS / management use)' },
+  { label: 'BIOS', value: 'Version 3703 · build date 04/24/2018' },
+  { label: 'Includes', value: 'Board, both CPUs, I/O shield' },
+  { label: 'Condition', value: 'Good — fully tested, clean POST, no issues' },
+  { label: 'Shipping', value: 'USA only' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'ASUS Z10PE-D16 + Dual Xeon E5-2620 v4',
+  description: 'Tested dual-socket workstation platform. ASUS Z10PE-D16, dual E5-2620 v4, full IPMI/BMC. Confirmed working — booted to BIOS, both CPUs detected.',
+  image: 'https://markspcparts.com/images/posts/dual-socket-16/hero-dual.jpg',
+  url: 'https://markspcparts.com/inventory/z10pe-d16',
+  brand: { '@type': 'Brand', name: 'ASUS' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'USD',
+    price: '200',
+    url: ebayUrl,
+    seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
+  },
+};
+---
+
+<Layout
+  title="ASUS Z10PE-D16 + Dual Xeon E5-2620 v4 — For Sale"
+  description="Tested dual-socket DDR4 ECC workstation platform. ASUS Z10PE-D16, dual Xeon E5-2620 v4, full IPMI/BMC. $200 on eBay — USA shipping only."
+  ogImage="https://markspcparts.com/images/posts/dual-socket-16/hero-dual.jpg"
+  canonicalUrl="https://markspcparts.com/inventory/z10pe-d16"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+  <Nav slot="nav" />
+
+  <!-- Breadcrumb -->
+  <div class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-steel font-mono">
+      <a href="/" class="hover:text-accent-light transition-colors">home</a>
+      <span class="text-white/20">/</span>
+      <a href="/inventory" class="hover:text-accent-light transition-colors">inventory</a>
+      <span class="text-white/20">/</span>
+      <span class="text-slate-300">z10pe-d16</span>
+    </div>
+  </div>
+
+  <!-- Status banner -->
+  <div class="bg-accent/10 border-b border-accent/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+      <p class="text-sm text-accent-light font-medium">Available on eBay — $200 · USA shipping only</p>
+      <a
+        href={ebayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 inline-flex items-center gap-1.5 text-xs text-yellow-400 hover:text-yellow-300 font-semibold transition-colors"
+      >
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+        </svg>
+        View on eBay →
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-14 items-start">
+
+      <!-- Image gallery -->
+      <div class="flex flex-col gap-3">
+        <div class="rounded-xl overflow-hidden bg-surface-700">
+          <img
+            id="main-image"
+            src={images[0].src}
+            alt={images[0].alt}
+            class="w-full object-contain max-h-[520px] bg-surface-700"
+          />
+        </div>
+        <div class="grid grid-cols-4 gap-2">
+          {images.map((img, i) => (
+            <button
+              data-src={img.src}
+              data-alt={img.alt}
+              class:list={[
+                'rounded-lg overflow-hidden border-2 transition-all duration-150 focus:outline-none thumbnail-btn aspect-square',
+                i === 0 ? 'border-accent' : 'border-white/10 hover:border-accent/40',
+              ]}
+            >
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="mt-10 lg:mt-0">
+        <div class="flex items-start justify-between gap-4 mb-1">
+          <span class="text-xs font-mono text-accent-light uppercase tracking-widest">Motherboard · Dual LGA 2011-3</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/30 shrink-0">
+            Available
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mt-2 leading-tight">ASUS Z10PE-D16 + Dual Xeon E5-2620 v4</h1>
+
+        <div class="flex flex-wrap items-center gap-3 mt-3">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium border text-yellow-400 bg-yellow-400/10 border-yellow-400/20">
+            Good
+          </span>
+          <span class="text-xs text-steel font-mono">Pulled from working system · fully tested</span>
+        </div>
+
+        <!-- What's included -->
+        <div class="mt-6 p-4 rounded-lg bg-surface-700/50 border border-white/10">
+          <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">What's Included</p>
+          <ul class="space-y-1.5">
+            {[
+              'ASUS Z10PE-D16 WS dual LGA 2011-3 motherboard (SSI-EEB)',
+              '2x Intel Xeon E5-2620 v4 (8C/16T · 2.1GHz base · 3.0GHz boost · 85W)',
+              'I/O shield',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-steel">
+                <span class="text-accent-light mt-px select-none shrink-0">›</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- IPMI callout -->
+        <div class="mt-4 p-4 rounded-lg bg-accent/5 border border-accent/20">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-accent-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+            <div>
+              <p class="text-sm font-semibold text-accent-light mb-1">Onboard IPMI/BMC (ASMB8-iKVM)</p>
+              <p class="text-xs text-steel leading-relaxed">
+                Dedicated management port — full out-of-band remote access via web browser. KVM over IP, remote power on/off/reset, hardware monitoring, fan control, BIOS access over the network. No extra hardware needed. Proxmox and homelab builders — you know what this means.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Write-up -->
+        <div class="mt-6">
+          <h2 class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">Tested & Confirmed</h2>
+          <div class="space-y-2 text-steel text-sm leading-relaxed">
+            <p>
+              Pulled from a working system and confirmed fully operational — booted to BIOS clean, both CPUs identified correctly, all memory slots verified, no Q-code errors. BIOS screenshot available on request.
+            </p>
+            <p>
+              Upgrade path goes all the way to E5-2699 v4 (22-core) in both sockets — the included E5-2620 v4s prove the platform works, and you can drop in whatever v3 or v4 Xeons you want from there.
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href={ebayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+            </svg>
+            Buy on eBay — $200
+          </a>
+          <a
+            href="/inventory"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
+          >
+            ← Inventory
+          </a>
+        </div>
+
+        <!-- Message note -->
+        <p class="mt-4 text-xs text-steel">
+          Got a question or want to work something out? Send me a message on eBay — happy to make a deal.
+        </p>
+      </div>
+    </div>
+
+    <!-- Specs table -->
+    <div class="mt-16 border-t border-white/5 pt-14">
+      <h2 class="text-xl font-bold mb-8">Full Specifications</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden border border-white/5">
+        {specs.map(spec => (
+          <div class="bg-surface-800 px-5 py-4">
+            <p class="text-xs text-steel font-mono uppercase tracking-wide mb-1">{spec.label}</p>
+            <p class="text-sm text-slate-100 font-medium">{spec.value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-xl bg-surface-800 border border-white/10">
+      <div>
+        <p class="font-semibold text-slate-100">$200 · Available now on eBay</p>
+        <p class="text-sm text-steel mt-0.5">USA shipping only · no returns · questions welcome via eBay message</p>
+      </div>
+      <a
+        href={ebayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20 shrink-0"
+      >
+        View on eBay →
+      </a>
+    </div>
+
+    <!-- Blog link -->
+    <div class="mt-6 text-center">
+      <a href="/blog/asus-z10pe-d16-dual-socket-flip" class="text-sm text-steel hover:text-accent-light transition-colors underline underline-offset-4">
+        Read the full writeup on this board →
+      </a>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const thumbBtns = document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn');
+
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mainImage.src = btn.dataset.src!;
+      mainImage.alt = btn.dataset.alt!;
+      thumbBtns.forEach(b => b.classList.replace('border-accent', 'border-white/10'));
+      btn.classList.replace('border-white/10', 'border-accent');
+    });
+  });
+</script>
