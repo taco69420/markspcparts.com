@@ -87,19 +87,17 @@ The IO corner is fine — worth noting because this is where I found damage on [
 
 Same playbook as the Z8PE flip. Three-way split, RAM first.
 
-**RAM goes first.** The 64GB DDR4 ECC RDIMM kit is the fastest mover with the highest margin. Four matched Micron 16GB PC4-2400T sticks — this is exactly what LGA 2011-v3 homelabbers are buying right now, and those buyers pay without negotiating because they know what they need. Selling this first recovers the entire $280 before anything else ships.
+**Noctua coolers first — already sold.** Listed both NH-D9DX i4 3U units individually at $50 each. Gone. $100 recovered before anything else shipped.
+
+**RAM next.** The 64GB DDR4 ECC RDIMM kit is listed at $200. Four matched Micron 16GB PC4-2400T sticks — exactly what LGA 2011-v3 homelabbers are buying right now, and those buyers don't negotiate because they know what they need.
 
 → **[RAM LISTING]**
 
-**Noctua coolers next.** Two NH-D9DX i4 3U units with Square-ILM brackets, listed individually. Anyone running LGA2011 hardware without adequate cooling is actively searching for this exact model. They move.
-
-→ **[COOLER LISTING]**
-
-**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s, sold tested and confirmed. The E5-2620 v4 is not a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and seven PCIe slots in a confirmed-working package. That's a real homelab server at surplus pricing, and the buyer that wants it will pay for a tested combo over a gamble.
+**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s listed at $200, sold tested and confirmed. The E5-2620 v4 is not a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and seven PCIe slots in a confirmed-working package. That's a real homelab server at surplus pricing, and the buyer that wants it will pay for a tested combo over a gamble.
 
 → **[BOARD+CPU LISTING]**
 
-Projected gross on the full split: **$530–760** before fees.
+Total gross on the full split: **$500** before fees on a $280 buy-in.
 
 ---
 
@@ -115,6 +113,6 @@ The RAM in this bundle is what makes the math work. $280 for the whole thing, an
 
 ---
 
-All three listings are live above. RAM goes first, as always.
+Coolers are already gone. RAM and board are live above.
 
 *Previous flip in the same series: [Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At](/blog/lga2011-dual-socket-cheat-code).*
