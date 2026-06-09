@@ -1,11 +1,11 @@
 ---
 title: "Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At"
 date: 2026-06-02
-description: "Average buyers see old server hardware and scroll past. Flippers see DDR3 or DDR4 ECC worth more than the asking price. Here's how the Z8PE flip went, and why I just bought its big brother."
+description: "Average buyers see old server hardware and scroll past. Flippers see DDR3 or DDR4 ECC worth more than the asking price. Here's how the Z9PE-D8 flip went, and why I just bought its big brother."
 tags: ["dual-socket", "lga2011", "lga2011-v3", "xeon", "ecc", "ddr3", "ddr4", "homelab", "flip", "ebay", "deal", "workstation", "asus"]
 ---
 
-I paid $150 for an ASUS Z8PE-D8 bundle — two E5-2697s and 256GB of DDR3 ECC. Came out $220 ahead. Then I bought the big brother.
+I paid $150 for an ASUS Z9PE-D8 WS bundle — two E5-2697s and 256GB of DDR3 ECC. Came out $220 ahead. Then I bought the big brother.
 
 Here's the whole story.
 
@@ -23,7 +23,7 @@ Most people look at that and think: old, weird, server stuff, probably broken. T
 
 ## The Payload
 
-**LGA 2011 (Sandy/Ivy Bridge-EP):** Dual E5-2600 or E5-2600 v2 CPUs. Quad-channel DDR3 ECC per socket — eight channels total in a dual-socket system. 128GB to 512GB of RAM is normal. The Z8PE-D8 has eight DIMM slots. Fill them and you've got a lot of memory.
+**LGA 2011 (Sandy/Ivy Bridge-EP):** Dual E5-2600 or E5-2600 v2 CPUs. Quad-channel DDR3 ECC per socket — eight channels total in a dual-socket system. 128GB to 512GB of RAM is normal. The Z9PE-D8 WS has eight DIMM slots. Fill them and you've got a lot of memory.
 
 **LGA 2011-v3 (Haswell/Broadwell-EP):** Same story, upgraded. Dual E5-2600 v3 or v4 CPUs, quad-channel DDR4 ECC per socket. This is where it gets genuinely interesting right now, because DDR4 ECC prices have not come down the way consumer DDR4 did. The RAM apocalypse hit server-grade sticks differently.
 
@@ -31,9 +31,9 @@ The CPUs have some value. The RAM is the score. And almost nobody clicking on th
 
 ---
 
-## The Z8PE Flip
+## The Z9PE-D8 Flip
 
-Paid $150 for the whole bundle: ASUS Z8PE-D8, two E5-2697s, and 256GB of DDR3 ECC. Then I actually looked at the board.
+Paid $150 for the whole bundle: ASUS Z9PE-D8 WS, two E5-2697s, and 256GB of DDR3 ECC. Then I actually looked at the board.
 
 IO corner was damaged. Bent up in a way that made me nervous about the board long-term. I'd seen this before — [shipping damage, IO corner, same story](/blog/dual-socket-ai-lab). I decided to cut my losses before I even tried to boot it.
 
@@ -43,7 +43,7 @@ The bundle cost me $150. The RAM alone sold for $200. At this point the board an
 
 Then I found a listing for untested 64GB DDR3 ECC sticks for $30. I figured: I've got a free board, what's $30 to find out if it works? Grabbed them, installed them. Board posted first try. Bent IO corner didn't matter at all.
 
-So now I had a working ASUS Z8PE-D8 with two E5-2697s and 64GB of DDR3 ECC, and my total out-of-pocket was $150 + $30 = $180 — minus the $200 I already made on the RAM sale, putting me at **negative $20** before selling the board. Sold the whole working combo for $200.
+So now I had a working ASUS Z9PE-D8 WS with two E5-2697s and 64GB of DDR3 ECC, and my total out-of-pocket was $150 + $30 = $180 — minus the $200 I already made on the RAM sale, putting me at **negative $20** before selling the board. Sold the whole working combo for $200.
 
 Final math: **+$220 net profit** on a $150 starting investment.
 
@@ -51,7 +51,7 @@ Final math: **+$220 net profit** on a $150 starting investment.
 
 ## The RAM Math (Why This Always Works)
 
-The Z8PE story is the template. You buy a bundle that looks scary — old, huge, server hardware, damaged, "AS-IS." Most buyers bounce. You don't, because you know the RAM is worth more than the ask.
+The Z9PE-D8 story is the template. You buy a bundle that looks scary — old, huge, server hardware, damaged, "AS-IS." Most buyers bounce. You don't, because you know the RAM is worth more than the ask.
 
 DDR3 ECC RDIMMs aren't glamorous but they have a real market. ECC RDIMM buyers are homelabbers, sysadmins, and small businesses. They shop by capacity and compatibility. They pay market rate without question because they know exactly what they need and they're not comparing it to consumer sticks.
 
@@ -61,9 +61,9 @@ DDR4 ECC is better. The v3 boards (LGA 2011-v3) carry DDR4, and those prices hav
 
 ## The Z10PE-D16
 
-After the Z8PE I went looking again.
+After the Z9PE-D8 I went looking again.
 
-Found an ASUS Z10PE-D16 — the big brother to the Z8PE-D8. The D8 has 8 DIMM slots. The D16 has **16 DIMM slots**, LGA 2011-v3, DDR4 ECC. It's a larger, newer, more capable board, and it's even more invisible to the average buyer because it looks even more like "serious server equipment that I definitely don't understand."
+Found an ASUS Z10PE-D16 — the big brother to the Z9PE-D8 WS. The D8 has 8 DIMM slots. The D16 has **16 DIMM slots**, LGA 2011-v3, DDR4 ECC. It's a larger, newer, more capable board, and it's even more invisible to the average buyer because it looks even more like "serious server equipment that I definitely don't understand."
 
 Bundle came with two E5-2620s, which are worth almost nothing — low-end Xeons, nobody wants them. Doesn't matter. What it also came with: **64GB of DDR4 ECC RAM**. Right now that RAM goes for around $200 by itself. The board alone goes for around $200. And then on top of all that, the seller threw in **two Noctua dual tower air coolers**. I don't know why. I'm not asking questions.
 

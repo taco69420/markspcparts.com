@@ -7,7 +7,7 @@ tags: ["dual-socket", "workstation", "server", "ASUS", "Xeon", "Z10PE-D16", "IPM
 
 ![ASUS Z10PE-D16 with dual Xeon E5-2620 v4 and Noctua NH-D9DX coolers, top-down view](/images/posts/dual-socket-16/hero-dual.jpg)
 
-$280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registered ECC, and two Noctua NH-D9DX tower coolers already mounted. The seller had no idea. Nobody bid against me. Same story as [the Z8PE-D8 before it](/blog/lga2011-dual-socket-cheat-code) — and this one is better.
+$280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registered ECC, and two Noctua NH-D9DX tower coolers already mounted. The seller had no idea. Nobody bid against me. Same story as [the Z9PE-D8 WS before it](/blog/lga2011-dual-socket-cheat-code) — and this one is better.
 
 ---
 
@@ -79,13 +79,13 @@ Board is confirmed working. Nothing to hedge on.
 ![Angled view of Z10PE-D16 SATA and storage connectivity area](/images/posts/dual-socket-16/sata.jpg)
 *SATA ports, M.2, and headers all clean. No damage, no missing caps, nothing bent.*
 
-The IO corner is fine — worth noting because this is where I found damage on [the Z8PE before this one](/blog/lga2011-dual-socket-cheat-code). This board traveled well.
+The IO corner is fine — worth noting because this is where I found damage on [the Z9PE-D8 before this one](/blog/lga2011-dual-socket-cheat-code). This board traveled well.
 
 ---
 
 ## How I'm Splitting It
 
-Same playbook as the Z8PE flip. Three-way split, RAM first.
+Same playbook as the Z9PE-D8 flip. Three-way split, RAM first.
 
 **Noctua coolers first — already sold.** Listed both NH-D9DX i4 3U units individually at $50 each. Gone. $100 recovered before anything else shipped.
 
