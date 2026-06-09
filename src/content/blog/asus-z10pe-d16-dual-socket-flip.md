@@ -115,4 +115,8 @@ The RAM in this bundle is what makes the math work. $280 for the whole thing, an
 
 Coolers are already gone. RAM and board are live above.
 
+---
+
+As much as I'd love to keep this thing and play with 256GB of DDR4 ECC and a full IPMI setup — I've got something way more fun in the works. New build coming together around an ASUS ROG Z490 Apex and I'm pushing the memory to something stupid like 4000MHz CL15. Very different energy from a dual-socket server board, but that's kind of the point. Stay tuned.
+
 *Previous flip in the same series: [Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At](/blog/lga2011-dual-socket-cheat-code).*
