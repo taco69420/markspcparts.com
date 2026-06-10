@@ -89,13 +89,15 @@ Same playbook as the Z9PE-D8 flip. Three-way split, RAM first.
 
 **Noctua coolers first.** Listed both NH-D9DX i4 3U units individually at $50 each — one already sold, one still available. $50 in the pocket before anything else ships.
 
+→ **[Noctua NH-D9DX i4 3U — $50](/inventory/noctua-nh-d9dx-i4-3u)**
+
 **RAM next.** The 64GB DDR4 ECC RDIMM kit is listed at $200. Four matched Micron 16GB PC4-2400T sticks — exactly what LGA 2011-v3 homelabbers are buying right now, and those buyers don't negotiate because they know what they need.
 
-→ **[RAM LISTING]**
+→ **[64GB DDR4 ECC RDIMM Kit — $200](/inventory/micron-64gb-ddr4-ecc)**
 
 **Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s listed at $200, sold tested and confirmed. The E5-2620 v4 is not a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and seven PCIe slots in a confirmed-working package. That's a real homelab server at surplus pricing, and the buyer that wants it will pay for a tested combo over a gamble.
 
-→ **[BOARD+CPU LISTING]**
+→ **[ASUS Z10PE-D16 + Dual E5-2620 v4 — $200](/inventory/z10pe-d16)**
 
 Total gross on the full split: **$500** before fees on a $280 buy-in.
 
@@ -113,7 +115,7 @@ The RAM in this bundle is what makes the math work. $280 for the whole thing, an
 
 ---
 
-Coolers are already gone. RAM and board are live above.
+Cooler listing is live. RAM and board are live. Links above.
 
 ---
 
