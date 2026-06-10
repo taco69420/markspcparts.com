@@ -5,5 +5,15 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://markspcparts.com',
   trailingSlash: 'never',
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    sitemap({
+      filter: (page) =>
+        !page.includes('/search'),
+      serialize(item) {
+        item.lastmod = new Date().toISOString().split('T')[0];
+        return item;
+      },
+    }),
+  ],
 });

@@ -41,8 +41,19 @@ const jsonLd = {
     availability: 'https://schema.org/InStock',
     priceCurrency: 'USD',
     price: '200',
+    priceValidUntil: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
     url: ebayUrl,
     seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: { '@type': 'MonetaryAmount', currency: 'USD' },
+      shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'US' },
+    },
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'US',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+    },
   },
 };
 
@@ -102,7 +113,7 @@ const breadcrumbLd = {
       <a
         href={ebayUrl}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener noreferrer sponsored"
         class="shrink-0 inline-flex items-center gap-1.5 text-xs text-yellow-400 hover:text-yellow-300 font-semibold transition-colors"
       >
         <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
@@ -209,7 +220,7 @@ const breadcrumbLd = {
           <a
             href={ebayUrl}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer sponsored"
             class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20"
           >
             <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -253,7 +264,7 @@ const breadcrumbLd = {
       <a
         href={ebayUrl}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener noreferrer sponsored"
         class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20 shrink-0"
       >
         View on eBay →
