@@ -5,6 +5,9 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="About" description="Mark's PC Parts — rare and enthusiast hardware from Redlands, CA.">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+  </Fragment>
   <Nav slot="nav" />
 
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">

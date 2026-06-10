@@ -27,6 +27,13 @@ const related = allPosts
   .map(({ post }) => post);
 const { Content } = await post.render();
 
+// Auto-extract first image from post body for OG + Article schema
+const firstImageMatch = post.body.match(/!\[.*?\]\(([^)]+)\)/);
+const ogImagePath = firstImageMatch?.[1];
+const ogImage = ogImagePath
+  ? (ogImagePath.startsWith('http') ? ogImagePath : `https://markspcparts.com${ogImagePath}`)
+  : undefined;
+
 const dateStr = post.data.date.toLocaleDateString('en-US', {
   year: 'numeric',
   month: 'long',

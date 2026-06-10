@@ -12,7 +12,7 @@ export interface Props {
 const {
   title,
   description = "Rare, collectible, and enthusiast PC hardware — Mark's PC Parts",
-  ogImage = 'https://markspcparts.com/images/inventory/rog-dominus-extreme/rogdom2.jpg',
+  ogImage = 'https://markspcparts.com/images/posts/dual-socket-16/hero-dual.jpg',
   ogType = 'website',
   canonicalUrl,
 } = Astro.props;
@@ -41,6 +41,7 @@ const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toStri
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter / X Card -->
     <meta name="twitter:card" content="summary_large_image" />

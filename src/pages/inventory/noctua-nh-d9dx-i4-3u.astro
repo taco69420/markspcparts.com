@@ -44,6 +44,31 @@ const jsonLd = {
     seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
   },
 };
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://markspcparts.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Inventory",
+      "item": "https://markspcparts.com/inventory"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Noctua NH-D9DX i4 3U",
+      "item": "https://markspcparts.com/inventory/noctua-nh-d9dx-i4-3u"
+    }
+  ]
+};
 ---
 
 <Layout
@@ -54,6 +79,7 @@ const jsonLd = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
   <Nav slot="nav" />
 
