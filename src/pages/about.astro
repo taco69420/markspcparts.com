@@ -2,6 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Mark',
+  url: 'https://markspcparts.com/about',
+  sameAs: [
+    'https://www.tiktok.com/@tacoismybigboydaddy',
+    'https://ebay.us/m/E2CfrF',
+  ],
+  jobTitle: 'Enthusiast Hardware Collector',
+  description: 'Rare and enthusiast PC hardware collector based in Redlands, CA.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Redlands',
+    addressRegion: 'CA',
+    addressCountry: 'US',
+  },
+};
 ---
 
 <Layout title="About" description="Mark's PC Parts — rare and enthusiast hardware from Redlands, CA.">
