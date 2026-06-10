@@ -87,7 +87,7 @@ The IO corner is fine — worth noting because this is where I found damage on [
 
 Same playbook as the Z9PE-D8 flip. Three-way split, RAM first.
 
-**Noctua coolers first — already sold.** Listed both NH-D9DX i4 3U units individually at $50 each. Gone. $100 recovered before anything else shipped.
+**Noctua coolers first.** Listed both NH-D9DX i4 3U units individually at $50 each — one already sold, one still available. $50 in the pocket before anything else ships.
 
 **RAM next.** The 64GB DDR4 ECC RDIMM kit is listed at $200. Four matched Micron 16GB PC4-2400T sticks — exactly what LGA 2011-v3 homelabbers are buying right now, and those buyers don't negotiate because they know what they need.
 
