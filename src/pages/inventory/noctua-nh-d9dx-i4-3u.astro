@@ -1,0 +1,284 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+
+const ebayUrl = 'https://ebay.io/m/I1uf7I';
+
+const images = [
+  { src: '/images/posts/noctua-sale/side-2-noc.jpg', alt: 'Noctua NH-D9DX i4 3U — front view showing dual fin stacks and NF-A9 fan' },
+  { src: '/images/posts/noctua-sale/side-noc.jpg', alt: 'Noctua NH-D9DX i4 3U — side view showing fin stack and heatpipes' },
+  { src: '/images/posts/noctua-sale/cold-plate.jpg', alt: 'Noctua NH-D9DX i4 3U — underside showing copper cold plate and Square-ILM mounting hardware' },
+];
+
+const specs = [
+  { label: 'Model', value: 'Noctua NH-D9DX i4 3U' },
+  { label: 'Fan', value: 'Noctua NF-A9 92mm PWM (attached)' },
+  { label: 'Socket', value: 'LGA 2011 Square-ILM compatible' },
+  { label: 'CPU Support', value: 'Intel Xeon E5 v3 / v4 (LGA 2011-3)' },
+  { label: 'Height', value: '95mm — fits 3U and taller chassis' },
+  { label: 'Mounting Hardware', value: 'Square-ILM bracket included' },
+  { label: 'Quantity Available', value: 'Two units — message for both' },
+  { label: 'Condition', value: 'Used — some cosmetic wear, minor fin bends, fan spins freely' },
+  { label: 'Allen Key', value: 'NOT included — you must source a 2.5mm hex key separately' },
+  { label: 'Thermal Paste', value: 'NOT included' },
+  { label: 'Original Box', value: 'NOT included' },
+  { label: 'Price', value: '$50 per unit · $15 shipping' },
+  { label: 'Shipping', value: 'USA only' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Noctua NH-D9DX i4 3U — LGA 2011 Square-ILM',
+  description: 'Used Noctua NH-D9DX i4 3U server CPU cooler with NF-A9 fan and Square-ILM mounting hardware. Pulled from a working dual-socket Xeon workstation. No Allen key included.',
+  image: 'https://markspcparts.com/images/posts/noctua-sale/side-2-noc.jpg',
+  url: 'https://markspcparts.com/inventory/noctua-nh-d9dx-i4-3u',
+  brand: { '@type': 'Brand', name: 'Noctua' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'USD',
+    price: '50',
+    url: ebayUrl,
+    seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
+  },
+};
+---
+
+<Layout
+  title="Noctua NH-D9DX i4 3U — LGA 2011 Square-ILM — For Sale"
+  description="Used Noctua NH-D9DX i4 3U with NF-A9 fan and Square-ILM bracket. Pulled from working dual-socket workstation. $50 + $15 shipping. No Allen key included — read before buying."
+  ogImage="https://markspcparts.com/images/posts/noctua-sale/side-2-noc.jpg"
+  canonicalUrl="https://markspcparts.com/inventory/noctua-nh-d9dx-i4-3u"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+  <Nav slot="nav" />
+
+  <!-- Breadcrumb -->
+  <div class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-steel font-mono">
+      <a href="/" class="hover:text-accent-light transition-colors">home</a>
+      <span class="text-white/20">/</span>
+      <a href="/inventory" class="hover:text-accent-light transition-colors">inventory</a>
+      <span class="text-white/20">/</span>
+      <span class="text-slate-300">noctua-nh-d9dx-i4-3u</span>
+    </div>
+  </div>
+
+  <!-- Status banner -->
+  <div class="bg-accent/10 border-b border-accent/20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
+      <p class="text-sm text-accent-light font-medium">Available on eBay — $50 + $15 shipping · Two units available · USA only</p>
+      <a
+        href={ebayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="shrink-0 inline-flex items-center gap-1.5 text-xs text-yellow-400 hover:text-yellow-300 font-semibold transition-colors"
+      >
+        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+        </svg>
+        View on eBay →
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-14 items-start">
+
+      <!-- Image gallery -->
+      <div class="flex flex-col gap-3">
+        <div class="rounded-xl overflow-hidden bg-surface-700">
+          <img
+            id="main-image"
+            src={images[0].src}
+            alt={images[0].alt}
+            class="w-full object-contain max-h-[520px] bg-surface-700"
+          />
+        </div>
+        <div class="grid grid-cols-3 gap-2">
+          {images.map((img, i) => (
+            <button
+              data-src={img.src}
+              data-alt={img.alt}
+              class:list={[
+                'rounded-lg overflow-hidden border-2 transition-all duration-150 focus:outline-none thumbnail-btn aspect-square',
+                i === 0 ? 'border-accent' : 'border-white/10 hover:border-accent/40',
+              ]}
+            >
+              <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Details -->
+      <div class="mt-10 lg:mt-0">
+        <div class="flex items-start justify-between gap-4 mb-1">
+          <span class="text-xs font-mono text-accent-light uppercase tracking-widest">CPU Cooler · LGA 2011 Square-ILM</span>
+          <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/30 shrink-0">
+            Available
+          </span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mt-2 leading-tight">Noctua NH-D9DX i4 3U</h1>
+        <p class="text-steel font-mono text-sm mt-1">NF-A9 92mm PWM · Square-ILM · 95mm height · LGA 2011-3</p>
+
+        <div class="flex flex-wrap items-center gap-3 mt-3">
+          <span class="px-2.5 py-1 rounded-full text-xs font-medium border text-orange-400 bg-orange-400/10 border-orange-400/20">
+            Fair
+          </span>
+          <span class="text-xs text-steel font-mono">Pulled from working dual-socket system · two units available</span>
+        </div>
+
+        <!-- Condition warning -->
+        <div class="mt-6 p-4 rounded-lg bg-orange-500/5 border border-orange-500/20">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-orange-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.07 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            </svg>
+            <div>
+              <p class="text-sm font-semibold text-orange-300 mb-1">Read before buying — condition notes</p>
+              <ul class="space-y-1 text-xs text-steel leading-relaxed">
+                <li class="flex items-start gap-1.5"><span class="text-orange-400 shrink-0 mt-px">›</span> Used cooler — cosmetic wear, minor scuffs, light dust residue</li>
+                <li class="flex items-start gap-1.5"><span class="text-orange-400 shrink-0 mt-px">›</span> Some fins are slightly bent — does not affect thermal performance</li>
+                <li class="flex items-start gap-1.5"><span class="text-orange-400 shrink-0 mt-px">›</span> Fan spins freely, no cracks, no broken parts</li>
+                <li class="flex items-start gap-1.5"><span class="text-orange-400 shrink-0 mt-px">›</span> Priced accordingly — this isn't a display piece</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Allen key warning -->
+        <div class="mt-4 p-4 rounded-lg bg-red-500/5 border border-red-500/20">
+          <div class="flex items-start gap-3">
+            <svg class="w-4 h-4 text-red-400 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+            </svg>
+            <div>
+              <p class="text-sm font-semibold text-red-300 mb-1">Allen key NOT included</p>
+              <p class="text-xs text-steel leading-relaxed">
+                Mounting this cooler requires a 2.5mm hex / Allen key that is <strong class="text-slate-300">not included</strong>. No original box or accessories. No thermal paste. You will need to source the Allen key separately before you can install this cooler.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- What's included -->
+        <div class="mt-4 p-4 rounded-lg bg-surface-700/50 border border-white/10">
+          <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">What's Included</p>
+          <ul class="space-y-1.5">
+            {[
+              'NH-D9DX i4 3U heatsink',
+              'Noctua NF-A9 92mm PWM fan (attached)',
+              'Square-ILM mounting hardware',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-sm text-steel">
+                <span class="text-accent-light mt-px select-none shrink-0">›</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-3 pt-3 border-t border-white/5">
+            <p class="text-xs font-mono text-steel uppercase tracking-wide mb-2">Not Included</p>
+            <ul class="space-y-1">
+              {['Original box / accessories', '2.5mm Allen key (required for installation)', 'Thermal paste'].map(item => (
+                <li class="flex items-start gap-2 text-sm text-steel/60">
+                  <span class="text-red-400/60 mt-px select-none shrink-0">✕</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Two units note -->
+        <div class="mt-4 p-3 rounded-lg bg-accent/5 border border-accent/20">
+          <p class="text-xs text-accent-light">
+            <strong>Two units available.</strong> Message me on eBay if you want both — happy to work something out.
+          </p>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-6 flex flex-col sm:flex-row gap-3">
+          <a
+            href={ebayUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M10 6v2H5v11h11v-5h2v6a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1h6zm11-3v8h-2V6.413l-7.293 7.294-1.414-1.414L17.585 5H13V3h8z"/>
+            </svg>
+            Buy on eBay — $50
+          </a>
+          <a
+            href="/inventory"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
+          >
+            ← Inventory
+          </a>
+        </div>
+
+        <p class="mt-4 text-xs text-steel">
+          Questions? Send me a message on eBay — happy to make a deal.
+        </p>
+      </div>
+    </div>
+
+    <!-- Specs table -->
+    <div class="mt-16 border-t border-white/5 pt-14">
+      <h2 class="text-xl font-bold mb-8">Full Specifications</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden border border-white/5">
+        {specs.map(spec => (
+          <div class="bg-surface-800 px-5 py-4">
+            <p class="text-xs text-steel font-mono uppercase tracking-wide mb-1">{spec.label}</p>
+            <p class="text-sm text-slate-100 font-medium">{spec.value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 p-6 rounded-xl bg-surface-800 border border-white/10">
+      <div>
+        <p class="font-semibold text-slate-100">$50 per unit · $15 shipping · USA only</p>
+        <p class="text-sm text-steel mt-0.5">No returns · two units available · message on eBay for a deal on both</p>
+      </div>
+      <a
+        href={ebayUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/20 shrink-0"
+      >
+        View on eBay →
+      </a>
+    </div>
+
+    <!-- Blog link -->
+    <div class="mt-6 text-center">
+      <a href="/blog/asus-z10pe-d16-dual-socket-flip" class="text-sm text-steel hover:text-accent-light transition-colors underline underline-offset-4">
+        Read about the system these came from →
+      </a>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const thumbBtns = document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn');
+
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mainImage.src = btn.dataset.src!;
+      mainImage.alt = btn.dataset.alt!;
+      thumbBtns.forEach(b => b.classList.replace('border-accent', 'border-white/10'));
+      btn.classList.replace('border-white/10', 'border-accent');
+    });
+  });
+</script>
