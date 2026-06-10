@@ -32,12 +32,23 @@ const jsonLd = {
   image: 'https://markspcparts.com/images/inventory/xeon-w-3175x/3175x1.jpg',
   url: 'https://markspcparts.com/inventory/xeon-w-3175x',
   brand: { '@type': 'Brand', name: 'Intel' },
+  itemCondition: 'https://schema.org/UsedCondition',
   offers: {
     '@type': 'Offer',
     availability: 'https://schema.org/OutOfStock',
     priceCurrency: 'USD',
     seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
   },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://markspcparts.com' },
+    { '@type': 'ListItem', position: 2, name: 'Inventory', item: 'https://markspcparts.com/inventory' },
+    { '@type': 'ListItem', position: 3, name: 'Intel Xeon W-3175X', item: 'https://markspcparts.com/inventory/xeon-w-3175x' },
+  ],
 };
 ---
 
@@ -49,6 +60,7 @@ const jsonLd = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
   <Nav slot="nav" />
 

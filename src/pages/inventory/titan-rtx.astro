@@ -31,12 +31,23 @@ const jsonLd = {
   image: 'https://markspcparts.com/images/inventory/titan-rtx/titan1.jpg',
   url: 'https://markspcparts.com/inventory/titan-rtx',
   brand: { '@type': 'Brand', name: 'NVIDIA' },
+  itemCondition: 'https://schema.org/NewCondition',
   offers: {
     '@type': 'Offer',
     availability: 'https://schema.org/OutOfStock',
     priceCurrency: 'USD',
     seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
   },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://markspcparts.com' },
+    { '@type': 'ListItem', position: 2, name: 'Inventory', item: 'https://markspcparts.com/inventory' },
+    { '@type': 'ListItem', position: 3, name: 'NVIDIA Titan RTX', item: 'https://markspcparts.com/inventory/titan-rtx' },
+  ],
 };
 ---
 
@@ -48,6 +59,7 @@ const jsonLd = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
   <Nav slot="nav" />
 
@@ -58,7 +70,7 @@ const jsonLd = {
       <span class="text-white/20">/</span>
       <a href="/inventory" class="hover:text-accent-light transition-colors">inventory</a>
       <span class="text-white/20">/</span>
-      <span class="text-slate-300">nvidia-titan-rtx</span>
+      <span class="text-slate-300">titan-rtx</span>
     </div>
   </div>
 

@@ -38,10 +38,62 @@ const parts = [
     href: '/inventory/noctua-nh-d9dx-i4-3u',
     ebayUrl: 'https://ebay.io/m/I1uf7I',
   },
+  {
+    name: 'NVIDIA Titan RTX',
+    category: 'GPU',
+    specs: ['24 GB GDDR6 · 384-bit bus', 'Turing TU102 · 4608 CUDA cores', 'NVLink support', 'Museum condition — display only'],
+    condition: 'Mint' as const,
+    status: 'Not Listed' as const,
+    description: 'Museum-condition NVIDIA Titan RTX — 24 GB GDDR6, NVLink support. Picked up from a local collector who only ever powered it on to test it.',
+    image: '/images/inventory/titan-rtx/titan1.jpg',
+    href: '/inventory/titan-rtx',
+  },
+  {
+    name: 'ASUS ROG Dominus Extreme',
+    category: 'Motherboard',
+    specs: ['Intel LGA 3647 · C621 chipset', 'W-3175X only (28C/56T)', '12x DDR4 DIMM · 192GB max', 'Complete with all original accessories'],
+    condition: 'Good' as const,
+    status: 'Not Listed' as const,
+    description: 'ASUS ROG Dominus Extreme LGA 3647 motherboard — fully working, complete with original accessories. Might list later.',
+    image: '/images/inventory/rog-dominus-extreme/rogdom2.jpg',
+    href: '/inventory/rog-dominus-extreme',
+  },
+  {
+    name: 'Intel Xeon W-3175X',
+    category: 'CPU',
+    specs: ['28 cores / 56 threads · Unlocked', 'LGA 3647 · Dominus Extreme only', '48 PCIe 3.0 lanes · 255W TDP', 'Fair cosmetic — solid silicon'],
+    condition: 'Fair' as const,
+    status: 'Not Listed' as const,
+    description: 'Intel Xeon W-3175X — 28 cores, unlocked multiplier, LGA 3647. Fair cosmetic condition (IHS scratches), but silicon is solid. Might list later.',
+    image: '/images/inventory/xeon-w-3175x/3175x1.jpg',
+    href: '/inventory/xeon-w-3175x',
+  },
 ];
+
+const inventoryLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: "Mark's PC Parts — Inventory",
+  description: 'Rare, collectible, and enthusiast PC hardware sourced, tested, and documented by Mark in Redlands, CA.',
+  url: 'https://markspcparts.com/inventory',
+  hasPart: parts.filter(p => p.status === 'Available').map(p => ({
+    '@type': 'Product',
+    name: p.name,
+    url: `https://markspcparts.com${p.href}`,
+    image: `https://markspcparts.com${p.image}`,
+  })),
+};
 ---
 
-<Layout title="Inventory" description="Browse Mark's collection of rare, collectible, and enthusiast PC hardware.">
+<Layout
+  title="Inventory"
+  description="Browse Mark's collection of rare, collectible, and enthusiast PC hardware. Available now: DDR4 ECC RAM, dual-socket workstation boards, and more."
+  canonicalUrl="https://markspcparts.com/inventory"
+  ogImage="https://markspcparts.com/images/posts/dual-socket-16/hero-dual.jpg"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(inventoryLd)} />
+  </Fragment>
   <Nav slot="nav" />
 
   <!-- Page header -->

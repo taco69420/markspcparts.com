@@ -39,12 +39,23 @@ const jsonLd = {
   image: 'https://markspcparts.com/images/inventory/rog-dominus-extreme/rogdom2.jpg',
   url: 'https://markspcparts.com/inventory/rog-dominus-extreme',
   brand: { '@type': 'Brand', name: 'ASUS' },
+  itemCondition: 'https://schema.org/UsedCondition',
   offers: {
     '@type': 'Offer',
     availability: 'https://schema.org/OutOfStock',
     priceCurrency: 'USD',
     seller: { '@type': 'Person', name: 'Mark', url: 'https://markspcparts.com' },
   },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://markspcparts.com' },
+    { '@type': 'ListItem', position: 2, name: 'Inventory', item: 'https://markspcparts.com/inventory' },
+    { '@type': 'ListItem', position: 3, name: 'ASUS ROG Dominus Extreme', item: 'https://markspcparts.com/inventory/rog-dominus-extreme' },
+  ],
 };
 ---
 
@@ -56,6 +67,7 @@ const jsonLd = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
   </Fragment>
   <Nav slot="nav" />
 

@@ -26,6 +26,24 @@ const jsonLd = {
   },
 };
 
+const orgLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: "Mark's PC Parts",
+  url: 'https://markspcparts.com',
+  description: 'Rare, collectible, and enthusiast PC hardware sourced, tested, and documented by Mark in Redlands, CA.',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Redlands',
+    addressRegion: 'CA',
+    addressCountry: 'US',
+  },
+  sameAs: [
+    'https://www.tiktok.com/@tacoismybigboydaddy',
+    'https://ebay.us/m/E2CfrF',
+  ],
+};
+
 const featured = [
   {
     name: 'ASUS Z10PE-D16 + Dual Xeon E5-2620 v4',
@@ -70,6 +88,7 @@ const featured = [
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
   </Fragment>
   <Nav slot="nav" />
 
