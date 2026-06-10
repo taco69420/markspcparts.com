@@ -48,6 +48,7 @@ const jsonLd = {
   '@type': 'Article',
   headline: post.data.title,
   description: post.data.description ?? '',
+  ...(ogImage ? { image: ogImage } : {}),
   datePublished: post.data.date.toISOString(),
   author: {
     '@type': 'Person',
