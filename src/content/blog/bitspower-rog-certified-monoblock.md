@@ -23,7 +23,7 @@ It's about what I found when I pulled the water block off.
 
 When I lifted the block off to repaste the CPU, I got my first real look at it. It wasn't a generic third-party piece.
 
-**"ROG CERTIFIED"** is engraved into the clear acrylic top. Engraved into the metal. And when I looked at the PCB itself — silkscreened directly onto the board below where the block sits — **ROG CERTIFIED** again.
+**"ROG CERTIFIED"** is engraved into the clear acrylic top. Engraved into the metal.
 
 This wasn't a random compatible block. This was a purpose-built, officially sanctioned collaboration piece. I identified it as the **Bitspower ROG Certified Rampage V Extreme Full Cover Block**, clear variant, model **BP-ROGCR5EFCB**. It's designed exclusively for this board and nothing else.
 
