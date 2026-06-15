@@ -1,0 +1,51 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect x="0" y="0" width="900" height="520" fill="#0f0f0f"/>
+
+  <!-- Title -->
+  <text x="450" y="40" text-anchor="middle" font-size="25" font-weight="700" fill="#e5e5e5">14 × 14 INCHES &#8212; <tspan fill="#e8a96a">THE SIZE OF A LARGE PIZZA</tspan></text>
+  <text x="450" y="61" text-anchor="middle" font-size="13" fill="#999">Board footprint, to scale &#8212; shared bottom-left corner</text>
+
+  <!-- Scale: 28 px per inch. Bottom-left corner anchored at x=110, y=470 -->
+  <!-- Dominus 14x14 = 392x392 ; E-ATX 12x13 = 336x364 ; ATX 12x9.6 = 336x269 -->
+
+  <!-- Largest: Dominus 14x14 (green) -->
+  <rect x="110" y="78" width="392" height="392" rx="8" fill="#11241a" stroke="#4ade80" stroke-width="2.5"/>
+
+  <!-- Pizza: dashed circle inscribed in Dominus square -->
+  <circle cx="306" cy="274" r="196" fill="#4ade80" opacity="0.04"/>
+  <circle cx="306" cy="274" r="196" fill="none" stroke="#e8a96a" stroke-width="1.8" stroke-dasharray="6 7" opacity="0.7"/>
+  <text x="306" y="270" text-anchor="middle" font-size="13" font-weight="700" fill="#e8a96a" opacity="0.9">Large hand-tossed</text>
+  <text x="306" y="289" text-anchor="middle" font-size="12" fill="#e8a96a" opacity="0.8">same footprint</text>
+
+  <!-- Medium: E-ATX 12x13 (amber) -->
+  <rect x="110" y="106" width="336" height="364" rx="8" fill="none" stroke="#e8a96a" stroke-width="2.2" stroke-dasharray="2 0"/>
+
+  <!-- Smallest: ATX 12x9.6 (grey) -->
+  <rect x="110" y="201" width="336" height="269" rx="8" fill="none" stroke="#999" stroke-width="2"/>
+
+  <!-- Labels: stacked top-right, color-keyed -->
+  <g>
+    <rect x="556" y="120" width="20" height="20" rx="4" fill="none" stroke="#4ade80" stroke-width="2.5"/>
+    <text x="586" y="130" font-size="14" font-weight="700" fill="#4ade80">ROG Dominus Extreme</text>
+    <text x="586" y="148" font-size="12" fill="#ccc">14 × 14 in &#8212; 12 DIMM slots</text>
+  </g>
+  <g>
+    <rect x="556" y="180" width="20" height="20" rx="4" fill="none" stroke="#e8a96a" stroke-width="2.2"/>
+    <text x="586" y="190" font-size="14" font-weight="700" fill="#e8a96a">E-ATX flagship</text>
+    <text x="586" y="208" font-size="12" fill="#ccc">~12 × 13 in</text>
+  </g>
+  <g>
+    <rect x="556" y="240" width="20" height="20" rx="4" fill="none" stroke="#999" stroke-width="2"/>
+    <text x="586" y="250" font-size="14" font-weight="700" fill="#bbb">Standard ATX</text>
+    <text x="586" y="268" font-size="12" fill="#ccc">12 × 9.6 in</text>
+  </g>
+
+  <!-- Aside -->
+  <text x="586" y="330" font-size="13" fill="#999" font-weight="700">The Dominus dwarfs them all.</text>
+  <text x="586" y="350" font-size="12" fill="#999">Over 1.7× the area of a standard</text>
+  <text x="586" y="367" font-size="12" fill="#999">ATX board &#8212; and it needs every</text>
+  <text x="586" y="384" font-size="12" fill="#999">square inch for 32 power stages.</text>
+
+  <!-- Watermark -->
+  <text x="892" y="513" text-anchor="end" fill="#ffffff" opacity="0.55" font-size="12">markspcparts.com</text>
+</svg>
