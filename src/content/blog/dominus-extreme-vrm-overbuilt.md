@@ -93,4 +93,4 @@ The VRM isn't going to be what kills a Dominus Extreme. Nothing about it is even
 
 ---
 
-*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, 570A+ sustained, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs, driving a [W-3175X that pulls 400 watts](/blog/xeon-w-3175x-270-dollar-monster) at ~12A per phase. Full board details on the [inventory page](/inventory/rog-dominus-extreme).*
+*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, 570A+ sustained, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs, driving a [W-3175X that pulls 400 watts](/blog/xeon-w-3175x-270-dollar-monster) at ~12A per phase.*
