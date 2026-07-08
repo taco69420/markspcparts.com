@@ -36,36 +36,48 @@
   (function () {
     var GA_ID = 'G-XGNKDW9ESZ';
 
-    function loadGA() {
-      if (window.__gaLoaded) return;
-      window.__gaLoaded = true;
-      var s = document.createElement('script');
-      s.async = true;
-      s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag('js', new Date());
-      window.gtag('config', GA_ID);
-    }
+    // gtag bootstrap — must exist before we set consent or load the tag.
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
 
-    var banner = document.getElementById('cookie-banner');
+    // Stored choice: 'granted' | 'denied' | null (undecided).
     var consent = localStorage.getItem('cookie-consent');
 
-    if (consent === 'granted') {
-      loadGA();
-    } else if (!consent) {
-      banner.style.display = 'block';
-    }
+    // Consent Mode v2 defaults. Analytics is granted only if the user
+    // previously accepted; otherwise denied. While denied, GA still sends
+    // anonymous, cookieless pings so traffic is counted — it just can't set
+    // cookies or collect identifiers until the user accepts.
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: consent === 'granted' ? 'granted' : 'denied',
+      wait_for_update: 500,
+    });
+
+    // Load GA on every page load regardless of consent state.
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(s);
+
+    gtag('js', new Date());
+    gtag('config', GA_ID);
+
+    // Only prompt if the user hasn't chosen yet.
+    var banner = document.getElementById('cookie-banner');
+    if (!consent) banner.style.display = 'block';
 
     document.getElementById('accept-cookies').addEventListener('click', function () {
       localStorage.setItem('cookie-consent', 'granted');
-      loadGA();
+      gtag('consent', 'update', { analytics_storage: 'granted' });
       banner.style.display = 'none';
     });
 
     document.getElementById('decline-cookies').addEventListener('click', function () {
       localStorage.setItem('cookie-consent', 'denied');
+      gtag('consent', 'update', { analytics_storage: 'denied' });
       banner.style.display = 'none';
     });
   })();
