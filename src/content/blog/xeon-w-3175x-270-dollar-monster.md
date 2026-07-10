@@ -39,21 +39,21 @@ The Dominus Extreme has the VRM to handle it — ASUS built that board specifica
 
 ---
 
-## The Reticle Limit
+## One of the Biggest Dies Intel Ever Shipped
 
 This is the other thing I love about this chip and not enough people talk about it.
 
-The W-3175X die hits the **reticle limit** — the physical maximum size of a silicon die that the fab's lithography machines can produce in a single exposure. At Intel's 14nm node, that ceiling was around 700mm². The W-3175X die comes in just under it.
+The W-3175X runs Skylake-SP's XCC die — 28 cores across roughly 694mm² of silicon, about 21.6mm x 32.3mm. I used to think that was Intel maxing out the reticle limit, the physical ceiling on how big a die the fab's lithography can expose in one shot. It's not — 14nm's DUV immersion reticle field tops out around 858mm² (26mm x 33mm), so there was still real headroom left. Intel got close on one dimension (32.3mm of a possible 33mm) but nowhere near it on the other.
 
-That means Intel wasn't holding back. They used every millimeter the process would allow. The die is *huge* — you can see it when you look at the chip, this massive piece of silicon sitting under the IHS, much larger than anything in a normal consumer CPU. It's one of the reasons the power draw is what it is, and it's one of the reasons Intel never made anything like it again. You can't really go bigger on a monolithic die at that node. This was the ceiling.
+So it's not a lithography ceiling. It's a yield and cost ceiling — a monolithic die this size is already brutal to produce without defects, and going bigger just tanks yield further for no real benefit to a workstation part. The die is still *huge* — you can see it when you look at the chip, this massive piece of silicon sitting under the IHS, much larger than anything in a normal consumer CPU. It's one of the reasons the power draw is what it is, and it's one of the reasons Intel never made anything quite like it again.
 
-There's something I find genuinely cool about owning a chip that represents a hard physical limit of what the fab could make at the time.
+There's something I find genuinely cool about owning a chip built from one of the largest monolithic dies Intel ever put into a shipping product.
 
 ---
 
 ## $270 for All of This
 
-I keep coming back to the price. $270 for a 28-core, 56-thread Xeon with an unlocked multiplier, 6-channel DDR4 support, and 48 PCIe lanes. A chip that launched at $3,000 and ate 400 watts and hit the reticle limit of 14nm lithography.
+I keep coming back to the price. $270 for a 28-core, 56-thread Xeon with an unlocked multiplier, 6-channel DDR4 support, and 48 PCIe lanes. A chip that launched at $3,000, ate 400 watts, and was built from one of the biggest monolithic dies Intel ever shipped.
 
 It's a terrible practical CPU in 2026. The platform is expensive, power hungry, and loud. There are modern chips that will outperform it in almost every workload.
 
