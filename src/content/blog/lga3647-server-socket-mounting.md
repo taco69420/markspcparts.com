@@ -29,7 +29,7 @@ The Xeon die is not small.
 
 ![LGA 3647 vs LGA 1700 ILM pressure distribution diagram](/images/posts/lga3647-mounting/mounting-diagram.svg)
 
-The W-3175X die hits the reticle limit of Intel's 14nm node — the largest die the fab's lithography can expose in a single shot. When that goes into an ILM designed around a different workload and a smaller die profile, the clamps press in from the sides and reach the middle of the chip just fine. The top and bottom edges get almost nothing.
+The W-3175X die is enormous — one of the largest monolithic dies Intel ever shipped, roughly 694mm² of silicon. When that goes into an ILM designed around a different workload and a smaller die profile, the clamps press in from the sides and reach the middle of the chip just fine. The top and bottom edges get almost nothing.
 
 This isn't a theoretical concern. Uneven mounting pressure means uneven thermal contact between the IHS and the cooler. The cores sitting in the well-clamped center band behave differently from the ones near the edges. Your temperature deltas across a 28-core die aren't just about workload distribution — part of what you're measuring is contact quality.
 

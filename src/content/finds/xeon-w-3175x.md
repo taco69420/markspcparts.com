@@ -10,8 +10,8 @@ specs:
     value: 28 cores / 56 threads
   - label: Base Clock
     value: 3.1 GHz
-  - label: Boost Clock
-    value: 4.3 GHz (single-core)
+  - label: Max Turbo
+    value: 3.8 GHz stock (unlocked — overclocks past 4.3)
   - label: Cache
     value: 38.5 MB Intel Smart Cache
   - label: Memory Channels

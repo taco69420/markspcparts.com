@@ -31,7 +31,7 @@ AMD brought in SK Hynix to build the actual memory dies. SK Hynix had been worki
 **Process node:** 28nm DRAM
 **Maker:** SK Hynix only
 
-The first generation shipped on AMD's Fiji GPU in mid-2015. That translated to three consumer cards:
+The first generation shipped on AMD's Fiji GPU in mid-2015. That translated to a short run of cards:
 
 - **Radeon R9 Fury X** — June 2015
 - **Radeon R9 Fury** — July 2015
@@ -63,8 +63,8 @@ Products that shipped on HBM2:
 | GPU | Config | Bandwidth | Year |
 |---|---|---|---|
 | NVIDIA Tesla V100 SXM2 16 GB | 4 stacks × 4 GB | 900 GB/s | 2017 |
-| AMD Radeon Vega Frontier Edition | 2 stacks × 8 GB | 512 GB/s | 2017 |
-| AMD Radeon RX Vega 64 | 2 stacks × 8 GB | 512 GB/s | 2017 |
+| AMD Radeon Vega Frontier Edition | 2 stacks × 8 GB | 483 GB/s | 2017 |
+| AMD Radeon RX Vega 64 | 2 stacks × 4 GB | 484 GB/s | 2017 |
 | AMD Radeon RX Vega 56 | 2 stacks × 4 GB | 410 GB/s | 2017 |
 | NVIDIA Titan V | 3 stacks | 652 GB/s | 2017 |
 | NVIDIA Tesla V100 32 GB | 4 stacks × 8 GB | 900 GB/s | 2018 |

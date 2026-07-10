@@ -7,7 +7,7 @@ specs:
   - label: Sockets
     value: Dual LGA 2011 (Socket R)
   - label: Included CPUs
-    value: 2x Intel Xeon E5-2697 (14C/28T each · Sandy/Ivy Bridge-EP)
+    value: 2x Intel Xeon E5-2697 v2 (12C/24T each · Ivy Bridge-EP)
   - label: Chipset
     value: Intel C602
   - label: Memory
