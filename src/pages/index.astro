@@ -3,11 +3,20 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import PartCard from '../components/PartCard.astro';
+import FindCard from '../components/FindCard.astro';
 import { readingTime } from '../lib/readingTime';
 
 const recentPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const recentFinds = (await getCollection('finds'))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const hallOfFame = (await getCollection('finds'))
+  .filter(f => f.data.hallOfFame)
+  .sort((a, b) => (a.data.rank ?? 999) - (b.data.rank ?? 999))
   .slice(0, 3);
 
 const jsonLd = {
@@ -26,12 +35,12 @@ const jsonLd = {
   },
 };
 
-const orgLd = {
+const personLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: "Mark's PC Parts",
+  '@type': 'Person',
+  name: 'Mark',
   url: 'https://markspcparts.com',
-  description: 'Rare, collectible, and enthusiast PC hardware sourced, tested, and documented by Mark in Redlands, CA.',
+  description: 'Rare and enthusiast PC hardware collector based in Redlands, CA.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Redlands',
@@ -40,45 +49,8 @@ const orgLd = {
   },
   sameAs: [
     'https://www.tiktok.com/@tacoismybigboydaddy',
-    'https://ebay.us/m/E2CfrF',
   ],
 };
-
-const featured = [
-  {
-    name: 'ASUS Z10PE-D16 + Dual Xeon E5-2620 v4',
-    category: 'Motherboard',
-    specs: ['Dual LGA 2011-3 · C612 chipset', '2x 8C/16T Xeon E5-2620 v4 included', '16x DDR4 ECC DIMM slots · up to 1TB', 'IPMI 2.0 · KVM over IP · remote management'],
-    condition: 'Good' as const,
-    status: 'Available' as const,
-    description: 'Complete dual-socket DDR4 ECC workstation platform. Tested and confirmed working. Full IPMI/BMC onboard. $200 on eBay.',
-    image: '/images/posts/dual-socket-16/hero-dual.jpg',
-    href: '/inventory/z10pe-d16',
-    ebayUrl: 'https://ebay.io/m/4Yi0ug',
-  },
-  {
-    name: 'Micron 64GB DDR4 ECC RDIMM Kit (4x 16GB)',
-    category: 'RAM',
-    specs: ['4x 16GB Micron MTA18ASF2G72PDZ-2G3B1IK', 'DDR4-2400 · PC4-2400T · 2Rx8', 'ECC Registered (RDIMM) · 288-pin', 'LGA 2011-3 · C612 / C602 compatible'],
-    condition: 'Good' as const,
-    status: 'Available' as const,
-    description: 'Matched 64GB DDR4 ECC RDIMM kit pulled from a working ASUS Z10PE-D16 dual-socket system. All 4 sticks confirmed in BIOS before removal. $200 on eBay.',
-    image: '/images/posts/ram-sale/hero-ram.jpg',
-    href: '/inventory/micron-64gb-ddr4-ecc',
-    ebayUrl: 'https://ebay.io/m/DMX5Pr',
-  },
-  {
-    name: 'Noctua NH-D9DX i4 3U — LGA 2011 Square-ILM',
-    category: 'Cooler',
-    specs: ['Noctua NF-A9 92mm PWM fan', 'LGA 2011 Square-ILM bracket included', '95mm height — fits 3U+', 'No Allen key included — read listing'],
-    condition: 'Fair' as const,
-    status: 'Available' as const,
-    description: 'Used Noctua NH-D9DX i4 3U pulled from a working dual-socket Xeon system. Minor cosmetic wear and fin bends — priced accordingly. No Allen key. $50 + $15 shipping.',
-    image: '/images/posts/noctua-sale/side-2-noc.jpg',
-    href: '/inventory/noctua-nh-d9dx-i4-3u',
-    ebayUrl: 'https://ebay.io/m/I1uf7I',
-  },
-];
 ---
 
 <Layout
@@ -88,7 +60,7 @@ const featured = [
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-    <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
   </Fragment>
   <Nav slot="nav" />
 
@@ -113,52 +85,100 @@ const featured = [
       </h1>
 
       <p class="mt-6 max-w-xl mx-auto text-lg text-steel leading-relaxed">
-        Collectible CPUs, legendary GPUs, and enthusiast boards — each piece sourced,
-        tested, and documented. Explore the inventory or follow the builds on TikTok.
+        Collectible CPUs, legendary GPUs, and enthusiast boards — every piece I come across gets
+        sourced, tested, and documented. This is where I keep the record.
       </p>
 
       <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
         <a
-          href="/inventory"
+          href="/finds"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/25"
         >
-          Browse Inventory
+          Browse Marks Finds
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
         <a
-          href="/about"
+          href="/blog"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
         >
-          About Mark
+          Read the Blog
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Featured listings -->
+  <!-- Marks Finds -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
     <div class="flex items-end justify-between mb-10">
       <div>
-        <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Featured</p>
-        <h2 class="text-2xl sm:text-3xl font-bold">Recent Finds</h2>
+        <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Marks Finds</p>
+        <h2 class="text-2xl sm:text-3xl font-bold">Recently Documented</h2>
       </div>
-      <a href="/inventory" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
+      <a href="/finds" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
         View all →
       </a>
     </div>
 
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {featured.map(part => <PartCard {...part} />)}
+      {recentFinds.map(find => (
+        <FindCard
+          title={find.data.title}
+          category={find.data.category}
+          description={find.data.description}
+          image={find.data.images[0]?.src}
+          href={`/finds/${find.slug}`}
+          featured={find.data.hallOfFame}
+        />
+      ))}
     </div>
 
     <div class="mt-8 text-center sm:hidden">
-      <a href="/inventory" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
-        View all inventory →
+      <a href="/finds" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
+        View all finds →
       </a>
     </div>
   </section>
+
+  <!-- Hall of Fame teaser -->
+  {hallOfFame.length > 0 && (
+    <section class="border-t border-white/5 bg-surface-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div class="flex items-end justify-between mb-10">
+          <div>
+            <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Curated</p>
+            <h2 class="text-2xl sm:text-3xl font-bold">Hall of Fame</h2>
+          </div>
+          <a href="/hall-of-fame" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
+            View all →
+          </a>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-3">
+          {hallOfFame.map(find => (
+            <a href={`/finds/${find.slug}`} class="group block rounded-xl overflow-hidden border border-white/10 bg-surface-900 hover:border-accent/40 transition-colors">
+              {find.data.images[0] && (
+                <div class="aspect-[4/3] overflow-hidden">
+                  <img src={find.data.images[0].src} alt={find.data.images[0].alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                </div>
+              )}
+              <div class="p-4">
+                <span class="text-xs font-mono text-accent-light uppercase tracking-widest">{find.data.category}</span>
+                <h3 class="text-base font-semibold text-slate-100 mt-1 group-hover:text-accent-light transition-colors">{find.data.title}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <div class="mt-8 text-center sm:hidden">
+          <a href="/hall-of-fame" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
+            View the Hall of Fame →
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
 
   <!-- Recent posts -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -228,11 +248,11 @@ const featured = [
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
       <div class="max-w-2xl mx-auto text-center">
         <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-4">About Mark</p>
-        <h2 class="text-2xl sm:text-3xl font-bold mb-5">Collector. Flipper. Creator.</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold mb-5">Collector. Tinkerer. Documenter.</h2>
         <p class="text-steel leading-relaxed">
-          Based in Redlands, CA — I source rare and enthusiast PC hardware, document it properly,
-          and find it a new home. Every piece gets a full write-up with specs, condition notes, and
-          backstory. Follow my builds and finds on TikTok.
+          Based in Redlands, CA — I source rare and enthusiast PC hardware and document it properly:
+          full specs, condition notes, and the backstory behind how it ended up on my bench.
+          Follow the builds and finds on TikTok.
         </p>
         <a href="/about" class="inline-block mt-6 text-sm text-accent-light hover:text-white transition-colors font-medium">
           Read more about me →

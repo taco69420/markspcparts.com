@@ -3,6 +3,7 @@ title: "I Paid $280 for a Dual-Socket DDR4 Workstation With Noctua Coolers Alrea
 date: 2026-06-09
 description: "ASUS Z10PE-D16, dual E5-2620 v4, 64GB DDR4 ECC, two Noctua NH-D9DX coolers, full IPMI. $280 shipped. Here's the board, the test results, and the split plan."
 tags: ["dual-socket", "workstation", "server", "ASUS", "Xeon", "Z10PE-D16", "IPMI", "homelab", "Proxmox", "hardware flip", "DDR4 ECC"]
+relatedFinds: ["z10pe-d16", "micron-64gb-ddr4-ecc", "noctua-nh-d9dx-i4-3u"]
 ---
 
 ![ASUS Z10PE-D16 with dual Xeon E5-2620 v4 and Noctua NH-D9DX coolers, top-down view](/images/posts/dual-socket-16/hero-dual.jpg)
@@ -89,15 +90,15 @@ Same playbook as the Z9PE-D8 flip. Three-way split, RAM first.
 
 **Noctua coolers first.** Listed both NH-D9DX i4 3U units individually at $50 each — one already sold, one still available. $50 in the pocket before anything else ships.
 
-→ **[Noctua NH-D9DX i4 3U — $50](/inventory/noctua-nh-d9dx-i4-3u)**
+→ **[Noctua NH-D9DX i4 3U — $50](/finds/noctua-nh-d9dx-i4-3u)**
 
 **RAM next.** The 64GB DDR4 ECC RDIMM kit is listed at $200. Four matched Micron 16GB PC4-2400T sticks — exactly what LGA 2011-v3 homelabbers are buying right now, and those buyers don't negotiate because they know what they need.
 
-→ **[64GB DDR4 ECC RDIMM Kit — $200](/inventory/micron-64gb-ddr4-ecc)**
+→ **[64GB DDR4 ECC RDIMM Kit — $200](/finds/micron-64gb-ddr4-ecc)**
 
 **Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s listed at $200, sold tested and confirmed. The E5-2620 v4 is not a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and seven PCIe slots in a confirmed-working package. That's a real homelab server at surplus pricing, and the buyer that wants it will pay for a tested combo over a gamble.
 
-→ **[ASUS Z10PE-D16 + Dual E5-2620 v4 — $200](/inventory/z10pe-d16)**
+→ **[ASUS Z10PE-D16 + Dual E5-2620 v4 — $200](/finds/z10pe-d16)**
 
 Total gross on the full split: **$500** before fees on a $280 buy-in.
 

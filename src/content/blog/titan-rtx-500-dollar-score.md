@@ -3,6 +3,7 @@ title: "I Got NVIDIA's Forgotten $2500 GPU for $500"
 date: 2026-03-28
 description: "The Titan RTX is the full unlocked TU102 die with 24GB of GDDR6 — and in 2026 that VRAM matters more than ever for local AI. I grabbed one off Facebook Marketplace for $500."
 tags: ["nvidia", "gpu", "turing", "titan", "ai"]
+relatedFinds: ["titan-rtx"]
 ---
 
 So if you saw the video, you already know the deal. I picked up an NVIDIA Titan RTX off Facebook Marketplace from a local collector for $500. These go for $700+ on eBay consistently, and mine is essentially brand new. Guy tested it once and let it sit. That's the kind of score that makes the whole sourcing grind worth it.
@@ -68,4 +69,4 @@ Mint condition. Matte gold shroud, polished accents, the Titan logo on the top e
 
 ---
 
-*This card is part of the collection — full details on the [Titan RTX inventory page](/inventory/titan-rtx). Curious what the cheap RAM-based AI lab alternative looks like? I tried that too: [dual socket E5-2697s for $150](/blog/dual-socket-ai-lab).*
+*This card is part of the collection — full details on the [Titan RTX finds page](/finds/titan-rtx). Curious what the cheap RAM-based AI lab alternative looks like? I tried that too: [dual socket E5-2697s for $150](/blog/dual-socket-ai-lab).*

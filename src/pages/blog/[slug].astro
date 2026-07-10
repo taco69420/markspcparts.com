@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Nav from '../../components/Nav.astro';
 import Footer from '../../components/Footer.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
 import { readingTime } from '../../lib/readingTime';
 
 export async function getStaticPaths() {
@@ -14,6 +15,10 @@ export async function getStaticPaths() {
 }
 
 const { post, allPosts } = Astro.props;
+
+const relatedFinds = post.data.relatedFinds.length > 0
+  ? (await getCollection('finds')).filter(f => post.data.relatedFinds.includes(f.slug))
+  : [];
 
 const related = allPosts
   .filter(p => p.slug !== post.slug)
@@ -136,6 +141,11 @@ const breadcrumbLd = {
     <div class="prose">
       <Content />
     </div>
+
+    <RelatedLinks
+      label="From Marks Finds"
+      items={relatedFinds.map(f => ({ href: `/finds/${f.slug}`, title: f.data.title, sub: f.data.category }))}
+    />
 
     <!-- Related posts -->
     {related.length > 0 && (

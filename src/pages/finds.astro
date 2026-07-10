@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import FindCard from '../components/FindCard.astro';
+
+const finds = (await getCollection('finds')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const collectionLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: "Mark's PC Parts — Marks Finds",
+  description: 'Rare, collectible, and enthusiast PC hardware sourced, tested, and documented by Mark in Redlands, CA.',
+  url: 'https://markspcparts.com/finds',
+  hasPart: finds.map(f => ({
+    '@type': 'CreativeWork',
+    name: f.data.title,
+    url: `https://markspcparts.com/finds/${f.slug}`,
+    image: `https://markspcparts.com${f.data.images[0]?.src ?? ''}`,
+  })),
+};
+---
+
+<Layout
+  title="Marks Finds"
+  description="Every rare, collectible, and enthusiast board, chip, and card Mark has come across — sourced, tested, and documented."
+  canonicalUrl="https://markspcparts.com/finds"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(collectionLd)} />
+  </Fragment>
+  <Nav slot="nav" />
+
+  <!-- Page header -->
+  <section class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">Browse</p>
+      <h1 class="text-3xl sm:text-4xl font-bold">Marks Finds</h1>
+      <p class="mt-3 text-steel max-w-lg">
+        Every piece I've come across worth writing up — sourced, tested, and documented.
+        Some are still in the collection, some have moved on. All of them have a story.
+      </p>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      {finds.map(find => (
+        <FindCard
+          title={find.data.title}
+          category={find.data.category}
+          description={find.data.description}
+          image={find.data.images[0]?.src}
+          href={`/finds/${find.slug}`}
+          featured={find.data.hallOfFame}
+        />
+      ))}
+    </div>
+
+    {finds.length === 0 && (
+      <div class="text-center py-24 text-steel">
+        <p class="font-medium">No finds posted yet.</p>
+        <p class="text-sm mt-1">Check back soon.</p>
+      </div>
+    )}
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

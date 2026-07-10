@@ -1,0 +1,37 @@
+---
+export interface Item {
+  href: string;
+  title: string;
+  sub?: string;
+}
+
+export interface Props {
+  label: string;
+  items: Item[];
+}
+
+const { label, items } = Astro.props;
+---
+
+{items.length > 0 && (
+  <div class="mt-6 p-4 rounded-lg bg-accent/5 border border-accent/20">
+    <div class="flex items-start gap-3">
+      <svg class="w-4 h-4 text-accent-light mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+      <div class="flex-1">
+        <p class="text-sm font-semibold text-accent-light mb-2">{label}</p>
+        <ul class="space-y-1.5">
+          {items.map(item => (
+            <li>
+              <a href={item.href} class="text-xs text-steel hover:text-accent-light underline underline-offset-2 transition-colors">
+                {item.title}
+              </a>
+              {item.sub && <span class="text-xs text-steel/60"> — {item.sub}</span>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+)}
