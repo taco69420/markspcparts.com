@@ -1,0 +1,133 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <rect width="900" height="520" fill="#0f0f0f"/>
+
+  <text x="40" y="40" fill="#e5e5e5" font-size="22" font-weight="700">Phase shedding: idle vs. load</text>
+  <text x="40" y="62" fill="#999999" font-size="13">The Dominus VRM — 8 phases, 4 teamed IR3555 stages each — at two load points</text>
+
+  <!-- ============ LEFT PANEL: IDLE ============ -->
+  <rect x="40" y="80" width="390" height="380" rx="10" fill="#151515" stroke="#2a2a2a"/>
+  <text x="60" y="118" fill="#4ade80" font-size="18" font-weight="700">AT IDLE</text>
+  <text x="60" y="140" fill="#999999" font-size="12">few phases switching, the rest shed</text>
+
+  <!-- P1 active -->
+  <rect x="60" y="160" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="100" y="180" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P1</text>
+  <rect x="68" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="86" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="104" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="122" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <!-- P2 active -->
+  <rect x="150" y="160" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="190" y="180" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P2</text>
+  <rect x="158" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="176" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="194" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="212" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <!-- P3 parked -->
+  <rect x="240" y="160" width="80" height="64" rx="8" fill="#161616" stroke="#333333" stroke-width="1.5"/>
+  <text x="280" y="180" text-anchor="middle" fill="#666666" font-size="12" font-weight="600">P3</text>
+  <rect x="248" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="266" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="284" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="302" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <!-- P4 parked -->
+  <rect x="330" y="160" width="80" height="64" rx="8" fill="#161616" stroke="#333333" stroke-width="1.5"/>
+  <text x="370" y="180" text-anchor="middle" fill="#666666" font-size="12" font-weight="600">P4</text>
+  <rect x="338" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="356" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="374" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="392" y="192" width="14" height="22" rx="2" fill="#333333"/>
+  <!-- P5 parked -->
+  <rect x="60" y="250" width="80" height="64" rx="8" fill="#161616" stroke="#333333" stroke-width="1.5"/>
+  <text x="100" y="270" text-anchor="middle" fill="#666666" font-size="12" font-weight="600">P5</text>
+  <rect x="68" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="86" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="104" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="122" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <!-- P6 parked -->
+  <rect x="150" y="250" width="80" height="64" rx="8" fill="#161616" stroke="#333333" stroke-width="1.5"/>
+  <text x="190" y="270" text-anchor="middle" fill="#666666" font-size="12" font-weight="600">P6</text>
+  <rect x="158" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="176" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="194" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="212" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <!-- P7 parked -->
+  <rect x="240" y="250" width="80" height="64" rx="8" fill="#161616" stroke="#333333" stroke-width="1.5"/>
+  <text x="280" y="270" text-anchor="middle" fill="#666666" font-size="12" font-weight="600">P7</text>
+  <rect x="248" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="266" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="284" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="302" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <!-- P8 parked -->
+  <rect x="330" y="250" width="80" height="64" rx="8" fill="#161616" stroke="#333333" stroke-width="1.5"/>
+  <text x="370" y="270" text-anchor="middle" fill="#666666" font-size="12" font-weight="600">P8</text>
+  <rect x="338" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="356" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="374" y="282" width="14" height="22" rx="2" fill="#333333"/>
+  <rect x="392" y="282" width="14" height="22" rx="2" fill="#333333"/>
+
+  <text x="60" y="362" fill="#4ade80" font-size="13" font-weight="600">2 phases active · 8 of 32 stages</text>
+  <text x="60" y="388" fill="#999999" font-size="12">The other 6 phases — 24 stages — sit parked.</text>
+  <text x="60" y="408" fill="#999999" font-size="12">No switching, no wasted idle power.</text>
+
+  <!-- ============ RIGHT PANEL: UNDER LOAD ============ -->
+  <rect x="470" y="80" width="390" height="380" rx="10" fill="#151515" stroke="#2a2a2a"/>
+  <text x="490" y="118" fill="#4ade80" font-size="18" font-weight="700">UNDER LOAD</text>
+  <text x="490" y="140" fill="#999999" font-size="12">every phase awake and sharing current</text>
+
+  <!-- all 8 active -->
+  <rect x="490" y="160" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="530" y="180" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P1</text>
+  <rect x="498" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="516" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="534" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="552" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="580" y="160" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="620" y="180" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P2</text>
+  <rect x="588" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="606" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="624" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="642" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="670" y="160" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="710" y="180" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P3</text>
+  <rect x="678" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="696" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="714" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="732" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="760" y="160" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="800" y="180" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P4</text>
+  <rect x="768" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="786" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="804" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="822" y="192" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="490" y="250" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="530" y="270" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P5</text>
+  <rect x="498" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="516" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="534" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="552" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="580" y="250" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="620" y="270" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P6</text>
+  <rect x="588" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="606" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="624" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="642" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="670" y="250" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="710" y="270" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P7</text>
+  <rect x="678" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="696" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="714" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="732" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="760" y="250" width="80" height="64" rx="8" fill="#13251a" stroke="#4ade80" stroke-width="1.5"/>
+  <text x="800" y="270" text-anchor="middle" fill="#e5e5e5" font-size="12" font-weight="600">P8</text>
+  <rect x="768" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="786" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="804" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+  <rect x="822" y="282" width="14" height="22" rx="2" fill="#4ade80"/>
+
+  <text x="490" y="362" fill="#4ade80" font-size="13" font-weight="600">all 8 phases active · 32 of 32 stages</text>
+  <text x="490" y="388" fill="#999999" font-size="12">Current spreads across the whole array —</text>
+  <text x="490" y="408" fill="#999999" font-size="12">nothing runs hot, transient response is instant.</text>
+
+  <text x="892" y="513" text-anchor="end" fill="#ffffff" fill-opacity="0.55" font-size="12">markspcparts.com</text>
+</svg>
