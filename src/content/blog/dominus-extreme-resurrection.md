@@ -3,6 +3,7 @@ title: The Dominus Extreme Came Back From the Dead
 date: 2026-03-24
 description: POST code 00, a dead board, an eBay listing, and one button fix.
 tags: [asus, rog, dominus-extreme, xeon, w-3175x, titan-rtx, debug, bios]
+relatedFinds: [rog-dominus-extreme, xeon-w-3175x, titan-rtx]
 ---
 
 I thought this board was cooked.
@@ -69,4 +70,4 @@ For now the eBay listing is coming down. This thing deserves better than being p
 
 ---
 
-*ROG Dominus Extreme — LGA 3647, 6-channel DDR4, W-3175X installed, Titan RTX. Status: very much alive. Full details on the [inventory page](/inventory/rog-dominus-extreme).*
+*ROG Dominus Extreme — LGA 3647, 6-channel DDR4, W-3175X installed, Titan RTX. Status: very much alive. Full details on the [finds page](/finds/rog-dominus-extreme).*

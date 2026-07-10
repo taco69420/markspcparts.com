@@ -3,6 +3,7 @@ title: "DIMM.2 on the ROG Dominus Extreme: The Feature That Almost Killed My RAM
 date: 2026-04-20
 description: "Two DIMM.2 slots, four M.2 drives, and a RAM overheating problem I didn't see coming. The Dominus Extreme's most interesting feature is also its most annoying one."
 tags: ["asus", "rog", "dominus-extreme", "x299", "lga2066", "m2", "storage", "build-log"]
+relatedFinds: ["rog-dominus-extreme", "xeon-w-3175x"]
 ---
 
 The DIMM.2 slots were honestly one of the reasons I wanted the Dominus Extreme in the first place.
@@ -69,4 +70,4 @@ Build log coming. Stay tuned.
 
 ---
 
-*ROG Dominus Extreme — full board details on the [inventory page](/inventory/rog-dominus-extreme). Background on how I got this board running in the first place: [the resurrection post](/blog/dominus-extreme-resurrection).*
+*ROG Dominus Extreme — full board details on the [finds page](/finds/rog-dominus-extreme). Background on how I got this board running in the first place: [the resurrection post](/blog/dominus-extreme-resurrection).*

@@ -3,6 +3,7 @@ title: My First ROG Dominus Extreme Was $300 and I Flipped It
 date: 2026-03-25
 description: Spring 2024, $300, and an EKWB VRM block included in the sale. Post code 00 resistor problem. Sold it for profit. Buyer fixed it.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, ekwb, watercooling, vrm, modding]
+relatedFinds: [rog-dominus-extreme, xeon-w-3175x]
 ---
 
 Spring 2024. Before the [Dominus Extreme that came back from the dead](/blog/dominus-extreme-resurrection), there was this one.
@@ -39,4 +40,4 @@ $300 for a board that launched alongside a $3,000 CPU. Even broken, even flipped
 
 ---
 
-*ROG Dominus Extreme — first one, spring 2024, $300. Post code 00, resistor problem. Sold with the EKWB VRM block for profit. Buyer got it running. The second board is still in the collection — see the [inventory page](/inventory/rog-dominus-extreme).*
+*ROG Dominus Extreme — first one, spring 2024, $300. Post code 00, resistor problem. Sold with the EKWB VRM block for profit. Buyer got it running. The second board is still in the collection — see the [finds page](/finds/rog-dominus-extreme).*

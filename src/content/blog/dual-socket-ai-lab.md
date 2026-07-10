@@ -43,7 +43,7 @@ At that point I was already losing the thread on this build. The bend was just a
 
 Honestly I was already losing interest. The ROG Dominus Extreme was calling and I needed money to fund it. And the more I thought about the AI lab idea the more I realized — DDR3 ECC on dual E5-2697s was going to be horrendously slow for inference. Like, painfully slow. The novelty of the $150 deal was wearing off and the reality of what the actual performance would look like was setting in.
 
-So I sold the 256GB DDR3 ECC kit for $200 and put that toward the [Dominus](/inventory/rog-dominus-extreme).
+So I sold the 256GB DDR3 ECC kit for $200 and put that toward the [Dominus](/finds/rog-dominus-extreme).
 
 Paid $150 for the board, RAM, and two CPUs. Sold just the RAM for $200. The board and both E5-2697s are just sitting here, essentially free.
 

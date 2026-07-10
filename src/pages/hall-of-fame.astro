@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+const finds = (await getCollection('finds'))
+  .filter(f => f.data.hallOfFame)
+  .sort((a, b) => (a.data.rank ?? 999) - (b.data.rank ?? 999));
+
+const collectionLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: "Mark's PC Parts — Hall of Fame",
+  description: "The best of what I've come across — the boards, chips, and cards that earned a permanent spot.",
+  url: 'https://markspcparts.com/hall-of-fame',
+};
+---
+
+<Layout
+  title="Hall of Fame"
+  description="The best of what I've come across — the boards, chips, and cards that earned a permanent spot."
+  canonicalUrl="https://markspcparts.com/hall-of-fame"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(collectionLd)} />
+  </Fragment>
+  <Nav slot="nav" />
+
+  <!-- Page header -->
+  <section class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+      <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-3">Curated</p>
+      <h1 class="text-3xl sm:text-4xl font-bold">Hall of Fame</h1>
+      <p class="mt-3 text-steel max-w-lg">
+        Most finds pass through. These didn't — or earned the spot some other way.
+        The weirdest platforms, the best scores, the stuff worth building a whole write-up around.
+      </p>
+    </div>
+  </section>
+
+  <!-- List -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <ol class="flex flex-col gap-10">
+      {finds.map((find, i) => (
+        <li class="lg:grid lg:grid-cols-[auto_1fr] gap-8 items-start">
+          <div class="hidden lg:flex items-center justify-center w-14 h-14 rounded-full bg-accent/10 border border-accent/20 text-accent-light font-mono text-lg font-semibold shrink-0">
+            {String(i + 1).padStart(2, '0')}
+          </div>
+          <div class="lg:grid lg:grid-cols-2 lg:gap-10 items-start rounded-xl border border-white/10 bg-surface-800 overflow-hidden">
+            {find.data.images[0] && (
+              <a href={`/finds/${find.slug}`} class="block aspect-[4/3] overflow-hidden bg-surface-700">
+                <img src={find.data.images[0].src} alt={find.data.images[0].alt} class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </a>
+            )}
+            <div class="p-6">
+              <span class="text-xs font-mono text-accent-light uppercase tracking-widest">{find.data.category}</span>
+              <h2 class="text-xl font-bold mt-1 mb-2">
+                <a href={`/finds/${find.slug}`} class="hover:text-accent-light transition-colors">{find.data.title}</a>
+              </h2>
+              <p class="text-sm text-steel leading-relaxed mb-4">{find.data.description}</p>
+              <a href={`/finds/${find.slug}`} class="text-xs text-accent-light hover:text-white transition-colors font-medium">
+                View the full writeup →
+              </a>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ol>
+
+    {finds.length === 0 && (
+      <div class="text-center py-24 text-steel">
+        <p class="font-medium">Nothing enshrined yet.</p>
+        <p class="text-sm mt-1">Check back soon.</p>
+      </div>
+    )}
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

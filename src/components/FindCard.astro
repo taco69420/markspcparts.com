@@ -1,0 +1,53 @@
+---
+export interface Props {
+  title: string;
+  category: string;
+  description: string;
+  image?: string;
+  href: string;
+  featured?: boolean;
+}
+
+const { title, category, description, image, href, featured } = Astro.props;
+---
+
+<div class="group relative flex flex-col rounded-xl border border-white/10 bg-surface-800 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-200 overflow-hidden">
+  <!-- Image area -->
+  <div class="relative aspect-[4/3] bg-surface-700 flex items-center justify-center overflow-hidden">
+    {image ? (
+      <img src={image} alt={title} class="w-full h-full object-cover" />
+    ) : (
+      <div class="flex flex-col items-center gap-2 text-steel/40">
+        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18" />
+        </svg>
+        <span class="font-mono text-xs">no image</span>
+      </div>
+    )}
+
+    <!-- Category tag -->
+    <span class="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/50 backdrop-blur-sm text-xs text-steel font-mono">
+      {category}
+    </span>
+
+    {featured && (
+      <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/30">
+        Hall of Fame
+      </span>
+    )}
+  </div>
+
+  <!-- Content -->
+  <div class="flex flex-col flex-1 p-5 gap-3">
+    <div>
+      <h3 class="text-base font-semibold text-slate-100 leading-tight transition-colors group-hover:text-accent-light">
+        <a href={href} class="after:absolute after:inset-0">{title}</a>
+      </h3>
+      <p class="mt-1.5 text-sm text-steel leading-relaxed">{description}</p>
+    </div>
+
+    <div class="mt-auto pt-3 border-t border-white/5">
+      <span class="text-xs text-accent-light font-medium">Read the writeup →</span>
+    </div>
+  </div>
+</div>

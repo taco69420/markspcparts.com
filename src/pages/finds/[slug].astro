@@ -1,0 +1,224 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+
+export async function getStaticPaths() {
+  const finds = await getCollection('finds');
+  return finds.map(find => ({
+    params: { slug: find.slug },
+    props: { find },
+  }));
+}
+
+const { find } = Astro.props;
+const { Content } = await find.render();
+
+const allPosts = await getCollection('blog');
+const relatedPosts = find.data.relatedPosts.length > 0
+  ? allPosts.filter(p => find.data.relatedPosts.includes(p.slug))
+  : [];
+
+const allFinds = await getCollection('finds');
+const relatedFinds = find.data.relatedFinds.length > 0
+  ? allFinds.filter(f => find.data.relatedFinds.includes(f.slug))
+  : [];
+
+const images = find.data.images;
+const canonicalUrl = `https://markspcparts.com/finds/${find.slug}`;
+const ogImage = images[0] ? `https://markspcparts.com${images[0].src}` : undefined;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: find.data.title,
+  description: find.data.description,
+  ...(ogImage ? { image: ogImage } : {}),
+  datePublished: find.data.date.toISOString(),
+  url: canonicalUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Mark',
+    url: 'https://markspcparts.com/about',
+  },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://markspcparts.com' },
+    { '@type': 'ListItem', position: 2, name: 'Marks Finds', item: 'https://markspcparts.com/finds' },
+    { '@type': 'ListItem', position: 3, name: find.data.title, item: canonicalUrl },
+  ],
+};
+---
+
+<Layout
+  title={find.data.title}
+  description={find.data.description}
+  ogImage={ogImage}
+  canonicalUrl={canonicalUrl}
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </Fragment>
+  <Nav slot="nav" />
+
+  <!-- Breadcrumb -->
+  <div class="border-b border-white/5 bg-surface-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-xs text-steel font-mono">
+      <a href="/" class="hover:text-accent-light transition-colors">home</a>
+      <span class="text-white/20">/</span>
+      <a href="/finds" class="hover:text-accent-light transition-colors">finds</a>
+      <span class="text-white/20">/</span>
+      <span class="text-slate-300">{find.slug}</span>
+    </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="lg:grid lg:grid-cols-2 lg:gap-14 items-start">
+
+      <!-- Image gallery -->
+      <div class="flex flex-col gap-3">
+        <div class="rounded-xl overflow-hidden bg-surface-700">
+          <img
+            id="main-image"
+            src={images[0]?.src}
+            alt={images[0]?.alt}
+            class="w-full object-contain max-h-[520px] bg-surface-700"
+          />
+        </div>
+        {images.length > 1 && (
+          <div class="grid grid-cols-4 gap-2">
+            {images.map((img, i) => (
+              <button
+                data-src={img.src}
+                data-alt={img.alt}
+                class:list={[
+                  'rounded-lg overflow-hidden border-2 transition-all duration-150 focus:outline-none thumbnail-btn aspect-square',
+                  i === 0 ? 'border-accent' : 'border-white/10 hover:border-accent/40',
+                ]}
+              >
+                <img src={img.src} alt={img.alt} class="w-full h-full object-cover" />
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <!-- Details -->
+      <div class="mt-10 lg:mt-0">
+        <div class="flex items-start justify-between gap-4 mb-1">
+          <span class="text-xs font-mono text-accent-light uppercase tracking-widest">{find.data.category}</span>
+          {find.data.hallOfFame && (
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-accent text-white shadow-lg shadow-accent/30 shrink-0">
+              Hall of Fame
+            </span>
+          )}
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl font-bold mt-2 leading-tight">{find.data.title}</h1>
+
+        {find.data.tags.length > 0 && (
+          <div class="flex flex-wrap gap-1.5 mt-4">
+            {find.data.tags.map(tag => (
+              <span class="text-xs font-mono px-2 py-0.5 rounded bg-surface-700 text-steel border border-white/5">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <!-- Write-up -->
+        <div class="mt-8 prose">
+          <Content />
+        </div>
+
+        <RelatedLinks
+          label="Read the deep-dive"
+          items={relatedPosts.map(p => ({ href: `/blog/${p.slug}`, title: p.data.title, sub: p.data.description }))}
+        />
+
+        <RelatedLinks
+          label="Related finds"
+          items={relatedFinds.map(f => ({ href: `/finds/${f.slug}`, title: f.data.title, sub: f.data.category }))}
+        />
+
+        <!-- Nav links -->
+        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+          <a
+            href="/finds"
+            class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
+          >
+            ← All Finds
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs table -->
+    <div class="mt-16 border-t border-white/5 pt-14">
+      <h2 class="text-xl font-bold mb-8">Full Specifications</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/5 rounded-xl overflow-hidden border border-white/5">
+        {find.data.specs.map(spec => (
+          <div class="bg-surface-800 px-5 py-4">
+            <p class="text-xs text-steel font-mono uppercase tracking-wide mb-1">{spec.label}</p>
+            <p class="text-sm text-slate-100 font-medium">{spec.value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <Footer slot="footer" />
+</Layout>
+
+<script>
+  const mainImage = document.getElementById('main-image') as HTMLImageElement;
+  const thumbBtns = document.querySelectorAll<HTMLButtonElement>('.thumbnail-btn');
+
+  thumbBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      mainImage.src = btn.dataset.src!;
+      mainImage.alt = btn.dataset.alt!;
+      thumbBtns.forEach(b => b.classList.replace('border-accent', 'border-white/10'));
+      btn.classList.replace('border-white/10', 'border-accent');
+    });
+  });
+</script>
+
+<style>
+  .prose {
+    color: #94a3b8;
+    font-size: 0.9375rem;
+    line-height: 1.75;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1.1rem;
+  }
+
+  .prose :global(strong) {
+    color: #e2e8f0;
+    font-weight: 600;
+  }
+
+  .prose :global(em) {
+    color: #94a3b8;
+    font-style: italic;
+  }
+
+  .prose :global(a) {
+    color: #a78bfa;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .prose :global(a:hover) {
+    color: #fff;
+  }
+</style>
