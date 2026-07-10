@@ -26,8 +26,8 @@ specs:
     value: Unlocked
   - label: Architecture
     value: Skylake-W (14nm)
-  - label: Compatible Board
-    value: ASUS ROG Dominus Extreme only
+  - label: Compatible Boards
+    value: 3 total — ASUS Dominus Extreme, Gigabyte C621 Aorus Xtreme, EVGA SR-3 DARK
   - label: Condition
     value: Fair — IHS scratches, thermal paste residue on back. Silicon solid.
 images:
@@ -49,6 +49,6 @@ rank: 2
 
 This W-3175X came from China and it delivered. Strong IMC, ran great on the Dominus Extreme platform. Cosmetically it has some scratches on the IHS and thermal paste residue on the back — what can you say, it's from China. But the silicon is solid and the results speak for themselves.
 
-The W-3175X is the only consumer-facing 28-core chip Intel ever shipped, and it only ever worked in one board: the ASUS ROG Dominus Extreme. It's not a chip you build a practical workstation around — it's a statement. Unlocked multiplier, 6-channel DDR4, 48 PCIe lanes, and a 255W TDP that demands serious cooling. There's nothing else like it.
+The W-3175X is the only consumer-facing 28-core chip Intel ever shipped, and it only ever worked in three boards — the ASUS ROG Dominus Extreme, the Gigabyte C621 Aorus Xtreme, and the EVGA SR-3 DARK. It's not a chip you build a practical workstation around — it's a statement. Unlocked multiplier, 6-channel DDR4, 48 PCIe lanes, and a 255W TDP that demands serious cooling. There's nothing else like it.
 
-*Paired permanently with the [ROG Dominus Extreme](/finds/rog-dominus-extreme) — the only board it fits.*
+*Paired with the [ROG Dominus Extreme](/finds/rog-dominus-extreme) — one of only three boards it ever fit, and the one I run.*

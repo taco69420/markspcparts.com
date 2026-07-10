@@ -21,7 +21,7 @@ specs:
   - label: USB
     value: USB 3.1 Gen 2 (Type-A + Type-C), USB 3.1 Gen 1
   - label: Networking
-    value: Dual Intel I219-LM Gigabit LAN
+    value: Aquantia AQC-107 10G + Intel I219-LM 1G + Intel AC-9260 Wi-Fi
   - label: Audio
     value: ROG SupremeFX 8-channel
   - label: RGB

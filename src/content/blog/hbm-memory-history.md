@@ -38,7 +38,7 @@ The first generation shipped on AMD's Fiji GPU in mid-2015. That translated to a
 - **Radeon R9 Nano** — September 2015
 - **Radeon Pro Duo** (dual Fiji) — April 2016
 
-Each Fiji chip used four HBM1 stacks. Four stacks × 1 GB × 128 GB/s = 4 GB total and 512 GB/s aggregate bandwidth across a 4096-bit interface. For reference, the GTX 980 Ti running GDDR5 had 336 GB/s on a 384-bit bus. HBM1 wasn't even close on bandwidth.
+Each Fiji chip used four HBM1 stacks. Four stacks × 1 GB × 128 GB/s = 4 GB total and 512 GB/s aggregate bandwidth across a 4096-bit interface. For reference, the GTX 980 Ti running GDDR5 had 336 GB/s on a 384-bit bus. GDDR5 wasn't even in the same league.
 
 The catch was capacity. Four stacks of 1 GB was a hard ceiling, and 4 GB was already looking thin when the competition was shipping 8 GB and beyond. AMD had to live with this for the entire Fiji generation, and it hurt in scenarios where VRAM actually mattered.
 
@@ -95,6 +95,7 @@ This is the generation that made NVIDIA's A100 possible:
 | NVIDIA A100 40 GB (SXM4) | 5 stacks × 8 GB | 40 GB | 1,555 GB/s | 2020 |
 | NVIDIA A100 80 GB | 5 stacks × 16 GB | 80 GB | 2,039 GB/s | 2020/2021 |
 | AMD Instinct MI250X | 8 stacks × 16 GB | 128 GB | 3,277 GB/s | 2021 |
+| Intel Gaudi 3 | 8 stacks × 16 GB | 128 GB | 3,700 GB/s | 2024 |
 
 The A100 was the product that made people take GPU compute seriously at scale. The 80 GB version with HBM2E, doing 2 TB/s, became the workhorse of early LLM training infrastructure. Entire data center strategies were built around it.
 
@@ -124,7 +125,6 @@ SK Hynix started mass production in June 2022, just in time for the H100.
 | NVIDIA H100 SXM5 | 5 stacks × 16 GB | 80 GB | 3.35 TB/s | 2022 |
 | NVIDIA H100 PCIe | 5 stacks × 16 GB | 80 GB | 2.0 TB/s | 2022 |
 | AMD Instinct MI300X | 8 stacks × 24 GB | 192 GB | 5.3 TB/s | 2023 |
-| Intel Gaudi 3 | 6 stacks | 96 GB | 3.7 TB/s | 2024 |
 
 The H100 is the product that turned the AI infrastructure market into a frenzy. Three and a half terabytes per second of memory bandwidth on a single package, in a standardized SXM5 form factor, available for dense cluster deployment. SK Hynix was the sole supplier at H100 launch; Samsung qualified later.
 
@@ -147,7 +147,7 @@ Micron finally entered the HBM market here, and not quietly. They announced HBM3
 
 | Accelerator | HBM3E Config | Total Memory | Total BW | Year |
 |---|---|---|---|---|
-| NVIDIA H200 SXM5 | 5× 24 GB 8-Hi | 141 GB | 4.8 TB/s | 2024 |
+| NVIDIA H200 SXM5 | 6× 24 GB 8-Hi | 141 GB | 4.8 TB/s | 2024 |
 | AMD Instinct MI325X | 8× 32 GB | 256 GB | 6.0 TB/s | 2024 |
 | NVIDIA B200/B100 (Blackwell) | 8× 24 GB 8-Hi | 192 GB | 8.0 TB/s | 2025 |
 | NVIDIA GB300 (Blackwell Ultra) | 8× 36 GB 12-Hi | 288 GB | 8.0 TB/s | 2025 |

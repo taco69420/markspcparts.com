@@ -13,7 +13,7 @@ specs:
   - label: CPU Support
     value: Intel Xeon E5 v3 / v4 (LGA 2011-3)
   - label: Height
-    value: 95mm — fits 3U and taller chassis
+    value: 110mm (95x95mm footprint) — fits 3U and taller chassis
   - label: Mounting Hardware
     value: Square-ILM bracket included
   - label: Condition
