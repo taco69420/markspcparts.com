@@ -3,6 +3,7 @@ title: Radeon Pro V340L Teardown and Repaste
 date: 2026-06-02
 description: "A full teardown of the AMD Radeon Pro V340L — dual Vega 10 XL GPUs, 16GB HBM2, SR-IOV MxGPU virtualization, and a repaste after years of server life. Part number 109-D05387, formerly in Google Stadia."
 tags: [gpu, teardown, amd, server, homelab, vega]
+relatedFinds: [radeon-pro-v340l]
 ---
 
 Stadia shut down in January 2023. Over the next year the hardware started moving — eBay listings, surplus auctions, all the server equipment Google quietly decommissioned after pulling the plug. I sniped this one for $30.

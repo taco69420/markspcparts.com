@@ -3,6 +3,7 @@ title: The ROG Rampage V Extreme That Was Never Actually Dead
 date: 2026-06-09
 description: POST code 53, a $90 refund, a borrowed RAM kit, and one overlooked switch. The X99 flagship was fine the whole time.
 tags: [asus, rog, rampage, x99, lga2011-3, intel, broadwell-e, i7-6950x, bitspower, water-cooling, hedt, ebay, debug]
+relatedFinds: [rog-rampage-v-extreme]
 ---
 
 This one came in as a bundle off eBay. The seller had originally picked it up from a pawn shop listing — which already tells you something about where this board had been before it landed on my bench.

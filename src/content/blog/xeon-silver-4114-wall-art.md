@@ -3,6 +3,7 @@ title: 20 Xeon Silver 4114s for $20 and a Piece of Scrap Wood
 date: 2026-03-26
 description: Won an eBay bidwar in September 2024. 20 server CPUs for a dollar each. Built wall art. Still don't know why I did it.
 tags: [intel, xeon, lga3647, wall-art, ebay, diy, server]
+relatedFinds: [xeon-silver-4114]
 ---
 
 September 2024. I was watching an eBay auction I had no business winning.

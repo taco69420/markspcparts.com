@@ -3,6 +3,7 @@ title: "I Almost Built a Poor Man's AI Lab for $150"
 date: 2026-03-27
 description: "Dual socket LGA 2011, two Xeon E5-2697s, and 256GB of DDR3 ECC for $150 off eBay. The plan was a cheap local AI lab. Then I found the shipping damage."
 tags: ["dual-socket", "lga2011", "xeon", "e5-2697", "asus", "z9pe-d8", "ecc", "ddr3", "workstation", "ebay", "deal", "ai", "ram", "ipmi"]
+relatedFinds: ["z9pe-d8-ws"]
 ---
 
 I was scrolling eBay one night and saw a listing that made no sense. An ASUS Z9PE-D8 WS — dual socket LGA 2011 workstation board — with two Xeon E5-2697s and 256GB of DDR3 ECC RAM. Originally listed at $230. Nobody bought it. So the seller just kept dropping the price, week after week, all the way down to $150 over the course of about a month.

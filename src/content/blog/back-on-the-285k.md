@@ -3,6 +3,7 @@ title: Back on the 285K
 date: 2026-03-27
 description: Built this rig in November 2025, moved to the Dominus, and finally came back. White GPU, black build, and CUDIMMs running at 8800 MT/s on a 4-slot board.
 tags: [intel, core-ultra, z890, msi, ddr5, cudimm, zotac, rtx-5080, build, personal]
+relatedFinds: [cudimm-9000-400]
 ---
 
 I built this machine back in November 2025. Used it for a while, then the Dominus pulled me away. Eventually moved back to the Dominus full time and this rig just sat there.
