@@ -2,7 +2,7 @@
 title: Why the ROG Dominus Extreme VRM Will Basically Last Forever
 date: 2026-06-15
 description: 32 teamed IR3555 power stages, a CPU that pulls 400 watts, and barely 12 amps per phase. The Dominus Extreme power delivery is so overbuilt it can't really wear out — here's the math, the board, and why nothing current touches it.
-tags: [asus, rog, dominus-extreme, lga3647, xeon, w-3175x, vrm, power-delivery, overbuilt]
+tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm]
 relatedFinds: [rog-dominus-extreme, xeon-w-3175x]
 ---
 

@@ -2,7 +2,7 @@
 title: My First ROG Dominus Extreme Was $300 and I Flipped It
 date: 2026-03-25
 description: Spring 2024, $300, and an EKWB VRM block included in the sale. Post code 00 resistor problem. Sold it for profit. Buyer fixed it.
-tags: [asus, rog, dominus-extreme, lga3647, xeon, ekwb, watercooling, vrm, modding]
+tags: [asus, rog, dominus-extreme, lga3647, xeon, water-cooling, vrm, modding]
 relatedFinds: [rog-dominus-extreme, xeon-w-3175x]
 ---
 

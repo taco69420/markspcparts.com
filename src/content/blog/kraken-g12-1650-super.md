@@ -2,7 +2,7 @@
 title: I Liquid Cooled a GTX 1650 Super With a Kraken G12
 date: 2026-03-25
 description: Drilled custom holes, cut brackets, and got it to post — then found out the PCB was too short to actually cool anything.
-tags: [gpu, nvidia, gtx-1650-super, nzxt, kraken-g12, aio, liquid-cooling, modding]
+tags: [nvidia, gpu, water-cooling, modding]
 ---
 
 It was March 2022, near the end of quarantine, and I was losing my mind.

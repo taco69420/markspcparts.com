@@ -2,7 +2,7 @@
 title: I Delidded a $5 Pentium With a Vice and Used Aluminum Foil to Make It Post
 date: 2026-03-25
 description: First delid ever. Vice, foil, and zero reason not to try it.
-tags: [intel, pentium, delid, modding, proof-of-concept]
+tags: [intel, cpu, modding]
 ---
 
 August 2022. The chip was worth about five bucks on eBay. It was a Pentium — the one that came out of my very first PC. Sentimental value: low. Experimental value: potentially high.

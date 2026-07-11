@@ -2,7 +2,7 @@
 title: "DIMM.2 on the ROG Dominus Extreme: The Feature That Almost Killed My RAM"
 date: 2026-04-20
 description: "Two DIMM.2 slots, four M.2 drives, and a RAM overheating problem I didn't see coming. The Dominus Extreme's most interesting feature is also its most annoying one."
-tags: ["asus", "rog", "dominus-extreme", "c621", "lga3647", "m2", "storage", "build-log"]
+tags: [asus, rog, dominus-extreme, lga3647, build]
 relatedFinds: ["rog-dominus-extreme", "xeon-w-3175x"]
 ---
 

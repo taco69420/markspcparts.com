@@ -2,7 +2,7 @@
 title: I Built a Microwave Transformer Arc Machine at 15
 date: 2026-03-25
 description: Grandparents were getting a new microwave. I searched what you could do with the parts. This happened.
-tags: [high-voltage, mot, capacitor, electronics, mad-scientist]
+tags: [diy]
 ---
 
 It was May 2022. My grandparents were getting a new microwave. Before it went in the trash I looked up what you could actually do with the parts inside, and the rabbit hole went deep fast.

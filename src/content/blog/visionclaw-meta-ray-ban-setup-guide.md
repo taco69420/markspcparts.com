@@ -2,7 +2,7 @@
 title: "Meta Ray-Ban + VisionClaw: The Complete Windows Setup Guide (And My Honest Review)"
 description: "I've been wearing Meta Ray-Ban Gen 2 smart glasses for weeks. Here's my honest take on the camera, the AI features, the livestreaming bait and switch — and a full walkthrough of setting up VisionClaw on Windows with an Android phone."
 date: 2026-04-03
-tags: ["meta ray-ban", "visionclaw", "smart glasses", "AR", "android", "gemini", "setup guide"]
+tags: [ai]
 ---
 
 I picked these up for $417 a few weeks ago with a pretty specific use case in mind: hands-free POV footage for my TikTok and YouTube content. When you're elbow-deep in a server board or chasing down a short on a dead VRM, you can't exactly hold a phone. The Ray-Ban Gen 2s seemed like the obvious answer — ultra-wide camera, sits on your face, shoots while your hands do the actual work.

@@ -2,7 +2,7 @@
 title: Radeon Pro V340L Teardown and Repaste
 date: 2026-06-02
 description: "A full teardown of the AMD Radeon Pro V340L — dual Vega 10 XL GPUs, 16GB HBM2, SR-IOV MxGPU virtualization, and a repaste after years of server life. Part number 109-D05387, formerly in Google Stadia."
-tags: [gpu, teardown, amd, server, homelab, vega]
+tags: [amd, gpu, teardown, server, homelab]
 relatedFinds: [radeon-pro-v340l]
 ---
 

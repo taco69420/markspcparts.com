@@ -2,7 +2,7 @@
 title: The Vega 56 Strix and My Love for HBM
 date: 2026-03-25
 description: Got this card in August 2022. It ran hot, it had the thermal pad problem, and I loved it anyway.
-tags: [amd, vega-56, asus, rog, strix, hbm, hbm2, gpu]
+tags: [amd, asus, rog, gpu, memory, hbm]
 relatedFinds: [vega-56-strix]
 ---
 

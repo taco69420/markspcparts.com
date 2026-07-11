@@ -2,7 +2,7 @@
 title: The Water Block That Was Never Sold in America
 date: 2026-06-11
 description: A Washington pawn shop. A "broken" X99 flagship. One full-cover monoblock that ASUS officially certified and Bitspower never distributed in North America. How I ended up with one of three cooling products ever certified by the ROG program.
-tags: [asus, rog, bitspower, water-cooling, x99, lga2011-3, rampage-v-extreme, custom-loop, collectors, ebay, hedt]
+tags: [asus, rog, water-cooling, x99, lga2011, hedt, deal]
 relatedFinds: [rog-rampage-v-extreme]
 ---
 

@@ -2,7 +2,7 @@
 title: "I Got NVIDIA's Forgotten $2500 GPU for $500"
 date: 2026-03-28
 description: "The Titan RTX is the full unlocked TU102 die with 24GB of GDDR6 — and in 2026 that VRAM matters more than ever for local AI. I grabbed one off Facebook Marketplace for $500."
-tags: ["nvidia", "gpu", "turing", "titan", "ai"]
+tags: [nvidia, gpu, ai, deal]
 relatedFinds: ["titan-rtx"]
 ---
 

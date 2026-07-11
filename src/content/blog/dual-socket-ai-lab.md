@@ -2,7 +2,7 @@
 title: "I Almost Built a Poor Man's AI Lab for $150"
 date: 2026-03-27
 description: "Dual socket LGA 2011, two Xeon E5-2697s, and 256GB of DDR3 ECC for $150 off eBay. The plan was a cheap local AI lab. Then I found the shipping damage."
-tags: ["dual-socket", "lga2011", "xeon", "e5-2697", "asus", "z9pe-d8", "ecc", "ddr3", "workstation", "ebay", "deal", "ai", "ram", "ipmi"]
+tags: [asus, xeon, dual-socket, lga2011, workstation, memory, ecc, ai, deal, homelab]
 relatedFinds: ["z9pe-d8-ws"]
 ---
 

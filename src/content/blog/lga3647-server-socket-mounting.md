@@ -2,7 +2,7 @@
 title: "LGA 3647: Born in a Server Rack, Dropped in a Desktop"
 date: 2026-03-26
 description: "Intel's LGA 3647 was designed for server sleds. Then they shipped a 28-core unlocked chip on it and called it enthusiast. The mounting system never got the memo."
-tags: [intel, xeon, lga3647, w-3175x, cpu, cooling, socket, hedt, server]
+tags: [intel, xeon, cpu, lga3647, hedt, server]
 ---
 
 LGA 3647 has a weird mounting system. Not weird in a "quirky design decision" way — weird in a "this was built for something completely different and we shipped it anyway" way. To understand why, you have to start with where the socket actually came from.

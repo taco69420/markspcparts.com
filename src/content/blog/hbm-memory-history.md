@@ -2,7 +2,7 @@
 title: "HBM: The History of Stacked Memory and Where It's At Now"
 date: 2026-03-27
 description: "From Fiji to MI300X — how HBM went from a niche GPU trick to the backbone of every serious AI accelerator."
-tags: [hbm, memory, amd, nvidia, sk-hynix, samsung, micron, ai, gpu, hardware-history]
+tags: [amd, nvidia, gpu, memory, hbm, ai]
 ---
 
 High Bandwidth Memory is one of the more interesting technologies to trace because it started as a solution to a very specific problem, spent years as a curiosity on a handful of enthusiast GPUs, and then quietly became the thing that makes modern AI infrastructure possible. The jump from Fiji to Blackwell is a wild arc. Let's walk through it.

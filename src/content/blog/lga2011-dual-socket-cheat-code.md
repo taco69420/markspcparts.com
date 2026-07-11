@@ -2,7 +2,7 @@
 title: "Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At"
 date: 2026-06-02
 description: "Average buyers see old server hardware and scroll past. Flippers see DDR3 or DDR4 ECC worth more than the asking price. Here's how the Z9PE-D8 flip went, and why I just bought its big brother."
-tags: ["dual-socket", "lga2011", "lga2011-v3", "xeon", "ecc", "ddr3", "ddr4", "homelab", "flip", "ebay", "deal", "workstation", "asus"]
+tags: [asus, xeon, dual-socket, lga2011, workstation, homelab, memory, ecc, flip, deal]
 ---
 
 I paid $150 for an ASUS Z9PE-D8 WS bundle — two E5-2697s and 256GB of DDR3 ECC. Came out $220 ahead. Then I bought the big brother.

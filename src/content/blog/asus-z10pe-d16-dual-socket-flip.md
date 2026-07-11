@@ -2,7 +2,7 @@
 title: "I Paid $280 for a Dual-Socket DDR4 Workstation With Noctua Coolers Already On It"
 date: 2026-06-09
 description: "ASUS Z10PE-D16, dual E5-2620 v4, 64GB DDR4 ECC, two Noctua NH-D9DX coolers, full IPMI. $280 shipped. Here's the board, the test results, and the split plan."
-tags: ["dual-socket", "workstation", "server", "ASUS", "Xeon", "Z10PE-D16", "IPMI", "homelab", "Proxmox", "hardware flip", "DDR4 ECC"]
+tags: [asus, xeon, dual-socket, workstation, server, homelab, ecc, flip]
 relatedFinds: ["z10pe-d16", "micron-64gb-ddr4-ecc", "noctua-nh-d9dx-i4-3u"]
 ---
 

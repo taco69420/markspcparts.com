@@ -2,7 +2,7 @@
 title: I Downgraded to a Vega 64 LC for $200 and I'd Do It Again
 date: 2026-03-25
 description: Came from a 5700 XT, paid $200 in July 2023 for a factory liquid cooled Vega 64. Technically worse. Worth it.
-tags: [amd, vega-64, powercolor, hbm2, liquid-cooling, aio, gpu]
+tags: [amd, gpu, memory, hbm, water-cooling]
 relatedFinds: [vega-64-lc]
 ---
 
