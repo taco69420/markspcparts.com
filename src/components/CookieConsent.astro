@@ -9,7 +9,7 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <p class="text-sm text-steel leading-relaxed">
-        This site uses Google Analytics to see how people find and use it — no ads, no selling data.
+        This site uses Google Analytics to see how people find and use it — no ads, no selling data. It's on by default; click Decline to opt out.
         <a href="/cookie-policy" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">Cookie policy</a>
         ·
         <a href="/privacy-policy" class="text-accent-light hover:text-slate-300 underline underline-offset-2 transition-colors">Privacy policy</a>
@@ -44,15 +44,17 @@
     // Stored choice: 'granted' | 'denied' | null (undecided).
     var consent = localStorage.getItem('cookie-consent');
 
-    // Consent Mode v2 defaults. Analytics is granted only if the user
-    // previously accepted; otherwise denied. While denied, GA still sends
-    // anonymous, cookieless pings so traffic is counted — it just can't set
-    // cookies or collect identifiers until the user accepts.
+    // Consent Mode v2 defaults — opt-out model. Analytics is granted by
+    // default so every visit is a proper, reportable GA4 session; it's only
+    // denied if the user explicitly clicked Decline. Ads storage stays denied
+    // always (no advertising, no personalization). Denied-by-default would
+    // send only cookieless pings, which show in Realtime but get dropped from
+    // standard reports unless the property meets Google's modeling threshold.
     gtag('consent', 'default', {
       ad_storage: 'denied',
       ad_user_data: 'denied',
       ad_personalization: 'denied',
-      analytics_storage: consent === 'granted' ? 'granted' : 'denied',
+      analytics_storage: consent === 'denied' ? 'denied' : 'granted',
       wait_for_update: 500,
     });
 
