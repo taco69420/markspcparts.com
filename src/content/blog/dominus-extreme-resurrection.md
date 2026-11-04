@@ -3,7 +3,6 @@ title: The Dominus Extreme Came Back From the Dead
 date: 2026-03-24
 description: POST code 00, a dead board, an eBay listing, and one button fix.
 tags: [asus, rog, dominus-extreme, xeon, debug, bios]
-relatedFinds: [rog-dominus-extreme, xeon-w-3175x, titan-rtx]
 ---
 
 I thought this board was cooked.
@@ -24,7 +23,7 @@ So I dragged everything back out.
 
 ![Full build - ROG Dominus Extreme with Titan RTX installed, ROG logo glowing blue, Titan backlit](/images/posts/dominus-resurrection/build-wide.jpg)
 
-[The W-3175X](/blog/xeon-w-3175x-270-dollar-monster) went back in the socket. I grabbed **6 sticks of RAM** and populated the slots strategically — the W-3175X has a notoriously demanding IMC and on a board like the Dominus, bad RAM config or marginal sticks can absolutely cause a 00 on cold boot. Giving the IMC the best possible chance to train.
+[The W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) went back in the socket. I grabbed **6 sticks of RAM** and populated the slots strategically — the W-3175X has a notoriously demanding IMC and on a board like the Dominus, bad RAM config or marginal sticks can absolutely cause a 00 on cold boot. Giving the IMC the best possible chance to train.
 
 Power on. 00. Still nothing.
 
@@ -70,4 +69,4 @@ For now the eBay listing is coming down. This thing deserves better than being p
 
 ---
 
-*ROG Dominus Extreme — LGA 3647, 6-channel DDR4, W-3175X installed, Titan RTX. Status: very much alive. Full details on the [finds page](/finds/rog-dominus-extreme).*
+*ROG Dominus Extreme — LGA 3647, 6-channel DDR4, W-3175X installed, Titan RTX. Status: very much alive.*

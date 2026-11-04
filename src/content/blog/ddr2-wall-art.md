@@ -3,7 +3,6 @@ title: 128 Sticks of DDR2 ECC for $21.73
 date: 2026-03-24
 description: Won an eBay auction for 128 sticks of server RAM at age 14. Built wall art with my grandpa.
 tags: [memory, ecc, wall-art, diy, deal]
-relatedFinds: [ddr2-ecc-wall-art]
 ---
 
 It was 2021. I was 14, broke, and absolutely addicted to eBay auctions.
@@ -50,7 +49,7 @@ It looks exactly as unhinged as I hoped. People walk into the room and do a doub
 
 I've still got somewhere between 80 and 90 sticks under my bed. Open to ideas. If you want some, reach out — I'll probably just give them away at this point. They're not getting faster sitting in a box.
 
-The $21.73 auction was one of the best financial decisions I've ever made. Not because the RAM was useful. Just because it became *this.* If this is your kind of thing, I did [the same thing with 20 server CPUs](/blog/xeon-silver-4114-wall-art).
+The $21.73 auction was one of the best financial decisions I've ever made. Not because the RAM was useful. Just because it became *this.* If this is your kind of thing, I did [the same thing with 20 server CPUs](/blog/xeon-silver-4114-wall-art/).
 
 ---
 

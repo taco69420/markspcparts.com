@@ -3,7 +3,6 @@ title: Putting Together a Corsair XM2 NVMe Waterblock on a Samsung 980 1TB
 date: 2026-03-25
 description: Brand new Corsair XM2 M.2 waterblock, a Samsung 980 1TB, and a build that took about two minutes. Here's the full process.
 tags: [water-cooling, build]
-relatedFinds: [corsair-xm2-waterblock]
 ---
 
 If you saw the short — welcome. We didn't have enough time in the video to cover the full build, so here's the complete breakdown.
@@ -58,9 +57,9 @@ Drive seated, alignment looks right. The 980's controller and NAND are exposed u
 
 From here it's straightforward — the top block sets down over the bottom casing and snaps into place. No tools needed for the basic assembly. The design is clip-fit, so it's one motion.
 
-![Corsair XM2 fully assembled with Samsung 980 1TB — front view](/images/posts/nvme-waterblock/ssd-compleate.jpg)
+![Corsair XM2 fully assembled with Samsung 980 1TB — front view](/images/posts/nvme-waterblock/ssd-complete.jpg)
 
-![Corsair XM2 fully assembled — rear view showing bottom mounting plate](/images/posts/nvme-waterblock/ssd-compleate-back.jpg)
+![Corsair XM2 fully assembled — rear view showing bottom mounting plate](/images/posts/nvme-waterblock/ssd-complete-back.jpg)
 
 That's the finished build. Front and back. The whole process took maybe two minutes from opening the box to done. The drive is fully encased — copper contact on the top, the mounting plate on the bottom, thermal pads sandwiched between both and the NAND.
 

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+
+const posts = await getCollection('blog');
+
+const tagCounts = new Map<string, number>();
+posts.forEach(p => p.data.tags.forEach(t => tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1)));
+const tags = [...tagCounts.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+---
+
+<Layout
+  title="Tags"
+  description="Browse every hardware writeup on Mark's PC Parts by subject."
+>
+  <Nav slot="nav" />
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <a href="/blog/" class="inline-flex items-center gap-1.5 text-xs font-mono text-steel hover:text-accent-light transition-colors mb-8">
+      ← blog
+    </a>
+    <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Browse</p>
+    <h1 class="text-3xl font-semibold text-slate-100 mb-10">All tags</h1>
+
+    <div class="flex flex-wrap gap-2">
+      {tags.map(([tag, count]) => (
+        <a
+          href={`/blog/tag/${tag}/`}
+          class="text-sm font-mono px-3 py-1.5 rounded border border-white/10 bg-surface-700 text-steel hover:border-accent-light hover:text-accent-light transition-colors"
+        >
+          {tag} <span class="text-steel/50">({count})</span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

@@ -3,21 +3,11 @@ import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import FindCard from '../components/FindCard.astro';
 import { readingTime } from '../lib/readingTime';
 
 const recentPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
-
-const recentFinds = (await getCollection('finds'))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
-
-const hallOfFame = (await getCollection('finds'))
-  .filter(f => f.data.hallOfFame)
-  .sort((a, b) => (a.data.rank ?? 999) - (b.data.rank ?? 999))
-  .slice(0, 3);
+  .slice(0, 8);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -56,7 +46,6 @@ const personLd = {
 <Layout
   title="Rare &amp; Enthusiast PC Hardware"
   description="Rare, collectible, and enthusiast PC hardware sourced, tested, and documented. Redlands, CA."
-  canonicalUrl="https://markspcparts.com/"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -89,96 +78,19 @@ const personLd = {
         sourced, tested, and documented. This is where I keep the record.
       </p>
 
-      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <div class="mt-10 flex items-center justify-center">
         <a
-          href="/finds"
+          href="/blog/"
           class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold text-sm hover:bg-accent/90 transition-colors shadow-lg shadow-accent/25"
         >
-          Browse Marks Finds
+          Read the Blog
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
-        <a
-          href="/blog"
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/10 text-steel hover:text-slate-100 hover:border-white/20 font-medium text-sm transition-colors"
-        >
-          Read the Blog
-        </a>
       </div>
     </div>
   </section>
-
-  <!-- Marks Finds -->
-  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-    <div class="flex items-end justify-between mb-10">
-      <div>
-        <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Marks Finds</p>
-        <h2 class="text-2xl sm:text-3xl font-bold">Recently Documented</h2>
-      </div>
-      <a href="/finds" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
-        View all →
-      </a>
-    </div>
-
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {recentFinds.map(find => (
-        <FindCard
-          title={find.data.title}
-          category={find.data.category}
-          description={find.data.description}
-          image={find.data.images[0]?.src}
-          href={`/finds/${find.slug}`}
-          featured={find.data.hallOfFame}
-        />
-      ))}
-    </div>
-
-    <div class="mt-8 text-center sm:hidden">
-      <a href="/finds" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
-        View all finds →
-      </a>
-    </div>
-  </section>
-
-  <!-- Hall of Fame teaser -->
-  {hallOfFame.length > 0 && (
-    <section class="border-t border-white/5 bg-surface-800">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="flex items-end justify-between mb-10">
-          <div>
-            <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Curated</p>
-            <h2 class="text-2xl sm:text-3xl font-bold">Hall of Fame</h2>
-          </div>
-          <a href="/hall-of-fame" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
-            View all →
-          </a>
-        </div>
-
-        <div class="grid gap-6 sm:grid-cols-3">
-          {hallOfFame.map(find => (
-            <a href={`/finds/${find.slug}`} class="group block rounded-xl overflow-hidden border border-white/10 bg-surface-900 hover:border-accent/40 transition-colors">
-              {find.data.images[0] && (
-                <div class="aspect-[4/3] overflow-hidden">
-                  <img src={find.data.images[0].src} alt={find.data.images[0].alt} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-                </div>
-              )}
-              <div class="p-4">
-                <span class="text-xs font-mono text-accent-light uppercase tracking-widest">{find.data.category}</span>
-                <h3 class="text-base font-semibold text-slate-100 mt-1 group-hover:text-accent-light transition-colors">{find.data.title}</h3>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div class="mt-8 text-center sm:hidden">
-          <a href="/hall-of-fame" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
-            View the Hall of Fame →
-          </a>
-        </div>
-      </div>
-    </section>
-  )}
 
   <!-- Recent posts -->
   <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -187,7 +99,7 @@ const personLd = {
         <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Blog</p>
         <h2 class="text-2xl sm:text-3xl font-bold">Recent Posts</h2>
       </div>
-      <a href="/blog" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
+      <a href="/blog/" class="text-sm text-steel hover:text-accent-light transition-colors font-medium hidden sm:block">
         View all →
       </a>
     </div>
@@ -202,7 +114,7 @@ const personLd = {
         });
         return (
           <li class="py-8 group">
-            <a href={`/blog/${post.slug}`} class="block">
+            <a href={`/blog/${post.slug}/`} class="block">
               <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
                   <div class="flex items-center gap-2 shrink-0 mb-2 sm:mb-0">
                     <time class="text-xs font-mono text-steel">{dateStr}</time>
@@ -237,7 +149,7 @@ const personLd = {
     </ul>
 
     <div class="mt-8 text-center sm:hidden">
-      <a href="/blog" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
+      <a href="/blog/" class="text-sm text-steel hover:text-accent-light transition-colors font-medium">
         View all posts →
       </a>
     </div>
@@ -252,9 +164,9 @@ const personLd = {
         <p class="text-steel leading-relaxed">
           Based in Redlands, CA — I source rare and enthusiast PC hardware and document it properly:
           full specs, condition notes, and the backstory behind how it ended up on my bench.
-          Follow the builds and finds on TikTok.
+          Follow the builds on <a href="https://www.tiktok.com/@tacoismybigboydaddy" target="_blank" rel="noopener noreferrer" class="text-accent-light hover:text-white transition-colors underline underline-offset-2">TikTok</a>.
         </p>
-        <a href="/about" class="inline-block mt-6 text-sm text-accent-light hover:text-white transition-colors font-medium">
+        <a href="/about/" class="inline-block mt-6 text-sm text-accent-light hover:text-white transition-colors font-medium">
           Read more about me →
         </a>
       </div>

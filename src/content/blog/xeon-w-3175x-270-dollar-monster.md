@@ -1,17 +1,17 @@
 ---
 title: I Paid $270 for Intel's Most Unhinged CPU
 date: 2026-03-25
-description: The only consumer 28-core chip Intel ever made, bought off eBay for $270. It has lived a hard life and does not care.
+description: Intel's first unlocked 28-core CPU, bought off eBay for $270. It has lived a hard life and does not care.
 tags: [intel, xeon, cpu, lga3647, deal]
 ---
 
 Back in April 2025 I grabbed a Xeon W-3175X off eBay for $270. That's not a typo.
 
-This thing launched at **$2,999**. It's the only consumer-facing 28-core chip Intel ever shipped, and it only worked in a handful of boards — the [ASUS ROG Dominus Extreme](/blog/dominus-extreme-resurrection), the Gigabyte C621 Aorus Xtreme, and the EVGA SR-3 Dark (I've actually had two of those). Not a long list. You couldn't just drop this into any LGA 3647 server board and call it a day — it needed a platform built around its unlocked multiplier and extreme power delivery. One chip, a few very specific boards, [one insane platform](/blog/lga3647-server-socket-mounting). And I got the CPU for the price of a mid-range GPU.
+This thing launched at **$2,999**. It's Intel's first unlocked 28-core CPU, and it only worked in a handful of boards — the [ASUS ROG Dominus Extreme](/blog/dominus-extreme-resurrection/), the Gigabyte C621 Aorus Xtreme, and the EVGA SR-3 Dark (I've actually had two of those). Not a long list. You couldn't just drop this into any LGA 3647 server board and call it a day — it needed a platform built around its unlocked multiplier and extreme power delivery. One chip, a few very specific boards, [one insane platform](/blog/lga3647-server-socket-mounting/). And I got the CPU for the price of a mid-range GPU.
 
 ---
 
-## It Came From China and It Showed
+## Cosmetically Rough, Electrically Fine
 
 I knew what I was getting into. The listing was honest — shipped from overseas, no box, cosmetic wear noted. When it showed up I could see why.
 
@@ -43,7 +43,7 @@ The Dominus Extreme has the VRM to handle it — ASUS built that board specifica
 
 This is the other thing I love about this chip and not enough people talk about it.
 
-The W-3175X runs Skylake-SP's XCC die — 28 cores across roughly 694mm² of silicon, about 21.6mm x 32.3mm. I used to think that was Intel maxing out the reticle limit, the physical ceiling on how big a die the fab's lithography can expose in one shot. It's not — 14nm's DUV immersion reticle field tops out around 858mm² (26mm x 33mm), so there was still real headroom left. Intel got close on one dimension (32.3mm of a possible 33mm) but nowhere near it on the other.
+The W-3175X runs Skylake-SP's XCC die — 28 cores across roughly 698mm² of silicon, about 21.6mm x 32.3mm. I used to think that was Intel maxing out the reticle limit, the physical ceiling on how big a die the fab's lithography can expose in one shot. It's not — 14nm's DUV immersion reticle field tops out around 858mm² (26mm x 33mm), so there was still real headroom left. Intel got close on one dimension (32.3mm of a possible 33mm) but nowhere near it on the other.
 
 So it's not a lithography ceiling. It's a yield and cost ceiling — a monolithic die this size is already brutal to produce without defects, and going bigger just tanks yield further for no real benefit to a workstation part. The die is still *huge* — you can see it when you look at the chip, this massive piece of silicon sitting under the IHS, much larger than anything in a normal consumer CPU. It's one of the reasons the power draw is what it is, and it's one of the reasons Intel never made anything quite like it again.
 
@@ -61,4 +61,4 @@ But that's not why you get one.
 
 ---
 
-*Intel Xeon W-3175X — 28C/56T, LGA 3647, currently living in the ROG Dominus Extreme. Scratched up. Running great. Full details on the [finds page](/finds/xeon-w-3175x).*
+*Intel Xeon W-3175X — 28C/56T, LGA 3647, currently living in the ROG Dominus Extreme. Scratched up. Running great.*

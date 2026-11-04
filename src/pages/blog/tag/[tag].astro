@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+import { readingTime } from '../../../lib/readingTime';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const tags = [...new Set(posts.flatMap(p => p.data.tags))];
+
+  return tags.map(tag => ({
+    params: { tag },
+    props: {
+      posts: posts
+        .filter(p => p.data.tags.includes(tag))
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props as { posts: Awaited<ReturnType<typeof getCollection<'blog'>>> };
+---
+
+<Layout
+  title={`Tag: ${tag}`}
+  description={`${posts.length} post${posts.length === 1 ? '' : 's'} tagged "${tag}" on Mark's PC Parts.`}
+>
+  <Nav slot="nav" />
+
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+    <a href="/blog/tag/" class="inline-flex items-center gap-1.5 text-xs font-mono text-steel hover:text-accent-light transition-colors mb-8">
+      ← all tags
+    </a>
+    <p class="text-xs font-mono text-accent-light uppercase tracking-widest mb-2">Tag</p>
+    <h1 class="text-3xl font-semibold text-slate-100 mb-2">{tag}</h1>
+    <p class="text-steel text-base mb-10">{posts.length} post{posts.length === 1 ? '' : 's'}.</p>
+
+    <ul class="divide-y divide-white/5">
+      {posts.map(post => {
+        const dateStr = post.data.date.toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          timeZone: 'UTC',
+        });
+        return (
+          <li class="py-8 group">
+            <a href={`/blog/${post.slug}/`} class="block">
+              <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
+                <div class="flex items-center gap-2 shrink-0 mb-2 sm:mb-0">
+                  <time class="text-xs font-mono text-steel">{dateStr}</time>
+                  <span class="text-white/15 text-xs hidden sm:inline">·</span>
+                  <span class="text-xs font-mono text-steel hidden sm:inline">{readingTime(post.body)}</span>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h2 class="text-lg font-medium text-slate-100 group-hover:text-accent-light transition-colors mb-1">
+                    {post.data.title}
+                  </h2>
+                  {post.data.description && (
+                    <p class="text-steel text-sm leading-relaxed">{post.data.description}</p>
+                  )}
+                </div>
+                <span class="hidden sm:inline-block shrink-0 text-accent-light opacity-0 group-hover:opacity-100 transition-opacity text-sm">
+                  →
+                </span>
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+
+  <Footer slot="footer" />
+</Layout>

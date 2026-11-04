@@ -1,12 +1,12 @@
 ---
 title: Radeon Pro V340L Teardown and Repaste
 date: 2026-06-02
-description: "A full teardown of the AMD Radeon Pro V340L — dual Vega 10 XL GPUs, 16GB HBM2, SR-IOV MxGPU virtualization, and a repaste after years of server life. Part number 109-D05387, formerly in Google Stadia."
+description: "Dual Vega 10 XL server card with 16GB HBM2 and SR-IOV virtualization, torn down and repasted after years of server use."
 tags: [amd, gpu, teardown, server, homelab]
-relatedFinds: [radeon-pro-v340l]
 ---
 
-Stadia shut down in January 2023. Over the next year the hardware started moving — eBay listings, surplus auctions, all the server equipment Google quietly decommissioned after pulling the plug. I sniped this one for $30.
+<!-- TODO(owner): real provenance here if you want one — who/where you bought it from -->
+This came off a decommissioned server, sold as surplus. I picked it up for $30.
 
 Thirty dollars for a dual Vega 10 XL server card with 16GB HBM2 and hardware GPU virtualization. The seller had no idea what they had. I wasn't going to explain it.
 
@@ -20,14 +20,15 @@ A card that spent years running continuous server workloads doesn't get paste ch
 
 Think of the V340L as the server big brother of the Fiji Pro Duo — AMD's answer to the question "what if we put two high-end GPUs on one card, but for the datacenter instead of the living room." Where the Pro Duo was aimed at content creators and VR enthusiasts, the V340L is pure enterprise iron.
 
-The card carries two Vega 10 XL GPUs on a single PCIe board, each one paired with 4GB HBM2 stacks for 8GB per GPU and 16GB total. That HBM2 is part of what makes this card interesting — the same high-bandwidth memory you'd find on a [Vega 64](/blog/vega-64-lc-powercolor) or [Vega 56](/blog/vega-56-strix-hbm), just doubled up on one board. It runs passively cooled, which means there's a substantial heatsink doing all the work and it needs proper airflow from the server chassis to survive. AMD rates it at 300W TDP with dual 8-pin power connectors to match.
+The card carries two Vega 10 XL GPUs on a single PCIe board, each one paired with 4GB HBM2 stacks for 8GB per GPU and 16GB total. That HBM2 is part of what makes this card interesting — the same high-bandwidth memory you'd find on a [Vega 64](/blog/vega-64-lc-powercolor/) or [Vega 56](/blog/vega-56-strix-hbm/), just doubled up on one board. It runs passively cooled, which means there's a substantial heatsink doing all the work and it needs proper airflow from the server chassis to survive. AMD rates it at 230W TDP.
+<!-- TODO(owner): confirm power connector off the card -->
 
-The real reason this card exists is SR-IOV. Through AMD's MxGPU technology, the V340L can expose up to 16 virtual GPUs to a hypervisor — hardware-level GPU virtualization without the driver gymnastics that software approaches require. That makes it a natural fit for VDI workloads, cloud gaming infrastructure, and virtualized compute environments. It's part number 109-D05387 if you're trying to track one down, and you may recognize its lineage from Google Stadia, where these cards were running in Google's datacenter racks serving game streams.
+The real reason this card exists is SR-IOV. Through AMD's MxGPU technology, the V340L can expose up to 16 virtual GPUs to a hypervisor — hardware-level GPU virtualization without the driver gymnastics that software approaches require. That makes it a natural fit for VDI workloads, cloud gaming infrastructure, and virtualized compute environments. If you're trying to track one down, search **102-D05318-02** — that's AMD's actual SKU for this card. There's also a **109-D05387** silkscreened on the PCB itself, but that reads as a board-revision code, not the part number you want for sourcing.
 
-There's also a Microsemi SmartFusion2 security processor onboard — a microcontroller with FPGA fabric that handles secure boot and platform management functions. It's the kind of component you don't see on consumer cards and it's one of the more interesting things to find when you crack this open. For the full story on HBM2 and where it fits in the memory lineage from Fiji through the current datacenter generation, I wrote up [the complete HBM history here](/blog/hbm-memory-history).
+There's also a Microsemi SmartFusion2 security processor onboard — a microcontroller with FPGA fabric that handles secure boot and platform management functions. It's the kind of component you don't see on consumer cards and it's one of the more interesting things to find when you crack this open. For the full story on HBM2 and where it fits in the memory lineage from Fiji through the current datacenter generation, I wrote up [the complete HBM history here](/blog/hbm-memory-history/).
 
 ![AMD Radeon Pro V340L part number 109-D05387 on PCB](/images/posts/v340l-repaste/amd-logo.jpg)
-*Part number 109-D05387 stamped right on the board.*
+*109-D05387 — silkscreened right on the board. The sellable SKU is 102-D05318-02.*
 
 ---
 
@@ -135,7 +136,7 @@ VRM pads held their position on the components and didn't need replacement. Both
 
 ## Whats Next
 
-This is going into a homelab Proxmox build. The SR-IOV MxGPU support is the whole reason to bother — each Vega 10 XL die supports up to 8 virtual GPU instances, so the V340L can theoretically hand out 16 vGPUs to different VMs simultaneously. That's not a number you see outside serious enterprise hardware, and getting one of these at Stadia surplus prices is the kind of gap that makes this stuff worth chasing.
+This is going into a homelab Proxmox build. The SR-IOV MxGPU support is the whole reason to bother — each Vega 10 XL die supports up to 8 virtual GPU instances, so the V340L can theoretically hand out 16 vGPUs to different VMs simultaneously. That's not a number you see outside serious enterprise hardware, and getting one of these is the kind of gap that makes this stuff worth chasing.
 
 The plan is to get AMD's MxGPU drivers running on a Linux host and start carving it into vGPU slices for Windows VMs. Getting SR-IOV GPU passthrough properly configured is its own project — I'm not declaring victory until it's actually stable and running. Expect a follow-up once that's sorted.
 
@@ -149,7 +150,7 @@ The plan is to get AMD's MxGPU drivers running on a Linux host and start carving
       "name": "What is the AMD Radeon Pro V340L?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Radeon Pro V340L (part number 109-D05387) is a server-class GPU from AMD that puts two Vega 10 XL dies on a single PCIe card. It has 16GB of HBM2 memory split as 8GB per GPU, runs fully passively cooled, draws 300W via dual 8-pin connectors, and supports hardware GPU virtualization through AMD's MxGPU SR-IOV technology for up to 16 virtual GPUs. It also carries a Microsemi SmartFusion2 security processor for secure boot and platform management."
+        "text": "The Radeon Pro V340L (AMD part number 102-D05318-02; silkscreened on the board itself as 109-D05387) is a server-class GPU from AMD that puts two Vega 10 XL dies on a single PCIe card. It has 16GB of HBM2 memory split as 8GB per GPU, runs fully passively cooled, draws 230W, and supports hardware GPU virtualization through AMD's MxGPU SR-IOV technology for up to 16 virtual GPUs. It also carries a Microsemi SmartFusion2 security processor for secure boot and platform management."
       }
     },
     {
@@ -158,14 +159,6 @@ The plan is to get AMD's MxGPU drivers running on a Linux host and start carving
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "MxGPU is AMD's hardware GPU virtualization technology built on the PCI-SIG SR-IOV (Single Root I/O Virtualization) standard. SR-IOV allows a single physical PCIe device to present multiple independent virtual functions directly to a hypervisor, bypassing the need for software emulation. On the Radeon Pro V340L this means up to 16 virtual GPUs can be assigned to separate virtual machines simultaneously, each with direct hardware access and isolated resources — making it well-suited for VDI, cloud gaming, and virtualized compute workloads."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Was the Radeon Pro V340L used in Google Stadia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. The Radeon Pro V340L was used in Google's Stadia cloud gaming infrastructure. The card's dual-GPU layout and MxGPU SR-IOV hardware virtualization made it a practical fit for serving multiple simultaneous game streaming sessions from a single physical card installed in a server rack."
       }
     },
     {

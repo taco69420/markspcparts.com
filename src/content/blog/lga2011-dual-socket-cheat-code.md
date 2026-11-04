@@ -35,7 +35,7 @@ The CPUs have some value. The RAM is the score. And almost nobody clicking on th
 
 Paid $150 for the whole bundle: ASUS Z9PE-D8 WS, two E5-2697s, and 256GB of DDR3 ECC. Then I actually looked at the board.
 
-IO corner was damaged. Bent up in a way that made me nervous about the board long-term. I'd seen this before — [shipping damage, IO corner, same story](/blog/dual-socket-ai-lab). I decided to cut my losses before I even tried to boot it.
+IO corner was damaged. Bent up in a way that made me nervous about the board long-term. I'd seen this before — [shipping damage, IO corner, same story](/blog/dual-socket-ai-lab/). I decided to cut my losses before I even tried to boot it.
 
 Pulled the 256GB DDR3 ECC kit, listed it separately, sold it for **$200**.
 
@@ -79,9 +79,9 @@ I sent him **$220** and he accepted.
 
 Not the consumer PC crowd. They already scrolled past twice without bidding.
 
-**Homelabbers.** Proxmox, TrueNAS, Unraid users who need lots of cores, lots of RAM, and ECC support. A working dual-socket v4 system is a legitimately powerful homelab server. These people will pay real money for something complete and tested — they're not buying it to game on, they're buying it to run 40 containers and never touch it again. The same surplus channel that produces these boards also turns up enterprise GPUs like the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste) — a passive AMD dual-GPU card with hardware SR-IOV for up to 16 virtual GPUs, which pairs directly with Proxmox for vGPU workloads.
+**Homelabbers.** Proxmox, TrueNAS, Unraid users who need lots of cores, lots of RAM, and ECC support. A working dual-socket v4 system is a legitimately powerful homelab server. These people will pay real money for something complete and tested — they're not buying it to game on, they're buying it to run 40 containers and never touch it again. The same surplus channel that produces these boards also turns up enterprise GPUs like the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste/) — a passive AMD dual-GPU card with hardware SR-IOV for up to 16 virtual GPUs, which pairs directly with Proxmox for vGPU workloads.
 
-**AI and LLM people.** [RAM-based inference works](/blog/dual-socket-ai-lab). It's slow compared to VRAM, but several hundred gigabytes of system memory can hold models that would otherwise require stacked high-end GPUs. There's a buyer for this.
+**AI and LLM people.** [RAM-based inference works](/blog/dual-socket-ai-lab/). It's slow compared to VRAM, but several hundred gigabytes of system memory can hold models that would otherwise require stacked high-end GPUs. There's a buyer for this.
 
 **Small businesses.** Someone who needs an internal server and doesn't have a rack budget will look at a tested dual-socket workstation for $350 and call it a reasonable deal. Because it is.
 
@@ -89,11 +89,12 @@ None of these people are browsing the same eBay results as someone building a ga
 
 ---
 
-## The Z10PE Arrives Tomorrow
+## The Z10PE Arrived
 
-I'll tear it down, verify it posts, inventory everything. If the board is clean — and I expect it will be — this goes to a homelabber as a complete package. A working dual-socket DDR4 workstation with Noctua coolers already installed is worth more sold whole than parted. If something's wrong with the board, the RAM covers my cost anyway.
+I tore it down, verified it posted, went through everything. The board was clean.
+<!-- TODO(owner): fill in what actually happened to this board — sold whole, parted out, kept -->
 
-Either way, I already know how this ends.
+Either way, I already knew how it would end.
 
 ---
 
@@ -107,4 +108,4 @@ The gap between what an average eBay scroller values and what the actual market 
 
 ---
 
-*More on the Z10PE when it arrives. For the original dual-socket experiment that started all this: [I Almost Built a Poor Man's AI Lab for $150](/blog/dual-socket-ai-lab).*
+*More on the Z10PE when it arrives. For the original dual-socket experiment that started all this: [I Almost Built a Poor Man's AI Lab for $150](/blog/dual-socket-ai-lab/).*

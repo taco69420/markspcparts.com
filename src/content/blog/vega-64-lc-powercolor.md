@@ -3,7 +3,6 @@ title: I Downgraded to a Vega 64 LC for $200 and I'd Do It Again
 date: 2026-03-25
 description: Came from a 5700 XT, paid $200 in July 2023 for a factory liquid cooled Vega 64. Technically worse. Worth it.
 tags: [amd, gpu, memory, hbm, water-cooling]
-relatedFinds: [vega-64-lc]
 ---
 
 July 2023. I was running a 5700 XT and I knew exactly what I was about to do was stupid.
@@ -52,7 +51,7 @@ Five degrees Fahrenheit. My room got measurably warmer running this card under l
 
 ## The HBM Part
 
-This is still what gets me about Vega. HBM2 sitting right there on the package, absurd bandwidth for a consumer card. By 2023 it was already a generation behind and the performance numbers showed it, but the architecture is genuinely interesting. Same lineage as [the Vega 56 Strix](/blog/vega-56-strix-hbm), same reason I keep coming back to these cards. I wrote up [the full HBM history](/blog/hbm-memory-history) if you want the whole arc from Fiji onward. The same Vega 10 die also had a server life — AMD put two of them on one passive PCIe card for the enterprise market, the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste), which ended up running in Google Stadia's infrastructure before finding its way into homelabs.
+This is still what gets me about Vega. HBM2 sitting right there on the package, absurd bandwidth for a consumer card. By 2023 it was already a generation behind and the performance numbers showed it, but the architecture is genuinely interesting. Same lineage as [the Vega 56 Strix](/blog/vega-56-strix-hbm/), same reason I keep coming back to these cards. I wrote up [the full HBM history](/blog/hbm-memory-history/) if you want the whole arc from Fiji onward. The same Vega 10 die also had a server life — AMD put two of them on one passive PCIe card for the enterprise market, the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste/), which found its way into homelabs once decommissioned server stock hit the used market.
 
 Fast memory on consumer silicon is cool. It was cool in 2017 and it was still cool when I dropped $200 on one six years later.
 

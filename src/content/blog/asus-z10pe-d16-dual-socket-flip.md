@@ -3,12 +3,11 @@ title: "I Paid $280 for a Dual-Socket DDR4 Workstation With Noctua Coolers Alrea
 date: 2026-06-09
 description: "ASUS Z10PE-D16, dual E5-2620 v4, 64GB DDR4 ECC, two Noctua NH-D9DX coolers, full IPMI. $280 shipped. Here's the board, the test results, and the split plan."
 tags: [asus, xeon, dual-socket, workstation, server, homelab, ecc, flip]
-relatedFinds: ["z10pe-d16", "micron-64gb-ddr4-ecc", "noctua-nh-d9dx-i4-3u"]
 ---
 
 ![ASUS Z10PE-D16 with dual Xeon E5-2620 v4 and Noctua NH-D9DX coolers, top-down view](/images/posts/dual-socket-16/hero-dual.jpg)
 
-$280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registered ECC, and two Noctua NH-D9DX tower coolers already mounted. The seller had no idea. Nobody bid against me. Same story as [the Z9PE-D8 WS before it](/blog/lga2011-dual-socket-cheat-code) — and this one is better.
+$280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registered ECC, and two Noctua NH-D9DX tower coolers already mounted. The seller had no idea. Nobody bid against me. Same story as [the Z9PE-D8 WS before it](/blog/lga2011-dual-socket-cheat-code/) — and this one is better.
 
 ---
 
@@ -31,7 +30,7 @@ The coolers are the part I keep coming back to. The NH-D9DX i4 is the specific N
 
 The "D16" is the important part. Sixteen DIMM slots — eight per CPU, quad-channel per socket. That's the whole board. Where cheaper dual-socket platforms cut corners on memory slots, ASUS built this one out fully. Fill it with 64GB LRDIMMs and you've got a 1TB system. Fill it with the 16GB RDIMMs that came in this bundle and you've got 256GB with slots to spare.
 
-The rest of the spec sheet: dual Intel i350 Gigabit LAN onboard, seven PCIe 3.0 x16 slots, C612 chipset, SSI-EEB form factor. The seven PCIe slots aren't a typo — this board was designed for multi-GPU visualization workloads, so ASUS populated it properly. In a homelab context that means room for GPUs, HBAs, NVMe controllers, and 10GbE cards without fighting over slots.
+The rest of the spec sheet: dual Intel i350 Gigabit LAN onboard, six PCIe 3.0 x16 slots, C612 chipset, SSI-EEB form factor. That's not a typo — this board was designed for multi-GPU visualization workloads, so ASUS populated it properly. In a homelab context that means room for GPUs, HBAs, NVMe controllers, and 10GbE cards without fighting over slots.
 
 It needs a server case, pedestal workstation chassis, or open bench. It's too big for a standard ATX enclosure.
 
@@ -80,27 +79,22 @@ Board is confirmed working. Nothing to hedge on.
 ![Angled view of Z10PE-D16 SATA and storage connectivity area](/images/posts/dual-socket-16/sata.jpg)
 *SATA ports, M.2, and headers all clean. No damage, no missing caps, nothing bent.*
 
-The IO corner is fine — worth noting because this is where I found damage on [the Z9PE-D8 before this one](/blog/lga2011-dual-socket-cheat-code). This board traveled well.
+The IO corner is fine — worth noting because this is where I found damage on [the Z9PE-D8 before this one](/blog/lga2011-dual-socket-cheat-code/). This board traveled well.
 
 ---
 
-## How I'm Splitting It
+## How I Split It
 
 Same playbook as the Z9PE-D8 flip. Three-way split, RAM first.
 
-**Noctua coolers first.** Listed both NH-D9DX i4 3U units individually at $50 each — one already sold, one still available. $50 in the pocket before anything else ships.
+**Noctua coolers.** Two NH-D9DX i4 3U units.
+<!-- TODO(owner): fill in what actually happened — sold both, kept one, price realized -->
 
-→ **[Noctua NH-D9DX i4 3U — $50](/finds/noctua-nh-d9dx-i4-3u)**
+**RAM.** The 64GB DDR4 ECC RDIMM kit — four matched Micron 16GB PC4-2400T sticks, exactly what LGA 2011-v3 homelabbers are after.
+<!-- TODO(owner): fill in what actually happened to this kit -->
 
-**RAM next.** The 64GB DDR4 ECC RDIMM kit is listed at $200. Four matched Micron 16GB PC4-2400T sticks — exactly what LGA 2011-v3 homelabbers are buying right now, and those buyers don't negotiate because they know what they need.
-
-→ **[64GB DDR4 ECC RDIMM Kit — $200](/finds/micron-64gb-ddr4-ecc)**
-
-**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s listed at $200, sold tested and confirmed. The E5-2620 v4 is not a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and seven PCIe slots in a confirmed-working package. That's a real homelab server at surplus pricing, and the buyer that wants it will pay for a tested combo over a gamble.
-
-→ **[ASUS Z10PE-D16 + Dual E5-2620 v4 — $200](/finds/z10pe-d16)**
-
-Total gross on the full split: **$500** before fees on a $280 buy-in.
+**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s, sold tested and confirmed. The E5-2620 v4 isn't a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and six PCIe slots in a confirmed-working package.
+<!-- TODO(owner): fill in what actually happened to this combo, and the final numbers for the full split -->
 
 ---
 
@@ -108,7 +102,7 @@ Total gross on the full split: **$500** before fees on a $280 buy-in.
 
 If you're reading this because you're thinking about buying into a LGA 2011-v3 platform: do it now, not later.
 
-TrendForce data through Q1 2026 shows DDR4 ECC RDIMM pricing up roughly 90–95% year-over-year. 16GB sticks that were $15 used in early 2025 are clearing $65–95 now depending on config and compatibility. Industry consensus on relief is 2027 at the earliest.
+DDR4 ECC RDIMM prices roughly doubled over the back half of 2026.
 
 This matters because LGA 2011-v3 platforms require registered ECC — you can't sub in consumer DDR4. The boards are cheap because they're old server gear. The RAM isn't cheap anymore because enterprise demand ate the supply. The window where you can buy a complete, tested bundle with RAM already included at a reasonable all-in price is closing.
 
@@ -122,4 +116,4 @@ Cooler listing is live. RAM and board are live. Links above.
 
 As much as I'd love to keep this thing and play with 256GB of DDR4 ECC and a full IPMI setup — I've got something way more fun in the works. New build coming together around an ASUS ROG Z490 Apex and I'm pushing the memory to something stupid like 4000MHz CL15. Very different energy from a dual-socket server board, but that's kind of the point. Stay tuned.
 
-*Previous flip in the same series: [Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At](/blog/lga2011-dual-socket-cheat-code).*
+*Previous flip in the same series: [Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At](/blog/lga2011-dual-socket-cheat-code/).*

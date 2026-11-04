@@ -3,7 +3,6 @@ title: Back on the 285K
 date: 2026-03-27
 description: Built this rig in November 2025, moved to the Dominus, and finally came back. White GPU, black build, and CUDIMMs running at 8800 MT/s on a 4-slot board.
 tags: [intel, nvidia, cpu, gpu, memory, ddr5, cudimm, build]
-relatedFinds: [cudimm-9000-400]
 ---
 
 I built this machine back in November 2025. Used it for a while, then the Dominus pulled me away. Eventually moved back to the Dominus full time and this rig just sat there.
@@ -16,7 +15,7 @@ Then I finally came back to it.
 
 - **CPU:** Intel Core Ultra 9 285K — Micro Center bundle deal with the board
 - **Motherboard:** MSI Z890 Tomahawk WiFi — picked up as a bundle with the 285K at Micro Center
-- **RAM:** 48GB G.Skill Trident Z5 CK 8800 MT/s CUDIMMs — [$400 on eBay](/blog/cudimm-9000-400)
+- **RAM:** 48GB G.Skill Trident Z5 CK 8800 MT/s CUDIMMs — [$400 on eBay](/blog/cudimm-9000-400/)
 - **GPU:** Zotac RTX 5080 Solid White
 - **Cooler:** be quiet! Silent Loop 3 420
 - **Case:** Phanteks Enthoo Pro 2 Server Edition
@@ -38,7 +37,7 @@ Honestly? It works. It stands out. You notice it immediately when you look throu
 
 ## The RAM Situation
 
-The CUDIMMs are the part of this build I'm most proud of. If you haven't read the full story — [I got 48GB of 9000 MT/s G.Skill Trident Z5 CK CUDIMMs for $400 on eBay](/blog/cudimm-9000-400). Listed at $650, countered low, seller said yes.
+The CUDIMMs are the part of this build I'm most proud of. If you haven't read the full story — [I got 48GB of 9000 MT/s G.Skill Trident Z5 CK CUDIMMs for $400 on eBay](/blog/cudimm-9000-400/). Listed at $650, countered low, seller said yes.
 
 Running them on the Z890 Tomahawk at **8800 MT/s**. The Tomahawk is a 4-slot board — not the go-to recommendation for CUDIMM builds where people tend to suggest boards with dedicated CUDIMM routing. But they trained, they're stable, and I'm pulling bandwidth numbers that are wild for a 2-stick consumer setup.
 

@@ -1,11 +1,9 @@
 ---
 const navLinks = [
   { href: '/', label: 'Home' },
-  { href: '/finds', label: 'Finds' },
-  { href: '/hall-of-fame', label: 'Hall of Fame' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/about', label: 'About' },
-  { href: '/contact', label: 'Contact' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -42,7 +40,7 @@ const isActive = (href: string) =>
 
       <!-- Search icon -->
       <a
-        href="/search"
+        href="/search/"
         class="p-2 rounded text-steel hover:text-slate-100 hover:bg-white/5 transition-colors"
         aria-label="Search"
       >

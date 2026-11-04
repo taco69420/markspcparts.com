@@ -1,12 +1,11 @@
 ---
 title: Why the ROG Dominus Extreme VRM Will Basically Last Forever
 date: 2026-06-15
-description: 32 teamed IR3555 power stages, a CPU that pulls 400 watts, and barely 12 amps per phase. The Dominus Extreme power delivery is so overbuilt it can't really wear out — here's the math, the board, and why nothing current touches it.
+description: 32 teamed IR3555 power stages, a CPU that pulls 400 watts, and barely 12 amps per stage. The Dominus Extreme power delivery is so overbuilt it can't really wear out — here's the math, the board, and why nothing current touches it.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm]
-relatedFinds: [rog-dominus-extreme, xeon-w-3175x]
 ---
 
-I've owned a few of these boards now. [Flipped my first one for $300](/blog/dominus-extreme-first-board), [brought a dead one back with a CMOS button](/blog/dominus-extreme-resurrection), [fought the DIMM.2 slots over RAM thermals](/blog/dominus-extreme-dimm2-problem). And the more time I spend with the ROG Dominus Extreme, the more I keep landing on the same thought:
+I've owned a few of these boards now. [Flipped my first one for $300](/blog/dominus-extreme-first-board/), [brought a dead one back with a CMOS button](/blog/dominus-extreme-resurrection/), [fought the DIMM.2 slots over RAM thermals](/blog/dominus-extreme-dimm2-problem/). And the more time I spend with the ROG Dominus Extreme, the more I keep landing on the same thought:
 
 The VRM on this board is never going to die. Not "probably fine." Not "should last a while." It is so far over-engineered for what it actually has to do that, barring a manufacturing defect or me dropping a wrench across the phases, the power delivery will outlive the rest of the board, the CPU, and most likely me.
 
@@ -36,13 +35,13 @@ Now here's the part that matters.
 
 ## The CPU can't stress it
 
-The chip this board exists for is the [Xeon W-3175X](/blog/xeon-w-3175x-270-dollar-monster) — 28 cores, and a part that'll [pull around 400 watts under a real load](/blog/xeon-w-3175x-270-dollar-monster). That sounds like a monster, and it is. But run the actual current through this VRM and the picture flips.
+The chip this board exists for is the [Xeon W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) — 28 cores, and a part that'll [pull around 400 watts under a real load](/blog/xeon-w-3175x-270-dollar-monster/). That sounds like a monster, and it is. But run the actual current through this VRM and the picture flips.
 
 At roughly 1.0V core voltage, 400 watts is about **400 amps** going into the socket. Spread that across 32 teamed stages and each one is carrying around **12.5 amps**.
 
 Each stage is rated for **60 amps**.
 
-So at full stock load — the kind of load that makes the W-3175X scream and the AIO work — every power stage on this board is sitting at roughly **21% of what it's rated for**. Even if you push the board to its own 570A sustained ceiling, that's still only ~18A per stage. Under 30% of rating, across the entire array, all the time.
+So at full stock load — the kind of load that makes the W-3175X scream and the AIO work — every power stage on this board is sitting at roughly **21% of what it's rated for**. Even if you push the board to its own 570A sustained ceiling, that's still only ~18A per stage. Under 30% of stage rating, across the entire array, all the time — and still under half of the 40A choke rating even at the board's 570A ceiling.
 
 ![Diagram — W-3175X pulling ~400A from the socket, fanning out across 32 teamed IR3555 power stages, each one carrying ~12.5A against a 60A rating, with a load-bar showing every stage filled to roughly 21 percent](/images/posts/dominus-extreme-vrm/load-spread.svg)
 
@@ -56,7 +55,7 @@ Heat in a power stage scales with the *square* of the current through it (I²R).
 
 (12.5 / 60)² ≈ **0.043**
 
-Each stage is producing somewhere around **4% of the heat it would make if you ran it at its rating**. Four percent. That's why the VRM fans on this board basically never have a reason to spin. There's nothing to cool. The array barely warms up because no individual piece of it is doing any real work.
+Each stage is producing somewhere around **4% of the heat it would make if you ran it at its rating** — in conduction loss alone; switching and gate-drive losses are roughly fixed per active stage and don't scale with current, which is exactly why [phase shedding](/blog/dominus-extreme-phase-shedding/) exists in the first place. Four percent. That's why the VRM fans on this board basically never have a reason to spin. There's nothing to cool. The array barely warms up because no individual piece of it is doing any real work.
 
 ![Diagram — heat-output comparison per power stage at 12.5A actual load versus 60A full rating, I-squared-R relationship, showing the actual operating point producing roughly 4 percent of the rated-load heat](/images/posts/dominus-extreme-vrm/thermal-load.svg)
 
@@ -94,4 +93,4 @@ The VRM isn't going to be what kills a Dominus Extreme. Nothing about it is even
 
 ---
 
-*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, 570A+ sustained, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs, driving a [W-3175X that pulls 400 watts](/blog/xeon-w-3175x-270-dollar-monster) at ~12A per phase.*
+*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, 570A+ sustained, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs, driving a [W-3175X that pulls 400 watts](/blog/xeon-w-3175x-270-dollar-monster/) at ~12A per stage.*

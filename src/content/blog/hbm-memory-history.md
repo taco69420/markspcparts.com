@@ -1,7 +1,8 @@
 ---
 title: "HBM: The History of Stacked Memory and Where It's At Now"
 date: 2026-03-27
-description: "From Fiji to MI300X — how HBM went from a niche GPU trick to the backbone of every serious AI accelerator."
+updatedDate: 2026-11-03
+description: "From Fiji to HBM4 — how HBM went from a niche GPU trick to the backbone of every serious AI accelerator."
 tags: [amd, nvidia, gpu, memory, hbm, ai]
 ---
 
@@ -72,7 +73,7 @@ Products that shipped on HBM2:
 
 The V100 was arguably the more important launch. NVIDIA used HBM2 for data center compute rather than consumer graphics, and that framing — HBM as a serious accelerator technology rather than a consumer gimmick — stuck. The V100's 900 GB/s on the SXM2 form factor set the standard for what serious compute memory looked like.
 
-AMD's Vega architecture was supposed to recapture the GPU lead. It didn't, but the Vega 56 and Vega 64 were at least respectable parts with interesting bandwidth characteristics. The Radeon VII in 2019 was essentially a compute card with 1 TB/s+ memory bandwidth shoved into a gaming SKU — wildly overbuilt for games, interesting for compute work. AMD also took the same Vega 10 die into the enterprise with the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste) — a passive dual-GPU server card carrying 16GB HBM2 across two dies, hardware SR-IOV for up to 16 virtual GPUs, and a prior life inside Google Stadia's datacenter racks.
+AMD's Vega architecture was supposed to recapture the GPU lead. It didn't, but the Vega 56 and Vega 64 were at least respectable parts with interesting bandwidth characteristics. The Radeon VII in 2019 was essentially a compute card with 1 TB/s+ memory bandwidth shoved into a gaming SKU — wildly overbuilt for games, interesting for compute work. AMD also took the same Vega 10 die into the enterprise with the [Radeon Pro V340L](/blog/radeon-pro-v340l-teardown-repaste/) — a passive dual-GPU server card carrying 16GB HBM2 across two dies and hardware SR-IOV for up to 16 virtual GPUs.
 
 ---
 
@@ -85,17 +86,17 @@ AMD's Vega architecture was supposed to recapture the GPU lead. It didn't, but t
 **Stack heights:** 8-Hi, 12-Hi, 16-Hi
 **Makers:** SK Hynix, Samsung
 
-HBM2E wasn't a new JEDEC standard number — it was an extension of the HBM2 spec that pushed per-pin rates from 2 to 3.2 Gbps and unlocked taller stacks. Samsung announced 12-Hi HBM2E in October 2019 with 16 GB per stack. The "E" nomenclature became common shorthand even though JEDEC didn't give it its own number.
+HBM2E wasn't a new JEDEC standard number — it was an extension of the HBM2 spec that pushed per-pin rates from 2 to 3.2 Gbps and unlocked taller stacks. Samsung announced its Flashbolt HBM2E — the first product to meet the spec — at GTC in March 2019: an 8-Hi stack, 16 GB of capacity, 410 GB/s of bandwidth. The "E" nomenclature became common shorthand even though JEDEC didn't give it its own number.
 
-This is the generation that made NVIDIA's A100 possible:
+This is the generation that made NVIDIA's A100 80 GB possible — worth flagging that the A100 40 GB launched the same year on standard HBM2, not HBM2E:
 
 | Accelerator | Config | Total Memory | Total Bandwidth | Year |
 |---|---|---|---|---|
-| AMD Instinct MI100 | 4 stacks × 8 GB | 32 GB | 1,228 GB/s | 2020 |
-| NVIDIA A100 40 GB (SXM4) | 5 stacks × 8 GB | 40 GB | 1,555 GB/s | 2020 |
 | NVIDIA A100 80 GB | 5 stacks × 16 GB | 80 GB | 2,039 GB/s | 2020/2021 |
 | AMD Instinct MI250X | 8 stacks × 16 GB | 128 GB | 3,277 GB/s | 2021 |
 | Intel Gaudi 3 | 8 stacks × 16 GB | 128 GB | 3,700 GB/s | 2024 |
+
+For reference, the HBM2 (not HBM2E) parts that launched the same year: the **AMD Instinct MI100** (4 stacks × 8 GB, 32 GB, 1,228 GB/s) and the **NVIDIA A100 40 GB** (5 stacks × 8 GB, 40 GB, 1,555 GB/s) — both 2020.
 
 The A100 was the product that made people take GPU compute seriously at scale. The 80 GB version with HBM2E, doing 2 TB/s, became the workhorse of early LLM training infrastructure. Entire data center strategies were built around it.
 
@@ -188,7 +189,7 @@ The other major change is the base die. Previous HBM generations used a simple p
 
 Micron is already in high-volume HBM4 production. Samsung shipped HBM4 samples at 11.7 Gbps in late 2025 and officially has product shipping as of early 2026. SK Hynix is ramping in parallel.
 
-The first major target is NVIDIA's **Vera Rubin GPU**, targeting H2 2026. Numbers floating around: up to 288 GB HBM4 per package, up to 22 TB/s total bandwidth. The Vera Rubin NVL72 system (72 of those GPUs) is the compute platform AMD and the hyperscalers are building toward next.
+The first major target is NVIDIA's **Vera Rubin GPU**, targeting H2 2026. Numbers floating around: up to 288 GB HBM4 per package, up to 22 TB/s total bandwidth. The Vera Rubin NVL72 system (72 of those GPUs) is the compute platform the hyperscalers are building toward next.
 
 **HBM4E** comes after that — targeting roughly 2027 production, 12.8–13 Gbps per pin, ~3.25 TB/s per stack, still on the 2048-bit interface from HBM4. Samsung has put a 3.25 TB/s target on record. TrendForce projects HBM4E will represent 40% of total HBM bit demand in 2027.
 
@@ -203,3 +204,11 @@ The reasons are obvious in retrospect. Training large language models is almost 
 HBM was invented to solve the memory wall for gaming GPUs. It kind of failed at that — GDDR6X is fast enough and way cheaper for consumer graphics, and HBM never made sense on sub-$1000 cards. But the same properties that made it compelling for compute — insane bandwidth, dense packaging, lower power per bit — turned out to be exactly what AI infrastructure needed.
 
 From Fury X to Vera Rubin in eleven years. Not a bad run for a memory standard nobody outside of hardware enthusiasts had heard of in 2015.
+
+---
+
+## Where It's At, Late 2026
+
+AMD launched the Instinct MI350 series in 2025 (the MI350X in the table above) and has since confirmed the **MI400** for a 2026 launch — 432 GB of HBM4 per package at 19.6 TB/s of bandwidth, a significant jump over the MI350 generation and squarely aimed at the same hyperscaler training market NVIDIA's Vera Rubin platform is chasing. It's the clearest sign yet that HBM4 isn't just an NVIDIA story — both major accelerator vendors are building their 2026 flagships around it.
+
+Sources: [VideoCardz](https://videocardz.com/newz/amd-launches-instinct-mi350-series-confirms-mi400-in-2026-with-432gb-hbm4-memory), [Wccftech](https://wccftech.com/amd-instinct-mi400-accelerator-doubles-compute-40-pflops-432-gb-hbm4-memory-2026-launch/).

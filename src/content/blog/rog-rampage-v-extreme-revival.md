@@ -3,7 +3,6 @@ title: The ROG Rampage V Extreme That Was Never Actually Dead
 date: 2026-06-09
 description: POST code 53, a $90 refund, a borrowed RAM kit, and one overlooked switch. The X99 flagship was fine the whole time.
 tags: [asus, rog, intel, x99, lga2011, water-cooling, hedt, deal, debug]
-relatedFinds: [rog-rampage-v-extreme]
 ---
 
 This one came in as a bundle off eBay. The seller had originally picked it up from a pawn shop listing — which already tells you something about where this board had been before it landed on my bench.
@@ -54,7 +53,7 @@ The $90 refund I negotiated? Earned it back instantly just on the CPU alone.
 
 ![Top right of Rampage V Extreme — DIMM slots, M.2 slot, SATA port stack, onboard control strip with ROG logo panel behind](/images/posts/rog-rampage5/topr.jpg)
 
-This is the second time I've acquired a "broken" HEDT board that turned out to only need proper diagnosis. The first was the [ROG Dominus Extreme revival](/blog/dominus-extreme-resurrection) — POST code 00, looked completely dead, turned out to be corrupt CMOS data cleared with a single button press. These flagship boards are built to survive. They're not as fragile as their price tags suggest.
+This is the second time I've acquired a "broken" HEDT board that turned out to only need proper diagnosis. The first was the [ROG Dominus Extreme revival](/blog/dominus-extreme-resurrection/) — POST code 00, looked completely dead, turned out to be corrupt CMOS data cleared with a single button press. These flagship boards are built to survive. They're not as fragile as their price tags suggest.
 
 ---
 

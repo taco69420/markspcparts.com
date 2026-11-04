@@ -6,19 +6,18 @@ export interface Props {
   description?: string;
   ogImage?: string;
   ogType?: string;
-  canonicalUrl?: string;
 }
 
 const {
   title,
   description = "Rare, collectible, and enthusiast PC hardware — Mark's PC Parts",
+  // TODO(owner): replace sitewide OG fallback with a branded 1200x630 card
   ogImage = 'https://markspcparts.com/images/posts/dual-socket-16/hero-dual.jpg',
   ogType = 'website',
-  canonicalUrl,
 } = Astro.props;
 
 const pageTitle = `${title} — Mark's PC Parts`;
-const canonical = canonicalUrl ?? new URL(Astro.url.pathname, Astro.site).toString();
+const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 ---
 
 <!doctype html>
