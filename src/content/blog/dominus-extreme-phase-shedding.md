@@ -5,7 +5,7 @@ description: Phase shedding parks most of your VRM at idle to save a few watts. 
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm, bios]
 ---
 
-Last post I told you the [Dominus Extreme VRM will basically last forever](/blog/dominus-extreme-vrm-overbuilt/) — 32 teamed power stages, a CPU that can't even make them break a sweat, every stage loafing at a fifth of its rating. That was the "why it never dies" story.
+Last post I showed you [how much headroom the Dominus Extreme VRM has](/blog/dominus-extreme-vrm-overbuilt/) — 32 teamed power stages, a CPU that can't even make them break a sweat, every stage loafing at a fifth of its rating. That was the "why it's barely working" story.
 
 This is the flip side of the same coin. Because most of the time, on most boards, **most of those stages aren't even switched on.**
 
@@ -77,9 +77,10 @@ I run mine on **Extreme**. All 32 stages, awake, permanently. And I'll be honest
 
 The *reason* you'd disable shedding is transient response and stability margin. When the controller has parked most of the array and a sudden load slams in, it has to wake those phases back up — and there's a tiny lag before they're all pulling their weight. For a stable overclock chasing every last bit of margin, some people don't want the VRM ever having to "catch up." Keep all phases hot and there's nothing to wake. The load always lands on the full array instantly.
 
-Now the honest part: on **this** board, the downside of doing that is almost nothing. The reason shedding saves meaningful power on a normal board is that the switching overhead is a real fraction of a small total. But the Dominus is [so absurdly overbuilt](/blog/dominus-extreme-vrm-overbuilt/) that its stages barely generate heat even at full tilt — running all 32 at idle costs me a handful of watts of switching overhead that vanishes into the noise of a 400-watt-capable [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) platform. I'm not saving the planet by shedding phases on a board that already needs [dual 24-pin and quad 8-pin inputs](/blog/dominus-extreme-vrm-overbuilt/) to feed it.
+Now the honest part: on **this** board, I expect the downside of doing that is small. The reason shedding saves meaningful power on a normal board is that the switching overhead is a real fraction of a small total — and I'd expect the extra draw from keeping all 32 stages lit at idle to be modest next to a 400-watt-capable [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) platform. But that's an expectation, not a number I've actually logged.
+<!-- TODO(owner): measure actual idle draw in Standard/Optimized vs. Extreme phase control — same idle workload, same way of measuring (wall meter vs. board sensor), so the delta is a real figure instead of an assumption -->
 
-So the math is easy. On a normal board, shed — the efficiency win is real and the transient cost is theoretical. On the Dominus, the efficiency win is a rounding error and I'd rather keep the whole array hot and never think about wake-up lag again. Different board, different call.
+So until that's measured: on a normal board, shedding's efficiency win is real and well-documented. On the Dominus, I'd expect it to be small — but I'd rather keep the whole array hot and never think about wake-up lag again than chase savings I haven't actually confirmed. Different board, different call.
 
 There's also just something I like about it. This board was built to run 32 teamed stages. So I run 32 teamed stages. All of them. All the time. Feels right.
 

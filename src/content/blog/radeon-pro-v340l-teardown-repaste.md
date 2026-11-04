@@ -134,7 +134,7 @@ VRM pads held their position on the components and didn't need replacement. Both
 
 ---
 
-## Whats Next
+## What's Next
 
 This is going into a homelab Proxmox build. The SR-IOV MxGPU support is the whole reason to bother — each Vega 10 XL die supports up to 8 virtual GPU instances, so the V340L can theoretically hand out 16 vGPUs to different VMs simultaneously. That's not a number you see outside serious enterprise hardware, and getting one of these is the kind of gap that makes this stuff worth chasing.
 

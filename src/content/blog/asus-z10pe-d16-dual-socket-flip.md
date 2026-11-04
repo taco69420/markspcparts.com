@@ -1,6 +1,7 @@
 ---
 title: "I Paid $280 for a Dual-Socket DDR4 Workstation With Noctua Coolers Already On It"
 date: 2026-06-09
+updatedDate: 2026-11-03
 description: "ASUS Z10PE-D16, dual E5-2620 v4, 64GB DDR4 ECC, two Noctua NH-D9DX coolers, full IPMI. $280 shipped. Here's the board, the test results, and the split plan."
 tags: [asus, xeon, dual-socket, workstation, server, homelab, ecc, flip]
 ---
@@ -16,6 +17,7 @@ $280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registe
 Here's exactly what came in the box:
 
 - **ASUS Z10PE-D16 WS** — dual LGA2011-3, C612 chipset, SSI-EEB
+  <!-- TODO(owner): confirm whether this board is actually the "WS" variant vs plain Z10PE-D16 — the BMC chip (AST2300 vs AST2400), LAN chip (i350 vs I210-AT), and electrical x16 lane count below are all variant-dependent and need checking against the physical board before any of them get corrected -->
 - **2x Intel Xeon E5-2620 v4** — 8c/16t each, 16 cores / 32 threads total
 - **64GB DDR4 ECC RDIMM** — 4x 16GB Micron MTA18ASF2G72PDZ-2G3B1IK, PC4-2400T, 2Rx8
 - **2x Noctua NH-D9DX i4 3U** — with NM-XFB3 LGA2011 Square-ILM brackets
@@ -107,10 +109,6 @@ DDR4 ECC RDIMM prices roughly doubled over the back half of 2026.
 This matters because LGA 2011-v3 platforms require registered ECC — you can't sub in consumer DDR4. The boards are cheap because they're old server gear. The RAM isn't cheap anymore because enterprise demand ate the supply. The window where you can buy a complete, tested bundle with RAM already included at a reasonable all-in price is closing.
 
 The RAM in this bundle is what makes the math work. $280 for the whole thing, and the RAM alone is currently worth $200+ by itself. The rest is gravy.
-
----
-
-Cooler listing is live. RAM and board are live. Links above.
 
 ---
 

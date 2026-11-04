@@ -5,7 +5,7 @@ description: "Average buyers see old server hardware and scroll past. Flippers s
 tags: [asus, xeon, dual-socket, lga2011, workstation, homelab, memory, ecc, flip, deal]
 ---
 
-I paid $150 for an ASUS Z9PE-D8 WS bundle — two E5-2697s and 256GB of DDR3 ECC. Came out $220 ahead. Then I bought the big brother.
+I paid $150 for an ASUS Z9PE-D8 WS bundle — two E5-2697 v2s and 256GB of DDR3 ECC. Came out $220 ahead. Then I bought the big brother.
 
 Here's the whole story.
 
@@ -33,19 +33,19 @@ The CPUs have some value. The RAM is the score. And almost nobody clicking on th
 
 ## The Z9PE-D8 Flip
 
-Paid $150 for the whole bundle: ASUS Z9PE-D8 WS, two E5-2697s, and 256GB of DDR3 ECC. Then I actually looked at the board.
+Paid $150 for the whole bundle: ASUS Z9PE-D8 WS, two E5-2697 v2s, and 256GB of DDR3 ECC. Then I actually looked at the board.
 
 IO corner was damaged. Bent up in a way that made me nervous about the board long-term. I'd seen this before — [shipping damage, IO corner, same story](/blog/dual-socket-ai-lab/). I decided to cut my losses before I even tried to boot it.
 
 Pulled the 256GB DDR3 ECC kit, listed it separately, sold it for **$200**.
 
-The bundle cost me $150. The RAM alone sold for $200. At this point the board and both E5-2697s are sitting on my shelf for free — the RAM flip already covered the entire purchase.
+The bundle cost me $150. The RAM alone sold for $200. At this point the board and both E5-2697 v2s are sitting on my shelf for free — the RAM flip already covered the entire purchase.
 
 Then I found a listing for untested 64GB DDR3 ECC sticks for $30. I figured: I've got a free board, what's $30 to find out if it works? Grabbed them, installed them. Board posted first try. Bent IO corner didn't matter at all.
 
-So now I had a working ASUS Z9PE-D8 WS with two E5-2697s and 64GB of DDR3 ECC, and my total out-of-pocket was $150 + $30 = $180 — minus the $200 I already made on the RAM sale, putting me at **negative $20** before selling the board. Sold the whole working combo for $200.
+So now I had a working ASUS Z9PE-D8 WS with two E5-2697 v2s and 64GB of DDR3 ECC, and my total out-of-pocket was $150 + $30 = $180 — minus the $200 I already made on the RAM sale, putting me at **negative $20** before selling the board. Sold the whole working combo for $200.
 
-Final math: **+$220 net profit** on a $150 starting investment.
+Final math: **+$220** on a $150 starting investment — that's revenue minus what I paid for parts, not a true net. It doesn't subtract eBay/PayPal selling fees or what I paid to ship the RAM and the board out to their buyers, so actual take-home was lower than $220.
 
 ---
 
@@ -65,13 +65,13 @@ After the Z9PE-D8 I went looking again.
 
 Found an ASUS Z10PE-D16 — the big brother to the Z9PE-D8 WS. The D8 has 8 DIMM slots. The D16 has **16 DIMM slots**, LGA 2011-v3, DDR4 ECC. It's a larger, newer, more capable board, and it's even more invisible to the average buyer because it looks even more like "serious server equipment that I definitely don't understand."
 
-Bundle came with two E5-2620s, which are worth almost nothing — low-end Xeons, nobody wants them. Doesn't matter. What it also came with: **64GB of DDR4 ECC RAM**. Right now that RAM goes for around $200 by itself. The board alone goes for around $200. And then on top of all that, the seller threw in **two Noctua dual tower air coolers**. I don't know why. I'm not asking questions.
+Bundle came with two E5-2620 v4s, which are worth almost nothing — low-end Xeons, nobody wants them. Doesn't matter. What it also came with: **64GB of DDR4 ECC RAM**. Right now that RAM goes for around $200 by itself. The board alone goes for around $200. And then on top of all that, the seller threw in **two Noctua dual tower air coolers**. I don't know why. I'm not asking questions.
 
 The listing was an auction. I watched it. Four other people watched it. Nobody bid. The whole thing expired with zero bids on a $200 starting price, which tells you everything about how the average buyer sees this hardware.
 
 It got relisted at the same price — $200 — with Best Offer enabled this time. I saw the Best Offer button and immediately knew: this guy is desperate. He's relisted this twice, watched it sit with watchers and no bids, and now he's signaling he'll take less.
 
-I sent him **$220** and he accepted.
+I sent him **$220** and he accepted — that's the item price before shipping; add freight on a board and two tower coolers this size and it landed at **$280 shipped**, which is the number on [the full writeup](/blog/asus-z10pe-d16-dual-socket-flip/).
 
 ---
 
@@ -108,4 +108,4 @@ The gap between what an average eBay scroller values and what the actual market 
 
 ---
 
-*More on the Z10PE when it arrives. For the original dual-socket experiment that started all this: [I Almost Built a Poor Man's AI Lab for $150](/blog/dual-socket-ai-lab/).*
+*Full writeup on the Z10PE is up: [I Paid $280 for a Dual-Socket DDR4 Workstation](/blog/asus-z10pe-d16-dual-socket-flip/). For the original dual-socket experiment that started all this: [I Almost Built a Poor Man's AI Lab for $150](/blog/dual-socket-ai-lab/).*

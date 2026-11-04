@@ -15,6 +15,7 @@ import Footer from '../components/Footer.astro';
     <h1 class="text-3xl font-semibold text-slate-100 mb-8">Find a post</h1>
 
     <div class="relative mb-12">
+      <label for="search-input" class="sr-only">Search posts by title, description, or tag</label>
       <input
         id="search-input"
         type="search"
@@ -110,13 +111,17 @@ import Footer from '../components/Footer.astro';
 
   input.addEventListener('input', () => search(input.value));
 
+  // Populate from ?q= so links like /search?q=Dominus work, not just typed input.
+  const paramQuery = new URLSearchParams(location.search).get('q');
+  if (paramQuery) input.value = paramQuery;
+
   fetch('/search-index.json')
     .then(r => r.json())
     .then((data: Post[]) => {
       posts = data;
       loadingMsg.remove();
       input.focus();
-      // Run against any value already in the box (e.g. browser back-fill)
+      // Run against any value already in the box (from ?q= or browser back-fill)
       if (input.value) search(input.value);
     })
     .catch(() => {

@@ -124,8 +124,9 @@ SK Hynix started mass production in June 2022, just in time for the H100.
 | Accelerator | Config | Total Memory | Total Bandwidth | Year |
 |---|---|---|---|---|
 | NVIDIA H100 SXM5 | 5 stacks × 16 GB | 80 GB | 3.35 TB/s | 2022 |
-| NVIDIA H100 PCIe | 5 stacks × 16 GB | 80 GB | 2.0 TB/s | 2022 |
 | AMD Instinct MI300X | 8 stacks × 24 GB | 192 GB | 5.3 TB/s | 2023 |
+
+Worth flagging: the **H100 PCIe** card that launched alongside the SXM5 — same 80 GB, 5 stacks × 16 GB — actually shipped on **HBM2E**, not HBM3, which is why its bandwidth tops out around 2.0 TB/s instead of 3.35 TB/s. NVIDIA used the cheaper, already-mature memory on the PCIe card and reserved HBM3 for the flagship SXM5 form factor.
 
 The H100 is the product that turned the AI infrastructure market into a frenzy. Three and a half terabytes per second of memory bandwidth on a single package, in a standardized SXM5 form factor, available for dense cluster deployment. SK Hynix was the sole supplier at H100 launch; Samsung qualified later.
 
@@ -177,13 +178,14 @@ The Blackwell generation is the current ceiling. 288 GB and 8 TB/s on a single p
 | JESD235B ext. | HBM2E | ~2020 | 3.2 Gbps | 410 GB/s |
 | JESD238 | HBM3 | Jan 2022 | 6.4 Gbps | 819 GB/s |
 | JESD238 amend. | HBM3E | ~2023 | 9.6 Gbps | ~1.2 TB/s |
-| JESD270-4 | HBM4 | Apr 2025 | 8–13 Gbps | 2–2.8 TB/s |
+| JESD270-4 | HBM4 | Apr 2025 | 8–13 Gbps | 2–3.3 TB/s |
 
 ---
 
 ## HBM4 and What's Next
 
-HBM4's JEDEC standard (JESD270-4) was published in April 2025 and it's a bigger jump than any previous generation. The interface doubles from 1024-bit to **2048-bit per stack**. That alone doubles theoretical bandwidth before you even touch the pin speed. Combined with pushing speeds to 8–13 Gbps depending on variant, you get stacks in the 2–2.8 TB/s range.
+HBM4's JEDEC standard (JESD270-4) was published in April 2025 and it's a bigger jump than any previous generation. The interface doubles from 1024-bit to **2048-bit per stack**. That alone doubles theoretical bandwidth before you even touch the pin speed. JEDEC's own published ceiling for the standard is **over 2.0 TB/s per stack, up to roughly 3.3 TB/s in advanced configurations** — that upper figure is consistent with a 2048-bit bus run at ~13 Gbps per pin (2048 × 13 Gbps ÷ 8 ≈ 3.3 TB/s). Vendor-quoted pin speeds in the 8–13 Gbps range land inside that spec ceiling; which end of the range an individual stack hits depends on the vendor and bin, not the standard itself.
+<!-- TODO(owner): pick one specific pin speed to headline here — JEDEC's baseline vs. a named vendor's bin — rather than citing the whole range as if it's one number -->
 
 The other major change is the base die. Previous HBM generations used a simple passive I/O die at the bottom of the stack. HBM4 moves to a logic-process base die — initially on something like 12nm, moving toward 3nm for enhanced variants. This enables more sophisticated signaling, better power delivery, and things like programmable bandwidth modes.
 

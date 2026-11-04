@@ -97,9 +97,9 @@ Clear acrylic top with the **ROG eye logo engraved directly into the acrylic**. 
 
 ## What ROG Certified Actually Meant
 
-ROG Certified wasn't just a badge Bitspower slapped on the box. It was a formal partner program ASUS ROG ran with select third-party manufacturers — announced in December 2016, around the same time this monoblock was hitting the market. The premise was simple: ROG wanted to extend their ecosystem beyond their own hardware without losing quality control. So they partnered with premium brands, had products designed specifically to integrate with ROG boards, and put them through testing before issuing the certification.
+ROG Certified wasn't just a badge Bitspower slapped on the box. It was a formal partner program ASUS ROG ran with select third-party manufacturers — the roster I could find records of dates back to at least a December 2016 roundup, but that's a snapshot of the program already running, not necessarily when it started. The premise was simple: ROG wanted to extend their ecosystem beyond their own hardware without losing quality control. So they partnered with premium brands, had products designed specifically to integrate with ROG boards, and put them through testing before issuing the certification.
 
-![ROG official article from December 2016 explaining the ROG Certified program — partnering with premium brands so products are designed and tested to work together](/images/posts/rog-rampage5/rogcert.jpg)
+![ROG official article listing ROG Certified products, including this monoblock — partnering with premium brands so products are designed and tested to work together](/images/posts/rog-rampage5/rogcert.jpg)
 
 The program wasn't wide open. You didn't just apply and get a sticker. Products had to be purpose-designed for specific ROG hardware, tested by ASUS, and validated before they earned the badge. That's why this block carries the ROG Certified name — it was built to spec for this board under a formal agreement, not just styled to match.
 

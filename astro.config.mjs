@@ -4,6 +4,8 @@ import sitemap from '@astrojs/sitemap';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import rehypeOptimizeImages from './src/lib/rehype-optimize-images.mjs';
+import rehypeTableHeaders from './src/lib/rehype-table-headers.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const blogDir = path.join(__dirname, 'src/content/blog');
@@ -27,6 +29,9 @@ for (const file of fs.readdirSync(blogDir)) {
 export default defineConfig({
   site: 'https://markspcparts.com',
   trailingSlash: 'always',
+  markdown: {
+    rehypePlugins: [rehypeOptimizeImages, rehypeTableHeaders],
+  },
   redirects: {
     '/finds': '/blog/',
     '/hall-of-fame': '/blog/',

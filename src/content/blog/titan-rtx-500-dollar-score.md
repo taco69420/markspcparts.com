@@ -68,4 +68,4 @@ Mint condition. Matte gold shroud, polished accents, the Titan logo on the top e
 
 ---
 
-*Curious what the cheap RAM-based AI lab alternative looks like? I tried that too: [dual socket E5-2697s for $150](/blog/dual-socket-ai-lab/).*
+*Curious what the cheap RAM-based AI lab alternative looks like? I tried that too: [dual socket E5-2697 v2s for $150](/blog/dual-socket-ai-lab/).*

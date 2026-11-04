@@ -1,17 +1,17 @@
 ---
 title: "I Almost Built a Poor Man's AI Lab for $150"
 date: 2026-03-27
-description: "Dual socket LGA 2011, two Xeon E5-2697s, and 256GB of DDR3 ECC for $150 off eBay. The plan was a cheap local AI lab. Then I found the shipping damage."
+description: "Dual socket LGA 2011, two Xeon E5-2697 v2s, and 256GB of DDR3 ECC for $150 off eBay. The plan was a cheap local AI lab. Then I found the shipping damage."
 tags: [asus, xeon, dual-socket, lga2011, workstation, memory, ecc, ai, deal, homelab]
 ---
 
-I was scrolling eBay one night and saw a listing that made no sense. An ASUS Z9PE-D8 WS — dual socket LGA 2011 workstation board — with two Xeon E5-2697s and 256GB of DDR3 ECC RAM. Originally listed at $230. Nobody bought it. So the seller just kept dropping the price, week after week, all the way down to $150 over the course of about a month.
+I was scrolling eBay one night and saw a listing that made no sense. An ASUS Z9PE-D8 WS — dual socket LGA 2011 workstation board — with two Xeon E5-2697 v2s and 256GB of DDR3 ECC RAM. Originally listed at $230. Nobody bought it. So the seller just kept dropping the price, week after week, all the way down to $150 over the course of about a month.
 
 Two watchers. That's it.
 
 I couldn't figure out why nobody had touched it. The RAM alone was worth more than what he was asking. I bought it immediately.
 
-![ASUS Z9PE-D8 WS dual socket LGA 2011 workstation board with both E5-2697s installed](/images/posts/dual-socket-ai-lab/front-board.jpg)
+![ASUS Z9PE-D8 WS dual socket LGA 2011 workstation board with both E5-2697 v2s installed](/images/posts/dual-socket-ai-lab/front-board.jpg)
 
 ---
 
@@ -23,9 +23,9 @@ Poor man's AI lab. That was the vision.
 
 I grabbed two cheap Amazon coolers for about $20 and started planning the build.
 
-![Both E5-2697 CPUs seated in their LGA 2011 sockets on the Z9PE-D8 WS](/images/posts/dual-socket-ai-lab/2-cpu-sockets.jpg)
+![Both E5-2697 v2 CPUs seated in their LGA 2011 sockets on the Z9PE-D8 WS](/images/posts/dual-socket-ai-lab/2-cpu-sockets.jpg)
 
-![Close-up of an E5-2697 being seated into the LGA 2011 socket](/images/posts/dual-socket-ai-lab/chip.jpg)
+![Close-up of an E5-2697 v2 being seated into the LGA 2011 socket](/images/posts/dual-socket-ai-lab/chip.jpg)
 
 ---
 
@@ -41,11 +41,11 @@ At that point I was already losing the thread on this build. The bend was just a
 
 ## The Recovery
 
-Honestly I was already losing interest. The ROG Dominus Extreme was calling and I needed money to fund it. And the more I thought about the AI lab idea the more I realized — DDR3 ECC on dual E5-2697s was going to be horrendously slow for inference. Like, painfully slow. The novelty of the $150 deal was wearing off and the reality of what the actual performance would look like was setting in.
+Honestly I was already losing interest. The ROG Dominus Extreme was calling and I needed money to fund it. And the more I thought about the AI lab idea the more I realized — DDR3 ECC on dual E5-2697 v2s was going to be horrendously slow for inference. Like, painfully slow. The novelty of the $150 deal was wearing off and the reality of what the actual performance would look like was setting in.
 
 So I sold the 256GB DDR3 ECC kit for $200 and put that toward the [Dominus](/blog/dominus-extreme-resurrection/).
 
-Paid $150 for the board, RAM, and two CPUs. Sold just the RAM for $200. The board and both E5-2697s are just sitting here, essentially free.
+Paid $150 for the board, RAM, and two CPUs. Sold just the RAM for $200. The board and both E5-2697 v2s are just sitting here, essentially free.
 
 My cousin got me an IPMI module for this board for Christmas which is sitting in a drawer. The board is collecting dust. The dream is technically still alive.
 

@@ -19,35 +19,29 @@ Then Intel decided the [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) — a 2
 
 ---
 
-## The Narrow ILM Problem
+## The Carrier Clip and the Bolster Plate
 
 Here's where it gets interesting.
 
-The LGA 3647 ILM uses side clamps. Two arms press in from the left and right and hold the chip against the socket contacts. On a normal consumer CPU — LGA 1700, AM5, anything modern — this works fine, because the die is small relative to the ILM's clamping width. The pressure from both sides distributes across the entire surface of the chip.
+LGA 3647 doesn't let the CPU touch a cooler's retention bracket directly. The chip first snaps into a plastic carrier clip — Intel ships two ILM variants, "Narrow" and "Square," and the board dictates which carrier and heatsink you need to match. The carrier isn't part of the cooler; it's a separate piece whose only job is holding the CPU.
 
-The Xeon die is not small.
+![LGA 3647 carrier clip and bolster plate assembly diagram](/images/posts/lga3647-mounting/mounting-diagram.svg)
 
-![LGA 3647 vs LGA 1700 ILM pressure distribution diagram](/images/posts/lga3647-mounting/mounting-diagram.svg)
+That carrier — CPU seated inside it — then attaches to the heatsink itself: the carrier's posts go through holes in the heatsink's base and the latches snap onto the heatsink's mounting brackets. At that point the CPU, carrier, and heatsink are already one physical assembly, and none of it has touched the motherboard yet.
 
-The W-3175X die is enormous — one of the largest monolithic dies Intel ever shipped, roughly 698mm² of silicon. When that goes into an ILM designed around a different workload and a smaller die profile, the clamps press in from the sides and reach the middle of the chip just fine. The top and bottom edges get almost nothing.
-
-This isn't a theoretical concern. Uneven mounting pressure means uneven thermal contact between the IHS and the cooler. The cores sitting in the well-clamped center band behave differently from the ones near the edges. Your temperature deltas across a 28-core die aren't just about workload distribution — part of what you're measuring is contact quality.
+You lower that whole assembly onto the socket together, then secure it from underneath with spring-loaded screws into a bolster plate on the back of the board — torqued down in a specific diagonal sequence (corners first, then the middle screws) so the whole die gets even pressure on all sides at once. It's a deliberately more involved system than a normal two-point retention bracket, built specifically to avoid uneven clamping on a die this large.
 
 ---
 
-## You Glue the Chip to the Cooler First
+## Don't Force It Apart
 
-The cooler mounting workflow on LGA 3647 is where things depart most sharply from anything else you've worked on.
+The cooler mounting workflow on LGA 3647 is still where things depart most sharply from anything else you've worked on.
 
 Normal build, every platform you've ever touched: CPU goes in the socket, retention closes, paste goes on, cooler lowers on top, screws go in. Top down. Linear. Simple.
 
-LGA 3647 HEDT with a serious aftermarket cooler or custom water block: the block's retention hardware has a bracket or clips that physically lock onto the edges of the CPU's IHS. You apply paste, clip or bolt the block to the chip, and now the cooler and the CPU are a single assembly before either of them has touched the motherboard.
+LGA 3647 HEDT: the carrier clip, CPU, and heatsink go together as one assembly *before* any of it touches the board, then that whole sandwich lowers onto the socket and gets bolted through to the backplate from underneath. Backwards from everything else, until you understand it's really the CPU-and-carrier that's backwards, not the cooler.
 
-Then you lower that whole sandwich down onto the socket and bolt it through to the backplate.
-
-The chip attaches to the cooler first. It sounds backwards because it is backwards — but it makes sense once you understand the geometry. The ILM holds the CPU into the socket with enough force that the cooler mounting needs to match it, and on a die this large with this kind of heat output, you want the block making full, deliberate contact before it ever has to fight the socket retention for alignment.
-
-The practical consequence of getting this wrong: if you pull the cooler without releasing the retention properly, you're lifting the CPU out of the socket along with it. Pull hard enough or at the wrong angle and you're bending contacts. It has happened. It will happen again to someone. The fix is knowing the order before you start.
+The practical consequence: if you back out the bolster-plate screws unevenly or try to pull the heatsink off without releasing all of them first, you can lift the carrier — and the CPU still clipped inside it — right along with it instead of leaving the chip seated. Release every screw before you try to separate anything. The fix is knowing the order before you start.
 
 ---
 

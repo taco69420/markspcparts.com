@@ -41,6 +41,13 @@ const dateStr = post.data.date.toLocaleDateString('en-US', {
   timeZone: 'UTC',
 });
 
+const updatedDateStr = post.data.updatedDate?.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
 const canonicalUrl = `https://markspcparts.com/blog/${post.slug}/`;
 
 const jsonLd = {
@@ -50,6 +57,7 @@ const jsonLd = {
   description: post.data.description ?? '',
   ...(ogImage ? { image: ogImage } : {}),
   datePublished: post.data.date.toISOString(),
+  ...(post.data.updatedDate ? { dateModified: post.data.updatedDate.toISOString() } : {}),
   author: {
     '@type': 'Person',
     name: 'Mark',
@@ -117,6 +125,12 @@ const breadcrumbLd = {
         <time class="text-xs font-mono text-steel">{dateStr}</time>
         <span class="text-white/15 text-xs">·</span>
         <span class="text-xs font-mono text-steel">{readingTime(post.body)}</span>
+        {updatedDateStr && (
+          <>
+            <span class="text-white/15 text-xs">·</span>
+            <span class="text-xs font-mono text-accent-light">Updated {updatedDateStr}</span>
+          </>
+        )}
       </div>
       <h1 class="text-3xl sm:text-4xl font-semibold text-slate-100 leading-tight mb-6">
         {post.data.title}

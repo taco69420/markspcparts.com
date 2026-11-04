@@ -15,11 +15,11 @@ Then I started using it.
 
 ## What DIMM.2 actually is
 
-If you haven't seen one before: DIMM.2 is an ASUS-proprietary expansion card that slots into a standard DDR4 DIMM slot, using it purely as a mechanical anchor and power delivery point. The card itself holds two M.2 slots — 2242, 2260, 2280, or 22110 depending on the card revision — and connects to the board's PCIe and SATA lanes through that DIMM slot interface.
+If you haven't seen one before: DIMM.2 is an ASUS-proprietary expansion card that plugs into a dedicated DIMM.2 connector — a separate connector from the board's standard DRAM slots, not one of them. The card itself holds two M.2 slots — 2242, 2260, 2280, or 22110 depending on the card revision — carrying PCIe storage, and connects to the board's PCIe lanes through that DIMM.2 connector.
 
-The Dominus Extreme ships with two of them. Fully populated, that's four additional M.2 drives, none of which occupy the board's onboard M.2 slots, none of which block any PCIe x16 slots. On paper this is a genius solution for a workstation board that needs to do many things at once.
+The Dominus Extreme has 12 standard DRAM slots plus two of these dedicated DIMM.2 connectors. Fully populated, that's four additional M.2 drives, none of which occupy the board's onboard M.2 slots, none of which block any PCIe x16 slots, and none of which cost you a DRAM slot. On paper this is a genius solution for a workstation board that needs to do many things at once.
 
-The catch is the "connects to the board's PCIe and SATA lanes" part.
+The catch is the "connects to the board's PCIe lanes" part.
 
 ---
 
@@ -30,6 +30,7 @@ The Dominus Extreme does not give DIMM.2 its own dedicated lanes. What you're ac
 The manual covers it. The information is in there, in those dense block-diagram pages that everyone skips. But it's one of those things where you have to sit down with a notepad, map out every slot you intend to use, cross-reference against three different bandwidth-sharing tables, and plan the whole config before you ever install a single drive. Populate the wrong combination and you'll come back later wondering why a slot ran at half speed or why a drive just doesn't show up.
 
 ![Board layout diagram showing PCIe lane sharing on the ROG Dominus Extreme — DIMM.2_1 slots conflict with PCIEX16_4, while DIMM.2_2 and U.2 connectors share bandwidth with PCIEX16_2 and PCIEX16_3](/images/posts/dominus-dimm2/pcie-lane-diagram.svg)
+<!-- TODO(owner): confirm lane-sharing against the manual — re-check which PCIEX16 slots actually conflict with which DIMM.2/U.2 connectors before trusting this diagram -->
 
 It's not a dealbreaker. It's annoying for something marketed as a no-compromise workstation board. You should not have to spend an afternoon with a spreadsheet just to safely install your storage.
 
@@ -39,7 +40,7 @@ It's not a dealbreaker. It's annoying for something marketed as a no-compromise 
 
 Here's the issue I didn't anticipate at all.
 
-The DIMM.2 cards slot into DIMM slots. The Dominus Extreme has 12 DIMM slots. Those are right next to each other. When you have a DIMM.2 card installed with two M.2 drives on it — especially the taller 22110-length drives — the whole assembly becomes a physical wall sitting perpendicular to your DIMM array.
+The DIMM.2 connectors sit right next to the 12 DRAM slots on this board — physically adjacent, even though they're electrically separate. When you have a DIMM.2 card installed with two M.2 drives on it — especially the taller 22110-length drives — the whole assembly becomes a physical wall sitting perpendicular to your DIMM array.
 
 Airflow that should be moving laterally across your memory sticks just stops. It hits the DIMM.2 card and goes somewhere else. Your DIMMs are now in a dead air zone.
 

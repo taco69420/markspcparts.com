@@ -7,7 +7,7 @@ tags: [water-cooling, build]
 
 If you saw the short — welcome. We didn't have enough time in the video to cover the full build, so here's the complete breakdown.
 
-This started with a Corsair XM2 M.2 waterblock I'd been sitting on and a Samsung 980 1TB I had spare. The block was unpowered, meaning it's passive — no pump, no fitting ports of its own, just direct contact cooling designed to bolt onto your drive and integrate into an existing loop or just pull heat into a heatsink-style chassis. The install itself is fast. Here's how it actually went.
+This started with a Corsair XM2 M.2 waterblock I'd been sitting on and a Samsung 980 1TB I had spare. The XM2 is a custom-loop block — a copper cold plate with two G1/4" BSPP ports, built to sit inline in an actual water loop, not a standalone heatsink. Fittings aren't included, so you need your own plus tubing and coolant to actually run it. The install itself is fast. Here's how it actually went.
 
 ---
 
@@ -43,7 +43,7 @@ Before assembly you pull the protective backing off the thermal pads. They're al
 
 ![Samsung 980 1TB sliding into Corsair XM2 bottom mounting bracket](/images/posts/nvme-waterblock/ssd-slide-in.jpg)
 
-The Samsung 980 1TB slides into the bottom casing at the M.2 angle — same as dropping it into a motherboard slot. The bottom plate holds it at the correct position so the thermal pads land exactly where they need to when the top goes on.
+The Samsung 980 1TB slides into the bottom casing at the M.2 angle — same as dropping it into a motherboard slot — and gets secured with a mounting screw, same as you'd use on a board. The bottom plate holds it at the correct position so the thermal pads land exactly where they need to when the top goes on.
 
 ![Samsung 980 1TB seated in Corsair XM2 bottom casing, fully open view](/images/posts/nvme-waterblock/ssd-open.jpg)
 
@@ -67,7 +67,7 @@ That's the finished build. Front and back. The whole process took maybe two minu
 
 ## The Point
 
-The XM2 is a passive block. It's designed to mount inside a case that has active water cooling running through the drive bay, or to be used as an oversized heatsink. If you're running a custom loop with an M.2 slot in a waterblock-compatible position this is the direct solution. If you're using it standalone it'll still pull heat better than bare drive or a standard aluminum heatsink, but it needs airflow to do it properly.
+The XM2 is a custom-loop block, not a standalone heatsink. It needs coolant actually flowing through those two G1/4" ports to pull heat off the drive — you bolt it into your loop in-line with the rest of your blocks and route tubing to it like anything else in the system. Disconnected, with nothing flowing through it, it's just a copper plate sitting there.
 
 Samsung 980 1TB is a solid drive for this treatment — PCIe 3.0, 1TB, runs warm under sustained loads which is exactly the scenario where contact cooling makes a difference.
 
@@ -75,4 +75,4 @@ Total time: two minutes. Total tools required: none.
 
 ---
 
-*Corsair XM2 M.2 waterblock — Samsung 980 1TB — passive copper contact block, clip-fit assembly, no tools required.*
+*Corsair XM2 M.2 waterblock — Samsung 980 1TB — copper cold plate, two G1/4" ports, built for a custom loop. Clip-fit shell, one mounting screw for the drive.*

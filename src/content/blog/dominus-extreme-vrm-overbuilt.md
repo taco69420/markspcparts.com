@@ -1,13 +1,13 @@
 ---
-title: Why the ROG Dominus Extreme VRM Will Basically Last Forever
+title: Why the ROG Dominus Extreme VRM Has So Much Headroom
 date: 2026-06-15
-description: 32 teamed IR3555 power stages, a CPU that pulls 400 watts, and barely 12 amps per stage. The Dominus Extreme power delivery is so overbuilt it can't really wear out — here's the math, the board, and why nothing current touches it.
+description: 32 teamed IR3555 power stages, a CPU that pulls 400 watts, and barely 12 amps per stage. The Dominus Extreme power delivery has a lot of headroom by the numbers — here's the math, the board, and why nothing current touches it.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm]
 ---
 
 I've owned a few of these boards now. [Flipped my first one for $300](/blog/dominus-extreme-first-board/), [brought a dead one back with a CMOS button](/blog/dominus-extreme-resurrection/), [fought the DIMM.2 slots over RAM thermals](/blog/dominus-extreme-dimm2-problem/). And the more time I spend with the ROG Dominus Extreme, the more I keep landing on the same thought:
 
-The VRM on this board is never going to die. Not "probably fine." Not "should last a while." It is so far over-engineered for what it actually has to do that, barring a manufacturing defect or me dropping a wrench across the phases, the power delivery will outlive the rest of the board, the CPU, and most likely me.
+The VRM on this board has way more headroom than it'll ever need. That's not a guarantee it can't fail — manufacturing defects happen, accidents happen — but by the numbers, it's running so far under its rating that the usual wear mechanisms (heat, thermal cycling) shouldn't be what takes it out.
 
 Let me show you why.
 
@@ -47,7 +47,7 @@ So at full stock load — the kind of load that makes the W-3175X scream and the
 
 ---
 
-## Why "barely loaded" means "basically immortal"
+## Why "barely loaded" means a lot of headroom
 
 Here's the thing people miss about VRM longevity. The two things that actually kill power delivery over time are **heat** and **thermal cycling** — components getting hot, expanding, cooling, contracting, over and over, until a solder joint fatigues or a stage cooks itself.
 
@@ -59,7 +59,9 @@ Each stage is producing somewhere around **4% of the heat it would make if you r
 
 ![Diagram — heat-output comparison per power stage at 12.5A actual load versus 60A full rating, I-squared-R relationship, showing the actual operating point producing roughly 4 percent of the rated-load heat](/images/posts/dominus-extreme-vrm/thermal-load.svg)
 
-A VRM that never gets hot doesn't thermally cycle. Components that don't thermally cycle don't fatigue. Solder joints that don't fatigue don't crack. The whole failure chain that takes out normal motherboards over years of use just... doesn't get started here. The Dominus VRM is running a permanent victory lap.
+By that logic, a VRM running this cool shouldn't thermally cycle much, which should mean less solder-joint fatigue over the long run — that's the mechanism, in theory. But it's a projection from the I²R math, not a measurement off the board.
+<!-- TODO(owner): supply measured VRM temps (which sensor, idle vs. load), the workload used to generate them, and vcore — label all of it as approximate until it's actually logged -->
+Until there's thermal data to back it up, this is "a lot of headroom," not a lifetime guarantee.
 
 ---
 
@@ -87,9 +89,9 @@ The Dominus Extreme is **14 inches by 14 inches** — bigger than the E-ATX boar
 
 Current flagship boards are built for chips that pull more power than ever, sure — but they're built *to the edge* of what their VRM can handle, because that's how you hit a price. The Dominus was built for a one-off $3,000 Xeon halo platform where ASUS clearly stopped caring about cost and just kept adding phases until the board ran out of room. Nobody's going to make that board again. There's no W-3175X successor, no consumer-ROG reason to put 32 teamed stages and eight power plugs on one motherboard.
 
-So what's left is this: a board with power delivery so overbuilt for its own CPU that it operates its entire life at a fifth of its capacity, never gets hot, never cycles, and will keep posting long after everything around it has aged out.
+So what's left is this: a board with power delivery so overbuilt for its own CPU that it operates its entire life at a fifth of its rated capacity, by the math — a lot of headroom, even without thermal data yet to confirm exactly how cool it's actually running.
 
-The VRM isn't going to be what kills a Dominus Extreme. Nothing about it is even working hard.
+The VRM is unlikely to be what kills a Dominus Extreme first. Nothing about it is working hard, at least on paper.
 
 ---
 

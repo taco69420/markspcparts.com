@@ -82,5 +82,14 @@
       gtag('consent', 'update', { analytics_storage: 'denied' });
       banner.style.display = 'none';
     });
+
+    // Persistent control (footer) so changing your choice later doesn't require
+    // clearing local storage — which would just reset you back to granted.
+    var settingsBtn = document.getElementById('cookie-settings-btn');
+    if (settingsBtn) {
+      settingsBtn.addEventListener('click', function () {
+        banner.style.display = 'block';
+      });
+    }
   })();
 </script>
