@@ -5,7 +5,7 @@ description: "The Titan RTX is the full unlocked TU102 die with 24GB of GDDR6 â€
 tags: [nvidia, gpu, ai, deal]
 ---
 
-So if you saw the video, you already know the deal. I picked up an NVIDIA Titan RTX off Facebook Marketplace from a local collector for $500. These go for $700+ on eBay consistently, and mine is essentially brand new. Guy tested it once and let it sit. That's the kind of score that makes the whole sourcing grind worth it.
+So if you saw the video, you already know the deal. I picked up an NVIDIA Titan RTX off Facebook Marketplace from a local collector for $500. As of March 2026 these were going for $700+ on eBay, and mine is essentially brand new. Guy tested it once and let it sit. That's the kind of score that makes the whole sourcing grind worth it.
 
 But beyond the deal, there's a reason I'm actually keeping this one instead of flipping it immediately: 24 GB of GDDR6 VRAM. In 2026, that number matters a lot more than it did when this card launched in 2018.
 

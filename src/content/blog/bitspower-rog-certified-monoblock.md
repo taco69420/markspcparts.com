@@ -5,6 +5,7 @@ updatedDate: 2026-11-08
 seoTitle: "Bitspower BP-ROGCR5EFCB ROG Certified Monoblock"
 description: A Washington pawn shop. A "broken" X99 flagship. One full-cover monoblock that ASUS officially certified and Bitspower's own page says was never sold in the Americas. How I ended up with one of the three cooling products on ASUS's December 2016 ROG Certified roster.
 tags: [asus, rog, water-cooling, x99, lga2011, hedt, deal]
+ogImage: /images/posts/rog-rampage5/monoblock-close.jpg
 ---
 
 The bundle arrived from a seller in Washington state who'd picked it up from a local pawn shop. An **ASUS ROG Rampage V Extreme**, an **Intel Core i7-6950X**, and a full-cover water block already mounted on the board — all three in one listing.

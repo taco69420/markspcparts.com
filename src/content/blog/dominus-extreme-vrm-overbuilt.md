@@ -22,12 +22,12 @@ That's the bare VRM from when I was prepping one for an EKWB block. Thermal pads
 
 ASUS built the Dominus Extreme power delivery out of **32 IR3555 PowIRstages** — Infineon's (International Rectifier) integrated stages. Each one of those is rated to handle **60 amps**. Each stage gets its own high-permeability alloy-core choke rated for **40 amps**. Thirty-two of them, lined up down the side of the board.
 
-And these aren't doubled phases. ASUS ran them **teamed in direct parallel** — no phase doublers sitting in the middle adding latency and a failure point, just 32 real stages sharing the load directly. The whole thing is widely cited at **over 570 amps sustained**. There are fans buried in the VRM heatsink, and ASUS says they turn on above 30°C. In my experience they basically never spin up on their own — [Tom's Hardware](https://www.tomshardware.com/reviews/overclocking-intel-xeon-w-3175x,6097.html) saw the same. I've since set mine to max RPM, because it's barely louder than my case fans.
+And these aren't doubled phases. ASUS ran them **teamed in direct parallel** — no phase doublers sitting in the middle adding latency and a failure point, just 32 real stages sharing the load directly. The whole thing is cited at **over 570 amps sustained**. There are fans buried in the VRM heatsink, and ASUS says they turn on above 30°C. In my experience they basically never spin up on their own — [Tom's Hardware](https://www.tomshardware.com/reviews/overclocking-intel-xeon-w-3175x,6097.html) saw the same. I've since set mine to max RPM, because it's barely louder than my case fans.
 
 Stack that up:
 
 - 32 stages × 60A = **1,920 amps** of raw stage capacity
-- **570A+ sustained** — the commonly cited figure for the board as a complete system. A 570A sustained figure is widely cited for this board; I haven't been able to trace it back to an ASUS source, so treat the denominator below with the same caution as the rest of the table.
+- **570A+ sustained** — widely cited for this board, though I haven't been able to trace it back to an ASUS source. Treat the denominator below with the same caution as the rest of the table.
 - Fans that mostly sit idle on their own
 
 That second number is the one that matters. The stages add up to 1,920A, but the chokes, copper and everything else cap the board far below that. If you want to know how hard the VRM is working, compare against 570A, not against 32 × 60.
