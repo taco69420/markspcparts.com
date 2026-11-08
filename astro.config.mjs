@@ -81,6 +81,10 @@ export default defineConfig({
         const match = item.url.match(/\/blog\/([a-z0-9-]+)\/$/);
         const lastmod = match && postLastmod.get(match[1]);
         if (lastmod) item.lastmod = lastmod;
+        // Home page and blog index change whenever a post does, so use the newest post date.
+        if (item.url === 'https://markspcparts.com/' || item.url === 'https://markspcparts.com/blog/') {
+          item.lastmod = [...postLastmod.values()].filter(Boolean).sort().at(-1);
+        }
         return item;
       },
     }),

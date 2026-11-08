@@ -1,6 +1,7 @@
 ---
 title: "DIMM.2 on the ROG Dominus Extreme: The Feature That Almost Killed My RAM"
 date: 2026-04-20
+seoTitle: "ROG Dominus Extreme DIMM.2: Lane Sharing and RAM Heat"
 updatedDate: 2026-11-08
 description: "Two DIMM.2 slots, four M.2 drives, and a RAM overheating problem I didn't see coming. The Dominus Extreme's most interesting feature is also its most annoying one."
 tags: [asus, rog, dominus-extreme, lga3647, build]

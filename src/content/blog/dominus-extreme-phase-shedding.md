@@ -1,6 +1,7 @@
 ---
 title: What Phase Shedding Is — and Why I Turned It Off on the Dominus
 date: 2026-07-10
+seoTitle: "Phase Shedding on the ROG Dominus Extreme, Explained"
 updatedDate: 2026-11-08
 description: Phase shedding parks most of your VRM at idle to save a few watts. On a board with 32 teamed power stages, that's oddly fascinating — here's what it does, how the Dominus Extreme handles it, and why I run all 32 stages all the time anyway.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm, bios]

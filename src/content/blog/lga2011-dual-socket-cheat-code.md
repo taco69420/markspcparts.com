@@ -1,6 +1,7 @@
 ---
 title: "Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At"
 date: 2026-06-02
+seoTitle: "Flipping Dual-Socket LGA 2011 Server Bundles"
 updatedDate: 2026-11-06
 description: "Average buyers see old server hardware and scroll past. Flippers see DDR3 or DDR4 ECC worth more than the asking price. Here's how the Z9PE-D8 flip went, and why I just bought its big brother."
 tags: [asus, xeon, dual-socket, lga2011, workstation, homelab, memory, ecc, flip, deal]

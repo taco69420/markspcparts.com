@@ -1,6 +1,7 @@
 ---
 title: I Delidded a $5 Pentium With a Vice and Used Aluminum Foil to Make It Post
 date: 2026-03-25
+seoTitle: "Delidding a $5 Pentium With a Vice and Foil"
 description: First delid ever. Vice, foil, and zero reason not to try it.
 tags: [intel, cpu, modding]
 ---

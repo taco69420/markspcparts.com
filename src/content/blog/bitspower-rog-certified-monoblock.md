@@ -2,7 +2,7 @@
 title: The Water Block That Was Never Sold in America
 date: 2026-06-11
 updatedDate: 2026-11-08
-seoTitle: "Bitspower BP-ROGCR5EFCB ROG Certified Monoblock — Never Sold in America"
+seoTitle: "Bitspower BP-ROGCR5EFCB ROG Certified Monoblock"
 description: A Washington pawn shop. A "broken" X99 flagship. One full-cover monoblock that ASUS officially certified and Bitspower's own page says was never sold in the Americas. How I ended up with one of the three cooling products on ASUS's December 2016 ROG Certified roster.
 tags: [asus, rog, water-cooling, x99, lga2011, hedt, deal]
 ---

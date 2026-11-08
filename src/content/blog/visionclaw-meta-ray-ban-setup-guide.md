@@ -2,6 +2,7 @@
 title: "Meta Ray-Ban + VisionClaw: The Complete Windows Setup Guide (And My Honest Review)"
 description: "I've been wearing Meta Ray-Ban Gen 2 smart glasses for weeks. Here's my honest take on the camera, the AI features, the livestreaming bait and switch — and a full walkthrough of setting up VisionClaw on Windows with an Android phone."
 date: 2026-04-03
+seoTitle: "VisionClaw on Windows: Meta Ray-Ban Gen 2 Setup Guide"
 updatedDate: 2026-11-08
 tags: [ai]
 ---

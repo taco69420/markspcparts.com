@@ -1,6 +1,7 @@
 ---
 title: Putting Together a Corsair XM2 NVMe Waterblock on a Samsung 980 1TB
 date: 2026-03-25
+seoTitle: "Corsair XM2 NVMe Waterblock Install (Samsung 980)"
 updatedDate: 2026-11-08
 description: Brand new Corsair XM2 M.2 waterblock, a Samsung 980 1TB, and a build that took about two minutes. Here's the full process.
 tags: [water-cooling, build]
