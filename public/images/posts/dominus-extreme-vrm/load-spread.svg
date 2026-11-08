@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="system-ui, -apple-system, sans-serif" role="img" aria-labelledby="t d">
-  <title id="t">Estimated VCCIN current against the Dominus Extreme's 570A rating</title>
-  <desc id="d">Four horizontal bars show estimated total VCCIN current for a W-3175X: about 177 amps at stock, 222 amps at 400 watts, 356 amps at a 4.6 GHz overclock, and 417 amps at a 4.6 GHz AVX overclock, against ASUS's 570 amp sustained rating marked as a dashed red line. These are estimates, not measurements.</desc>
+  <title id="t">Estimated VCCIN current against the Dominus Extreme's cited 570A figure</title>
+  <desc id="d">Four horizontal bars show estimated total VCCIN current for a W-3175X: about 177 amps at stock, 222 amps at 400 watts, 356 amps at a 4.6 GHz overclock, and 417 amps at a 4.6 GHz AVX overclock, against the cited 570 amp sustained figure marked as a dashed red line. These are estimates, not measurements.</desc>
   <rect width="900" height="520" fill="#0f0f0f"/>
 
-  <text x="40" y="52" fill="#ccc" font-size="22" font-weight="600">Estimated VCCIN current vs. the board's 570A+ rating</text>
+  <text x="40" y="52" fill="#ccc" font-size="22" font-weight="600">Estimated VCCIN current vs. the board's cited 570A+ figure</text>
   <text x="40" y="78" fill="#999" font-size="14">Estimates — CPU power ÷ assumed VCCIN, shared equally across 32 stages. Not measured on my board.</text>
 
   <!-- axis: 1px per amp, origin x=140 -->
@@ -12,7 +12,7 @@
 
   <!-- rating line at 140 + 570 = 710 -->
   <line x1="710" y1="112" x2="710" y2="440" stroke="#f87171" stroke-width="2" stroke-dasharray="7 5"/>
-  <text x="710" y="104" fill="#f87171" font-size="13" text-anchor="middle">ASUS rating: 570A+ sustained</text>
+  <text x="710" y="104" fill="#f87171" font-size="13" text-anchor="middle">Cited: 570A+ sustained</text>
 
   <!-- Row 1: stock -->
   <text x="140" y="140" fill="#ccc" font-size="14">Stock — ~318 W @ ~1.8 V</text>
@@ -34,7 +34,7 @@
   <rect x="140" y="399" width="417" height="38" rx="6" fill="#e8a96a"/>
   <text x="567" y="423" fill="#ccc" font-size="14">~417 A · 73% · ~13 A per stage</text>
 
-  <text x="40" y="478" fill="#999" font-size="12">Power figures: Tom's Hardware W-3175X review and overclocking article. Rating: ASUS (32× IR3555, 60A each, 570A+ sustained). Voltages are assumptions.</text>
+  <text x="40" y="478" fill="#999" font-size="12">Power figures: Tom's Hardware W-3175X review and overclocking article. Stages: 32× IR3555, 60A each. 570A+ sustained is a widely cited figure, not traced to an ASUS source. Voltages are assumptions.</text>
   <text x="40" y="496" fill="#999" font-size="12">Assumes all reported CPU power flows through VCCIN and the stages share load equally. Real values will differ.</text>
 
   <text x="892" y="513" fill="#fff" fill-opacity="0.55" font-size="12" text-anchor="end">markspcparts.com</text>

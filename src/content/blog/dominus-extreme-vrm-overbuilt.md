@@ -2,7 +2,7 @@
 title: Why the ROG Dominus Extreme VRM Has So Much Headroom
 date: 2026-06-15
 updatedDate: 2026-11-08
-description: 32 teamed IR3555 power stages and a 570A+ sustained rating. By my estimates a stock W-3175X uses about a third of that, and a hard overclock uses 60–70%. Here's the math, the board, and what I haven't measured yet.
+description: 32 teamed IR3555 power stages and a cited 570A+ sustained rating. By my estimates a stock W-3175X uses about a third of that, and a hard overclock uses 60–70%. Here's the math, the board, and what I haven't measured yet.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm]
 ---
 
@@ -22,12 +22,12 @@ That's the bare VRM from when I was prepping one for an EKWB block. Thermal pads
 
 ASUS built the Dominus Extreme power delivery out of **32 IR3555 PowIRstages** — Infineon's (International Rectifier) integrated stages. Each one of those is rated to handle **60 amps**. Each stage gets its own high-permeability alloy-core choke rated for **40 amps**. Thirty-two of them, lined up down the side of the board.
 
-And these aren't doubled phases. ASUS ran them **teamed in direct parallel** — no phase doublers sitting in the middle adding latency and a failure point, just 32 real stages sharing the load directly. ASUS rates the whole thing for **over 570 amps sustained**. There are fans buried in the VRM heatsink, and ASUS says they turn on above 30°C. In my experience they basically never spin up on their own — [Tom's Hardware](https://www.tomshardware.com/reviews/overclocking-intel-xeon-w-3175x,6097.html) saw the same. I've since set mine to max RPM, because it's barely louder than my case fans.
+And these aren't doubled phases. ASUS ran them **teamed in direct parallel** — no phase doublers sitting in the middle adding latency and a failure point, just 32 real stages sharing the load directly. The whole thing is widely cited at **over 570 amps sustained**. There are fans buried in the VRM heatsink, and ASUS says they turn on above 30°C. In my experience they basically never spin up on their own — [Tom's Hardware](https://www.tomshardware.com/reviews/overclocking-intel-xeon-w-3175x,6097.html) saw the same. I've since set mine to max RPM, because it's barely louder than my case fans.
 
 Stack that up:
 
 - 32 stages × 60A = **1,920 amps** of raw stage capacity
-- **570A+ sustained** — ASUS's rating for the board as a complete system
+- **570A+ sustained** — the commonly cited figure for the board as a complete system. A 570A sustained figure is widely cited for this board; I haven't been able to trace it back to an ASUS source, so treat the denominator below with the same caution as the rest of the table.
 - Fans that mostly sit idle on their own
 
 That second number is the one that matters. The stages add up to 1,920A, but the chokes, copper and everything else cap the board far below that. If you want to know how hard the VRM is working, compare against 570A, not against 32 × 60.
@@ -42,14 +42,14 @@ I divided watts by about 1 volt, called it 400 amps, and spread that across 32 s
 
 So the real current is lower than I first claimed: power divided by roughly 1.8–1.9V, not 1V. Using Tom's Hardware's [published power numbers](https://www.tomshardware.com/reviews/intel-xeon-w-3175x-cpu,5976.html) for the chip — about 318W at stock, and 676W (792W with AVX) at their 4.6 GHz all-core overclock — here's what that works out to:
 
-| Scenario | CPU power | Assumed VCCIN | Total current | Per stage | % of one stage's 60A | % of the 570A rating |
+| Scenario | CPU power | Assumed VCCIN | Total current | Per stage | % of one stage's 60A | % of the cited 570A |
 |---|---|---|---|---|---|---|
 | Stock | ~318W | 1.8V | ~177A | ~5.5A | 9% | 31% |
 | 400W | 400W | 1.8V | ~222A | ~6.9A | 12% | 39% |
 | 4.6 GHz overclock | ~676W | 1.9V | ~356A | ~11A | 19% | 62% |
 | 4.6 GHz overclock, AVX | ~792W | 1.9V | ~417A | ~13A | 22% | 73% |
 
-![Diagram — four bars showing estimated VCCIN current for a W-3175X at stock, 400 watts, a 4.6 GHz overclock and a 4.6 GHz AVX overclock, against ASUS's 570 amp sustained rating marked as a dashed red line. Estimates, not measurements](/images/posts/dominus-extreme-vrm/load-spread.svg)
+![Diagram — four bars showing estimated VCCIN current for a W-3175X at stock, 400 watts, a 4.6 GHz overclock and a 4.6 GHz AVX overclock, against the cited 570 amp sustained figure marked as a dashed red line. Estimates, not measurements](/images/posts/dominus-extreme-vrm/load-spread.svg)
 
 These are **estimates, not measurements**. They assume all the reported CPU power flows through VCCIN, that the 32 stages share the load equally, and that VCCIN sits at the voltages I listed. I haven't put a probe on my board's VCCIN, and I don't know exactly how Tom's measured their power. Package-power numbers alone can't tell you the real current. Treat the table as a sense of scale.
 
@@ -99,4 +99,4 @@ So here's the honest version. The Dominus Extreme VRM has a lot of headroom — 
 
 ---
 
-*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, 570A+ sustained rating, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs. By my estimates a [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) uses roughly a third of that rating at stock and 60–70% at a hard overclock. Estimates, not measurements.*
+*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, cited 570A+ sustained rating, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs. By my estimates a [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) uses roughly a third of that figure at stock and 60–70% at a hard overclock. Estimates, not measurements.*

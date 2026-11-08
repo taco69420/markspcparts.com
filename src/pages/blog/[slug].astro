@@ -29,7 +29,9 @@ const { Content } = await post.render();
 
 // Auto-extract first image from post body for OG + Article schema
 const firstImageMatch = post.body.match(/!\[.*?\]\(([^)]+)\)/);
-const ogImagePath = firstImageMatch?.[1];
+// Explicit frontmatter wins; otherwise first raster image (SVG doesn't render as a social preview).
+const rasterMatch = [...post.body.matchAll(/![.*?](([^)s]+.(?:jpe?g|png|webp))[^)]*)/gi)][0];
+const ogImagePath = post.data.ogImage ?? rasterMatch?.[1] ?? firstImageMatch?.[1];
 const ogImage = ogImagePath
   ? (ogImagePath.startsWith('http') ? ogImagePath : `https://markspcparts.com${ogImagePath}`)
   : undefined;

@@ -5,9 +5,10 @@ seoTitle: "Phase Shedding on the ROG Dominus Extreme, Explained"
 updatedDate: 2026-11-08
 description: Phase shedding parks most of your VRM at idle to save a few watts. On a board with 32 teamed power stages, that's oddly fascinating — here's what it does, how the Dominus Extreme handles it, and why I run all 32 stages all the time anyway.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm, bios]
+ogImage: /images/posts/dominus-extreme-phase-shedding/shed-vs-full-og.png
 ---
 
-Last post I showed you [how much headroom the Dominus Extreme VRM has](/blog/dominus-extreme-vrm-overbuilt/) — 32 teamed power stages, a 570A+ rating, and a CPU that uses about a third of it at stock. That was the "why there's so much headroom" story.
+Last post I showed you [how much headroom the Dominus Extreme VRM has](/blog/dominus-extreme-vrm-overbuilt/) — 32 teamed power stages, a cited 570A+ rating, and a CPU that uses about a third of it at stock. That was the "why there's so much headroom" story.
 
 This is the flip side of the same coin. Because most of the time, on most boards, **most of those stages aren't even switched on.**
 

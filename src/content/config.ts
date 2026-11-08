@@ -9,6 +9,8 @@ const blog = defineCollection({
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     description: z.string().optional(),
+    // Optional explicit og:image path (must be raster — PNG/JPG; social sites don't render SVG).
+    ogImage: z.string().optional(),
     tags: z.array(z.string()).default([]),
   }),
 });

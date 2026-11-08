@@ -49,7 +49,7 @@ export default defineConfig({
     '/finds/rog-rampage-v-extreme': '/blog/rog-rampage-v-extreme-revival/',
     '/finds/z10pe-d16': '/blog/asus-z10pe-d16-dual-socket-flip/',
     '/finds/radeon-pro-v340l': '/blog/radeon-pro-v340l-teardown-repaste/',
-    '/finds/z9pe-d8-ws': '/blog/dual-socket-ai-lab/',
+    '/finds/z9pe-d8-ws': '/blog/lga2011-dual-socket-cheat-code/',
     '/finds/xeon-silver-4114': '/blog/xeon-silver-4114-wall-art/',
     '/finds/corsair-xm2-waterblock': '/blog/corsair-xm2-nvme-waterblock-build/',
     '/finds/rog-dominus-extreme': '/blog/dominus-extreme-resurrection/',

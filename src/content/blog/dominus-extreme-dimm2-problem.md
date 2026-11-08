@@ -5,6 +5,7 @@ seoTitle: "ROG Dominus Extreme DIMM.2: Lane Sharing and RAM Heat"
 updatedDate: 2026-11-08
 description: "Two DIMM.2 slots, four M.2 drives, and a RAM overheating problem I didn't see coming. The Dominus Extreme's most interesting feature is also its most annoying one."
 tags: [asus, rog, dominus-extreme, lga3647, build]
+ogImage: /images/posts/dominus-dimm2/pcie-lane-diagram-og.png
 ---
 
 The DIMM.2 slots were honestly one of the reasons I wanted the Dominus Extreme in the first place.

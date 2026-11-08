@@ -11,11 +11,13 @@ export async function GET(context: APIContext) {
     title: "Mark's PC Parts",
     description: "Hardware writeups. What broke, what worked, what I'm running next.",
     site: context.site!,
+    xmlns: { atom: 'http://www.w3.org/2005/Atom' },
+    customData: `<language>en-us</language><lastBuildDate>${new Date().toUTCString()}</lastBuildDate><atom:link href="https://markspcparts.com/rss.xml" rel="self" type="application/rss+xml"/>`,
     items: posts.map(post => ({
       title: post.data.title,
       pubDate: post.data.date,
       description: post.data.description,
-      link: `/blog/${post.slug}`,
+      link: `/blog/${post.slug}/`,
     })),
   });
 }
