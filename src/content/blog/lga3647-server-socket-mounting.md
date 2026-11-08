@@ -1,6 +1,7 @@
 ---
 title: "LGA 3647: Born in a Server Rack, Dropped in a Desktop"
 date: 2026-03-26
+updatedDate: 2026-11-06
 description: "Intel's LGA 3647 was designed for server sleds. Then they shipped a 28-core unlocked chip on it and called it enthusiast. The mounting system never got the memo."
 tags: [intel, xeon, cpu, lga3647, hedt, server]
 ---
@@ -19,17 +20,18 @@ Then Intel decided the [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) — a 2
 
 ---
 
-## The Carrier Clip and the Bolster Plate
+## The Carrier Clip
 
 Here's where it gets interesting.
 
 LGA 3647 doesn't let the CPU touch a cooler's retention bracket directly. The chip first snaps into a plastic carrier clip — Intel ships two ILM variants, "Narrow" and "Square," and the board dictates which carrier and heatsink you need to match. The carrier isn't part of the cooler; it's a separate piece whose only job is holding the CPU.
 
-![LGA 3647 carrier clip and bolster plate assembly diagram](/images/posts/lga3647-mounting/mounting-diagram.svg)
+![Diagram — a consumer CPU with a small die next to an LGA 3647 Xeon with a massive die under the same ILM clamping force, showing pressure reaching the whole die on one and only a middle band on the other](/images/posts/lga3647-mounting/mounting-diagram.svg)
+*Diagram made by me, based on my own experience with the socket — not an Intel illustration.*
 
-That carrier — CPU seated inside it — then attaches to the heatsink itself: the carrier's posts go through holes in the heatsink's base and the latches snap onto the heatsink's mounting brackets. At that point the CPU, carrier, and heatsink are already one physical assembly, and none of it has touched the motherboard yet.
+On a standard cooler (my Noctua was one), that carrier — CPU seated inside it — then attaches to the heatsink itself: the carrier's posts go through holes in the heatsink's base and the latches snap onto the heatsink's mounting brackets. At that point the CPU, carrier, and heatsink are already one physical assembly, and none of it has touched the motherboard yet.
 
-You lower that whole assembly onto the socket together, then secure it from underneath with spring-loaded screws into a bolster plate on the back of the board — torqued down in a specific diagonal sequence (corners first, then the middle screws) so the whole die gets even pressure on all sides at once. It's a deliberately more involved system than a normal two-point retention bracket, built specifically to avoid uneven clamping on a die this large.
+You lower that whole assembly onto the socket together, then bolt it down. Every screw gets turned from the cooler side — the cooler's own fasteners thread into the socket's mounting holes, and nothing gets turned from the back of the board. On my Dominus Extreme those threaded holes are built straight into the board, so there's no separate backplate to deal with. Follow your cooler's tightening sequence — Alphacool's manual, for example, says outer corners first, then the side screws. (I'll admit I mount LGA 3647 by feel, and mine posted on the first tightening. Follow the manual anyway.) It's a deliberately more involved system than a normal two-point retention bracket, built to avoid uneven clamping on a die this large.
 
 ---
 
@@ -39,9 +41,11 @@ The cooler mounting workflow on LGA 3647 is still where things depart most sharp
 
 Normal build, every platform you've ever touched: CPU goes in the socket, retention closes, paste goes on, cooler lowers on top, screws go in. Top down. Linear. Simple.
 
-LGA 3647 HEDT: the carrier clip, CPU, and heatsink go together as one assembly *before* any of it touches the board, then that whole sandwich lowers onto the socket and gets bolted through to the backplate from underneath. Backwards from everything else, until you understand it's really the CPU-and-carrier that's backwards, not the cooler.
+LGA 3647 with a standard cooler: the carrier clip, CPU, and heatsink go together as one assembly *before* any of it touches the board, then that whole sandwich lowers onto the socket and gets bolted down. Backwards from everything else, until you understand it's really the CPU-and-carrier that's backwards, not the cooler.
 
-The practical consequence: if you back out the bolster-plate screws unevenly or try to pull the heatsink off without releasing all of them first, you can lift the carrier — and the CPU still clipped inside it — right along with it instead of leaving the chip seated. Release every screw before you try to separate anything. The fix is knowing the order before you start.
+There's an exception. The carrier only works if the coldplate sits low enough for the clip to snap on, and some high-end AIOs and LGA 3647 water blocks have a coldplate that sticks out too far — the carrier physically won't fit. That's my Alphacool Eisbaer Pro Aurora 360 on the Dominus (Narrow ILM). I hand-dropped the W-3175X into the socket, set the cooler on top, and bolted it down.
+
+The practical consequence on a carrier setup: the CPU lives with the cooler, so when you lift the cooler, the chip comes with it. That's how it's meant to work, not a failure — just release it carefully. This is how I do it. It's my method, from taking my Noctua off, not an official procedure: unscrew the two middle screws in an alternating pattern until they're completely unthreaded. Then work the two corner screws, alternating a little at a time, with one hand on the cooler keeping it straight so it can't tilt with the chip. Once everything is fully out, lift straight up, slowly. (I haven't taken the Alphacool off yet, so I can't tell you how that one behaves.)
 
 ---
 
@@ -55,4 +59,4 @@ That's what makes the platform interesting to work on. Every quirk has a reason.
 
 ---
 
-*W-3175X + ROG Dominus Extreme — running, watercooled, the cooler was attached to the chip before the chip hit the board.*
+*W-3175X + ROG Dominus Extreme — Alphacool Eisbaer Pro Aurora 360 on a Narrow ILM, CPU dropped in bare because the coldplate won't take the carrier. Running, watercooled.*

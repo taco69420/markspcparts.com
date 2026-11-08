@@ -2,6 +2,7 @@
 title: "Meta Ray-Ban + VisionClaw: The Complete Windows Setup Guide (And My Honest Review)"
 description: "I've been wearing Meta Ray-Ban Gen 2 smart glasses for weeks. Here's my honest take on the camera, the AI features, the livestreaming bait and switch — and a full walkthrough of setting up VisionClaw on Windows with an Android phone."
 date: 2026-04-03
+updatedDate: 2026-11-08
 tags: [ai]
 ---
 
@@ -75,7 +76,9 @@ Got it running this week on my ROG Phone 8 Pro and a Windows laptop. The short v
 
 ### Setup Steps
 
-**1. Install Android Studio and Git on your Windows machine**, then clone the repo:
+*Heads up: I set this up early in the project's life and didn't record which commit I built, and the upstream repo has changed since. If a step doesn't match what you see, check [the upstream Android sample](https://github.com/sseanliu/VisionClaw/tree/main/samples/CameraAccessAndroid) first.*
+
+**1. Install Android Studio and Git on your Windows machine**, then clone the repo. Run these in Git Bash (in PowerShell, use `cd $HOME` instead of `cd ~`):
 ```bash
 cd ~
 git clone https://github.com/sseanliu/VisionClaw.git
@@ -86,15 +89,30 @@ Don't skip the `cd ~` first. Cloning into `C:\Windows\system32` causes permissio
 **2. Open `VisionClaw/samples/CameraAccessAndroid`** in Android Studio — not the root folder, specifically that subdirectory.
 
 **3. Fix `gradle.properties` immediately.** The repo has a Mac Java path hardcoded:
-/Applications/Android Studio.app/Contents/jbr/Contents/Home
 
-Replace it with your Windows path:
-C:\Program Files\Android\Android Studio\jbr
+```properties
+org.gradle.java.home=/Applications/Android Studio.app/Contents/jbr/Contents/Home
+```
 
-**4. Bump the JVM heap** in `gradle.properties` from `-Xmx2048m` to `-Xmx4096m`. The Gradle daemon crashes with the default 2GB on Windows, especially with other things running.
+Replace it with your Windows path. Use forward slashes — in a `.properties` file a single backslash is an escape character, so `C:\Program Files\...` can break:
+
+```properties
+org.gradle.java.home=C:/Program Files/Android/Android Studio/jbr
+```
+
+**4. Bump the JVM heap** in `gradle.properties` from `-Xmx2048m` to `-Xmx4096m`:
+
+```properties
+org.gradle.jvmargs=-Xmx4096m -Dfile.encoding=UTF-8
+```
+
+This is the change I made on my laptop to stop the Gradle daemon crashing at the default 2 GB. You may not need it, but if the daemon dies mid-build, try it.
 
 **5. Add your GitHub token to `local.properties`:**
+
+```properties
 github_token=YOUR_TOKEN_HERE
+```
 
 Not `gpr.key`. Not `gpr.user`. Specifically `github_token` — the wrong property name returns a silent 401 and you'll spend way too long figuring out why.
 

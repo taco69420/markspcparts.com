@@ -1,15 +1,16 @@
 ---
 title: Why the ROG Dominus Extreme VRM Has So Much Headroom
 date: 2026-06-15
-description: 32 teamed IR3555 power stages, a CPU that pulls 400 watts, and barely 12 amps per stage. The Dominus Extreme power delivery has a lot of headroom by the numbers — here's the math, the board, and why nothing current touches it.
+updatedDate: 2026-11-08
+description: 32 teamed IR3555 power stages and a 570A+ sustained rating. By my estimates a stock W-3175X uses about a third of that, and a hard overclock uses 60–70%. Here's the math, the board, and what I haven't measured yet.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm]
 ---
 
 I've owned a few of these boards now. [Flipped my first one for $300](/blog/dominus-extreme-first-board/), [brought a dead one back with a CMOS button](/blog/dominus-extreme-resurrection/), [fought the DIMM.2 slots over RAM thermals](/blog/dominus-extreme-dimm2-problem/). And the more time I spend with the ROG Dominus Extreme, the more I keep landing on the same thought:
 
-The VRM on this board has way more headroom than it'll ever need. That's not a guarantee it can't fail — manufacturing defects happen, accidents happen — but by the numbers, it's running so far under its rating that the usual wear mechanisms (heat, thermal cycling) shouldn't be what takes it out.
+The VRM on this board has a lot of headroom. That's not a guarantee it can't fail — manufacturing defects happen, accidents happen — but by the numbers, the usual wear mechanisms (heat, thermal cycling) shouldn't be what takes it out first.
 
-Let me show you why.
+Let me show you why. And fair warning: I redid this post's math in November, because my first version got the current wrong. The corrected numbers are less dramatic and a lot more honest.
 
 ![ROG Dominus Extreme laid flat on the bench — thermal pad material laid over the full VRM array, scissors on standby, LGA 3647 socket visible](/images/posts/dominus-extreme-first/vrm-prep.jpg)
 
@@ -21,47 +22,48 @@ That's the bare VRM from when I was prepping one for an EKWB block. Thermal pads
 
 ASUS built the Dominus Extreme power delivery out of **32 IR3555 PowIRstages** — Infineon's (International Rectifier) integrated stages. Each one of those is rated to handle **60 amps**. Each stage gets its own high-permeability alloy-core choke rated for **40 amps**. Thirty-two of them, lined up down the side of the board.
 
-And these aren't doubled phases. ASUS ran them **teamed in direct parallel** — no phase doublers sitting in the middle adding latency and a failure point, just 32 real stages sharing the load directly. ASUS rated the whole thing for **over 570 amps sustained**, with active fans buried in the VRM heatsink that don't even spin up until the array crosses 30°C.
+And these aren't doubled phases. ASUS ran them **teamed in direct parallel** — no phase doublers sitting in the middle adding latency and a failure point, just 32 real stages sharing the load directly. ASUS rates the whole thing for **over 570 amps sustained**. There are fans buried in the VRM heatsink, and ASUS says they turn on above 30°C. In my experience they basically never spin up on their own — [Tom's Hardware](https://www.tomshardware.com/reviews/overclocking-intel-xeon-w-3175x,6097.html) saw the same. I've since set mine to max RPM, because it's barely louder than my case fans.
 
 Stack that up:
 
-- 32 stages × 60A = **1,920 amps** of theoretical stage capacity
-- Rated for **570A+ sustained** as a complete system
-- Active cooling that mostly sits idle
+- 32 stages × 60A = **1,920 amps** of raw stage capacity
+- **570A+ sustained** — ASUS's rating for the board as a complete system
+- Fans that mostly sit idle on their own
 
-Now here's the part that matters.
-
----
-
-## The CPU can't stress it
-
-The chip this board exists for is the [Xeon W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) — 28 cores, and a part that'll [pull around 400 watts under a real load](/blog/xeon-w-3175x-270-dollar-monster/). That sounds like a monster, and it is. But run the actual current through this VRM and the picture flips.
-
-At roughly 1.0V core voltage, 400 watts is about **400 amps** going into the socket. Spread that across 32 teamed stages and each one is carrying around **12.5 amps**.
-
-Each stage is rated for **60 amps**.
-
-So at full stock load — the kind of load that makes the W-3175X scream and the AIO work — every power stage on this board is sitting at roughly **21% of what it's rated for**. Even if you push the board to its own 570A sustained ceiling, that's still only ~18A per stage. Under 30% of stage rating, across the entire array, all the time — and still under half of the 40A choke rating even at the board's 570A ceiling.
-
-![Diagram — W-3175X pulling ~400A from the socket, fanning out across 32 teamed IR3555 power stages, each one carrying ~12.5A against a 60A rating, with a load-bar showing every stage filled to roughly 21 percent](/images/posts/dominus-extreme-vrm/load-spread.svg)
+That second number is the one that matters. The stages add up to 1,920A, but the chokes, copper and everything else cap the board far below that. If you want to know how hard the VRM is working, compare against 570A, not against 32 × 60.
 
 ---
 
-## Why "barely loaded" means a lot of headroom
+## What the CPU actually asks for
+
+The chip this board exists for is the [Xeon W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) — 28 cores, unlocked, and a part that pulls serious power. Here's where my first version of this post went wrong.
+
+I divided watts by about 1 volt, called it 400 amps, and spread that across 32 stages. But the W-3175X has its voltage regulation on the chip itself. The motherboard doesn't feed the cores directly — it feeds a higher input rail called **VCCIN**, and the chip steps that down internally. In [Tom's Hardware's overclock](https://www.tomshardware.com/reviews/overclocking-intel-xeon-w-3175x,6097.html), VCCIN sat at **1.9V** while Vcore was only **1.17V**. The board's VRM sees current at the *input* voltage, which is closer to 1.8–1.9V than 1V.
+
+So the real current is lower than I first claimed: power divided by roughly 1.8–1.9V, not 1V. Using Tom's Hardware's [published power numbers](https://www.tomshardware.com/reviews/intel-xeon-w-3175x-cpu,5976.html) for the chip — about 318W at stock, and 676W (792W with AVX) at their 4.6 GHz all-core overclock — here's what that works out to:
+
+| Scenario | CPU power | Assumed VCCIN | Total current | Per stage | % of one stage's 60A | % of the 570A rating |
+|---|---|---|---|---|---|---|
+| Stock | ~318W | 1.8V | ~177A | ~5.5A | 9% | 31% |
+| 400W | 400W | 1.8V | ~222A | ~6.9A | 12% | 39% |
+| 4.6 GHz overclock | ~676W | 1.9V | ~356A | ~11A | 19% | 62% |
+| 4.6 GHz overclock, AVX | ~792W | 1.9V | ~417A | ~13A | 22% | 73% |
+
+![Diagram — four bars showing estimated VCCIN current for a W-3175X at stock, 400 watts, a 4.6 GHz overclock and a 4.6 GHz AVX overclock, against ASUS's 570 amp sustained rating marked as a dashed red line. Estimates, not measurements](/images/posts/dominus-extreme-vrm/load-spread.svg)
+
+These are **estimates, not measurements**. They assume all the reported CPU power flows through VCCIN, that the 32 stages share the load equally, and that VCCIN sits at the voltages I listed. I haven't put a probe on my board's VCCIN, and I don't know exactly how Tom's measured their power. Package-power numbers alone can't tell you the real current. Treat the table as a sense of scale.
+
+But the scale is useful. At stock, the VRM is asked for about a third of its rated sustained current. Push a hard overclock with a heavy AVX load and it's running somewhere around 60–70% of its rating. That's still under the ceiling, with real margin left — but it's a long way from "barely working," which is what my first version of this post said.
+
+---
+
+## Why headroom still matters
 
 Here's the thing people miss about VRM longevity. The two things that actually kill power delivery over time are **heat** and **thermal cycling** — components getting hot, expanding, cooling, contracting, over and over, until a solder joint fatigues or a stage cooks itself.
 
-Heat in a power stage scales with the *square* of the current through it (I²R). So running a stage at 12.5A instead of its rated 60A doesn't make a little less heat — it makes almost none.
+Conduction loss in a power stage scales with the *square* of the current through it (I²R). So a stage carrying half the current produces roughly a quarter of the conduction heat. That's why spreading a load across 32 stages helps so much, and why running well under a stage's rating keeps things cool. (Switching and gate-drive losses are roughly fixed per active stage and don't scale with current — which is exactly why [phase shedding](/blog/dominus-extreme-phase-shedding/) exists in the first place.)
 
-(12.5 / 60)² ≈ **0.043**
-
-Each stage is producing somewhere around **4% of the heat it would make if you ran it at its rating** — in conduction loss alone; switching and gate-drive losses are roughly fixed per active stage and don't scale with current, which is exactly why [phase shedding](/blog/dominus-extreme-phase-shedding/) exists in the first place. Four percent. That's why the VRM fans on this board basically never have a reason to spin. There's nothing to cool. The array barely warms up because no individual piece of it is doing any real work.
-
-![Diagram — heat-output comparison per power stage at 12.5A actual load versus 60A full rating, I-squared-R relationship, showing the actual operating point producing roughly 4 percent of the rated-load heat](/images/posts/dominus-extreme-vrm/thermal-load.svg)
-
-By that logic, a VRM running this cool shouldn't thermally cycle much, which should mean less solder-joint fatigue over the long run — that's the mechanism, in theory. But it's a projection from the I²R math, not a measurement off the board.
-<!-- TODO(owner): supply measured VRM temps (which sensor, idle vs. load), the workload used to generate them, and vcore — label all of it as approximate until it's actually logged -->
-Until there's thermal data to back it up, this is "a lot of headroom," not a lifetime guarantee.
+That's the mechanism in theory. It's a projection from the math, not a measurement off my board. I haven't logged VRM temperatures yet — not the sensor, not the workload — so I'm not going to put a number on how cool it runs. "A lot of headroom" is what the specs and the estimates above support. A lifetime guarantee isn't.
 
 ---
 
@@ -73,26 +75,28 @@ It's not just the output stages. Look at what ASUS gave this thing to *feed* tho
 - **Quad 8-pin** EPS connectors
 - **Dual 6-pin** supplementary
 
-That is a genuinely absurd amount of input copper for a single-socket board. Most flagship boards today give you two 8-pin EPS and call it a day. This board wants up to **eight power connectors** because ASUS designed the input rails to never be the bottleneck either. The whole power path, input to output, is built like a substation that wandered into an ATX case.
+That is a genuinely absurd amount of input copper for a single-socket board. Typical consumer boards give you one or two 8-pin EPS connectors. This board wants up to **eight power connectors** because ASUS designed the input rails to never be the bottleneck either. The whole power path, input to output, is built like a substation that wandered into an ATX case.
 
 ![Diagram — power input map: dual 24-pin, quad 8-pin EPS, and dual 6-pin connectors feeding the 32-stage teamed VRM array, which feeds the W-3175X socket, showing the absurd amount of input copper relative to a normal two-EPS board](/images/posts/dominus-extreme-vrm/power-input-map.svg)
 
 ---
 
-## And nothing current matches it
+## And it's a big board
 
-This is the part that gets me. You can't go buy a board like this anymore. Not a newer one. Not a better one.
-
-The Dominus Extreme is **14 inches by 14 inches** — bigger than the E-ATX boards that sit at the top of every current lineup. I work at Pizza Hut, so I'll give it to you in units I actually know: that's the exact footprint of a **large hand-tossed**. Fourteen by fourteen. You could box this motherboard in a pizza box and it would fit like it was made for it. It runs **12 DIMM slots**, a full 32-stage teamed VRM, eight power inputs, and a socket built for a 28-core workstation chip, all on one slab of PCB that barely fits in normal cases. When I lay it on the bench next to anything modern, the modern board looks like a model of itself.
+The Dominus Extreme is **14 inches by 14 inches** — bigger than the E-ATX boards that sit at the top of most lineups. I work at Pizza Hut, so I'll give it to you in units I actually know: that's the exact footprint of a **large hand-tossed**. Fourteen by fourteen. You could box this motherboard in a pizza box and it would fit like it was made for it. It runs **12 DIMM slots**, a 32-stage teamed VRM, eight power inputs, and a socket built for a 28-core workstation chip, all on one slab of PCB that barely fits in normal cases.
 
 ![Diagram — board footprint comparison: ROG Dominus Extreme (14 by 14 inches, 12 DIMM slots) overlaid against a standard ATX board and a current E-ATX flagship, with a large hand-tossed pizza outline at the same 14 by 14 size for scale, showing how much larger the Dominus is](/images/posts/dominus-extreme-vrm/size-comparison.svg)
 
-Current flagship boards are built for chips that pull more power than ever, sure — but they're built *to the edge* of what their VRM can handle, because that's how you hit a price. The Dominus was built for a one-off $3,000 Xeon halo platform where ASUS clearly stopped caring about cost and just kept adding phases until the board ran out of room. Nobody's going to make that board again. There's no W-3175X successor, no consumer-ROG reason to put 32 teamed stages and eight power plugs on one motherboard.
+I'm not going to tell you current boards are flimsy by comparison, because they're not. ASUS's [ROG Maximus Z890 Extreme](https://rog.asus.com/motherboards/rog-maximus/rog-maximus-z890-extreme/) lists 24 CPU power stages at 110A each, for chips in the 250–300W range. ASUS's [Pro WS WRX90E-SAGE SE](https://www.asus.com/us/motherboards-components/motherboards/workstation/pro-ws-wrx90e-sage-se/) lists 32 CPU power stages. Modern VRMs are strong, and a lot of that is the same idea — more stages, less current each.
 
-So what's left is this: a board with power delivery so overbuilt for its own CPU that it operates its entire life at a fifth of its rated capacity, by the math — a lot of headroom, even without thermal data yet to confirm exactly how cool it's actually running.
-
-The VRM is unlikely to be what kills a Dominus Extreme first. Nothing about it is working hard, at least on paper.
+What the Dominus has is the whole package at once: the size, the 12 DIMM slots, the eight power plugs, and a teamed 32-stage array built for one halo Xeon. It's a one-off board for a one-off chip, and I think that's what makes it fun to own.
 
 ---
 
-*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, 570A+ sustained, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs, driving a [W-3175X that pulls 400 watts](/blog/xeon-w-3175x-270-dollar-monster/) at ~12A per stage.*
+## Where that leaves it
+
+So here's the honest version. The Dominus Extreme VRM has a lot of headroom — about two-thirds of its rated current left over at stock, and still a real margin under a hard overclock, by my estimates. The VRM is unlikely to be what kills one of these boards first. But that's math and published specs, not something I've measured on my own board yet, and the closer you push the chip, the less spare you have.
+
+---
+
+*ROG Dominus Extreme — 32× IR3555 teamed power stages, 60A each, 570A+ sustained rating, fed by dual 24-pin / quad 8-pin / dual 6-pin inputs. By my estimates a [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) uses roughly a third of that rating at stock and 60–70% at a hard overclock. Estimates, not measurements.*

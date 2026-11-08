@@ -1,11 +1,12 @@
 ---
 title: What Phase Shedding Is — and Why I Turned It Off on the Dominus
 date: 2026-07-10
+updatedDate: 2026-11-08
 description: Phase shedding parks most of your VRM at idle to save a few watts. On a board with 32 teamed power stages, that's oddly fascinating — here's what it does, how the Dominus Extreme handles it, and why I run all 32 stages all the time anyway.
 tags: [asus, rog, dominus-extreme, lga3647, xeon, vrm, bios]
 ---
 
-Last post I showed you [how much headroom the Dominus Extreme VRM has](/blog/dominus-extreme-vrm-overbuilt/) — 32 teamed power stages, a CPU that can't even make them break a sweat, every stage loafing at a fifth of its rating. That was the "why it's barely working" story.
+Last post I showed you [how much headroom the Dominus Extreme VRM has](/blog/dominus-extreme-vrm-overbuilt/) — 32 teamed power stages, a 570A+ rating, and a CPU that uses about a third of it at stock. That was the "why there's so much headroom" story.
 
 This is the flip side of the same coin. Because most of the time, on most boards, **most of those stages aren't even switched on.**
 
@@ -33,7 +34,7 @@ Then you launch something heavy, the load ramps, and the controller **wakes the 
 
 Quick bit of the physics, because it's the part that makes it click.
 
-A power stage loses energy two ways. **Conduction losses** — the current fighting through the resistance of the parts — scale with the *square* of the current (I²R, the same relationship that makes [the Dominus run so cool under load](/blog/dominus-extreme-vrm-overbuilt/)). And **switching losses** — the overhead of turning on and off — which are basically flat per phase, set by the switching frequency and voltage, not the load.
+A power stage loses energy two ways. **Conduction losses** — the current fighting through the resistance of the parts — scale with the *square* of the current (I²R — the same relationship I walked through in [the headroom post](/blog/dominus-extreme-vrm-overbuilt/)). And **switching losses** — the overhead of turning on and off — which are basically flat per phase, set by the switching frequency and voltage, not the load.
 
 At **high** current, conduction losses dominate, and spreading the load across many phases is a huge win — each phase carries less current, and since it's squared, the total heat drops off a cliff. That's the case *for* lots of phases.
 
@@ -84,7 +85,7 @@ So until that's measured: on a normal board, shedding's efficiency win is real a
 
 There's also just something I like about it. This board was built to run 32 teamed stages. So I run 32 teamed stages. All of them. All the time. Feels right.
 
-![Diagram — BIOS CPU Power Phase Control settings compared: Standard and Optimized shedding phases at idle for efficiency, versus Extreme keeping all 32 stages lit permanently, with a small callout that the idle-power difference on this specific board is negligible](/images/posts/dominus-extreme-phase-shedding/phase-control-modes.svg)
+![Diagram — BIOS CPU Power Phase Control settings compared: Standard and Optimized shedding phases at idle for efficiency, versus Extreme keeping all 32 stages lit permanently, with a small callout that the idle-power difference on this specific board is expected to be small, though I haven't measured it](/images/posts/dominus-extreme-phase-shedding/phase-control-modes.svg)
 
 ---
 
@@ -92,6 +93,6 @@ There's also just something I like about it. This board was built to run 32 team
 
 Phase shedding parks VRM phases at idle so the fixed switching overhead doesn't eat you alive when the CPU's doing nothing, then wakes them under load so the current spreads and nothing overheats. Every modern board does it, cheap ones included. The Dominus does it in chunks of four, because each of its eight control phases is a team of four stages.
 
-And I turn it off — not because shedding is wrong, but because on a VRM this overbuilt the savings don't matter, and I'd rather run all 32 stages the way the board was clearly meant to.
+And I turn it off — not because shedding is wrong, but because on a VRM this big I expect the savings are small, and I'd rather run all 32 stages the way the board was clearly meant to.
 
-*ROG Dominus Extreme — 32× IR3555 stages, 8 phases of 4 teamed each, run off a single ASP1405I (IR35201) controller, phase shedding disabled, all 32 stages lit permanently against a [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) that couldn't stress them if it tried.*
+*ROG Dominus Extreme — 32× IR3555 stages, 8 phases of 4 teamed each, run off a single ASP1405I (IR35201) controller, phase shedding disabled, all 32 stages lit permanently against a [W-3175X](/blog/xeon-w-3175x-270-dollar-monster/) that uses roughly a third of the board's rating at stock.*

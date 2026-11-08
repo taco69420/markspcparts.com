@@ -1,7 +1,7 @@
 ---
 title: "HBM: The History of Stacked Memory and Where It's At Now"
 date: 2026-03-27
-updatedDate: 2026-11-03
+updatedDate: 2026-11-08
 description: "From Fiji to HBM4 — how HBM went from a niche GPU trick to the backbone of every serious AI accelerator."
 tags: [amd, nvidia, gpu, memory, hbm, ai]
 ---
@@ -84,7 +84,7 @@ AMD's Vega architecture was supposed to recapture the GPU lead. It didn't, but t
 **Interface:** 1024-bit per stack, 8 channels
 **Max pin speed:** 3.2 Gbps
 **Stack heights:** 8-Hi, 12-Hi, 16-Hi
-**Makers:** SK Hynix, Samsung
+**Makers:** SK Hynix, Samsung, Micron
 
 HBM2E wasn't a new JEDEC standard number — it was an extension of the HBM2 spec that pushed per-pin rates from 2 to 3.2 Gbps and unlocked taller stacks. Samsung announced its Flashbolt HBM2E — the first product to meet the spec — at GTC in March 2019: an 8-Hi stack, 16 GB of capacity, 410 GB/s of bandwidth. The "E" nomenclature became common shorthand even though JEDEC didn't give it its own number.
 
@@ -102,7 +102,7 @@ The A100 was the product that made people take GPU compute seriously at scale. T
 
 The MI250X's 128 GB / 3.27 TB/s numbers are impressive on paper — AMD used two compute dies in one package and strapped eight HBM2E stacks to it. In practice the multi-die architecture had latency implications, but for memory bandwidth-bound workloads it was competitive.
 
-Notably: Micron skipped this entire era of HBM entirely. They weren't a player from HBM1 through HBM2E.
+Micron is the quiet name in this generation. It sat out HBM1 and HBM2 — it had been pushing its own Hybrid Memory Cube instead — but it did show up for HBM2E: Micron published a technical brief covering 8 GB (4-high) and 16 GB (8-high) HBM2E stacks at up to 3.2 Gb/s, and reported its first HBM2E shipments in late 2020.
 
 ---
 
@@ -145,7 +145,7 @@ AMD's MI300X response with 192 GB and 5.3 TB/s across 8 stacks was legitimately 
 
 HBM3E pushed pin speeds from 6.4 to ~9.6 Gbps and introduced the 12-Hi stack configuration that enables 36 GB per stack. The 12-Hi build required JEDEC to relax the maximum stack height spec from 720 μm to 775 μm to make it work.
 
-Micron finally entered the HBM market here, and not quietly. They announced HBM3E in July 2023 at 9.6 Gbps, claimed 30% better power efficiency versus the competition, and began mass production in February 2024 for the NVIDIA H200. Going from 5% market share to 21% in a single year is not nothing.
+HBM3E is where Micron got serious. They announced it in July 2023 at 9.6 Gbps, claimed 30% better power efficiency versus the competition, and began mass production in February 2024 for the NVIDIA H200. How much share that won them depends on who's counting: trackers put Micron's 2024 HBM share anywhere from about [5% (TrendForce)](https://www.koreaherald.com/article/10463949) to about [17% (Silicon Analysts)](https://siliconanalysts.com/market-data/hbm-market-share), so I wouldn't trust any single number.
 
 | Accelerator | HBM3E Config | Total Memory | Total BW | Year |
 |---|---|---|---|---|
@@ -161,11 +161,11 @@ The Blackwell generation is the current ceiling. 288 GB and 8 TB/s on a single p
 
 ## The Three Players
 
-**SK Hynix** built the first HBM chip in 2013 and has been first-to-market on every generation since. They hold roughly 57–62% of the HBM market as of early 2026 and reportedly have NVIDIA supply agreements locked in through 2026. The HBM business was significant enough that SK Hynix briefly overtook Samsung as the world's largest DRAM maker in early 2025 — first time that's happened.
+**SK Hynix** built the first HBM chip in 2013 and has been first-to-market on every generation since. By [Counterpoint's numbers](https://marklapedus.substack.com/p/sk-hynix-lead-shrinks-in-dram-hbm) they held about 62% of the HBM market in Q2 2025 and 57% in Q3 (down from 70% in Q1), and they reportedly have NVIDIA supply agreements locked in through 2026. The HBM business was significant enough that SK Hynix briefly overtook Samsung as the world's largest DRAM maker in early 2025 — first time that's happened.
 
-**Samsung** entered with HBM2 in 2016 and has been present in every generation. They had a rough patch with HBM3E — took longer to qualify with NVIDIA than expected — and watched their market share drop to around 15% at the low point. They're recovering, targeting a 50% capacity expansion in 2026 and positioning HBM4 as the generation where they close the gap.
+**Samsung** entered with HBM2 in 2016 and has been present in every generation. They had a rough patch with HBM3E — took longer to qualify with NVIDIA than expected — and watched their share fall to about 17% in Q2 2025 per Counterpoint, down from 41% a year earlier. Reports say it recovered to roughly 22% in Q3. They're recovering, targeting a 50% capacity expansion in 2026 and positioning HBM4 as the generation where they close the gap.
 
-**Micron** skipped everything through HBM3 and came in at HBM3E with a strong product and better power numbers than the Korean competition. That 9-year gap probably cost them a massive amount of long-term market position, but they're clearly committed to catching up. US government interest in domestic HBM supply doesn't hurt their positioning either.
+**Micron** sat out the first two generations, shipped HBM2E, went straight to HBM3E, and came back hard with a strong product and better power numbers than the Korean competition. Arriving late probably cost them long-term market position, but they're clearly committed to catching up. US government interest in domestic HBM supply doesn't hurt their positioning either.
 
 ---
 
@@ -178,22 +178,30 @@ The Blackwell generation is the current ceiling. 288 GB and 8 TB/s on a single p
 | JESD235B ext. | HBM2E | ~2020 | 3.2 Gbps | 410 GB/s |
 | JESD238 | HBM3 | Jan 2022 | 6.4 Gbps | 819 GB/s |
 | JESD238 amend. | HBM3E | ~2023 | 9.6 Gbps | ~1.2 TB/s |
-| JESD270-4 | HBM4 | Apr 2025 | 8–13 Gbps | 2–3.3 TB/s |
+| JESD270-4 | HBM4 | Apr 2025 | up to 8 Gbps | ~2 TB/s |
+
+Faster vendor HBM4 implementations go beyond the standard's baseline, so I'm listing them separately:
+
+| Vendor | Product | Per-Pin Speed | BW/Stack | Date |
+|---|---|---|---|---|
+| Micron | 36 GB 12-high HBM4 | 11+ Gbps (vendor-quoted) | 2.8+ TB/s (vendor-quoted) | Samples June 2025; volume production spring 2026 |
+| Samsung | HBM4 | 11.7 Gbps | ~3.0 TB/s (my math: 2048 bits × 11.7 Gbps ÷ 8) | Shipping since Feb 2026 |
+
+Sources: [Micron's volume production, via Tom's Hardware](https://www.tomshardware.com/pc-components/dram/micron-enters-high-volume-production-of-hbm4-for-nvidia-vera-rubin) and [Samsung's shipments, via The Register](https://www.theregister.com/2026/02/13/samsung_and_micron_start_shipping/).
 
 ---
 
 ## HBM4 and What's Next
 
-HBM4's JEDEC standard (JESD270-4) was published in April 2025 and it's a bigger jump than any previous generation. The interface doubles from 1024-bit to **2048-bit per stack**. That alone doubles theoretical bandwidth before you even touch the pin speed. JEDEC's own published ceiling for the standard is **over 2.0 TB/s per stack, up to roughly 3.3 TB/s in advanced configurations** — that upper figure is consistent with a 2048-bit bus run at ~13 Gbps per pin (2048 × 13 Gbps ÷ 8 ≈ 3.3 TB/s). Vendor-quoted pin speeds in the 8–13 Gbps range land inside that spec ceiling; which end of the range an individual stack hits depends on the vendor and bin, not the standard itself.
-<!-- TODO(owner): pick one specific pin speed to headline here — JEDEC's baseline vs. a named vendor's bin — rather than citing the whole range as if it's one number -->
+HBM4's JEDEC standard (JESD270-4) was published in April 2025 and it's a bigger jump than any previous generation. The interface doubles from 1024-bit to **2048-bit per stack**. That alone doubles theoretical bandwidth before you even touch the pin speed. The standard itself specifies up to **8 Gbps per pin**, which works out to about **2 TB/s per stack**. The faster numbers you see in headlines — 11+ Gbps and 2.8+ TB/s — are vendor implementations that go beyond that baseline. I list them separately in the table above.
 
 The other major change is the base die. Previous HBM generations used a simple passive I/O die at the bottom of the stack. HBM4 moves to a logic-process base die — initially on something like 12nm, moving toward 3nm for enhanced variants. This enables more sophisticated signaling, better power delivery, and things like programmable bandwidth modes.
 
-Micron is already in high-volume HBM4 production. Samsung shipped HBM4 samples at 11.7 Gbps in late 2025 and officially has product shipping as of early 2026. SK Hynix is ramping in parallel.
+Micron began volume production of its 36 GB 12-high HBM4 in spring 2026, quoting over 11 Gbps and over 2.8 TB/s per stack. Samsung says it began shipping HBM4 at 11.7 Gbps in February 2026. SK Hynix is ramping in parallel.
 
 The first major target is NVIDIA's **Vera Rubin GPU**, targeting H2 2026. Numbers floating around: up to 288 GB HBM4 per package, up to 22 TB/s total bandwidth. The Vera Rubin NVL72 system (72 of those GPUs) is the compute platform the hyperscalers are building toward next.
 
-**HBM4E** comes after that — targeting roughly 2027 production, 12.8–13 Gbps per pin, ~3.25 TB/s per stack, still on the 2048-bit interface from HBM4. Samsung has put a 3.25 TB/s target on record. TrendForce projects HBM4E will represent 40% of total HBM bit demand in 2027.
+**HBM4E** comes after that. Samsung [showed an HBM4E at GTC in March 2026](https://www.businesswire.com/news/home/20260316873365/en/Samsung-Unveils-HBM4E-Showcasing-Comprehensive-AI-Solutions-NVIDIA-Partnership-and-Vision-at-NVIDIA-GTC-2026) with targets of 16 Gbps per pin and 4.0 TB/s per stack on the same 2048-bit interface, in a 16-high 48 GB configuration, with samples planned for mid-2026. Those are targets, not shipping specs, and I haven't found a firm mass-production date.
 
 ---
 

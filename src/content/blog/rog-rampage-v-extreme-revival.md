@@ -1,6 +1,7 @@
 ---
 title: The ROG Rampage V Extreme That Was Never Actually Dead
 date: 2026-06-09
+updatedDate: 2026-11-08
 description: POST code 53, a $90 refund, a borrowed RAM kit, and one overlooked switch. The X99 flagship was fine the whole time.
 tags: [asus, rog, intel, x99, lga2011, water-cooling, hedt, deal, debug]
 ---
@@ -35,7 +36,7 @@ That's when I noticed the **Slow Mode switch was on.**
 
 ![Rampage V Extreme onboard control cluster — POST code display, red START button, RESET, SLOW_MODE switch, MemOK!, and Safe Boot buttons visible along top edge](/images/posts/rog-rampage5/slow-mode.jpg)
 
-Slow Mode is an overclocking recovery feature — it forces the CPU to run at a dramatically reduced multiplier, designed for LN2 sessions where you need to bring the chip up slowly through cold bug range. It is not something you want engaged during normal diagnostics. With it on, depending on BIOS state and what was saved, it can contribute to a board that just won't cooperate.
+Slow Mode is an overclocking recovery feature — it forces the CPU to run at a dramatically reduced multiplier, designed for LN2 sessions where you need to bring the chip up slowly through cold bug range. It is not something you want engaged during normal diagnostics. I couldn't find a source tying it to POST code 53 — that's a memory-initialization error — so I'm not claiming it caused this.
 
 I flipped it off. Slotted the borrowed DDR4.
 
@@ -47,7 +48,7 @@ Hit power.
 
 Straight into UEFI. No hesitation. No debug codes cycling. The **i7-6950X** came up at **3.00GHz**, **8,192MB DDR4-2133** detected, everything nominal. The board and CPU were completely healthy.
 
-The culprit the entire time was a combination of a dead DDR4 test kit — whatever RAM I'd tried initially was the problem, not the board — and the Slow Mode switch sitting in the wrong position. Two things working against me at once, making a healthy board look like a brick.
+I changed two things at once — a known-good borrowed kit in, Slow Mode off — and I never went back to test either one alone, so I can't tell you which one did it. Code 53 is a memory-init error, so the RAM is my first suspect, but that's an assumption, not something I tested. If you're chasing a 53 on one of these, try both. Either way, the board and CPU were fine.
 
 The $90 refund I negotiated? Earned it back instantly just on the CPU alone.
 

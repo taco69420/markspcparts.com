@@ -1,6 +1,7 @@
 ---
 title: "Dual-Socket LGA 2011 Bundles Are Free Money If You Know What You're Looking At"
 date: 2026-06-02
+updatedDate: 2026-11-06
 description: "Average buyers see old server hardware and scroll past. Flippers see DDR3 or DDR4 ECC worth more than the asking price. Here's how the Z9PE-D8 flip went, and why I just bought its big brother."
 tags: [asus, xeon, dual-socket, lga2011, workstation, homelab, memory, ecc, flip, deal]
 ---
@@ -45,7 +46,7 @@ Then I found a listing for untested 64GB DDR3 ECC sticks for $30. I figured: I'v
 
 So now I had a working ASUS Z9PE-D8 WS with two E5-2697 v2s and 64GB of DDR3 ECC, and my total out-of-pocket was $150 + $30 = $180 — minus the $200 I already made on the RAM sale, putting me at **negative $20** before selling the board. Sold the whole working combo for $200.
 
-Final math: **+$220** on a $150 starting investment — that's revenue minus what I paid for parts, not a true net. It doesn't subtract eBay/PayPal selling fees or what I paid to ship the RAM and the board out to their buyers, so actual take-home was lower than $220.
+Final math: **+$220** on a $150 starting investment — that's revenue minus what I paid for parts, not a true net. It doesn't subtract eBay/PayPal selling fees or what I paid to ship the RAM and the board out to their buyers, so actual take-home was lower than $220. The two cheap coolers from [the March build](/blog/dual-socket-ai-lab/) (about $20 total) weren't part of the sale — I still have them, which is why they're not in this math.
 
 ---
 
@@ -65,7 +66,7 @@ After the Z9PE-D8 I went looking again.
 
 Found an ASUS Z10PE-D16 — the big brother to the Z9PE-D8 WS. The D8 has 8 DIMM slots. The D16 has **16 DIMM slots**, LGA 2011-v3, DDR4 ECC. It's a larger, newer, more capable board, and it's even more invisible to the average buyer because it looks even more like "serious server equipment that I definitely don't understand."
 
-Bundle came with two E5-2620 v4s, which are worth almost nothing — low-end Xeons, nobody wants them. Doesn't matter. What it also came with: **64GB of DDR4 ECC RAM**. Right now that RAM goes for around $200 by itself. The board alone goes for around $200. And then on top of all that, the seller threw in **two Noctua dual tower air coolers**. I don't know why. I'm not asking questions.
+Bundle came with two E5-2620 v4s, which are worth almost nothing — low-end Xeons, nobody wants them. Doesn't matter. What it also came with: **64GB of DDR4 ECC RAM**. That RAM sold for $180 by itself. On top of all that, the seller threw in **two Noctua dual tower air coolers**. I don't know why. I'm not asking questions.
 
 The listing was an auction. I watched it. Four other people watched it. Nobody bid. The whole thing expired with zero bids on a $200 starting price, which tells you everything about how the average buyer sees this hardware.
 
@@ -92,10 +93,7 @@ None of these people are browsing the same eBay results as someone building a ga
 ## The Z10PE Arrived
 
 I tore it down, verified it posted, went through everything. The board was clean.
-<!-- TODO(owner): fill in what actually happened to this board — sold whole, parted out, kept -->
-
-Either way, I already knew how it would end.
-
+I parted it out three ways: the 64GB kit sold for $180, the two Noctua coolers went for around $50 each, and the board with both E5-2620 v4s sold as a combo for around $160. That's roughly $440 back on $280, before fees and shipping.
 ---
 
 ## Why This Keeps Working

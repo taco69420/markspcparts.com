@@ -1,7 +1,9 @@
 ---
 title: The Water Block That Was Never Sold in America
 date: 2026-06-11
-description: A Washington pawn shop. A "broken" X99 flagship. One full-cover monoblock that ASUS officially certified and Bitspower never distributed in North America. How I ended up with one of three cooling products ever certified by the ROG program.
+updatedDate: 2026-11-08
+seoTitle: "Bitspower BP-ROGCR5EFCB ROG Certified Monoblock — Never Sold in America"
+description: A Washington pawn shop. A "broken" X99 flagship. One full-cover monoblock that ASUS officially certified and Bitspower's own page says was never sold in the Americas. How I ended up with one of the three cooling products on ASUS's December 2016 ROG Certified roster.
 tags: [asus, rog, water-cooling, x99, lga2011, hedt, deal]
 ---
 
@@ -9,7 +11,7 @@ The bundle arrived from a seller in Washington state who'd picked it up from a l
 
 The board showed **POST code 53** on arrival. Memory initialization failure. I negotiated a partial refund assuming the worst and moved on to other projects.
 
-Weeks later I borrowed a known-good DDR4 stick from my brother's machine, noticed the **Slow Mode switch was engaged**, flipped it off, slotted the RAM, and the board came up immediately. Straight into UEFI. Completely healthy. The whole story on that diagnosis is in the [Rampage V Extreme revival post](/blog/rog-rampage-v-extreme-revival/) — the short version is the board was never broken. My own dead test kit and one overlooked switch made it look like a paperweight.
+Weeks later I borrowed a known-good DDR4 stick from my brother's machine, noticed the **Slow Mode switch was engaged**, flipped it off, slotted the RAM, and the board came up immediately. Straight into UEFI. Completely healthy. The whole story on that diagnosis is in the [Rampage V Extreme revival post](/blog/rog-rampage-v-extreme-revival/) — the short version is the board was never broken. I swapped in a known-good kit and turned off an overlooked Slow Mode switch at the same time, and it posted first try. I never tested either change on its own.
 
 But this post isn't about the board.
 
@@ -51,7 +53,7 @@ By **December 2016** — the same window when the Bitspower block was featured �
 
 **Cooling:** Bitspower Rampage V Extreme FCB in Black (BP-ROGCR5EFCB-BK), Bitspower Rampage V Extreme FCB in Clear (BP-ROGCR5EFCB), EK-FB R5-E10 (fits the Rampage V Edition 10, not the original RVE)
 
-That's the only cooling products on any ROG Certified roster I could find. Two of them are colorways of the same block — the one I'm holding.
+That's the full cooling list on ASUS's [December 2016 roster](https://rog.asus.com/articles/rog-certified/rog-certified-army-growing-stronger/). Two of the three are colorways of the same block — the one I'm holding. It wasn't the only certified water block ever made, though: Bitspower later sold a monoblock for the Crosshair VI Extreme (BP-ROGX370C6E) that its own shop lists as "ROG Certificated."
 
 Many certified products also tied into **Aura Sync**, ASUS's RGB lighting ecosystem. The program wasn't just about engineering validation — it was an early push to build a unified ROG hardware ecosystem with third-party depth. Certified products from different brands were designed to work together visually and electronically.
 
@@ -87,7 +89,7 @@ For context on how few of these exist in North America: the Rampage V Extreme wa
 
 My rough estimate — and I want to be clear these are my guesses, Bitspower never disclosed production figures — is somewhere in the low hundreds to maybe a thousand clear units produced worldwide. The number physically present in North America is probably in the double digits. The number on eBay with no comps, no sold history, and no price anchor is effectively one: the one I have.
 
-The only adjacent data point I found was an **EK monoblock for the same platform** that sold for around $60 years ago. But the EK block is a standard production piece. Not an official ROG Certified collaboration. Not engraved. Not one of three cooling products in a formal ASUS program. They aren't comparable.
+The only adjacent data point I found was an **EK monoblock for the same platform** that sold for around $60 years ago. But the EK block is a standard production piece. Not an official ROG Certified collaboration. Not engraved. Not one of three cooling products on ASUS's December 2016 ROG Certified roster. They aren't comparable.
 
 ---
 
@@ -101,13 +103,13 @@ Then the program went quiet.
 
 Today, if you search "ROG Certified" on ASUS's site, what comes back is a **DRAM compatibility program** — a memory qualification list for ROG boards. That's it. The era of certified chassis, certified water blocks, and certified RGB memory kits built under a formal ASUS engineering partnership is over. The category is dead.
 
-The three cooling products that ever carried the certification — two colorways of a Bitspower monoblock for a 2015 flagship board and one EK block for its ten-core variant — are all discontinued. No new certified blocks were ever added. The Bitspower pieces remain the only full-cover water cooling hardware in the history of the program.
+The three cooling products on that December 2016 roster — two colorways of a Bitspower monoblock for a 2015 flagship board and one EK block for its ten-core variant — are all discontinued. The program did add at least one more block later, Bitspower's monoblock for the Crosshair VI Extreme, so I can't tell you mine is the last or the only one. I can tell you it's one of the three ASUS put on that list.
 
 ---
 
 ## Where This Ends Up
 
-A water block that was never distributed in America somehow ended up in an American pawn shop. It got bundled with a board everyone thought was broken, which turned out to be completely healthy. It arrived in my hands in California, officially certified by ASUS, one of three cooling products in the entire history of a now-defunct program, with no sold comps, no restock, and no successor.
+A water block that was never distributed in America somehow ended up in an American pawn shop. It got bundled with a board everyone thought was broken, which turned out to be completely healthy. It arrived in my hands in California, officially certified by ASUS, one of three cooling products on the December 2016 ROG Certified roster, with no sold comps, no restock, and no successor.
 
 The 6950X is installed. The monoblock fits. The loop infrastructure is already there.
 
@@ -115,4 +117,4 @@ I'm not in a hurry.
 
 ---
 
-*Bitspower BP-ROGCR5EFCB — ROG Certified Full Cover Monoblock for ASUS ROG Rampage V Extreme, clear variant. EOL. No North American distribution. One of three cooling products ever certified in the ROG Certified program.*
+*Bitspower BP-ROGCR5EFCB — ROG Certified Full Cover Monoblock for ASUS ROG Rampage V Extreme, clear variant. EOL. No North American distribution. One of three cooling products on ASUS's December 2016 ROG Certified roster.*

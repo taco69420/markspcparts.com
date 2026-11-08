@@ -1,13 +1,14 @@
 ---
 title: "DIMM.2 on the ROG Dominus Extreme: The Feature That Almost Killed My RAM"
 date: 2026-04-20
+updatedDate: 2026-11-08
 description: "Two DIMM.2 slots, four M.2 drives, and a RAM overheating problem I didn't see coming. The Dominus Extreme's most interesting feature is also its most annoying one."
 tags: [asus, rog, dominus-extreme, lga3647, build]
 ---
 
 The DIMM.2 slots were honestly one of the reasons I wanted the Dominus Extreme in the first place.
 
-Two full-size DIMM.2 cards, each capable of holding two M.2 drives — so in theory you could run two completely separate OS and storage setups off one board without touching any of the standard M.2 slots. You could have one NVMe for your daily driver, another for a VM host, two more for scratch storage, all on DIMM.2 alone. That idea genuinely ruled in my head before I actually owned the board.
+Two full-size DIMM.2 cards, each capable of holding two M.2 drives — so in theory you could run two completely separate OS and storage setups off one board using nothing but the two DIMM.2 cards. You could have one NVMe for your daily driver, another for a VM host, two more for scratch storage, all on DIMM.2 alone. That idea genuinely ruled in my head before I actually owned the board.
 
 Then I started using it.
 
@@ -17,7 +18,7 @@ Then I started using it.
 
 If you haven't seen one before: DIMM.2 is an ASUS-proprietary expansion card that plugs into a dedicated DIMM.2 connector — a separate connector from the board's standard DRAM slots, not one of them. The card itself holds two M.2 slots — 2242, 2260, 2280, or 22110 depending on the card revision — carrying PCIe storage, and connects to the board's PCIe lanes through that DIMM.2 connector.
 
-The Dominus Extreme has 12 standard DRAM slots plus two of these dedicated DIMM.2 connectors. Fully populated, that's four additional M.2 drives, none of which occupy the board's onboard M.2 slots, none of which block any PCIe x16 slots, and none of which cost you a DRAM slot. On paper this is a genius solution for a workstation board that needs to do many things at once.
+The Dominus Extreme has 12 standard DRAM slots plus two of these dedicated DIMM.2 connectors. Fully populated, that's four M.2 drives — the DIMM.2 cards are the board's only M.2 storage — and none of them cost you a DRAM slot. On paper this is a genius solution for a workstation board that needs to do many things at once.
 
 The catch is the "connects to the board's PCIe lanes" part.
 
@@ -29,8 +30,15 @@ The Dominus Extreme does not give DIMM.2 its own dedicated lanes. What you're ac
 
 The manual covers it. The information is in there, in those dense block-diagram pages that everyone skips. But it's one of those things where you have to sit down with a notepad, map out every slot you intend to use, cross-reference against three different bandwidth-sharing tables, and plan the whole config before you ever install a single drive. Populate the wrong combination and you'll come back later wondering why a slot ran at half speed or why a drive just doesn't show up.
 
-![Board layout diagram showing PCIe lane sharing on the ROG Dominus Extreme — DIMM.2_1 slots conflict with PCIEX16_4, while DIMM.2_2 and U.2 connectors share bandwidth with PCIEX16_2 and PCIEX16_3](/images/posts/dominus-dimm2/pcie-lane-diagram.svg)
-<!-- TODO(owner): confirm lane-sharing against the manual — re-check which PCIEX16 slots actually conflict with which DIMM.2/U.2 connectors before trusting this diagram -->
+![Board layout diagram showing PCIe lane sharing on the ROG Dominus Extreme — per ASUS, PCIEX16_2 shares bandwidth with DIMM.2_1_1, DIMM.2_1_2, DIMM.2_2_2 and U.2_2; PCIEX16_3 with DIMM.2_2_1 and U.2_1; PCIEX16_4 with DIMM.2_1_1 and DIMM.2_1_2; PCIEX16_1 is not listed as shared](/images/posts/dominus-dimm2/pcie-lane-diagram.svg)
+
+Straight from [ASUS's spec page](https://rog.asus.com/motherboards/rog-dominus/rog-dominus-extreme-model/spec): the CPU gives you 48 lanes, and the four x16 slots run as x16/x16/x16 or x16/x8/x16/x8. The sharing, exactly as ASUS lists it:
+
+- **PCIEX16_2** shares bandwidth with DIMM.2_1_1, DIMM.2_1_2, DIMM.2_2_2 and U.2_2
+- **PCIEX16_3** shares bandwidth with DIMM.2_2_1 and U.2_1
+- **PCIEX16_4** shares bandwidth with DIMM.2_1_1 and DIMM.2_1_2
+
+So yes — populating DIMM.2 drives can cost you GPU slot bandwidth, and I've run into it myself.
 
 It's not a dealbreaker. It's annoying for something marketed as a no-compromise workstation board. You should not have to spend an afternoon with a spreadsheet just to safely install your storage.
 

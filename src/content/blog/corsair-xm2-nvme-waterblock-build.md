@@ -1,6 +1,7 @@
 ---
 title: Putting Together a Corsair XM2 NVMe Waterblock on a Samsung 980 1TB
 date: 2026-03-25
+updatedDate: 2026-11-08
 description: Brand new Corsair XM2 M.2 waterblock, a Samsung 980 1TB, and a build that took about two minutes. Here's the full process.
 tags: [water-cooling, build]
 ---
@@ -15,11 +16,11 @@ This started with a Corsair XM2 M.2 waterblock I'd been sitting on and a Samsung
 
 ![Corsair XM2 M.2 waterblock — sealed retail packaging on workbench](/images/posts/nvme-waterblock/starting-shot.jpg)
 
-Sealed retail box, never opened. The XM2 comes packaged with everything you need — the top block, the bottom mounting plate, thermal pads, and documentation. First thing out was the manual and the accessory tray sitting on top.
+Sealed retail box, never opened. The XM2 comes packaged with everything you need — the top block, the bottom mounting clip, thermal pads, and documentation. First thing out was the manual and the accessory tray sitting on top.
 
 ![Corsair XM2 box open — manual and documentation visible on top layer](/images/posts/nvme-waterblock/ssd-out-of-box.jpg)
 
-Under the docs you get the block itself. Two main pieces: the top section which is the actual waterblock body, and the bottom casing that the SSD mounts into before the top clamps down.
+Under the docs you get the block itself. Two main pieces: the top section which is the actual waterblock body, and the bottom mounting clip that the SSD slides into before the block presses down on top and latches.
 
 ---
 
@@ -43,7 +44,7 @@ Before assembly you pull the protective backing off the thermal pads. They're al
 
 ![Samsung 980 1TB sliding into Corsair XM2 bottom mounting bracket](/images/posts/nvme-waterblock/ssd-slide-in.jpg)
 
-The Samsung 980 1TB slides into the bottom casing at the M.2 angle — same as dropping it into a motherboard slot — and gets secured with a mounting screw, same as you'd use on a board. The bottom plate holds it at the correct position so the thermal pads land exactly where they need to when the top goes on.
+The Samsung 980 1TB slides into the metal mounting clip on the bottom. No screw at this stage — the clip holds the drive in the correct position so the thermal pads land exactly where they need to when the block comes down. The screw comes later: per Corsair's instructions, the finished assembly goes into the motherboard's M.2 slot and gets secured with a screw like any other M.2 drive. (I haven't mounted mine on a board yet.)
 
 ![Samsung 980 1TB seated in Corsair XM2 bottom casing, fully open view](/images/posts/nvme-waterblock/ssd-open.jpg)
 
@@ -55,7 +56,7 @@ Drive seated, alignment looks right. The 980's controller and NAND are exposed u
 
 ## Top Snaps On
 
-From here it's straightforward — the top block sets down over the bottom casing and snaps into place. No tools needed for the basic assembly. The design is clip-fit, so it's one motion.
+From here it's straightforward — the water block presses down on top of the clip until it clicks closed, and the block's thermal pads make contact with the drive. No tools needed for the block assembly. The design is clip-fit, so it's one motion.
 
 ![Corsair XM2 fully assembled with Samsung 980 1TB — front view](/images/posts/nvme-waterblock/ssd-complete.jpg)
 
@@ -71,8 +72,8 @@ The XM2 is a custom-loop block, not a standalone heatsink. It needs coolant actu
 
 Samsung 980 1TB is a solid drive for this treatment — PCIe 3.0, 1TB, runs warm under sustained loads which is exactly the scenario where contact cooling makes a difference.
 
-Total time: two minutes. Total tools required: none.
+Total time: two minutes. Tools required to assemble the block: none. (You'll want a screwdriver and a screw when it goes on the motherboard.)
 
 ---
 
-*Corsair XM2 M.2 waterblock — Samsung 980 1TB — copper cold plate, two G1/4" ports, built for a custom loop. Clip-fit shell, one mounting screw for the drive.*
+*Corsair XM2 M.2 waterblock — Samsung 980 1TB — copper cold plate, two G1/4" ports, built for a custom loop. Clip-fit shell, no tools to assemble the block; one screw secures the finished assembly on the motherboard.*

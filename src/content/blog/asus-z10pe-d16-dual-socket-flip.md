@@ -1,14 +1,15 @@
 ---
 title: "I Paid $280 for a Dual-Socket DDR4 Workstation With Noctua Coolers Already On It"
 date: 2026-06-09
-updatedDate: 2026-11-03
+updatedDate: 2026-11-06
+seoTitle: "ASUS Z10PE-D16 Tested With Dual E5-2620 v4s — My $280 Find"
 description: "ASUS Z10PE-D16, dual E5-2620 v4, 64GB DDR4 ECC, two Noctua NH-D9DX coolers, full IPMI. $280 shipped. Here's the board, the test results, and the split plan."
 tags: [asus, xeon, dual-socket, workstation, server, homelab, ecc, flip]
 ---
 
 ![ASUS Z10PE-D16 with dual Xeon E5-2620 v4 and Noctua NH-D9DX coolers, top-down view](/images/posts/dual-socket-16/hero-dual.jpg)
 
-$280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registered ECC, and two Noctua NH-D9DX tower coolers already mounted. The seller had no idea. Nobody bid against me. Same story as [the Z9PE-D8 WS before it](/blog/lga2011-dual-socket-cheat-code/) — and this one is better.
+$280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registered ECC, and two Noctua NH-D9DX tower coolers already mounted. The auction drew zero bids, the relist took a Best Offer, and I got it at $220 plus freight. Same story as [the Z9PE-D8 WS before it](/blog/lga2011-dual-socket-cheat-code/) — and this one is better.
 
 ---
 
@@ -16,8 +17,7 @@ $280 shipped. Dual-socket DDR4 ECC workstation board, two Xeons, 64GB of registe
 
 Here's exactly what came in the box:
 
-- **ASUS Z10PE-D16 WS** — dual LGA2011-3, C612 chipset, SSI-EEB
-  <!-- TODO(owner): confirm whether this board is actually the "WS" variant vs plain Z10PE-D16 — the BMC chip (AST2300 vs AST2400), LAN chip (i350 vs I210-AT), and electrical x16 lane count below are all variant-dependent and need checking against the physical board before any of them get corrected -->
+- **ASUS Z10PE-D16** (the PCB silkscreen reads Z10PE-D16, not the WS) — dual LGA2011-3, C612 chipset, SSI-EEB
 - **2x Intel Xeon E5-2620 v4** — 8c/16t each, 16 cores / 32 threads total
 - **64GB DDR4 ECC RDIMM** — 4x 16GB Micron MTA18ASF2G72PDZ-2G3B1IK, PC4-2400T, 2Rx8
 - **2x Noctua NH-D9DX i4 3U** — with NM-XFB3 LGA2011 Square-ILM brackets
@@ -30,9 +30,9 @@ The coolers are the part I keep coming back to. The NH-D9DX i4 is the specific N
 
 ![Z10PE-D16 PCB name printed between the two CPU DIMM banks](/images/posts/dual-socket-16/name-shot.jpg)
 
-The "D16" is the important part. Sixteen DIMM slots — eight per CPU, quad-channel per socket. That's the whole board. Where cheaper dual-socket platforms cut corners on memory slots, ASUS built this one out fully. Fill it with 64GB LRDIMMs and you've got a 1TB system. Fill it with the 16GB RDIMMs that came in this bundle and you've got 256GB with slots to spare.
+The "D16" is the important part. Sixteen DIMM slots — eight per CPU, quad-channel per socket. That's the whole board. Where cheaper dual-socket platforms cut corners on memory slots, ASUS built this one out fully. Fill it with 64GB LRDIMMs and you've got a 1TB system. Fill it with the 16GB RDIMMs that came in this bundle and you've got 256GB with all 16 slots filled.
 
-The rest of the spec sheet: dual Intel i350 Gigabit LAN onboard, six PCIe 3.0 x16 slots, C612 chipset, SSI-EEB form factor. That's not a typo — this board was designed for multi-GPU visualization workloads, so ASUS populated it properly. In a homelab context that means room for GPUs, HBAs, NVMe controllers, and 10GbE cards without fighting over slots.
+The rest of the basics: C612 chipset, SSI-EEB form factor. ASUS sold this family in several flavors — the plain D16, the /10G-2T, the /4L, and the WS, which is the one with six x16-length slots — and the slot layout and LAN change between them. Mine is the plain D16, since that's what's printed on the PCB. Check the sticker on your board and the ASUS manual for your exact suffix before you plan around a slot count.
 
 It needs a server case, pedestal workstation chassis, or open bench. It's too big for a standard ATX enclosure.
 
@@ -42,10 +42,10 @@ It needs a server case, pedestal workstation chassis, or open bench. It's too bi
 
 ## The IPMI
 
-![Bottom-left corner of the Z10PE-D16 showing the ASPEED AST2300 BMC chip](/images/posts/dual-socket-16/left-cornor.jpg)
-*The ASPEED AST2300 is right there on the PCB. That chip is the whole reason this board commands a premium over consumer HEDT.*
+![Bottom-left corner of the Z10PE-D16 showing the ASPEED AST2400 BMC chip](/images/posts/dual-socket-16/left-cornor.jpg)
+*The ASPEED AST2400 is right there on the PCB. That chip is the whole reason this board commands a premium over consumer HEDT.*
 
-The ASUS ASMB8-iKVM module is what separates this from anything in the consumer HEDT world. Full IPMI 2.0 out-of-band management through a dedicated management port, powered by the ASPEED AST2300 SoC — its own processor, its own memory, its own network connection, completely independent of the main system.
+The ASUS ASMB8-iKVM module is what separates this from anything in the consumer HEDT world. Full IPMI 2.0 out-of-band management through a dedicated management port, powered by the ASPEED AST2400 SoC — its own processor, its own memory, its own network connection, completely independent of the main system.
 
 What that means in practice: you can power the machine on or off remotely even when the OS is dead. You get a full KVM-over-IP browser session — keyboard, video, mouse — so you see POST messages, BIOS screens, and OS boot failures without a monitor attached. You can mount an ISO over the network as a virtual optical drive and do a completely headless Proxmox install. You can hook it into ipmitool and automate power management from other machines. You get SNMP and SMTP alerting on fan failures, voltage drift, and temperature spikes before they become real problems.
 
@@ -90,13 +90,14 @@ The IO corner is fine — worth noting because this is where I found damage on [
 Same playbook as the Z9PE-D8 flip. Three-way split, RAM first.
 
 **Noctua coolers.** Two NH-D9DX i4 3U units.
-<!-- TODO(owner): fill in what actually happened — sold both, kept one, price realized -->
+Sold both, around $50 each.
 
 **RAM.** The 64GB DDR4 ECC RDIMM kit — four matched Micron 16GB PC4-2400T sticks, exactly what LGA 2011-v3 homelabbers are after.
-<!-- TODO(owner): fill in what actually happened to this kit -->
+Sold for $180.
 
-**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s, sold tested and confirmed. The E5-2620 v4 isn't a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, full IPMI, dual Gigabit LAN, and six PCIe slots in a confirmed-working package.
-<!-- TODO(owner): fill in what actually happened to this combo, and the final numbers for the full split -->
+**Board and CPUs as a combo.** Z10PE-D16 with both E5-2620 v4s, sold tested and confirmed. The E5-2620 v4 isn't a glamorous CPU — 2.1GHz base, eight cores — but two of them gives a Proxmox buyer 16 cores / 32 threads, quad-channel DDR4 ECC per socket, and full IPMI in a confirmed-working package. Sold for around $160.
+
+**Total.** Roughly $440 back on $280 — about $160 ahead, before fees and shipping.
 
 ---
 
@@ -104,11 +105,11 @@ Same playbook as the Z9PE-D8 flip. Three-way split, RAM first.
 
 If you're reading this because you're thinking about buying into a LGA 2011-v3 platform: do it now, not later.
 
-DDR4 ECC RDIMM prices roughly doubled over the back half of 2026.
+I don't have a tracked price history to show you. What I have is one data point — my 4×16GB Micron kit sold for $180 — and the fact that listings for this stuff keep getting crazier.
 
-This matters because LGA 2011-v3 platforms require registered ECC — you can't sub in consumer DDR4. The boards are cheap because they're old server gear. The RAM isn't cheap anymore because enterprise demand ate the supply. The window where you can buy a complete, tested bundle with RAM already included at a reasonable all-in price is closing.
+This matters because the Z10PE-D16 takes registered (RDIMM) or load-reduced (LRDIMM) ECC — you can't sub in consumer DDR4 here. Other LGA 2011-v3 boards are different: my [Rampage V Extreme](/blog/rog-rampage-v-extreme-revival/) is an X99 board and runs ordinary unbuffered DDR4. The boards are cheap because they're old server gear. The RAM is where the money is.
 
-The RAM in this bundle is what makes the math work. $280 for the whole thing, and the RAM alone is currently worth $200+ by itself. The rest is gravy.
+The RAM in this bundle is what makes the math work. $280 for the whole thing, and the RAM alone sold for $180. The rest is gravy.
 
 ---
 

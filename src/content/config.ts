@@ -4,6 +4,8 @@ const blog = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
+    // Optional search-friendly <title>/social title. The on-page H1 stays `title`.
+    seoTitle: z.string().optional(),
     date: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     description: z.string().optional(),

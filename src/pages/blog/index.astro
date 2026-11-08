@@ -66,6 +66,14 @@ const blogListLd = {
                   <div class="flex flex-col sm:flex-row sm:items-baseline sm:gap-6">
                     <div class="flex items-center gap-2 shrink-0 mb-2 sm:mb-0">
                       <time class="text-xs font-mono text-steel">{dateStr}</time>
+                      {post.data.updatedDate && (
+                        <>
+                          <span class="text-white/15 text-xs">·</span>
+                          <span class="text-xs font-mono text-accent-light">
+                            Updated {post.data.updatedDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' })}
+                          </span>
+                        </>
+                      )}
                       <span class="text-white/15 text-xs hidden sm:inline">·</span>
                       <span class="text-xs font-mono text-steel hidden sm:inline">{readingTime(post.body)}</span>
                     </div>

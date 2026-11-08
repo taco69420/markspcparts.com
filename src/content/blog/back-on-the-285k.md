@@ -1,7 +1,9 @@
 ---
 title: Back on the 285K
 date: 2026-03-27
-description: Built this rig in November 2025, moved to the Dominus, and finally came back. White GPU, black build, and CUDIMMs running at 8800 MT/s on a 4-slot board.
+updatedDate: 2026-11-06
+seoTitle: "Core Ultra 9 285K With DDR5-8800 on the MSI Z890 Tomahawk"
+description: Built this rig in November 2025, moved to the Dominus, and finally came back. White GPU, black build, and DDR5-9000-rated CUDIMMs running at 8800 MT/s on a 4-slot board.
 tags: [intel, nvidia, cpu, gpu, memory, ddr5, cudimm, build]
 ---
 
@@ -15,7 +17,7 @@ Then I finally came back to it.
 
 - **CPU:** Intel Core Ultra 9 285K — Micro Center bundle deal with the board
 - **Motherboard:** MSI Z890 Tomahawk WiFi — picked up as a bundle with the 285K at Micro Center
-- **RAM:** 48GB G.Skill Trident Z5 CK 8800 MT/s CUDIMMs — [$400 on eBay](/blog/cudimm-9000-400/)
+- **RAM:** 48GB G.Skill Trident Z5 CK, rated DDR5-9000, running at 8800 MT/s on the Z890 Tomahawk — [$400 on eBay](/blog/cudimm-9000-400/)
 - **GPU:** Zotac RTX 5080 Solid White
 - **Cooler:** be quiet! Silent Loop 3 420
 - **Case:** Phanteks Enthoo Pro 2 Server Edition
@@ -39,7 +41,7 @@ Honestly? It works. It stands out. You notice it immediately when you look throu
 
 The CUDIMMs are the part of this build I'm most proud of. If you haven't read the full story — [I got 48GB of 9000 MT/s G.Skill Trident Z5 CK CUDIMMs for $400 on eBay](/blog/cudimm-9000-400/). Listed at $650, countered low, seller said yes.
 
-Running them on the Z890 Tomahawk at **8800 MT/s**. The Tomahawk is a 4-slot board — not the go-to recommendation for CUDIMM builds where people tend to suggest boards with dedicated CUDIMM routing. But they trained, they're stable, and I'm pulling bandwidth numbers that are wild for a 2-stick consumer setup.
+Running them on the Z890 Tomahawk at **8800 MT/s** (the kit is rated for 9000 — I ran that once in Gear 4 as a send-off to the board, but 8800 is what I lived on in this build). The Tomahawk is a 4-slot board — not the go-to recommendation for CUDIMM builds where people tend to suggest boards with dedicated CUDIMM routing. But they trained, they're stable, and I'm pulling bandwidth numbers that are wild for a 2-stick consumer setup.
 
 The 285K has a strong IMC. The Tomahawk has better traces than its reputation suggests. Combination works.
 
@@ -69,4 +71,4 @@ Glad I came back to it.
 
 ---
 
-*Core Ultra 9 285K / MSI Z890 Tomahawk WiFi / 48GB G.Skill Trident Z5 CK 8800 MT/s / Zotac RTX 5080 Solid White / be quiet! Silent Loop 3 420 / Phanteks Enthoo Pro 2*
+*Core Ultra 9 285K / MSI Z890 Tomahawk WiFi / 48GB G.Skill Trident Z5 CK (rated DDR5-9000, running 8800 MT/s) / Zotac RTX 5080 Solid White / be quiet! Silent Loop 3 420 / Phanteks Enthoo Pro 2*

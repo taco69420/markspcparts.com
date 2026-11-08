@@ -1,6 +1,7 @@
 ---
 title: "I Almost Built a Poor Man's AI Lab for $150"
 date: 2026-03-27
+updatedDate: 2026-11-06
 description: "Dual socket LGA 2011, two Xeon E5-2697 v2s, and 256GB of DDR3 ECC for $150 off eBay. The plan was a cheap local AI lab. Then I found the shipping damage."
 tags: [asus, xeon, dual-socket, lga2011, workstation, memory, ecc, ai, deal, homelab]
 ---
@@ -56,3 +57,5 @@ My cousin got me an IPMI module for this board for Christmas which is sitting in
 ## Where It Stands
 
 If enough people are interested I'll grab some cheap DDR3 ECC, throw it in, and see if the board even posts with the bent corner. Could be fine. Could be dead. Only one way to find out.
+
+**Update, around June 2026:** I found out. I paid $30 for untested DDR3 ECC sticks, the board posted first try despite the bent corner, and I sold the working combo for $200. I kept the two cheap coolers (about $20 total). The full math is in [the follow-up post](/blog/lga2011-dual-socket-cheat-code/).

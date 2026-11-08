@@ -6,6 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import rehypeOptimizeImages from './src/lib/rehype-optimize-images.mjs';
 import rehypeTableHeaders from './src/lib/rehype-table-headers.mjs';
+import { computeNoindexTags } from './src/lib/noindex-tags.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const blogDir = path.join(__dirname, 'src/content/blog');
@@ -19,12 +20,22 @@ function frontmatterDate(field, frontmatter) {
 }
 
 const postLastmod = new Map();
+const tagToSlugs = new Map();
 for (const file of fs.readdirSync(blogDir)) {
   if (!file.endsWith('.md')) continue;
   const frontmatter = fs.readFileSync(path.join(blogDir, file), 'utf-8').split('---')[1] ?? '';
   const slug = file.replace(/\.md$/, '');
   postLastmod.set(slug, frontmatterDate('updatedDate', frontmatter) ?? frontmatterDate('date', frontmatter));
+
+  const tagLine = frontmatter.match(/^tags:\s*\[(.*?)\]/m)?.[1] ?? '';
+  for (const rawTag of tagLine.split(',')) {
+    const tag = rawTag.trim().replace(/^["']|["']$/g, '');
+    if (!tag) continue;
+    if (!tagToSlugs.has(tag)) tagToSlugs.set(tag, []);
+    tagToSlugs.get(tag).push(slug);
+  }
 }
+const noindexTags = computeNoindexTags(tagToSlugs);
 
 export default defineConfig({
   site: 'https://markspcparts.com',
@@ -61,8 +72,11 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      filter: (page) =>
-        !page.includes('/search') && !page.includes('/inventory'),
+      filter: (page) => {
+        if (page.includes('/search') || page.includes('/inventory')) return false;
+        const tagMatch = page.match(/\/blog\/tag\/([^/]+)\/$/);
+        return !(tagMatch && noindexTags.has(decodeURIComponent(tagMatch[1])));
+      },
       serialize(item) {
         const match = item.url.match(/\/blog\/([a-z0-9-]+)\/$/);
         const lastmod = match && postLastmod.get(match[1]);
