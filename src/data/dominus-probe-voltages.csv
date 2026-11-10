@@ -1,0 +1,14 @@
+pad,name,meter_idle,meter_load,hwi_idle,hwi_load
+2,VIN,1.782,1.876,1.776,1.749
+3,VSA,0.891,0.891,0.896,0.896
+4,IO,1.064,1.084,1.056,1.088
+5,DRAM_ABC,1.399,1.398,1.403,1.403
+6,DRAM_DEF,1.400,1.398,1.412,1.403
+7,COREA,0.20-0.81 wandering,1.048,not exposed,not exposed
+8,COREB,1.066,1.068,not exposed,not exposed
+9,CACHE0,1.066,1.068,not exposed,not exposed
+10,IO_A_DEF,1.162,1.158,not exposed,not exposed
+11,IO_D_DEF,1.162,1.346,not exposed,not exposed
+12,SFR,1.359,1.365,not exposed,not exposed
+13,IO_A_ABC,1.310,1.306,not exposed,not exposed
+14,IO_D_ABC,1.348,1.346,not exposed,not exposed
