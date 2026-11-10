@@ -2,12 +2,12 @@
   <rect width="900" height="520" fill="#0f0f0f"/>
 
   <text x="40" y="40" fill="#e5e5e5" font-size="22" font-weight="700">BIOS: CPU Power Phase Control</text>
-  <text x="40" y="62" fill="#999999" font-size="13">The one knob that decides all this — and where I leave it. Pips show active phases at idle.</text>
+  <text x="40" y="62" fill="#999999" font-size="13">The one knob that decides all this — and where I leave it. Pips are illustrative, not measured.</text>
 
   <!-- ===== Standard ===== -->
   <rect x="40" y="82" width="820" height="80" rx="10" fill="#151515" stroke="#2a2a2a"/>
   <text x="64" y="118" fill="#cccccc" font-size="17" font-weight="700">Standard</text>
-  <text x="64" y="143" fill="#999999" font-size="12">Sheds aggressively — best idle efficiency</text>
+  <text x="64" y="143" fill="#999999" font-size="12">Sheds phases based on load</text>
   <text x="580" y="104" fill="#999999" font-size="10">at idle:</text>
   <rect x="580" y="110" width="26" height="36" rx="6" fill="#4ade80"/>
   <rect x="612" y="110" width="26" height="36" rx="6" fill="#4ade80"/>
@@ -50,9 +50,8 @@
   <!-- ===== callout ===== -->
   <rect x="40" y="370" width="820" height="102" rx="10" fill="#151515" stroke="#e8a96a"/>
   <text x="64" y="398" fill="#e8a96a" font-size="14" font-weight="700">Why Extreme on this board?</text>
-  <text x="64" y="422" fill="#cccccc" font-size="13">Shedding would save only a handful of idle watts — nothing on a 400W-capable platform this</text>
-  <text x="64" y="443" fill="#cccccc" font-size="13">overbuilt. So I keep all 32 stages lit, all the time. Flat transient response, and the array</text>
-  <text x="64" y="464" fill="#cccccc" font-size="13">never even gets warm.</text>
+  <text x="64" y="422" fill="#cccccc" font-size="13">I picked full-phase mode, so there's no phase-add step. How much that helps transients on my board,</text>
+  <text x="64" y="443" fill="#cccccc" font-size="13">or what it costs at idle, I haven't measured. So I keep all 32 stages lit, all the time.</text>
 
   <text x="892" y="513" text-anchor="end" fill="#ffffff" fill-opacity="0.55" font-size="12">markspcparts.com</text>
 </svg>
