@@ -85,7 +85,7 @@ Nine BIOS pictures, numbered 1–9 in my files. Here's what matters:
 | DRAM Current Capability | 100% | |
 | CPU cache ratio (mesh) | min 30 / max 30 | Mesh locked at 30x |
 | XMP | On, DDR4-3603 15-16-16-36 | The RAM speed |
-| CPU Current Reporting | Divide by 1.28 (Intel Spec) | That's the closest number to the true wattage in HWiNFO |
+| CPU Current Reporting | Divide by 1.28 (Intel Spec) | Makes HWiNFO's package power read ~400W instead of ~130W (closest to real draw, as far as I can tell) |
 | Voltages | Mostly Auto; DRAM 1.4000 | What the DRAM pads are set to |
 
 ![BIOS 1: Extreme Tweaker](/images/posts/dominus-probe-points/bios-1-extreme-tweaker.jpg)
@@ -193,7 +193,7 @@ Pad by pad: meter idle / HWiNFO idle / meter load / HWiNFO load.
 - **VSA (3):** 0.891 / 0.896 / 0.891 / 0.896.
 - **IO (4):** 1.064 / 1.056 / 1.084 / 1.088.
 - **DRAM_ABC (5):** 1.399 / 1.403 / 1.398 / 1.403.
-- **DRAM_DEF (6):** 1.400 / 1.412 / 1.398 / 1.403. The 12 mV idle gap is the biggest apart from VIN under load, and it's close to the meter's error bar.
+- **DRAM_DEF (6):** 1.400 / 1.412 / 1.398 / 1.403. The 12 mV idle gap is the biggest apart from VIN under load, and it's close to the meter's error bar — but my meter read both DRAM rails within 1 mV of each other (1.399 vs 1.400), so the gap looks like it's in HWiNFO's reading, not on the pads (same meter, same error on both).
 
 So on those five rails, the meter and the board's sensor agree within about 12 mV, except VIN under load.
 
