@@ -299,6 +299,36 @@ const breadcrumbLd = {
     margin: 1.5rem 0;
   }
 
+  .prose :global(table) {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .prose :global(th),
+  .prose :global(td) {
+    padding: 0.6rem 1rem;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .prose :global(th) {
+    color: #e2e8f0;
+    font-weight: 600;
+    vertical-align: bottom;
+    border-bottom-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .prose :global(th:first-child),
+  .prose :global(td:first-child) {
+    padding-left: 0;
+  }
+
   .prose :global(.video-embed) {
     position: relative;
     width: 100%;

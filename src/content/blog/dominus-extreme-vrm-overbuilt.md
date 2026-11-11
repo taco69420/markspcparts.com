@@ -73,12 +73,12 @@ It's not just the output stages. Here's the board's power connector inventory:
 
 - **Dual 24-pin** ATX connectors
 - **Quad 8-pin** EPS connectors
-- **Dual 6-pin** EATX 12V connectors — these two feed the CPU VRM
+- **Dual 6-pin** PCIe connectors — standard 6-pin PCIe plugs (ASUS's spec sheet calls them "6-pin EATX 12V"), and these two feed the CPU VRM
 - **One 6-pin EZ_PLUG** — supplementary PCIe slot power for multi-GPU, not CPU power
 
-That is a genuinely absurd amount of input copper for a single-socket board. Typical consumer boards give you one or two 8-pin EPS connectors. This board has up to **eight power inputs**, plus the EZ_PLUG. The two 6-pin EATX 12V connectors feed the CPU VRM — I confirmed that on my board. I haven't found a source that traces the rest to it, and some of them probably feed other parts of the board, so read this as an inventory, not a map of what feeds the 32 stages. Either way, that's a lot of connectors for one board.
+That is a genuinely absurd amount of input copper for a single-socket board. Typical consumer boards give you one or two 8-pin EPS connectors. This board has up to **eight power inputs**, plus the EZ_PLUG. The two 6-pin PCIe connectors are CPU input — extra power straight to the VRM.
 
-![Diagram — the board's power connector inventory: 2× 24-pin ATX, 4× 8-pin EPS, 2× 6-pin EATX 12V that feed the CPU VRM, and the 6-pin EZ_PLUG for supplementary PCIe slot power, compared with a normal two-EPS board](/images/posts/dominus-extreme-vrm/power-input-map.svg)
+![Diagram — the board's power connector inventory: 2× 24-pin ATX, 4× 8-pin EPS, 2× 6-pin PCIe and the 6-pin EZ_PLUG, compared with a normal two-EPS board](/images/posts/dominus-extreme-vrm/power-input-map.svg)
 
 ---
 
@@ -96,7 +96,7 @@ What the Dominus has is the whole package at once: the size, the 12 DIMM slots, 
 
 ## Where that leaves it
 
-So here's the honest version. The Dominus Extreme VRM has a lot of headroom — about two-thirds of the 570A ASUS quotes left over at stock, and still a real margin under a hard overclock, by my estimates. The VRM is unlikely to be what kills one of these boards first. But that's math and published specs, not something I've measured on my own board yet, and the closer you push the chip, the less spare you have.
+So here's the honest version. The Dominus Extreme VRM has a lot of headroom — about two-thirds of the 570A ASUS quotes left over at stock, and still a real margin under a hard overclock, by my estimates. The VRM is unlikely to be what kills one of these boards first.
 
 ---
 
